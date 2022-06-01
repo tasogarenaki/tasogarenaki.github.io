@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-01T06:46:42+00:00</updated>
+  <updated>2022-06-01T06:47:55+00:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>JAJAJAJAJA</title>
-    <link href="http://localhost:4000/posts/text-and-typography/" rel="alternate" type="text/html" title="JAJAJAJAJA" />
+    <title>HAHAHAHAH</title>
+    <link href="http://localhost:4000/posts/text-and-typography/" rel="alternate" type="text/html" title="HAHAHAHAH" />
     <published>2019-08-08T03:33:00+00:00</published>
   
-    <updated>2022-06-01T06:44:41+00:00</updated>
+    <updated>2022-06-01T06:47:27+00:00</updated>
   
     <id>http://localhost:4000/posts/text-and-typography/</id>
     <content src="http://localhost:4000/posts/text-and-typography/" />
