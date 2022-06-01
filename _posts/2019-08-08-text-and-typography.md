@@ -1,5 +1,5 @@
 ---
-title: Text and Typography
+title: Test
 author:
   name: Cotes Chung
   link: https://github.com/cotes2020
