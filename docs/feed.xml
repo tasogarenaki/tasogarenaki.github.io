@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-01T12:43:15+00:00</updated>
+  <updated>2022-06-01T14:16:00+00:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -24,7 +24,7 @@
     <link href="https://tasogarenaki.github.io/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
     <published>2022-06-01T10:11:00+00:00</published>
   
-    <updated>2022-06-01T12:38:34+00:00</updated>
+    <updated>2022-06-01T14:13:22+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/Python-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/Python-Note/" />
@@ -48,71 +48,27 @@
 
 
 
-      test!
+      1 Fundations
 
-test!
-test!
 
-    </summary>
-  
+  install pip:
 
-  </entry>
 
-  
-  <entry>
-    <title>HAHAHAHAH</title>
-    <link href="https://tasogarenaki.github.io/posts/text-and-typography/" rel="alternate" type="text/html" title="HAHAHAHAH" />
-    <published>2019-08-08T03:33:00+00:00</published>
-  
-    <updated>2022-06-01T12:33:48+00:00</updated>
-  
-    <id>https://tasogarenaki.github.io/posts/text-and-typography/</id>
-    <content src="https://tasogarenaki.github.io/posts/text-and-typography/" />
-    <author>
-      <name>{"name"=>"Cotes Chung", "link"=>"https://github.com/cotes2020"}</name>
-    </author>
+  $ curl https://bootstrap.pypa.io/pip/get-pip.py -o get-pip.py
+  $ sudo python3 get-pip.py
 
-  
+
+
+  Some Commands:
     
-    <category term="Blogging" />
-    
-    <category term="Demo" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
-
-Titles this is titel
-
-H1 - heading
-
-H2 - heading
-
-H3 - heading
-
-H4 - heading
-
-
-
-Paragraph
-
-I wandered lonely as a cloud
-
-That floats on high o’er vales and hills,
-
-When all at once I saw a crowd,
-
-A host, of golden daffodils;
-
-Beside the lake,...
+      control + d: exit()
+      control + l: clear
+      python3 -i name.py
+      handle = open(filename, mode)
+      quit(): break
+      append() to add elements in list
+      sort() to sort elements in list
+      split() to remove element (here (...
     </summary>
   
 
