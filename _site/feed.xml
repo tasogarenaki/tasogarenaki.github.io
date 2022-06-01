@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-01T06:47:55+00:00</updated>
+  <updated>2022-06-01T12:33:27+00:00</updated>
   <author>
     <name>your_full_name</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://tasogarenaki.github.io/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://tasogarenaki.github.io/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4000/"/>
+    href="https://tasogarenaki.github.io/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <rights> © 2022 your_full_name </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,14 +20,52 @@
 
   
   <entry>
+    <title>Python Note</title>
+    <link href="https://tasogarenaki.github.io/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
+    <published>2022-06-01T10:11:00+00:00</published>
+  
+    <updated>2022-06-01T10:11:00+00:00</updated>
+  
+    <id>https://tasogarenaki.github.io/posts/Python-Note/</id>
+    <content src="https://tasogarenaki.github.io/posts/Python-Note/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      test!
+
+test!
+test!
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>HAHAHAHAH</title>
-    <link href="http://localhost:4000/posts/text-and-typography/" rel="alternate" type="text/html" title="HAHAHAHAH" />
+    <link href="https://tasogarenaki.github.io/posts/text-and-typography/" rel="alternate" type="text/html" title="HAHAHAHAH" />
     <published>2019-08-08T03:33:00+00:00</published>
   
     <updated>2022-06-01T06:47:27+00:00</updated>
   
-    <id>http://localhost:4000/posts/text-and-typography/</id>
-    <content src="http://localhost:4000/posts/text-and-typography/" />
+    <id>https://tasogarenaki.github.io/posts/text-and-typography/</id>
+    <content src="https://tasogarenaki.github.io/posts/text-and-typography/" />
     <author>
       <name>{"name"=>"Cotes Chung", "link"=>"https://github.com/cotes2020"}</name>
     </author>
@@ -50,7 +88,7 @@
 
       This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
 
-Titles
+Titles this is titel
 
 H1 - heading
 
@@ -72,7 +110,7 @@ When all at once I saw a crowd,
 
 A host, of golden daffodils;
 
-Beside the lake, beneath the t...
+Beside the lake,...
     </summary>
   
 

@@ -1,7 +1,8 @@
-I"E'<p>This post is to show Markdown syntax rendering on <a href="https://github.com/cotes2020/jekyll-theme-chirpy/fork"><strong>Chirpy</strong></a>, you can also use it as an example of writing. Now, let’s start looking at text and typography.</p>
+I"�'<p>This post is to show Markdown syntax rendering on <a href="https://github.com/cotes2020/jekyll-theme-chirpy/fork"><strong>Chirpy</strong></a>, you can also use it as an example of writing. Now, let’s start looking at text and typography.</p>
 
-<h2 id="titles">Titles</h2>
+<h2 id="titles-this-is-titel">Titles this is titel</h2>
 <hr />
+
 <h1 id="h1---heading">H1 - heading</h1>
 
 <h2 data-toc-skip="">H2 - heading</h2>
@@ -10,6 +11,7 @@
 
 <h4>H4 - heading</h4>
 <hr />
+
 <p><br /></p>
 
 <h2 id="paragraph">Paragraph</h2>
@@ -179,11 +181,11 @@
 
 <p>The mathematics powered by <a href="https://www.mathjax.org/"><strong>MathJax</strong></a>:</p>
 
-\[\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}\]
+<p>[\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}]</p>
 
 <p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are</p>
 
-\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}\]
+<p>[x = {-b \pm \sqrt{b^2-4ac} \over 2a}]</p>
 
 <h2 id="inline-code">Inline code</h2>
 
@@ -193,29 +195,29 @@
 
 <h3 id="common">Common</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>This is a common code snippet, without syntax highlight and line number.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>This is a common code snippet, without syntax highlight and line number.
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="specific-languages">Specific Languages</h3>
 
 <h4 id="console">Console</h4>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span><span class="nb">env</span> |grep SHELL
+</pre></td> --><td class="rouge-code"><pre><span class="gp">$</span><span class="w"> </span><span class="nb">env</span> |grep SHELL
 <span class="go">SHELL=/usr/local/bin/bash
 PYENV_SHELL=bash
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="shell">Shell</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+</pre></td> --><td class="rouge-code"><pre><span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-ne</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
     </span><span class="nb">echo</span> <span class="s2">"The command was not successful."</span><span class="p">;</span>
     <span class="c">#do the needful / exit</span>
 <span class="k">fi</span><span class="p">;</span>
@@ -223,20 +225,20 @@ PYENV_SHELL=bash
 
 <h3 id="specific-filename">Specific filename</h3>
 
-<div file="_sass/jekyll-theme-chirpy.scss" class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div file="_sass/jekyll-theme-chirpy.scss" class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="k">@import</span>
+</pre></td> --><td class="rouge-code"><pre><span class="k">@import</span>
   <span class="s2">"colors/light-typography"</span><span class="o">,</span>
   <span class="s2">"colors/dark-typography"</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="reverse-footnote">Reverse Footnote</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="mi">2</span><span class="p">:</span>
+</pre></td> --><td class="rouge-code"><pre><span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="mi">2</span><span class="p">:</span>
   <span class="n">test</span> <span class="n">xxx</span> <span class="o">+</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
   <span class="k">return</span> <span class="n">xxx</span> 
 </pre></td></tr></tbody></table></code></pre></div></div>
