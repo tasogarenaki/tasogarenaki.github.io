@@ -43,7 +43,7 @@ const resource = [
 const allowedDomains = [
   
 
-  'tasogarenaki.github.io',
+  'localhost:4000',
 
   
     'raw.githubusercontent.com',
