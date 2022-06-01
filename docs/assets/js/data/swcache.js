@@ -46,8 +46,6 @@ const allowedDomains = [
   'tasogarenaki.github.io',
 
   
-    'raw.githubusercontent.com',
-  
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',
