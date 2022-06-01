@@ -1,5 +1,5 @@
 ---
-title: JAJAJAJAJA
+title: HAHAHAHAH
 author:
   name: Cotes Chung
   link: https://github.com/cotes2020
