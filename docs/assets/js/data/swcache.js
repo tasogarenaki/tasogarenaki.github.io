@@ -33,7 +33,6 @@ const resource = [
     '/assets/js/dist/categories.min.js',
     '/assets/js/dist/commons.min.js',
     '/assets/js/dist/home.min.js',
-    '/assets/js/dist/misc.min.js',
     '/assets/js/dist/page.min.js',
     '/assets/js/dist/post.min.js',
     '/assets/js/dist/pvreport.min.js'
@@ -44,7 +43,7 @@ const resource = [
 const allowedDomains = [
   
 
-  'localhost:4000',
+  'tasogarenaki.github.io',
 
   
     'raw.githubusercontent.com',
