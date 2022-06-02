@@ -1,0 +1,558 @@
+I"$}<h1 id="1-fundations">1 Fundations</h1>
+
+<ul>
+  <li>install pip:</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="gp">  $</span><span class="w"> </span>curl https://bootstrap.pypa.io/pip/get-pip.py <span class="nt">-o</span> get-pip.py
+<span class="gp">  $</span><span class="w"> </span><span class="nb">sudo </span>python3 get-pip.py
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Some Commands:
+    <ul>
+      <li>control + d: <code class="language-plaintext highlighter-rouge">exit()</code></li>
+      <li>control + l: <code class="language-plaintext highlighter-rouge">clear</code></li>
+      <li><code class="language-plaintext highlighter-rouge">python3 -i name.py</code></li>
+      <li><code class="language-plaintext highlighter-rouge">handle = open(filename, mode)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">quit(): break</code></li>
+      <li><code class="language-plaintext highlighter-rouge">append()</code> to add elements in list</li>
+      <li><code class="language-plaintext highlighter-rouge">sort()</code> to sort elements in list</li>
+      <li><code class="language-plaintext highlighter-rouge">split()</code> to remove element (here (none)) from the list</li>
+      <li><code class="language-plaintext highlighter-rouge">dict_name.get(xxx, 0) + 1</code>: if in <code class="language-plaintext highlighter-rouge">dict()</code> has <code class="language-plaintext highlighter-rouge">xxx</code> then <code class="language-plaintext highlighter-rouge">xxx+1</code> otherwise <code class="language-plaintext highlighter-rouge">0+1</code></li>
+    </ul>
+  </li>
+  <li>Position of numbers without <code class="language-plaintext highlighter-rouge">[]</code>:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">18117</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">all_but_last</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+<span class="n">all_but_last</span> <span class="o">=</span> <span class="mi">1811</span>   <span class="c1"># via //
+</span><span class="n">last</span> <span class="o">=</span> <span class="mi">7</span>              <span class="c1"># via %
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+<ul>
+  <li>Placeholder:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">%d</code>: decimal</li>
+      <li><code class="language-plaintext highlighter-rouge">%f</code>: float</li>
+      <li><code class="language-plaintext highlighter-rouge">%%</code>: percent</li>
+      <li>e.g.: <code class="language-plaintext highlighter-rouge">print('%d + %d = %d' % (a, b, a + b)) </code></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="2-coursera-py4e">2 Coursera: PY4E</h1>
+
+<h2 id="21-fundations">2.1 Fundations</h2>
+
+<ul>
+  <li>Regular Expressions and Extracting Data:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">import re</code></li>
+      <li><code class="language-plaintext highlighter-rouge">re.search()</code></li>
+      <li><code class="language-plaintext highlighter-rouge">re.findall()</code></li>
+      <li>see <strong>e9.py</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Symbol</strong></th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>^</strong></td>
+      <td>Matches the beginning of a line</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>$</strong></td>
+      <td>Matches the end of the line</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>.</strong></td>
+      <td>Matches any character</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>\s</strong></td>
+      <td>Matches whitespace</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>\S</strong></td>
+      <td>Matches any non-whitespace character</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">*****</td>
+      <td>Repeats a character zero or more times</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>*?</strong></td>
+      <td>Repeats a character zero or more times (non-greedy)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>+</strong></td>
+      <td>Repeats a character one or more times</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>+?</strong></td>
+      <td>Repeats a character one or more times (non-greedy)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>[aeiou]</strong></td>
+      <td>Matches a single character in the listed set</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>[^XYZ]</strong></td>
+      <td>Matches a single character not in the listed set</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>[a-z0-9]</strong></td>
+      <td>The set of characters can include a range</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>( )</strong></td>
+      <td>Only show date inside of ()</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Socket
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">import socket</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Port 80</code>: Web Server, HTTP(80)</li>
+      <li><code class="language-plaintext highlighter-rouge">decode()</code></li>
+    </ul>
+  </li>
+  <li>Retrieving Web Pages
+    <ul>
+      <li>use Chrome to view the page source</li>
+      <li><code class="language-plaintext highlighter-rouge">import urllib.request, urllib.parse, urllib.error</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">fhand</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">'http://xxxxx'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fhand</span><span class="p">:</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">decode</span><span class="p">().</span><span class="n">strip</span><span class="p">())</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Beautifulsoup4: <strong>e11.py</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">from bs4 import BeautifulSoup</code></li>
+      <li>Example to get img: https://divertingpan.github.io/post/python_tieba/</li>
+    </ul>
+
+    <p>1) download <code class="language-plaintext highlighter-rouge">BeautifulSoup4</code></p>
+
+    <p>2) unzip and Terminal geht to the folder</p>
+
+    <p>3) <code class="language-plaintext highlighter-rouge">sudo python3 ./setup.py i nstall</code></p>
+
+    <p>4) <code class="language-plaintext highlighter-rouge">pip install soupsieve</code></p>
+  </li>
+  <li>eXtensible Markup Language (XML)
+    <ul>
+      <li>share structured data</li>
+      <li><code class="language-plaintext highlighter-rouge">import xml.etree.ElementTree as ET</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xxx.findall(‘a/b’)</code>: find all tags <code class="language-plaintext highlighter-rouge">b</code> from <code class="language-plaintext highlighter-rouge">a</code></li>
+    </ul>
+  </li>
+  <li>JavaScript Object Notation (JSON)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">import json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">'''[ xxx ]'''</code></li>
+      <li><code class="language-plaintext highlighter-rouge">info = json.loads(xxx)</code></li>
+    </ul>
+  </li>
+  <li>Service Oriented Approach
+    <ul>
+      <li>Application Programming Interfaces (API)</li>
+      <li><code class="language-plaintext highlighter-rouge">import twurl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">twurl.augment(url, {‘xx’})</code></li>
+      <li>GeoJason API: http://maps.googleapis.com/maps/api/geocode/json?</li>
+    </ul>
+  </li>
+  <li>Class and Object
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">class xxx:</code></li>
+      <li>object: <code class="language-plaintext highlighter-rouge">test = xxx():</code></li>
+      <li>function: <code class="language-plaintext highlighter-rouge">def xxx:</code></li>
+      <li>subclass: <code class="language-plaintext highlighter-rouge">class name2(class_name1):</code></li>
+    </ul>
+  </li>
+  <li>assert expression:
+    <ul>
+      <li>test if expression is <code class="language-plaintext highlighter-rouge">False</code>: <code class="language-plaintext highlighter-rouge">assert 1 == 0, 'xxx'</code>. This is <code class="language-plaintext highlighter-rouge">False</code>, so show <code class="language-plaintext highlighter-rouge">'xxx'</code></li>
+      <li><code class="language-plaintext highlighter-rouge">assert 1 == 1, ‘xxx’</code>. This is <code class="language-plaintext highlighter-rouge">True</code>, show nothing.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="22-examples">2.2 Examples</h2>
+
+<ul>
+  <li>Example <strong>e1</strong>:
+    <ul>
+      <li>if error, still accept, then run yyy and continue.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">try</span><span class="p">:</span> 
+	<span class="n">xxx</span>      
+<span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span> 
+	<span class="n">yyy</span> 
+	<span class="k">continue</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Example <strong>e2</strong>:
+    <ul>
+      <li>find position, print out xxx between position 1 and 2.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">text</span> <span class="o">=</span> <span class="n">abcdef</span> 
+<span class="n">n1</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'f'</span><span class="p">)</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">n1</span><span class="p">:</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Example <strong>e3</strong>:
+    <ul>
+      <li>use os function to use <code class="language-plaintext highlighter-rouge">os.getcwd()</code> to now the path and use <code class="language-plaintext highlighter-rouge">os.chdir()</code> to change the path</li>
+      <li><code class="language-plaintext highlighter-rouge">rstrip()</code>: move the blank line</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span>
+<span class="n">os</span><span class="p">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">'/Users/Terry/Desktop'</span><span class="p">)</span>
+
+<span class="c1"># Use words.txt as the file name
+</span><span class="n">fname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter file name: "</span><span class="p">)</span>
+<span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">rstrip</span><span class="p">()</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Example <strong>e5</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">lst.split()</code> error, so should use <code class="language-plaintext highlighter-rouge">lst[0].split()</code> to remove blank.</li>
+      <li><code class="language-plaintext highlighter-rouge">list(set(xx))</code> to remove repeated elements</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="n">fname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter file name: "</span><span class="p">)</span>
+<span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">new</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">rstrip</span><span class="p">()</span>
+    <span class="n">lst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">new</span> <span class="o">+</span> <span class="n">lst</span><span class="p">[</span><span class="n">count</span><span class="p">].</span><span class="n">split</span><span class="p">()</span> 
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span> 
+
+
+<span class="n">new</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">new</span><span class="p">))</span>
+<span class="n">new</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Example <strong>e14</strong>:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="c1"># compute the sum of the numbers in the file and enter the sum
+# the numbers are inside tag 'count'
+</span>
+<span class="n">address</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter location: '</span><span class="p">)</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="n">address</span> 
+<span class="k">print</span><span class="p">(</span><span class="s">'Retrieving'</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+<span class="n">uh</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">ctx</span><span class="p">)</span>
+
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">uh</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Retrieved'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="s">'characters'</span><span class="p">)</span>
+
+
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="p">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># locatate 'count' and find them all
+</span><span class="n">counts</span> <span class="o">=</span> <span class="n">tree</span><span class="p">.</span><span class="n">findall</span><span class="p">(</span><span class="s">'.//count'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Count:'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">counts</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+    <span class="c1"># the numbers are 'text' from count
+</span>    <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">count</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Databases: <strong>e17.py</strong> and <strong>e18.py</strong>
+    <ul>
+      <li>SQLite Browser</li>
+      <li><code class="language-plaintext highlighter-rouge">import sqlite3</code></li>
+      <li>Reconstructing Data with JOIN: select … from … join … on …</li>
+      <li>inside python code, should use SQL code:</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">xyz</span><span class="p">.</span><span class="k">execute</span><span class="p">(</span><span class="s1">'UPDATE xxx SET yyy=xxx WHERE xxxx'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">xxx</span> <span class="o">=</span> <span class="n">sqlite</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'xxx.sqlite'</span><span class="p">)</span>
+<span class="n">yyy</span> <span class="o">=</span> <span class="n">xxx</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">yyy</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'SQL code'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="3-cs61a">3 CS61A</h1>
+
+<h2 id="31-fundations">3.1 Fundations</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">*args</code> and <code class="language-plaintext highlighter-rouge">**kwargs</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">*args</code>: unknown functions/parameters</li>
+      <li><code class="language-plaintext highlighter-rouge">**kwargs</code>: same but list</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">printed</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+     	<span class="k">def</span> <span class="nf">print_and_return</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+         	<span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+         	<span class="k">print</span><span class="p">(</span><span class="s">'Result:'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+         	<span class="k">return</span> <span class="n">result</span>
+     	<span class="k">return</span> <span class="n">print_and_return</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_pow</span> <span class="o">=</span> <span class="n">printed</span><span class="p">(</span><span class="nb">pow</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">Result</span><span class="p">:</span> <span class="mi">256</span>
+<span class="mi">256</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_abs</span> <span class="o">=</span> <span class="n">printed</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">printed_abs</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Result</span><span class="p">:</span> <span class="mi">10</span>
+<span class="mi">10</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Higher-Order Functions:
+    <ul>
+      <li>use function inside of function</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">apply_twice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  	<span class="c1"># here call the f function with x, f can be i.e. square 
+</span>
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">apply_twice</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>      <span class="c1"># f is now the function square(x) with x = 2
+</span><span class="mi">16</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>Lambda Expressions:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">lambda &lt;parameters&gt;: &lt;return expression&gt;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">(lambda &lt;parameters A&gt;: &lt;return function&gt;)(lambda &lt;parameters A&gt;: lambda &lt;parameters B&gt;:  &lt;return expression&gt;)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">lambda</code> is a function with formal parameter <code class="language-plaintext highlighter-rouge">x=10</code> that returns the value of <code class="language-plaintext highlighter-rouge">x*x</code>, it’s like <code class="language-plaintext highlighter-rouge">def</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">square</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>	
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="32-examples">3.2 Examples</h2>
+
+<ul>
+  <li>Example <strong>lab02</strong>:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                               <span class="c1"># first to give is n times
+</span>        <span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>                           <span class="c1"># second to give is x
+</span>            <span class="n">run</span> <span class="o">=</span> <span class="n">n</span>                                <span class="c1"># run n times 
+</span>            <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span>                             <span class="c1"># f1, f2, f3
+</span>            <span class="n">result</span> <span class="o">=</span> <span class="n">x</span>
+            <span class="k">if</span> <span class="n">run</span><span class="p">:</span>
+                <span class="k">while</span> <span class="n">run</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">result</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                        <span class="n">result</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">order</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                        <span class="n">result</span> <span class="o">=</span> <span class="n">f3</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+                    <span class="n">order</span> <span class="o">=</span> <span class="n">order</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>       <span class="c1"># f1 -&gt; f2 -&gt; f3 -&gt; f1
+</span>                    <span class="n">run</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">func2</span>
+    <span class="k">return</span> <span class="n">func1</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>To run this function i.e. <code class="language-plaintext highlighter-rouge">my_cycle = cycle(add1, times2, add3)(2)(1)</code>:</p>
+
+<p>1) inside function <code class="language-plaintext highlighter-rouge">cycle</code> has input <code class="language-plaintext highlighter-rouge">f1</code>, <code class="language-plaintext highlighter-rouge">f2</code>, <code class="language-plaintext highlighter-rouge">f3</code></p>
+
+<p>2) then has inside function <code class="language-plaintext highlighter-rouge">func1(n)</code> and <code class="language-plaintext highlighter-rouge">func2(x)</code> which in this case <code class="language-plaintext highlighter-rouge">n = 2</code> and <code class="language-plaintext highlighter-rouge">x = 1</code>, cause <code class="language-plaintext highlighter-rouge">func1</code> first defined.</p>
+
+<p><strong>Alternative i.e.</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">my_cycle</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">add1</span><span class="p">,</span> <span class="n">times2</span><span class="p">,</span> <span class="n">add3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add_one_then_double</span> <span class="o">=</span> <span class="n">my_cycle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add_one_then_double</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">4</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET
