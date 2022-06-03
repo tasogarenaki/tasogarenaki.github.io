@@ -684,8 +684,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1070 words">
-  <em>5 min</em> read</span>
+  title="1777 words">
+  <em>9 min</em> read</span>
 
 
       <!-- page views -->
@@ -1217,10 +1217,91 @@
 <span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<ul>
+  <li>List
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">lst[::-1]</code> creates a reversed list</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">directors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'jenkins'</span><span class="p">,</span> <span class="s">'spielberg'</span><span class="p">,</span> <span class="s">'bigelow'</span><span class="p">,</span> <span class="s">'kubrick'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">directors</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="s">'kubrick'</span><span class="p">,</span> <span class="s">'bigelow'</span><span class="p">,</span> <span class="s">'spielberg'</span><span class="p">,</span> <span class="s">'jenkins'</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>List Comprehensions
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">[&lt;map exp&gt; for &lt;name&gt; in &lt;iter exp&gt; if &lt;filter exp&gt;]</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>First check the <code class="language-plaintext highlighter-rouge">if</code> statement with <code class="language-plaintext highlighter-rouge">x</code> from the List <code class="language-plaintext highlighter-rouge">[1, 2, 3, 4, 5]</code>, then apply with <code class="language-plaintext highlighter-rouge">x * x -3</code>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">enumerate()</code></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="c1"># normal for-statement
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
+<span class="p">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="p">...</span>     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="p">...</span> 
+<span class="mi">0</span> <span class="n">one</span>
+<span class="mi">1</span> <span class="n">two</span>
+<span class="mi">2</span> <span class="n">three</span>
+
+<span class="c1"># wih enumerate()
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+<span class="p">...</span>     <span class="k">print</span> <span class="n">i</span><span class="p">,</span> <span class="n">element</span>
+<span class="p">...</span> 
+<span class="mi">0</span> <span class="n">one</span>
+<span class="mi">1</span> <span class="n">two</span>
+<span class="mi">2</span> <span class="n">three</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h2 id="32-examples">3.2 Examples<a href="#32-examples" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <ul>
-  <li>Example <strong>lab02</strong>:</li>
+  <li>Some Example from <strong>lab02</strong>:</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -1282,6 +1363,212 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">add_one_then_double</span> <span class="o">=</span> <span class="n">my_cycle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">add_one_then_double</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="mi">4</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>Some Examples from <strong>project cats</strong>:
+    <ul>
+      <li>full cases see ___ (link)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q1 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">choose</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">,</span> <span class="n">select</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="s">"""Return the Kth paragraph from PARAGRAPHS for which SELECT called on the
+    paragraph returns true. If there are fewer than K such paragraphs, return
+    the empty string.
+    """</span>
+    <span class="c1"># BEGIN PROBLEM 1
+</span>    <span class="s">"*** YOUR CODE HERE ***"</span>
+    <span class="c1"># Index must be corrected, it's like 'remove' all the False Index
+</span>    <span class="c1"># In this case used 2 different Index Systems to locate the correct one
+</span>    
+    <span class="c1"># Check the List with full Indexs
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">select</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="c1"># Check the corrected Index with right order
+</span>            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">paragraphs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">k</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="s">''</span>
+
+
+
+
+
+
+<span class="c1"># ----------------------------------------- Q2 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">about</span><span class="p">(</span><span class="n">topic</span><span class="p">):</span>
+    <span class="s">"""Return a select function that returns whether a paragraph contains one
+    of the words in TOPIC.
+
+    &gt;&gt;&gt; about_dogs = about(['dog', 'dogs', 'pup', 'puppy'])
+    &gt;&gt;&gt; choose(['Cute Dog!', 'That is a cat.', 'Nice pup!'], about_dogs, 0)
+    'Cute Dog!'
+    &gt;&gt;&gt; choose(['Cute Dog!', 'That is a cat.', 'Nice pup.'], about_dogs, 1)
+    'Nice pup.'
+    
+    &gt;&gt;&gt; dogs = about(['dogs', 'hounds'])
+    &gt;&gt;&gt; dogs('A paragraph about cats.')
+    False
+    &gt;&gt;&gt; dogs('"DOGS" stands for Department Of Geophysical Science.')
+    True
+    """</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">([</span><span class="n">lower</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">]),</span> <span class="s">'topics should be lowercase.'</span>
+    <span class="c1"># BEGIN PROBLEM 2
+</span>    <span class="s">"*** YOUR CODE HERE ***"</span>
+    <span class="c1"># Use Higher-Order Function
+</span>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="c1"># remove punctuations, lowercase of sentence then split via utils.py
+</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span><span class="n">lower</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+        <span class="c1"># use double for-statement to find the same key word
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topic</span><span class="p">:</span>
+            <span class="c1"># same as topic[i] == x[k]:
+</span>            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="n">check</span>
+
+
+
+
+
+<span class="c1"># ----------------------------------------- Q6 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">shifty_shifts</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+    <span class="s">"""A diff function for autocorrect that determines how many letters
+    in START need to be substituted to create GOAL, then adds the difference in
+    their lengths.
+    """</span>
+    <span class="c1"># BEGIN PROBLEM 6
+</span>    <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">goal</span><span class="p">))</span>
+
+    <span class="c1"># version 1: return the correct answer for tests, but didn't pass the ok.py
+</span>    <span class="c1"># can't figured out why
+</span>    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># Question required
+</span>    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1"># return diff_length + total 
+</span>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">goal</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">count</span> <span class="o">+</span> <span class="n">diff</span>
+    <span class="c1"># count the different chars
+</span>    <span class="k">if</span> <span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># recursion: use [1:] -&gt; by running every time the length of string will -1
+</span>    <span class="c1"># + count, cause will reset as 0 every time
+</span>    <span class="k">return</span> <span class="n">shifty_shifts</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">)</span> <span class="o">+</span> <span class="n">count</span>
+
+
+    <span class="c1"># version 2: use Higher-Order function pass the ok.py
+</span>    <span class="k">def</span> <span class="nf">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">goal</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">count</span> <span class="o">+</span> <span class="n">diff</span>
+        <span class="k">if</span> <span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 

@@ -316,20 +316,54 @@ square = lambda x: x * x
 print(square(4))
 ```
 
+- List
+  - `lst[::-1]` creates a reversed list
 
+```python
+>>> directors = ['jenkins', 'spielberg', 'bigelow', 'kubrick']
+>>> directors[::-1]
+['kubrick', 'bigelow', 'spielberg', 'jenkins']
+```
 
+- List Comprehensions
+  - `[<map exp> for <name> in <iter exp> if <filter exp>]` 
 
+```python
+>>> [x * x - 3 for x in [1, 2, 3, 4, 5] if x % 2 == 1]
+[-2, 6, 22]
+```
+First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then apply with `x * x -3`.
 
+- `enumerate()`
 
+```python
+# normal for-statement
+>>> i = 0
+>>> seq = ['one', 'two', 'three']
+>>> for element in seq:
+...     print i, seq[i]
+...     i += 1
+... 
+0 one
+1 two
+2 three
 
-
+# wih enumerate()
+>>> seq = ['one', 'two', 'three']
+>>> for i, element in enumerate(seq):
+...     print i, element
+... 
+0 one
+1 two
+2 three
+```
 
 
 ## 3.2 Examples 
 
 
 
-- Example **lab02**:
+- Some Example from **lab02**:
 
 ```python
 def cycle(f1, f2, f3):
@@ -367,6 +401,113 @@ To run this function i.e. `my_cycle = cycle(add1, times2, add3)(2)(1)`:
 >>> add_one_then_double(1)
 4
 ```
+
+
+- Some Examples from **project cats**:
+  - full cases see ___ (link)
+
+```python
+# ----------------------------------------- Q1 ---------------------------------- #
+def choose(paragraphs, select, k):
+    """Return the Kth paragraph from PARAGRAPHS for which SELECT called on the
+    paragraph returns true. If there are fewer than K such paragraphs, return
+    the empty string.
+    """
+    # BEGIN PROBLEM 1
+    "*** YOUR CODE HERE ***"
+    # Index must be corrected, it's like 'remove' all the False Index
+    # In this case used 2 different Index Systems to locate the correct one
+    
+    # Check the List with full Indexs
+    for i in range(len(paragraphs)):
+        if select(paragraphs[i]):
+            # Check the corrected Index with right order
+            if k == 0:
+                return paragraphs[i]
+            k -= 1
+    return ''
+
+
+
+
+
+
+# ----------------------------------------- Q2 ---------------------------------- #
+def about(topic):
+    """Return a select function that returns whether a paragraph contains one
+    of the words in TOPIC.
+
+    >>> about_dogs = about(['dog', 'dogs', 'pup', 'puppy'])
+    >>> choose(['Cute Dog!', 'That is a cat.', 'Nice pup!'], about_dogs, 0)
+    'Cute Dog!'
+    >>> choose(['Cute Dog!', 'That is a cat.', 'Nice pup.'], about_dogs, 1)
+    'Nice pup.'
+    
+    >>> dogs = about(['dogs', 'hounds'])
+    >>> dogs('A paragraph about cats.')
+    False
+    >>> dogs('"DOGS" stands for Department Of Geophysical Science.')
+    True
+    """
+    assert all([lower(x) == x for x in topic]), 'topics should be lowercase.'
+    # BEGIN PROBLEM 2
+    "*** YOUR CODE HERE ***"
+    # Use Higher-Order Function
+    def check(x):
+        # remove punctuations, lowercase of sentence then split via utils.py
+        x = split(lower(remove_punctuation(x)))
+        # use double for-statement to find the same key word
+        for i in topic:
+            # same as topic[i] == x[k]:
+            if i in x:
+                return True
+        return False
+    return check
+
+
+
+
+
+# ----------------------------------------- Q6 ---------------------------------- #
+def shifty_shifts(start, goal, limit):
+    """A diff function for autocorrect that determines how many letters
+    in START need to be substituted to create GOAL, then adds the difference in
+    their lengths.
+    """
+    # BEGIN PROBLEM 6
+    diff = abs(len(start)-len(goal))
+
+    # version 1: return the correct answer for tests, but didn't pass the ok.py
+    # can't figured out why
+    count = 0
+    # Question required
+    if count > limit:
+        return limit + 1
+    # return diff_length + total 
+    if len(start) == 0 or len(goal) == 0:
+        return count + diff
+    # count the different chars
+    if start[0] != goal[0]:
+        count += 1
+    # recursion: use [1:] -> by running every time the length of string will -1
+    # + count, cause will reset as 0 every time
+    return shifty_shifts(start[1:], goal[1:], limit) + count
+
+
+    # version 2: use Higher-Order function pass the ok.py
+    def counting(start, goal, limit, count):
+        if count > limit:
+            return limit + 1
+        if len(start) == 0 or len(goal) == 0:
+            return count + diff
+        if start[0] != goal[0]:
+            count += 1
+        return counting(start[1:], goal[1:], limit, count)
+    return counting(start, goal, limit, 0)
+```
+
+
+
 
 
 
