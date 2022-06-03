@@ -504,6 +504,36 @@ def shifty_shifts(start, goal, limit):
             count += 1
         return counting(start[1:], goal[1:], limit, count)
     return counting(start, goal, limit, 0)
+
+
+
+
+# ----------------------------------------- Q7 ---------------------------------- #
+def pawssible_patches(start, goal, limit):
+    """A diff function that computes the edit distance from START to GOAL."""
+    # similar as shifty_shifts
+
+    
+    def counting(start, goal, limit, count):
+        diff = abs(len(start)-len(goal))
+        if count > limit:
+            return limit + 1
+        # if one is empty, should change n times of lengh another word which is diff
+        if len(start) == 0 or len(goal) == 0:
+            return count + diff
+        # if same char, skip with next char
+        if start[0] == goal[0]:
+            return counting(start[1:], goal[1:], limit, count)
+        # minimize the amount
+        # if diff char, there's three conditions 
+        # 1) compare with same index
+        # 2)/3):
+        # compare with one word each time, maybe a[1] == b[0]
+        # or a[0] == b[1], e.g. a, b = "ckiteus", "kittens"
+        return min(counting(start[1:], goal[1:], limit, count+1), 
+        counting(start[1:], goal, limit, count+1), counting(start, goal[1:], limit, count+1))
+    
+    return counting(start, goal, limit, 0)
 ```
 
 

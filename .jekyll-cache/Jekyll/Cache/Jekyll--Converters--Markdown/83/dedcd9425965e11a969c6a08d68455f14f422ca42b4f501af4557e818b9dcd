@@ -1,4 +1,4 @@
-I"1»<h1 id="1-fundations">1 Fundations</h1>
+I";Î<h1 id="1-fundations">1 Fundations</h1>
 
 <ul>
   <li>install pip:</li>
@@ -735,6 +735,36 @@
 95
 96
 97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
 </pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q1 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">choose</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">,</span> <span class="n">select</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="s">"""Return the Kth paragraph from PARAGRAPHS for which SELECT called on the
@@ -831,6 +861,36 @@
         <span class="k">if</span> <span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+
+
+<span class="c1"># ----------------------------------------- Q7 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">pawssible_patches</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+    <span class="s">"""A diff function that computes the edit distance from START to GOAL."""</span>
+    <span class="c1"># similar as shifty_shifts
+</span>
+    
+    <span class="k">def</span> <span class="nf">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">goal</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># if one is empty, should change n times of lengh another word which is diff
+</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">goal</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">count</span> <span class="o">+</span> <span class="n">diff</span>
+        <span class="c1"># if same char, skip with next char
+</span>        <span class="k">if</span> <span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+        <span class="c1"># minimize the amount
+</span>        <span class="c1"># if diff char, there's three conditions 
+</span>        <span class="c1"># 1) compare with same index
+</span>        <span class="c1"># 2)/3):
+</span>        <span class="c1"># compare with one word each time, maybe a[1] == b[0]
+</span>        <span class="c1"># or a[0] == b[1], e.g. a, b = "ckiteus", "kittens"
+</span>        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> 
+        <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    
     <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
