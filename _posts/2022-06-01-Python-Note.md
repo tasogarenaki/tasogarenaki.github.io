@@ -359,11 +359,31 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 ```
 
 
+- Trees 
+  - **root**: the node at the top of the tree
+  - **label**: the value in a node, selected by the `label` function
+  - **branches**: a list of trees directly under the tree's root, selected by the `branches` function
+  - **leaf**: a tree with zero branches
+  - **node**: any location within the tree (e.g., root node, leaf nodes, etc.)
+  - **Constructor**: `tree(label, branches=[])`: creates a tree object with the given `label` value at its root node and list of `branches`. 
+  - **Selectors**:
+    - `label(tree)`: returns the value in the root node of tree.
+    - `branches(tree)`: returns the list of branches of the given tree.
+  - **Convenience function**: `is_leaf(tree)`: returns `True` if tree's list of `branches` is empty, and `False` otherwise.
+
+
+
+
+
+
+
+
+
 ## 3.2 Examples 
 
 
 
-- Some Example from **lab02**:
+- Some Examples from **lab02**:
 
 ```python
 def cycle(f1, f2, f3):
@@ -404,7 +424,7 @@ To run this function i.e. `my_cycle = cycle(add1, times2, add3)(2)(1)`:
 
 
 - Some Examples from **project cats**:
-  - full cases see [here](url) 
+  - full cases see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Projects/cats/cats.py) 
 
 ```python
 # ----------------------------------------- Q1 ---------------------------------- #
@@ -642,9 +662,9 @@ def fastest_words(game):
     """
 
     # see exmaple with time() by Q9
-    # Initial a empty 2D-Array
+    # Initial a empty Array
     result = [[] for i in player_indices]
-    # begin with compair for word 1 with different players 
+    # begin with compair for word 0 with different players 
     for word in word_indices:
         for player in player_indices:
             # default set the player 0 is always the winner
@@ -662,6 +682,8 @@ def fastest_words(game):
         # add the word in the array
         result[winer] += [word_at(game, word)]
     return result 
+
+
 ```
 
 
