@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-06T10:46:32+00:00","datePublished":"2022-06-01T10:11:00+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-06T10:50:55+00:00","datePublished":"2022-06-01T10:11:00+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -653,12 +653,12 @@
 
 
 <em class="timeago"
-    date="2022-06-06 12:46:32 +0200
+    date="2022-06-06 12:50:55 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jun  6, 2022, 12:46 PM +0200"
+      title="Mon, Jun  6, 2022, 12:50 PM +0200"
     >Jun  6</em>
 
       </span>
@@ -684,8 +684,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1954 words">
-  <em>10 min</em> read</span>
+  title="2647 words">
+  <em>14 min</em> read</span>
 
 
       <!-- page views -->
@@ -1368,7 +1368,7 @@
 <ul>
   <li>Some Examples from <strong>project cats</strong>:
     <ul>
-      <li>full cases see ___ (link)</li>
+      <li>full cases see <a href="url">here</a></li>
     </ul>
   </li>
 </ul>
@@ -1502,6 +1502,134 @@
 125
 126
 127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
 </pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q1 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">choose</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">,</span> <span class="n">select</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="s">"""Return the Kth paragraph from PARAGRAPHS for which SELECT called on the
@@ -1629,9 +1757,135 @@
         <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">limit</span><span class="p">,</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">counting</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
 
-<p>!!!!!! new</p>
+
+
+
+<span class="c1"># ----------------------------------------- Q8 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">report_progress</span><span class="p">(</span><span class="n">typed</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">send</span><span class="p">):</span>
+    <span class="s">"""Send a report of your id and progress so far to the multiplayer server."""</span>
+    <span class="c1"># BEGIN PROBLEM 8
+</span>    <span class="s">"*** YOUR CODE HERE ***"</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">typed</span><span class="p">:</span>
+        <span class="c1"># located the first incorrect word
+</span>        <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">prompt</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">break</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># calculate the error ratio
+</span>    <span class="n">progress</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="c1"># "print"
+</span>    <span class="n">send</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span> <span class="s">'progress'</span><span class="p">:</span> <span class="n">progress</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">progress</span> 
+
+
+
+
+
+<span class="c1"># ----------------------------------------- Q9 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">time_per_word</span><span class="p">(</span><span class="n">times_per_player</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
+    <span class="s">"""Given timing data, return a game data abstraction, which contains a list
+    of words and the amount of time each player took to type each word.
+
+    Arguments:
+        times_per_player: A list of lists of timestamps including the time
+                          the player started typing, followed by the time
+                          the player finished typing each word.
+        words: a list of words, in the order they are typed.
+    """</span>
+    <span class="c1"># BEGIN PROBLEM 9
+</span>    <span class="s">"*** YOUR CODE HERE ***"</span>
+
+    <span class="s">"""
+    &gt;&gt;&gt; p = [[1, 4, 6, 7], [0, 4, 6, 9]]
+    &gt;&gt;&gt; words = ['This', 'is', 'fun']
+    &gt;&gt;&gt; game = time_per_word(p, words)
+    &gt;&gt;&gt; all_words(game)   ----&gt; game[0]
+    ['This', 'is', 'fun']
+    &gt;&gt;&gt; all_times(game)   ----&gt; game[1]
+    [[3,2,1],[4,2,3]]
+
+    &gt;&gt;&gt; p = [[0, 2, 3], [2, 4, 7]]
+    &gt;&gt;&gt; game = time_per_word(p, ['hello', 'world'])
+    &gt;&gt;&gt; word_at(game, 1)   ----&gt; game[0][word_index]
+    'world'
+    &gt;&gt;&gt; all_times(game)
+    [[2,1],[2,3]]
+    &gt;&gt;&gt; time(game, 0, 1)   ----&gt; game[1][player_num][word_index]
+    1: 0 -&gt; [2,1] -&gt; 1 -&gt; [1]
+    """</span>
+
+    <span class="c1"># Initial 2D-Array
+</span>    <span class="c1"># times[i][j] with player i (num) and index of word j (num)
+</span>    <span class="n">times</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">times_per_player</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">layer1</span> <span class="ow">in</span> <span class="n">times_per_player</span><span class="p">:</span>
+        <span class="c1"># first value represents the initial starting time
+</span>        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">layer0</span> <span class="ow">in</span> <span class="n">layer1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># e.g. times[0][0] = times_per_player[0][1] - times_per_player[0][0]
+</span>                <span class="c1">#                  = 4 - 1 = 3
+</span>                <span class="n">times</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">layer0</span> <span class="o">-</span> <span class="n">layer1</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># change the order as rrequested
+</span>    <span class="k">return</span> <span class="n">game</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">times</span><span class="p">)</span>
+
+
+
+
+<span class="c1"># ----------------------------------------- Q10 ---------------------------------- #
+</span><span class="k">def</span> <span class="nf">fastest_words</span><span class="p">(</span><span class="n">game</span><span class="p">):</span>
+    <span class="s">"""Return a list of lists of which words each player typed fastest.
+
+    Arguments:
+        game: a game data abstraction as returned by time_per_word.
+    Returns:
+        a list of lists containing which words each player typed fastest
+    """</span>
+    <span class="n">player_indices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_times</span><span class="p">(</span><span class="n">game</span><span class="p">)))</span>  <span class="c1"># contains an *index* for each player
+</span>    <span class="n">word_indices</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_words</span><span class="p">(</span><span class="n">game</span><span class="p">)))</span>    <span class="c1"># contains an *index* for each word
+</span>    <span class="c1"># BEGIN PROBLEM 10
+</span>    <span class="s">"*** YOUR CODE HERE ***"</span>
+
+    <span class="s">"""
+    &gt;&gt;&gt; p0 = [2, 2, 3]
+    &gt;&gt;&gt; p1 = [6, 1, 2]
+    &gt;&gt;&gt; fastest_words(game(['What', 'great', 'luck'], [p0, p1]))
+    # p0 has only 'What' faster than p1, so ['What']
+    # p1 has both 'great' and 'luck' faster than p0, so ['great','luck']
+    [['What'],['great','luck']]
+
+    &gt;&gt;&gt; p0 = [2, 2, 3]
+    &gt;&gt;&gt; p1 = [6, 1, 3]
+    &gt;&gt;&gt; fastest_words(game(['What', 'great', 'luck'], [p0, p1]))  
+    # with a tie, choose the first player
+    [['What','luck'],['great']]
+    """</span>
+
+    <span class="c1"># see exmaple with time() by Q9
+</span>    <span class="c1"># Initial a empty 2D-Array
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">player_indices</span><span class="p">]</span>
+    <span class="c1"># begin with compair for word 1 with different players 
+</span>    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_indices</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">player_indices</span><span class="p">:</span>
+            <span class="c1"># default set the player 0 is always the winner
+</span>            <span class="c1"># in the case of a tie, the player 0 wins 
+</span>            <span class="k">if</span> <span class="n">player</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">winer</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="c1"># set the player's time as minimum
+</span>                <span class="n">min_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+            <span class="c1"># save the current time
+</span>            <span class="n">cur_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+            <span class="c1"># reset the minimum time 
+</span>            <span class="k">if</span> <span class="n">cur_time</span> <span class="o">&lt;</span> <span class="n">min_time</span><span class="p">:</span>
+                <span class="n">min_time</span> <span class="o">=</span> <span class="n">cur_time</span>
+                <span class="n">winer</span> <span class="o">=</span> <span class="n">player</span>
+        <span class="c1"># add the word in the array
+</span>        <span class="n">result</span><span class="p">[</span><span class="n">winer</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="n">word_at</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> <span class="n">word</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">result</span> 
+</pre></td></tr></tbody></table></code></div></div>
 
 
 </div>

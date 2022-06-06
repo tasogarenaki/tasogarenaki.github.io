@@ -404,7 +404,7 @@ To run this function i.e. `my_cycle = cycle(add1, times2, add3)(2)(1)`:
 
 
 - Some Examples from **project cats**:
-  - full cases see ___ (link)
+  - full cases see [here](url) 
 
 ```python
 # ----------------------------------------- Q1 ---------------------------------- #
@@ -534,11 +534,137 @@ def pawssible_patches(start, goal, limit):
         counting(start[1:], goal, limit, count+1), counting(start, goal[1:], limit, count+1))
     
     return counting(start, goal, limit, 0)
+
+
+
+
+# ----------------------------------------- Q8 ---------------------------------- #
+def report_progress(typed, prompt, user_id, send):
+    """Send a report of your id and progress so far to the multiplayer server."""
+    # BEGIN PROBLEM 8
+    "*** YOUR CODE HERE ***"
+    i = 0
+    for k in typed:
+        # located the first incorrect word
+        if k != prompt[i]:
+            break
+        i += 1
+    # calculate the error ratio
+    progress = i / len(prompt)
+    # "print"
+    send({'id': user_id, 'progress': progress})
+    return progress 
+
+
+
+
+
+# ----------------------------------------- Q9 ---------------------------------- #
+def time_per_word(times_per_player, words):
+    """Given timing data, return a game data abstraction, which contains a list
+    of words and the amount of time each player took to type each word.
+
+    Arguments:
+        times_per_player: A list of lists of timestamps including the time
+                          the player started typing, followed by the time
+                          the player finished typing each word.
+        words: a list of words, in the order they are typed.
+    """
+    # BEGIN PROBLEM 9
+    "*** YOUR CODE HERE ***"
+
+    """
+    >>> p = [[1, 4, 6, 7], [0, 4, 6, 9]]
+    >>> words = ['This', 'is', 'fun']
+    >>> game = time_per_word(p, words)
+    >>> all_words(game)   ----> game[0]
+    ['This', 'is', 'fun']
+    >>> all_times(game)   ----> game[1]
+    [[3,2,1],[4,2,3]]
+
+    >>> p = [[0, 2, 3], [2, 4, 7]]
+    >>> game = time_per_word(p, ['hello', 'world'])
+    >>> word_at(game, 1)   ----> game[0][word_index]
+    'world'
+    >>> all_times(game)
+    [[2,1],[2,3]]
+    >>> time(game, 0, 1)   ----> game[1][player_num][word_index]
+    1: 0 -> [2,1] -> 1 -> [1]
+    """
+
+    # Initial 2D-Array
+    # times[i][j] with player i (num) and index of word j (num)
+    times = [[0 for i in range(len(j)-1)] for j in times_per_player]
+    i = 0
+    for layer1 in times_per_player:
+        # first value represents the initial starting time
+        j = 0
+        for layer0 in layer1:
+            if j != 0:
+                # e.g. times[0][0] = times_per_player[0][1] - times_per_player[0][0]
+                #                  = 4 - 1 = 3
+                times[i][j-1] = layer0 - layer1[j-1]
+            j += 1
+        i += 1
+    # change the order as rrequested
+    return game(words, times)
+
+
+
+
+# ----------------------------------------- Q10 ---------------------------------- #
+def fastest_words(game):
+    """Return a list of lists of which words each player typed fastest.
+
+    Arguments:
+        game: a game data abstraction as returned by time_per_word.
+    Returns:
+        a list of lists containing which words each player typed fastest
+    """
+    player_indices = range(len(all_times(game)))  # contains an *index* for each player
+    word_indices = range(len(all_words(game)))    # contains an *index* for each word
+    # BEGIN PROBLEM 10
+    "*** YOUR CODE HERE ***"
+
+    """
+    >>> p0 = [2, 2, 3]
+    >>> p1 = [6, 1, 2]
+    >>> fastest_words(game(['What', 'great', 'luck'], [p0, p1]))
+    # p0 has only 'What' faster than p1, so ['What']
+    # p1 has both 'great' and 'luck' faster than p0, so ['great','luck']
+    [['What'],['great','luck']]
+
+    >>> p0 = [2, 2, 3]
+    >>> p1 = [6, 1, 3]
+    >>> fastest_words(game(['What', 'great', 'luck'], [p0, p1]))  
+    # with a tie, choose the first player
+    [['What','luck'],['great']]
+    """
+
+    # see exmaple with time() by Q9
+    # Initial a empty 2D-Array
+    result = [[] for i in player_indices]
+    # begin with compair for word 1 with different players 
+    for word in word_indices:
+        for player in player_indices:
+            # default set the player 0 is always the winner
+            # in the case of a tie, the player 0 wins 
+            if player == 0:
+                winer = 0
+                # set the player's time as minimum
+                min_time = time(game, player, word)
+            # save the current time
+            cur_time = time(game, player, word)
+            # reset the minimum time 
+            if cur_time < min_time:
+                min_time = cur_time
+                winer = player
+        # add the word in the array
+        result[winer] += [word_at(game, word)]
+    return result 
 ```
 
 
-
-!!!!!! new 
 
 
 
