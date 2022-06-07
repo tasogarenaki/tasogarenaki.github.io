@@ -22,6 +22,8 @@ mermaid: true
   $ sudo python3 get-pip.py
 ```
 
+<br>
+
 - Some Commands: 
   - control + d: `exit()`
   - control + l: `clear` 
@@ -32,6 +34,10 @@ mermaid: true
   - `sort()` to sort elements in list
   - `split()` to remove element (here (none)) from the list
   - `dict_name.get(xxx, 0) + 1`: if in `dict()` has `xxx` then `xxx+1` otherwise `0+1`
+  - `range(start, stop, step)`
+  - `for j in range(i+1, xxx):` the step is `i+1`
+
+<br>
 
 - Position of numbers without `[]`:
 
@@ -41,6 +47,9 @@ mermaid: true
 all_but_last = 1811   # via //
 last = 7              # via %
 ```
+
+<br>
+
 - Placeholder: 
   - `%d`: decimal
   - `%f`: float
@@ -74,12 +83,14 @@ last = 7              # via %
 | **[a-z0-9]** | The set of characters can include a range           |
 |    **( )**   | Only show date inside of ()                         |
 
+<br>
 
 - Socket
   - `import socket`
   - `Port 80`: Web Server, HTTP(80) 
   - `decode()`
 
+<br>
 
 - Retrieving Web Pages
   - use Chrome to view the page source 
@@ -90,6 +101,8 @@ fhand = urllib.request.urlopen('http://xxxxx')
 for line in fhand:
 	print(line.decode().strip())
 ```
+
+<br>
 
 - Beautifulsoup4: **e11.py**
   - `from bs4 import BeautifulSoup`
@@ -103,18 +116,21 @@ for line in fhand:
    
   4) `pip install soupsieve`
 
+<br>
 
 - eXtensible Markup Language (XML)
   - share structured data 
   - `import xml.etree.ElementTree as ET`
   - `xxx.findall(‘a/b’)`: find all tags `b` from `a`
 
+<br>
 
 - JavaScript Object Notation (JSON)
   - `import json`
   - `'''[ xxx ]'''`
   - `info = json.loads(xxx)`
 
+<br>
 
 - Service Oriented Approach
   - Application Programming Interfaces (API)
@@ -122,13 +138,15 @@ for line in fhand:
   - `twurl.augment(url, {‘xx’})`
   - GeoJason API: http://maps.googleapis.com/maps/api/geocode/json?
 
+<br>
+
 - Class and Object
   - `class xxx:` 
   - object: `test = xxx():`
   - function: `def xxx:`
   - subclass: `class name2(class_name1):`
 
-
+<br>
 
 - assert expression: 
   - test if expression is `False`: `assert 1 == 0, 'xxx'`. This is `False`, so show `'xxx'`
@@ -141,7 +159,7 @@ for line in fhand:
 ## 2.2 Examples 
 
 - Example **e1**:
-  - if error, still accept, then run yyy and continue.
+  - if error, still accept, then run `yyy` and `continue`.
 
 ```python
 try: 
@@ -150,6 +168,8 @@ except ValueError:
 	yyy 
 	continue
 ```
+
+<br>
 
 - Example **e2**:
   - find position, print out xxx between position 1 and 2.
@@ -161,6 +181,8 @@ n2 = text.find('f')
 n3 = text[n1:n2+1]
 print(n3)
 ```
+
+<br>
 
 - Example **e3**:
   - use os function to use `os.getcwd()` to now the path and use `os.chdir()` to change the path
@@ -181,6 +203,7 @@ for line in fh:
     print(line)
 ```
 
+<br>
 
 - Example **e5**:
   - `lst.split()` error, so should use `lst[0].split()` to remove blank.
@@ -204,7 +227,7 @@ new.sort()
 print(new)
 ```
 
-
+<br>
 
 - Example **e14**:
 
@@ -236,9 +259,7 @@ for count in counts:
 print(sum)
 ```
 
-
-
-
+<br>
 
 - Databases: **e17.py** and **e18.py**
   - SQLite Browser
@@ -258,8 +279,9 @@ yyy.execute('SQL code')
 
 
 
-# 3 CS61A
+# 3 CS61A Fall 2020
 
+See [here](https://inst.eecs.berkeley.edu/~cs61a/fa20/) for this course.
 
 ## 3.1 Fundations
 
@@ -286,8 +308,7 @@ Result: 10
 10
 ```
 
-
-
+<br>
 
 - Higher-Order Functions:
   - use function inside of function 
@@ -303,6 +324,7 @@ def square(x):
 16
 ```
 
+<br>
 
 - Lambda Expressions:
   - `lambda <parameters>: <return expression>`
@@ -316,6 +338,8 @@ square = lambda x: x * x
 print(square(4))
 ```
 
+<br>
+
 - List
   - `lst[::-1]` creates a reversed list
 
@@ -325,14 +349,21 @@ print(square(4))
 ['kubrick', 'bigelow', 'spielberg', 'jenkins']
 ```
 
+<br>
+
 - List Comprehensions
-  - `[<map exp> for <name> in <iter exp> if <filter exp>]` 
+  - `[<expression> for <element> in <sequence> if <conditional>]` 
 
 ```python
 >>> [x * x - 3 for x in [1, 2, 3, 4, 5] if x % 2 == 1]
 [-2, 6, 22]
-```
-First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then apply with `x * x -3`.
+
+>>> [i ** 2 for i in [1, 2, 3, 4] if i % 2 == 0]
+[4, 16]
+```   
+First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then apply with `x * x -3`.   
+
+<br>
 
 - `enumerate()`
 
@@ -358,38 +389,57 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 2 three
 ```
 
+<br>
 
 - Trees 
+  - `from sklearn import tree`
+  - consider **recursion**
   - **root**: the node at the top of the tree
-  - **label**: the value in a node, selected by the `label` function
-  - **branches**: a list of trees directly under the tree's root, selected by the `branches` function
+  - **label**: the value in a node, selected by the `label` function, **up layer**
+  - **branches**: a list of trees directly under the tree's root, selected by the `branches` function, **under layer**
   - **leaf**: a tree with zero branches
   - **node**: any location within the tree (e.g., root node, leaf nodes, etc.)
-  - **Constructor**: `tree(label, branches=[])`: creates a tree object with the given `label` value at its root node and list of `branches`. 
-  - **Selectors**:
-    - `label(tree)`: returns the value in the root node of tree.
-    - `branches(tree)`: returns the list of branches of the given tree.
-  - **Convenience function**: `is_leaf(tree)`: returns `True` if tree's list of `branches` is empty, and `False` otherwise.
 
+<br>
 
+- `zip()`
+  - return a `list` with `tuple` from lists
+  - by differen length, return the short one
+  - `zip((iterable, ....))`
 
+```python
+>>> a = ['a', 'b', 'c', 'd']
+>>> b = ['1', '2', '3', '4']
+>>> list(zip(a,b))
+[('a', '1'), ('b', '2'), ('c', '3'), ('d', '4')]
+```
 
+<br>
 
+- Dictionaries
 
-
-
+```python
+>>> table = {}
+>>> test1 = 'abc'
+>>> test2 = '123'
+# put 'test2' into table with label 'test1'
+>>> table[test1] = [test2]
+>>> table
+{'abc': ['123']}
+```
 
 ## 3.2 Examples 
 
 
 
 - Some Examples from **lab02**:
+  - full cases see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab02) 
 
 ```python
 def cycle(f1, f2, f3):
-    def func1(n):                               # first to give is n times
-        def func2(x):                           # second to give is x
-            run = n                                # run n times 
+    def func1(n):                                 # first to give is n times
+        def func2(x):                             # second to give is x
+            run = n                               # run n times 
             order = 1                             # f1, f2, f3
             result = x
             if run:
@@ -400,7 +450,7 @@ def cycle(f1, f2, f3):
                         result = f2(result)
                     elif order == 3:
                         result = f3(result)
-                    order = order % 3 + 1       # f1 -> f2 -> f3 -> f1
+                    order = order % 3 + 1         # f1 -> f2 -> f3 -> f1
                     run -= 1
             return result
         return func2
@@ -422,6 +472,8 @@ To run this function i.e. `my_cycle = cycle(add1, times2, add3)(2)(1)`:
 4
 ```
 
+<br>
+<br>
 
 - Some Examples from **project cats**:
   - full cases see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Projects/cats/cats.py) 
@@ -434,10 +486,7 @@ def choose(paragraphs, select, k):
     the empty string.
     """
     # BEGIN PROBLEM 1
-    "*** YOUR CODE HERE ***"
-    # Index must be corrected, it's like 'remove' all the False Index
-    # In this case used 2 different Index Systems to locate the correct one
-    
+    "*** YOUR CODE HERE ***"    
     # Check the List with full Indexs
     for i in range(len(paragraphs)):
         if select(paragraphs[i]):
@@ -446,12 +495,14 @@ def choose(paragraphs, select, k):
                 return paragraphs[i]
             k -= 1
     return ''
+```
+1) Index must be corrected, it's like 'remove' all the `False` Index
+   
+2) In this case used two different Index Systems to locate the correct one
 
+<br>
 
-
-
-
-
+```python
 # ----------------------------------------- Q2 ---------------------------------- #
 def about(topic):
     """Return a select function that returns whether a paragraph contains one
@@ -483,11 +534,11 @@ def about(topic):
                 return True
         return False
     return check
+```
 
+<br>
 
-
-
-
+```python
 # ----------------------------------------- Q6 ---------------------------------- #
 def shifty_shifts(start, goal, limit):
     """A diff function for autocorrect that determines how many letters
@@ -497,8 +548,7 @@ def shifty_shifts(start, goal, limit):
     # BEGIN PROBLEM 6
     diff = abs(len(start)-len(goal))
 
-    # version 1: return the correct answer for tests, but didn't pass the ok.py
-    # can't figured out why
+    # version 1: 
     count = 0
     # Question required
     if count > limit:
@@ -514,7 +564,7 @@ def shifty_shifts(start, goal, limit):
     return shifty_shifts(start[1:], goal[1:], limit) + count
 
 
-    # version 2: use Higher-Order function pass the ok.py
+    # version 2: 
     def counting(start, goal, limit, count):
         if count > limit:
             return limit + 1
@@ -524,16 +574,21 @@ def shifty_shifts(start, goal, limit):
             count += 1
         return counting(start[1:], goal[1:], limit, count)
     return counting(start, goal, limit, 0)
+```
 
+There's two version to solve this question
 
+1) `return` the correct answer for tests, but didn't pass the ok.py, can't figured out why
+   
+2) use Higher-Order function pass the ok.py
 
+<br>
 
+```python
 # ----------------------------------------- Q7 ---------------------------------- #
 def pawssible_patches(start, goal, limit):
     """A diff function that computes the edit distance from START to GOAL."""
     # similar as shifty_shifts
-
-    
     def counting(start, goal, limit, count):
         diff = abs(len(start)-len(goal))
         if count > limit:
@@ -545,19 +600,21 @@ def pawssible_patches(start, goal, limit):
         if start[0] == goal[0]:
             return counting(start[1:], goal[1:], limit, count)
         # minimize the amount
-        # if diff char, there's three conditions 
-        # 1) compare with same index
-        # 2)/3):
-        # compare with one word each time, maybe a[1] == b[0]
-        # or a[0] == b[1], e.g. a, b = "ckiteus", "kittens"
         return min(counting(start[1:], goal[1:], limit, count+1), 
         counting(start[1:], goal, limit, count+1), counting(start, goal[1:], limit, count+1))
     
     return counting(start, goal, limit, 0)
+```
 
+If there's different `char`, there's three conditions: 
 
+1) compare with same index
+   
+2) /3) compare with one word each time, maybe `a[1] == b[0]` or `a[0] == b[1]`, e.g. `a, b = "ckiteus", "kittens"`
+        
+<br>       
 
-
+```python
 # ----------------------------------------- Q8 ---------------------------------- #
 def report_progress(typed, prompt, user_id, send):
     """Send a report of your id and progress so far to the multiplayer server."""
@@ -571,14 +628,14 @@ def report_progress(typed, prompt, user_id, send):
         i += 1
     # calculate the error ratio
     progress = i / len(prompt)
-    # "print"
+    # send --> "print"
     send({'id': user_id, 'progress': progress})
     return progress 
+```
 
+<br>
 
-
-
-
+```python
 # ----------------------------------------- Q9 ---------------------------------- #
 def time_per_word(times_per_player, words):
     """Given timing data, return a game data abstraction, which contains a list
@@ -628,10 +685,11 @@ def time_per_word(times_per_player, words):
         i += 1
     # change the order as rrequested
     return game(words, times)
+```
 
+<br>
 
-
-
+```python
 # ----------------------------------------- Q10 ---------------------------------- #
 def fastest_words(game):
     """Return a list of lists of which words each player typed fastest.
@@ -686,7 +744,109 @@ def fastest_words(game):
 
 ```
 
+<br>
+<br>
 
+- Some Examples from **lab05**:
+  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab05)
 
+```python
+# ------------------------------------- Q5 ------------------------------------- #
+def berry_finder(t):
+    """Returns True if t contains a node with the value 'berry' and 
+    False otherwise.
 
+    >>> scrat = tree('berry')
+    >>> berry_finder(scrat)
+    True
+    >>> sproul = tree('roots', [tree('branch1', [tree('leaf'), tree('berry')]), tree('branch2')])
+    >>> berry_finder(sproul)
+    True
+    """
+    "*** YOUR CODE HERE ***"
+    if label(t) == 'berry':
+        return True
+    # if branches is empty, return False directly, cause the label already checked 
+    if is_leaf(t):
+        return False
+    # get into every branches
+    for i in branches(t):
+        # use recursion to locate all labels every leaves
+        if berry_finder(i):
+            return True
+    return False
+```
 
+<br>
+
+```python
+# ------------------------------------- Q6 ------------------------------------- #
+def sprout_leaves(t, leaves):
+    """Sprout new leaves containing the data in leaves at each leaf in
+    the original tree t and return the resulting tree.
+
+    >>> t1 = tree(1, [tree(2), tree(3)])
+    >>> print_tree(t1)
+    1
+      2
+      3
+    >>> new1 = sprout_leaves(t1, [4, 5])
+    >>> print_tree(new1)
+    1
+      2
+        4
+        5
+      3
+        4
+        5
+    """
+    "*** YOUR CODE HERE ***"
+    # use recursion --> into lowst leaf that branches is empty
+    # if branches is empty, add the leaves
+    if is_leaf(t):
+        # the 'label' here is the last branches, simply use (label, xx) to print it out 
+        return tree(label(t), [tree(i) for i in leaves])
+    # similar as Q5
+    return tree(label(t), [sprout_leaves(i, leaves) for i in branches(t)])
+```
+
+<br>
+
+**A tricky one**
+
+```python
+# ------------------------------------- Q10 ------------------------------------- #
+def add_trees(t1, t2):
+    """
+    >>> print_tree(add_trees(tree(2), tree(3, [tree(4), tree(5)])))
+    5
+      4
+      5
+    """
+    "*** YOUR CODE HERE ***"
+    # use ADT and recursion
+    length1, length2 = len(branches(t1)), len(branches(t2))
+
+    # 1) if both trees have same number of branches:
+    if length1 == length2:
+        # use zip() to iterate over multiple sequences at once  
+        return tree(label(t1) + label(t2), [add_trees(b1, b2) for b1, b2 in zip(branches(t1), branches(t2))])
+
+    # 2) if both trees have different number of branches:
+    elif length1 < length2:
+        # add n (different length of both trees) branches with value 0 to short tree
+        new_branches = branches(t1) + [tree(0) for _ in range(length2 - length1)]
+        # reset the new tree
+        new_tree = tree(label(t1), new_branches)
+        return add_trees(new_tree, t2)
+    else:
+        # if tree2 is smaller than tree1, just exchange the input place 
+        # and below condition 'elif' works too
+        return add_trees(t2, t1)
+```
+The idea of the solution for the question can split into two parts:
+
+1) if both trees have **same** number of branches: add the roots `label()` of both trees directly, then for `branches()` via recursion, and because of that the next iteration: `branches()` ---> new `label()`
+   
+2) if both trees have **different** number of branches: this is the tricky part! Because of the different number of `branches` (the length), 1) will only add the lowst layer. The simplest way may add `brauches` with value `0` for the **short** tree, so now they both have same `branches`.
+ 
