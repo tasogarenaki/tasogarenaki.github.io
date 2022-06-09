@@ -3,7 +3,7 @@ title: Python Note
 author:
   name: Terry
   link: https://github.com/tasogarenaki
-date: 2022-06-01 11:11:00 +0100
+date: 2022-06-01 11:11:11 +0100
 categories: [Note, CS]
 tags: [note]
 math: true
@@ -30,9 +30,6 @@ mermaid: true
   - `python3 -i name.py`
   - `handle = open(filename, mode)`
   - `quit(): break`
-  - `append()` to add elements in list
-  - `sort()` to sort elements in list
-  - `split()` to remove element (here (none)) from the list
   - `dict_name.get(xxx, 0) + 1`: if in `dict()` has `xxx` then `xxx+1` otherwise `0+1`
   - `range(start, stop, step)`
   - `for j in range(i+1, xxx):` the step is `i+1`
@@ -341,6 +338,12 @@ print(square(4))
 <br>
 
 - List
+  - `append()` to add an elements in list
+  - `extend(['a', 'b'])` to add elements in list  
+  - `pop()` to remove the final element
+  - `remove('xx')` remove the first element named `xx`
+  - `sort()` to sort elements in list
+  - `split()` to remove element (here (none)) from the list
   - `lst[::-1]` creates a reversed list
 
 ```python
@@ -393,17 +396,88 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 
 - Trees 
   
-  <img src="/Users/Terry/Library/Mobile Documents/com~apple~CloudDocs/Documents/Blog/pics/python_note/trees.png" alt="trees" style="zoom:50%;" />
-  
-  
+  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/python_note/trees.png?raw=true" alt="trees" style="zoom:50%;" />
   
   - `from sklearn import tree`
   - consider **recursion**
-  - **root**: the node at the top of the tree
-  - **label**: the value in a node, selected by the `label` function, **up layer**
-  - **branches**: a list of trees directly under the tree's root, selected by the `branches` function, **under layer**
-  - **leaf**: a tree with zero branches
-  - **node**: any location within the tree (e.g., root node, leaf nodes, etc.)
+  - **root**: the node at the top of the tree, e.g. **7**
+  - **label**: the value in a node, selected by the `label()` function, **up layer**, e.g. **all of the integers** are values of this picture
+  - **branch**: a subtree of the root, selected by the `branches()` function, **under layer**, e.g. **1**
+  - **leaf**: a node that has no branches, the **lowst layer**,  e.g. **-4, 0, 6, 17, 20**
+  - **depth**: how far a node is from the root. e.g. the node **19** has depth 1 and the node **3** has depth 2
+  - **height**: the depth of the lowest leaf, e.g. the nodes **-4, 0, 6 and 17** are lowest leaves, which means they have depth 4 and the entire tree has height **4**
+  - some examples:
+
+```python
+# The Tree-ADTs
+# Initial a tree
+def tree(label, branches=[]):
+    for branch in branches:
+      assert is_tree(branch), 'branches must be trees'
+    return [label] + list(branches)
+
+# Define the label
+def label(tree):
+    return tree[0]
+
+# Define the branches 
+def branches(tree):
+    return tree[1:]
+
+# Check is tree or not 
+def is_tree(tree):
+    if type(tree) != list or len(tree) < 1:
+      return False
+    for branch in branches(tree):
+      if not is_tree(branch):
+        return False
+    return True
+
+# Check is tree or not 
+def is_leaf(tree):
+    return not branches(tree) 
+
+# Print the tree
+def print_tree(t, indent=0):
+    print('  ' * indent + str(label(t)))
+    for b in branches(t):
+      print_tree(b, indent + 1)
+  
+  
+# -------------------------- Some Solutions -------------------------- #
+# Calculate the Height of Tree
+def height(t):
+    if is_leaf(t):
+          return 0
+      return max([height(branch) for branch in branches(t)]) + 1
+
+# find the max value of the tree
+def tree_max(t):
+    if is_leaf(t):
+        return label(t)
+    else:
+        return max([label(t)] + [tree_max(branch) for branch in branches(t)])
+
+# find the path that has max sum
+def max_path_sum(t):
+    if is_leaf(t):
+        return label(t)
+    else:
+        return max([max_path_sum(branch) for branch in branches(t)]) + label(t)
+
+# square all value of the tree
+def square_tree(t):
+    return tree(label(t)**2, [square_tree(branch) for branch in branches(t)])
+
+# find the path that has value x and x can be list
+def find_path(tree, x):
+    if label(tree) == x:
+        return [label(tree)] 
+    for b in branches(tree):
+        path = find_path(b, x) 
+        if path:
+            return [label(tree)] + path
+```
 
 <br>
 
@@ -422,6 +496,8 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 <br>
 
 - Dictionaries
+  - e.g. `numerals = {'I': 1.0, 'V': 5, 'X': 10}`
+
 
 ```python
 >>> table = {}
@@ -431,6 +507,9 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 >>> table[test1] = [test2]
 >>> table
 {'abc': ['123']}
+
+>>> dict([(3, 9), (4, 16), (5, 25)])
+{3: 9, 4: 16, 5: 25}
 ```
 
 
@@ -446,8 +525,6 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 
 
 ## 3.2 Examples 
-
-
 
 - Some Examples from **lab02**:
   - full cases see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab02) 
@@ -784,7 +861,7 @@ def berry_finder(t):
     "*** YOUR CODE HERE ***"
     if label(t) == 'berry':
         return True
-    # if branches is empty, return False directly, cause the label already checked 
+    # if branch is empty, return False, cause the label already checked 
     if is_leaf(t):
         return False
     # get into every branches
@@ -819,10 +896,10 @@ def sprout_leaves(t, leaves):
         5
     """
     "*** YOUR CODE HERE ***"
-    # use recursion --> into lowst leaf that branches is empty
-    # if branches is empty, add the leaves
+    # use recursion --> into lowest leaves that branch is empty (leaf)
+    # if branch is empty, add the leaves
     if is_leaf(t):
-        # the 'label' here is the last branches, simply use (label, xx) to print it out 
+        # the 'label()' here is now the 'lowest' leaves, simply use (label(), [xx]) to print it out 
         return tree(label(t), [tree(i) for i in leaves])
     # similar as Q5
     return tree(label(t), [sprout_leaves(i, leaves) for i in branches(t)])
@@ -862,10 +939,18 @@ def add_trees(t1, t2):
         # and below condition 'elif' works too
         return add_trees(t2, t1)
 ```
-The idea of the solution for the question can split into two parts:
+The idea of the solution for this question can split into two parts:
 
 1) if both trees have **same** number of branches: add the roots `label()` of both trees directly, then for `branches()` via recursion, and because of that the next iteration: `branches()` ---> new `label()`
-2) if both trees have **different** number of branches: this is the tricky part! Because of the different number of `branches` (the length), 1) will only add the lowst layer. The simplest way may add `brauches` with value `0` for the **short** tree, so now they both have same `branches`.
+2) if both trees have **different** number of branches: this is the tricky part! Because of the different number of `branches()` (the length), part one will only add the lowest leaves. The simplest way may add the different of `brauches()` with value `0` for the **short** tree, so now they both have same `branches()`.
+
+
+
+
+
+
+
+ 
 
 
 

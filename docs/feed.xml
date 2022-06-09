@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-09T12:02:37+00:00</updated>
+  <updated>2022-06-09T18:51:18+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>Python Note</title>
     <link href="https://tasogarenaki.github.io/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
-    <published>2022-06-01T10:11:00+00:00</published>
+    <published>2022-06-01T10:11:11+00:00</published>
   
-    <updated>2022-06-07T19:30:06+00:00</updated>
+    <updated>2022-06-09T12:03:06+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/Python-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/Python-Note/" />
@@ -68,9 +68,9 @@
       python3 -i name.py
       handle = open(filename, mode)
       quit(): break
-      append() to add elements in list
-      sort() to sort elements in list
-      split() to remove element (here...
+      dict_name.get(xxx, 0) + 1: if in dict() has xxx then xxx+1 otherwise 0+1
+      range(start, stop, step)
+    ...
     </summary>
   
 

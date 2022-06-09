@@ -1,4 +1,4 @@
-I"MB<h1 id="1-fundations">1 Fundations</h1>
+I"o<h1 id="1-fundations">1 Fundations</h1>
 
 <ul>
   <li>install pip:</li>
@@ -20,9 +20,6 @@
       <li><code class="language-plaintext highlighter-rouge">python3 -i name.py</code></li>
       <li><code class="language-plaintext highlighter-rouge">handle = open(filename, mode)</code></li>
       <li><code class="language-plaintext highlighter-rouge">quit(): break</code></li>
-      <li><code class="language-plaintext highlighter-rouge">append()</code> to add elements in list</li>
-      <li><code class="language-plaintext highlighter-rouge">sort()</code> to sort elements in list</li>
-      <li><code class="language-plaintext highlighter-rouge">split()</code> to remove element (here (none)) from the list</li>
       <li><code class="language-plaintext highlighter-rouge">dict_name.get(xxx, 0) + 1</code>: if in <code class="language-plaintext highlighter-rouge">dict()</code> has <code class="language-plaintext highlighter-rouge">xxx</code> then <code class="language-plaintext highlighter-rouge">xxx+1</code> otherwise <code class="language-plaintext highlighter-rouge">0+1</code></li>
       <li><code class="language-plaintext highlighter-rouge">range(start, stop, step)</code></li>
       <li><code class="language-plaintext highlighter-rouge">for j in range(i+1, xxx):</code> the step is <code class="language-plaintext highlighter-rouge">i+1</code></li>
@@ -559,6 +556,12 @@
 <ul>
   <li>List
     <ul>
+      <li><code class="language-plaintext highlighter-rouge">append()</code> to add an elements in list</li>
+      <li><code class="language-plaintext highlighter-rouge">extend(['a', 'b'])</code> to add elements in list</li>
+      <li><code class="language-plaintext highlighter-rouge">pop()</code> to remove the final element</li>
+      <li><code class="language-plaintext highlighter-rouge">remove('xx')</code> remove the first element named <code class="language-plaintext highlighter-rouge">xx</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sort()</code> to sort elements in list</li>
+      <li><code class="language-plaintext highlighter-rouge">split()</code> to remove element (here (none)) from the list</li>
       <li><code class="language-plaintext highlighter-rouge">lst[::-1]</code> creates a reversed list</li>
     </ul>
   </li>
@@ -647,19 +650,159 @@
   <li>
     <p>Trees</p>
 
-    <p><img src="/Users/Terry/Library/Mobile Documents/com~apple~CloudDocs/Documents/Blog/pics/python_note/trees.png" alt="trees" style="zoom:50%;" /></p>
+    <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/python_note/trees.png?raw=true" alt="trees" style="zoom:50%;" /></p>
 
     <ul>
       <li><code class="language-plaintext highlighter-rouge">from sklearn import tree</code></li>
       <li>consider <strong>recursion</strong></li>
-      <li><strong>root</strong>: the node at the top of the tree</li>
-      <li><strong>label</strong>: the value in a node, selected by the <code class="language-plaintext highlighter-rouge">label</code> function, <strong>up layer</strong></li>
-      <li><strong>branches</strong>: a list of trees directly under the tree’s root, selected by the <code class="language-plaintext highlighter-rouge">branches</code> function, <strong>under layer</strong></li>
-      <li><strong>leaf</strong>: a tree with zero branches</li>
-      <li><strong>node</strong>: any location within the tree (e.g., root node, leaf nodes, etc.)</li>
+      <li><strong>root</strong>: the node at the top of the tree, e.g. <strong>7</strong></li>
+      <li><strong>label</strong>: the value in a node, selected by the <code class="language-plaintext highlighter-rouge">label()</code> function, <strong>up layer</strong>, e.g. <strong>all of the integers</strong> are values of this picture</li>
+      <li><strong>branch</strong>: a subtree of the root, selected by the <code class="language-plaintext highlighter-rouge">branches()</code> function, <strong>under layer</strong>, e.g. <strong>1</strong></li>
+      <li><strong>leaf</strong>: a node that has no branches, the <strong>lowst layer</strong>,  e.g. <strong>-4, 0, 6, 17, 20</strong></li>
+      <li><strong>depth</strong>: how far a node is from the root. e.g. the node <strong>19</strong> has depth 1 and the node <strong>3</strong> has depth 2</li>
+      <li><strong>height</strong>: the depth of the lowest leaf, e.g. the nodes <strong>-4, 0, 6 and 17</strong> are lowest leaves, which means they have depth 4 and the entire tree has height <strong>4</strong></li>
+      <li>some examples:</li>
     </ul>
   </li>
 </ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+</pre></td> --><td class="rouge-code"><pre><span class="c1"># The Tree-ADTs
+# Initial a tree
+</span><span class="k">def</span> <span class="nf">tree</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">branches</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
+      <span class="k">assert</span> <span class="n">is_tree</span><span class="p">(</span><span class="n">branch</span><span class="p">),</span> <span class="s">'branches must be trees'</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">branches</span><span class="p">)</span>
+
+<span class="c1"># Define the label
+</span><span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Define the branches 
+</span><span class="k">def</span> <span class="nf">branches</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tree</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="c1"># Check is tree or not 
+</span><span class="k">def</span> <span class="nf">is_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">is_tree</span><span class="p">(</span><span class="n">branch</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="c1"># Check is tree or not 
+</span><span class="k">def</span> <span class="nf">is_leaf</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">branches</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span> 
+
+<span class="c1"># Print the tree
+</span><span class="k">def</span> <span class="nf">print_tree</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'  '</span> <span class="o">*</span> <span class="n">indent</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+      <span class="n">print_tree</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">indent</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  
+  
+<span class="c1"># -------------------------- Some Solutions -------------------------- #
+# Calculate the Height of Tree
+</span><span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_leaf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+          <span class="k">return</span> <span class="mi">0</span>
+      <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="n">height</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span> <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">t</span><span class="p">)])</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># find the max value of the tree
+</span><span class="k">def</span> <span class="nf">tree_max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_leaf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">tree_max</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span> <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">t</span><span class="p">)])</span>
+
+<span class="c1"># find the path that has max sum
+</span><span class="k">def</span> <span class="nf">max_path_sum</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_leaf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="n">max_path_sum</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span> <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">t</span><span class="p">)])</span> <span class="o">+</span> <span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># square all value of the tree
+</span><span class="k">def</span> <span class="nf">square_tree</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tree</span><span class="p">(</span><span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">square_tree</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span> <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">t</span><span class="p">)])</span>
+
+<span class="c1"># find the path that has value x and x can be list
+</span><span class="k">def</span> <span class="nf">find_path</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">label</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">label</span><span class="p">(</span><span class="n">tree</span><span class="p">)]</span> 
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">find_path</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">label</span><span class="p">(</span><span class="n">tree</span><span class="p">)]</span> <span class="o">+</span> <span class="n">path</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><br /></p>
 
@@ -686,7 +829,11 @@
 <p><br /></p>
 
 <ul>
-  <li>Dictionaries</li>
+  <li>Dictionaries
+    <ul>
+      <li>e.g. <code class="language-plaintext highlighter-rouge">numerals = {'I': 1.0, 'V': 5, 'X': 10}</code></li>
+    </ul>
+  </li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
@@ -696,6 +843,9 @@
 5
 6
 7
+8
+9
+10
 </pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">test1</span> <span class="o">=</span> <span class="s">'abc'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">test2</span> <span class="o">=</span> <span class="s">'123'</span>
@@ -703,6 +853,9 @@
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span><span class="p">[</span><span class="n">test1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">test2</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">table</span>
 <span class="p">{</span><span class="s">'abc'</span><span class="p">:</span> <span class="p">[</span><span class="s">'123'</span><span class="p">]}</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)])</span>
+<span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="32-examples">3.2 Examples</h2>
@@ -1310,7 +1463,7 @@
     <span class="s">"*** YOUR CODE HERE ***"</span>
     <span class="k">if</span> <span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="s">'berry'</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">True</span>
-    <span class="c1"># if branches is empty, return False directly, cause the label already checked 
+    <span class="c1"># if branch is empty, return False, cause the label already checked 
 </span>    <span class="k">if</span> <span class="n">is_leaf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">False</span>
     <span class="c1"># get into every branches
@@ -1372,10 +1525,10 @@
         5
     """</span>
     <span class="s">"*** YOUR CODE HERE ***"</span>
-    <span class="c1"># use recursion --&gt; into lowst leaf that branches is empty
-</span>    <span class="c1"># if branches is empty, add the leaves
+    <span class="c1"># use recursion --&gt; into lowest leaves that branch is empty (leaf)
+</span>    <span class="c1"># if branch is empty, add the leaves
 </span>    <span class="k">if</span> <span class="n">is_leaf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-        <span class="c1"># the 'label' here is the last branches, simply use (label, xx) to print it out 
+        <span class="c1"># the 'label()' here is now the 'lowest' leaves, simply use (label(), [xx]) to print it out 
 </span>        <span class="k">return</span> <span class="n">tree</span><span class="p">(</span><span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="p">[</span><span class="n">tree</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">leaves</span><span class="p">])</span>
     <span class="c1"># similar as Q5
 </span>    <span class="k">return</span> <span class="n">tree</span><span class="p">(</span><span class="n">label</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="p">[</span><span class="n">sprout_leaves</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">leaves</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">(</span><span class="n">t</span><span class="p">)])</span>
@@ -1442,9 +1595,9 @@
 </span>        <span class="c1"># and below condition 'elif' works too
 </span>        <span class="k">return</span> <span class="n">add_trees</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
-<p>The idea of the solution for the question can split into two parts:</p>
+<p>The idea of the solution for this question can split into two parts:</p>
 
 <p>1) if both trees have <strong>same</strong> number of branches: add the roots <code class="language-plaintext highlighter-rouge">label()</code> of both trees directly, then for <code class="language-plaintext highlighter-rouge">branches()</code> via recursion, and because of that the next iteration: <code class="language-plaintext highlighter-rouge">branches()</code> —&gt; new <code class="language-plaintext highlighter-rouge">label()</code>
-2) if both trees have <strong>different</strong> number of branches: this is the tricky part! Because of the different number of <code class="language-plaintext highlighter-rouge">branches</code> (the length), 1) will only add the lowst layer. The simplest way may add <code class="language-plaintext highlighter-rouge">brauches</code> with value <code class="language-plaintext highlighter-rouge">0</code> for the <strong>short</strong> tree, so now they both have same <code class="language-plaintext highlighter-rouge">branches</code>.</p>
+2) if both trees have <strong>different</strong> number of branches: this is the tricky part! Because of the different number of <code class="language-plaintext highlighter-rouge">branches()</code> (the length), part one will only add the lowest leaves. The simplest way may add the different of <code class="language-plaintext highlighter-rouge">brauches()</code> with value <code class="language-plaintext highlighter-rouge">0</code> for the <strong>short</strong> tree, so now they both have same <code class="language-plaintext highlighter-rouge">branches()</code>.</p>
 
 :ET
