@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-06T14:46:09+00:00","datePublished":"2022-06-01T10:11:00+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Python-Note/"},"url":"http://localhost:4000/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-07T19:30:06+00:00","datePublished":"2022-06-01T10:11:00+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Python-Note/"},"url":"http://localhost:4000/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -491,6 +491,95 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+        
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -653,13 +742,13 @@
 
 
 <em class="timeago"
-    date="2022-06-06 16:46:09 +0200
+    date="2022-06-07 21:30:06 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jun  6, 2022,  4:46 PM +0200"
-    >Jun  6</em>
+      title="Tue, Jun  7, 2022,  9:30 PM +0200"
+    >Jun  7</em>
 
       </span>
       
@@ -1375,7 +1464,11 @@
 <p><br /></p>
 
 <ul>
-  <li>Trees
+  <li>
+    <p>Trees</p>
+
+    <p><img data-src="/Users/Terry/Library/Mobile Documents/com~apple~CloudDocs/Documents/Blog/pics/python_note/trees.png" alt="trees" style="zoom:50%;" data-proofer-ignore></p>
+
     <ul>
       <li><code class="language-plaintext highlighter-rouge">from sklearn import tree</code></li>
       <li>consider <strong>recursion</strong></li>
@@ -2199,9 +2292,8 @@
 </pre></td></tr></tbody></table></code></div></div>
 <p>The idea of the solution for the question can split into two parts:</p>
 
-<p>1) if both trees have <strong>same</strong> number of branches: add the roots <code class="language-plaintext highlighter-rouge">label()</code> of both trees directly, then for <code class="language-plaintext highlighter-rouge">branches()</code> via recursion, and because of that the next iteration: <code class="language-plaintext highlighter-rouge">branches()</code> —&gt; new <code class="language-plaintext highlighter-rouge">label()</code></p>
-
-<p>2) if both trees have <strong>different</strong> number of branches: this is the tricky part! Because of the different number of <code class="language-plaintext highlighter-rouge">branches</code> (the length), 1) will only add the lowst layer. The simplest way may add <code class="language-plaintext highlighter-rouge">brauches</code> with value <code class="language-plaintext highlighter-rouge">0</code> for the <strong>short</strong> tree, so now they both have same <code class="language-plaintext highlighter-rouge">branches</code>.</p>
+<p>1) if both trees have <strong>same</strong> number of branches: add the roots <code class="language-plaintext highlighter-rouge">label()</code> of both trees directly, then for <code class="language-plaintext highlighter-rouge">branches()</code> via recursion, and because of that the next iteration: <code class="language-plaintext highlighter-rouge">branches()</code> —&gt; new <code class="language-plaintext highlighter-rouge">label()</code>
+2) if both trees have <strong>different</strong> number of branches: this is the tricky part! Because of the different number of <code class="language-plaintext highlighter-rouge">branches</code> (the length), 1) will only add the lowst layer. The simplest way may add <code class="language-plaintext highlighter-rouge">brauches</code> with value <code class="language-plaintext highlighter-rouge">0</code> for the <strong>short</strong> tree, so now they both have same <code class="language-plaintext highlighter-rouge">branches</code>.</p>
 
 
 </div>

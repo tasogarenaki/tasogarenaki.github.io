@@ -109,11 +109,11 @@ for line in fhand:
   - Example to get img: https://divertingpan.github.io/post/python_tieba/
   
   1) download `BeautifulSoup4`
-   
+  
   2) unzip and Terminal geht to the folder
-   
+  
   3) `sudo python3 ./setup.py i nstall`
-   
+  
   4) `pip install soupsieve`
 
 <br>
@@ -360,7 +360,7 @@ print(square(4))
 
 >>> [i ** 2 for i in [1, 2, 3, 4] if i % 2 == 0]
 [4, 16]
-```   
+```
 First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then apply with `x * x -3`.   
 
 <br>
@@ -392,6 +392,11 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 <br>
 
 - Trees 
+  
+  <img src="/Users/Terry/Library/Mobile Documents/com~apple~CloudDocs/Documents/Blog/pics/python_note/trees.png" alt="trees" style="zoom:50%;" />
+  
+  
+  
   - `from sklearn import tree`
   - consider **recursion**
   - **root**: the node at the top of the tree
@@ -427,6 +432,18 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 >>> table
 {'abc': ['123']}
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 3.2 Examples 
 
@@ -612,6 +629,7 @@ If there's different `char`, there's three conditions:
    
 2) /3) compare with one word each time, maybe `a[1] == b[0]` or `a[0] == b[1]`, e.g. `a, b = "ckiteus", "kittens"`
         
+
 <br>       
 
 ```python
@@ -847,6 +865,7 @@ def add_trees(t1, t2):
 The idea of the solution for the question can split into two parts:
 
 1) if both trees have **same** number of branches: add the roots `label()` of both trees directly, then for `branches()` via recursion, and because of that the next iteration: `branches()` ---> new `label()`
-   
 2) if both trees have **different** number of branches: this is the tricky part! Because of the different number of `branches` (the length), 1) will only add the lowst layer. The simplest way may add `brauches` with value `0` for the **short** tree, so now they both have same `branches`.
- 
+
+
+

@@ -1,12 +1,12 @@
-I"�A<h1 id="1-fundations">1 Fundations</h1>
+I"?A<h1 id="1-fundations">1 Fundations</h1>
 
 <ul>
   <li>install pip:</li>
 </ul>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td> --><td class="rouge-code"><pre><span class="gp">  $</span><span class="w"> </span>curl https://bootstrap.pypa.io/pip/get-pip.py <span class="nt">-o</span> get-pip.py
+</pre></td><td class="rouge-code"><pre><span class="gp">  $</span><span class="w"> </span>curl https://bootstrap.pypa.io/pip/get-pip.py <span class="nt">-o</span> get-pip.py
 <span class="gp">  $</span><span class="w"> </span><span class="nb">sudo </span>python3 get-pip.py
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -36,11 +36,11 @@
   <li>Position of numbers without <code class="language-plaintext highlighter-rouge">[]</code>:</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">18117</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">18117</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">all_but_last</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
 <span class="n">all_but_last</span> <span class="o">=</span> <span class="mi">1811</span>   <span class="c1"># via //
 </span><span class="n">last</span> <span class="o">=</span> <span class="mi">7</span>              <span class="c1"># via %
@@ -160,10 +160,10 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre><span class="n">fhand</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">'http://xxxxx'</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="n">fhand</span> <span class="o">=</span> <span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">'http://xxxxx'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fhand</span><span class="p">:</span>
 	<span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="n">decode</span><span class="p">().</span><span class="n">strip</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -258,12 +258,12 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td> --><td class="rouge-code"><pre><span class="k">try</span><span class="p">:</span> 
+</pre></td><td class="rouge-code"><pre><span class="k">try</span><span class="p">:</span> 
 	<span class="n">xxx</span>      
 <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span> 
 	<span class="n">yyy</span> 
@@ -280,12 +280,12 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td> --><td class="rouge-code"><pre><span class="n">text</span> <span class="o">=</span> <span class="n">abcdef</span> 
+</pre></td><td class="rouge-code"><pre><span class="n">text</span> <span class="o">=</span> <span class="n">abcdef</span> 
 <span class="n">n1</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
 <span class="n">n2</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'f'</span><span class="p">)</span>
 <span class="n">n3</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">n1</span><span class="p">:</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
@@ -303,7 +303,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -315,7 +315,7 @@
 10
 11
 12
-</pre></td> --><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">os</span>
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">getcwd</span><span class="p">())</span>
 <span class="n">os</span><span class="p">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">'/Users/Terry/Desktop'</span><span class="p">)</span>
 
@@ -340,7 +340,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -355,7 +355,7 @@
 13
 14
 15
-</pre></td> --><td class="rouge-code"><pre><span class="n">fname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter file name: "</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="n">fname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter file name: "</span><span class="p">)</span>
 <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 <span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="n">new</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -378,7 +378,7 @@
   <li>Example <strong>e14</strong>:</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -403,7 +403,7 @@
 23
 24
 25
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># compute the sum of the numbers in the file and enter the sum
+</pre></td><td class="rouge-code"><pre><span class="c1"># compute the sum of the numbers in the file and enter the sum
 # the numbers are inside tag 'count'
 </span>
 <span class="n">address</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter location: '</span><span class="p">)</span>
@@ -443,14 +443,14 @@
   </li>
 </ul>
 
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td> --><td class="rouge-code"><pre><span class="n">xyz</span><span class="p">.</span><span class="k">execute</span><span class="p">(</span><span class="s1">'UPDATE xxx SET yyy=xxx WHERE xxxx'</span><span class="p">)</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">xyz</span><span class="p">.</span><span class="k">execute</span><span class="p">(</span><span class="s1">'UPDATE xxx SET yyy=xxx WHERE xxxx'</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre><span class="n">xxx</span> <span class="o">=</span> <span class="n">sqlite</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'xxx.sqlite'</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="n">xxx</span> <span class="o">=</span> <span class="n">sqlite</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'xxx.sqlite'</span><span class="p">)</span>
 <span class="n">yyy</span> <span class="o">=</span> <span class="n">xxx</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
 <span class="n">yyy</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">'SQL code'</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -470,7 +470,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -486,7 +486,7 @@
 14
 15
 16
-</pre></td> --><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">printed</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">printed</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
      	<span class="k">def</span> <span class="nf">print_and_return</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
          	<span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
          	<span class="k">print</span><span class="p">(</span><span class="s">'Result:'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
@@ -514,7 +514,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -522,7 +522,7 @@
 6
 7
 8
-</pre></td> --><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">apply_twice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">apply_twice</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  	<span class="c1"># here call the f function with x, f can be i.e. square 
 </span>
 <span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -544,11 +544,11 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td> --><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">square</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 <span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>	
 <span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
@@ -564,10 +564,10 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">directors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'jenkins'</span><span class="p">,</span> <span class="s">'spielberg'</span><span class="p">,</span> <span class="s">'bigelow'</span><span class="p">,</span> <span class="s">'kubrick'</span><span class="p">]</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">directors</span> <span class="o">=</span> <span class="p">[</span><span class="s">'jenkins'</span><span class="p">,</span> <span class="s">'spielberg'</span><span class="p">,</span> <span class="s">'bigelow'</span><span class="p">,</span> <span class="s">'kubrick'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">directors</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="p">[</span><span class="s">'kubrick'</span><span class="p">,</span> <span class="s">'bigelow'</span><span class="p">,</span> <span class="s">'spielberg'</span><span class="p">,</span> <span class="s">'jenkins'</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -582,12 +582,12 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
@@ -601,7 +601,7 @@
   <li><code class="language-plaintext highlighter-rouge">enumerate()</code></li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -620,7 +620,7 @@
 17
 18
 19
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># normal for-statement
+</pre></td><td class="rouge-code"><pre><span class="c1"># normal for-statement
 </span><span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">:</span>
@@ -644,7 +644,11 @@
 <p><br /></p>
 
 <ul>
-  <li>Trees
+  <li>
+    <p>Trees</p>
+
+    <p><img src="/Users/Terry/Library/Mobile Documents/com~apple~CloudDocs/Documents/Blog/pics/python_note/trees.png" alt="trees" style="zoom:50%;" /></p>
+
     <ul>
       <li><code class="language-plaintext highlighter-rouge">from sklearn import tree</code></li>
       <li>consider <strong>recursion</strong></li>
@@ -669,11 +673,11 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">]</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s">'1'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">,</span> <span class="s">'4'</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
 <span class="p">[(</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'1'</span><span class="p">),</span> <span class="p">(</span><span class="s">'b'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">),</span> <span class="p">(</span><span class="s">'c'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">),</span> <span class="p">(</span><span class="s">'d'</span><span class="p">,</span> <span class="s">'4'</span><span class="p">)]</span>
@@ -685,14 +689,14 @@
   <li>Dictionaries</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-</pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">test1</span> <span class="o">=</span> <span class="s">'abc'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">test2</span> <span class="o">=</span> <span class="s">'123'</span>
 <span class="c1"># put 'test2' into table with label 'test1'
@@ -711,7 +715,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -730,7 +734,7 @@
 17
 18
 19
-</pre></td> --><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">):</span>
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                                 <span class="c1"># first to give is n times
 </span>        <span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>                             <span class="c1"># second to give is x
 </span>            <span class="n">run</span> <span class="o">=</span> <span class="n">n</span>                               <span class="c1"># run n times 
@@ -758,11 +762,11 @@
 
 <p><strong>Alternative i.e.</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td> --><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">my_cycle</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">add1</span><span class="p">,</span> <span class="n">times2</span><span class="p">,</span> <span class="n">add3</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">my_cycle</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">add1</span><span class="p">,</span> <span class="n">times2</span><span class="p">,</span> <span class="n">add3</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">add_one_then_double</span> <span class="o">=</span> <span class="n">my_cycle</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">add_one_then_double</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="mi">4</span>
@@ -779,7 +783,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -795,7 +799,7 @@
 14
 15
 16
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q1 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q1 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">choose</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">,</span> <span class="n">select</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="s">"""Return the Kth paragraph from PARAGRAPHS for which SELECT called on the
     paragraph returns true. If there are fewer than K such paragraphs, return
@@ -818,7 +822,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -849,7 +853,7 @@
 29
 30
 31
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q2 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q2 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">about</span><span class="p">(</span><span class="n">topic</span><span class="p">):</span>
     <span class="s">"""Return a select function that returns whether a paragraph contains one
     of the words in TOPIC.
@@ -884,7 +888,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -919,7 +923,7 @@
 33
 34
 35
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q6 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q6 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">shifty_shifts</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
     <span class="s">"""A diff function for autocorrect that determines how many letters
     in START need to be substituted to create GOAL, then adds the difference in
@@ -964,7 +968,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -983,7 +987,7 @@
 17
 18
 19
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q7 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q7 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">pawssible_patches</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
     <span class="s">"""A diff function that computes the edit distance from START to GOAL."""</span>
     <span class="c1"># similar as shifty_shifts
@@ -1012,7 +1016,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1028,7 +1032,7 @@
 14
 15
 16
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q8 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q8 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">report_progress</span><span class="p">(</span><span class="n">typed</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">send</span><span class="p">):</span>
     <span class="s">"""Send a report of your id and progress so far to the multiplayer server."""</span>
     <span class="c1"># BEGIN PROBLEM 8
@@ -1048,7 +1052,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1097,7 +1101,7 @@
 47
 48
 49
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q9 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q9 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">time_per_word</span><span class="p">(</span><span class="n">times_per_player</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
     <span class="s">"""Given timing data, return a game data abstraction, which contains a list
     of words and the amount of time each player took to type each word.
@@ -1150,7 +1154,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1202,7 +1206,7 @@
 50
 51
 52
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q10 ---------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ----------------------------------------- Q10 ---------------------------------- #
 </span><span class="k">def</span> <span class="nf">fastest_words</span><span class="p">(</span><span class="n">game</span><span class="p">):</span>
     <span class="s">"""Return a list of lists of which words each player typed fastest.
 
@@ -1267,7 +1271,7 @@
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1291,7 +1295,7 @@
 22
 23
 24
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ------------------------------------- Q5 ------------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ------------------------------------- Q5 ------------------------------------- #
 </span><span class="k">def</span> <span class="nf">berry_finder</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="s">"""Returns True if t contains a node with the value 'berry' and 
     False otherwise.
@@ -1319,7 +1323,7 @@
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1347,7 +1351,7 @@
 26
 27
 28
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ------------------------------------- Q6 ------------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ------------------------------------- Q6 ------------------------------------- #
 </span><span class="k">def</span> <span class="nf">sprout_leaves</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">leaves</span><span class="p">):</span>
     <span class="s">"""Sprout new leaves containing the data in leaves at each leaf in
     the original tree t and return the resulting tree.
@@ -1381,7 +1385,7 @@
 
 <p><strong>A tricky one</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1409,7 +1413,7 @@
 26
 27
 28
-</pre></td> --><td class="rouge-code"><pre><span class="c1"># ------------------------------------- Q10 ------------------------------------- #
+</pre></td><td class="rouge-code"><pre><span class="c1"># ------------------------------------- Q10 ------------------------------------- #
 </span><span class="k">def</span> <span class="nf">add_trees</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">):</span>
     <span class="s">"""
     &gt;&gt;&gt; print_tree(add_trees(tree(2), tree(3, [tree(4), tree(5)])))
@@ -1440,8 +1444,7 @@
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>The idea of the solution for the question can split into two parts:</p>
 
-<p>1) if both trees have <strong>same</strong> number of branches: add the roots <code class="language-plaintext highlighter-rouge">label()</code> of both trees directly, then for <code class="language-plaintext highlighter-rouge">branches()</code> via recursion, and because of that the next iteration: <code class="language-plaintext highlighter-rouge">branches()</code> —&gt; new <code class="language-plaintext highlighter-rouge">label()</code></p>
-
-<p>2) if both trees have <strong>different</strong> number of branches: this is the tricky part! Because of the different number of <code class="language-plaintext highlighter-rouge">branches</code> (the length), 1) will only add the lowst layer. The simplest way may add <code class="language-plaintext highlighter-rouge">brauches</code> with value <code class="language-plaintext highlighter-rouge">0</code> for the <strong>short</strong> tree, so now they both have same <code class="language-plaintext highlighter-rouge">branches</code>.</p>
+<p>1) if both trees have <strong>same</strong> number of branches: add the roots <code class="language-plaintext highlighter-rouge">label()</code> of both trees directly, then for <code class="language-plaintext highlighter-rouge">branches()</code> via recursion, and because of that the next iteration: <code class="language-plaintext highlighter-rouge">branches()</code> —&gt; new <code class="language-plaintext highlighter-rouge">label()</code>
+2) if both trees have <strong>different</strong> number of branches: this is the tricky part! Because of the different number of <code class="language-plaintext highlighter-rouge">branches</code> (the length), 1) will only add the lowst layer. The simplest way may add <code class="language-plaintext highlighter-rouge">brauches</code> with value <code class="language-plaintext highlighter-rouge">0</code> for the <strong>short</strong> tree, so now they both have same <code class="language-plaintext highlighter-rouge">branches</code>.</p>
 
 :ET
