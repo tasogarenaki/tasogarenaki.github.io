@@ -469,7 +469,7 @@ def max_path_sum(t):
 def square_tree(t):
     return tree(label(t)**2, [square_tree(branch) for branch in branches(t)])
 
-# find the path that has value x and x can be list
+# find the path that has value x, and x can be list
 def find_path(tree, x):
     if label(tree) == x:
         return [label(tree)] 
@@ -735,17 +735,7 @@ def report_progress(typed, prompt, user_id, send):
 def time_per_word(times_per_player, words):
     """Given timing data, return a game data abstraction, which contains a list
     of words and the amount of time each player took to type each word.
-
-    Arguments:
-        times_per_player: A list of lists of timestamps including the time
-                          the player started typing, followed by the time
-                          the player finished typing each word.
-        words: a list of words, in the order they are typed.
-    """
-    # BEGIN PROBLEM 9
-    "*** YOUR CODE HERE ***"
-
-    """
+    
     >>> p = [[1, 4, 6, 7], [0, 4, 6, 9]]
     >>> words = ['This', 'is', 'fun']
     >>> game = time_per_word(p, words)
@@ -763,7 +753,8 @@ def time_per_word(times_per_player, words):
     >>> time(game, 0, 1)   ----> game[1][player_num][word_index]
     1: 0 -> [2,1] -> 1 -> [1]
     """
-
+    # BEGIN PROBLEM 9
+    "*** YOUR CODE HERE ***"
     # Initial 2D-Array
     # times[i][j] with player i (num) and index of word j (num)
     times = [[0 for i in range(len(j)-1)] for j in times_per_player]
@@ -788,18 +779,6 @@ def time_per_word(times_per_player, words):
 # ----------------------------------------- Q10 ---------------------------------- #
 def fastest_words(game):
     """Return a list of lists of which words each player typed fastest.
-
-    Arguments:
-        game: a game data abstraction as returned by time_per_word.
-    Returns:
-        a list of lists containing which words each player typed fastest
-    """
-    player_indices = range(len(all_times(game)))  # contains an *index* for each player
-    word_indices = range(len(all_words(game)))    # contains an *index* for each word
-    # BEGIN PROBLEM 10
-    "*** YOUR CODE HERE ***"
-
-    """
     >>> p0 = [2, 2, 3]
     >>> p1 = [6, 1, 2]
     >>> fastest_words(game(['What', 'great', 'luck'], [p0, p1]))
@@ -813,7 +792,10 @@ def fastest_words(game):
     # with a tie, choose the first player
     [['What','luck'],['great']]
     """
-
+    player_indices = range(len(all_times(game)))  # contains an *index* for each player
+    word_indices = range(len(all_words(game)))    # contains an *index* for each word
+    # BEGIN PROBLEM 10
+    "*** YOUR CODE HERE ***"
     # see exmaple with time() by Q9
     # Initial a empty Array
     result = [[] for i in player_indices]
@@ -941,16 +923,52 @@ def add_trees(t1, t2):
 ```
 The idea of the solution for this question can split into two parts:
 
-1) if both trees have **same** number of branches: add the roots `label()` of both trees directly, then for `branches()` via recursion, and because of that the next iteration: `branches()` ---> new `label()`
-2) if both trees have **different** number of branches: this is the tricky part! Because of the different number of `branches()` (the length), part one will only add the lowest leaves. The simplest way may add the different of `brauches()` with value `0` for the **short** tree, so now they both have same `branches()`.
+1. if both trees have **same** number of branches: add the roots `label()` of both trees directly, then for `branches()` via recursion, and because of that the next iteration: `branches()` ---> new `label()`
 
+   
 
+2. if both trees have **different** number of branches: this is the tricky part! Because of the different number of `branches()` (the length), part one will only add the lowest leaves. The simplest way may add the different of `brauches()` with value `0` for the **short** tree, so now they both have same `branches()`.
 
+<br>
+<br>
 
+Some Examples from **hw03**:
 
+- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw03/hw03.py)
 
-
+ ```python
+ # ------------------------------------- Q4 ------------------------------------- #
+ def replace_leaf(t, find_value, replace_value):
+     """Returns a new tree where every leaf value equal to find_value has
+     been replaced with replace_value.
  
+     >>> yggdrasil = tree('odin',
+     ...                  [tree('balder',
+     ...                        [tree('thor'),
+     ...                         tree('freya')])])
+     >>> print_tree(replace_leaf(yggdrasil, 'thor', 'freya'))
+     odin
+       balder
+         freya
+         freya
+     """
+     "*** YOUR CODE HERE ***"
+     # use recursion into leaf
+     if is_leaf(t):
+         if label(t) == find_value:
+             # replace the leaf value if matched 
+             return tree(replace_value)
+         # return the leaf value if didn't matched 
+         return t
+     temp_branch = []
+     # let branches into recursion to located the leaf 
+     for b in branches(t):
+         # storage the value every recursion
+         temp_branch += [replace_leaf(b, find_value, replace_value)]
+     return tree(label(t), temp_branch)
+ ```
+
+For case like this, its usefull to via **recursion** to get into the `leaf` by `is_leaf()` then `label` it. The recursion is relate to `branches`.
 
 
 
