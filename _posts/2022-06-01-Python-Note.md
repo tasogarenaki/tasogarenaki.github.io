@@ -490,8 +490,8 @@ def find_path(tree, x):
 
 <br>
 
-- `zip()`
-  - return a `list` with `tuple` from lists
+- `zip(first_iter, second_iter)`
+  - Iterate over co-indexed `(x,y)` pairs. Return a `list` with `tuple` from lists
   - by differen length, return the short one
   - `zip((iterable, ....))`
 
@@ -565,6 +565,171 @@ def inner_func():
 inner_func()      
 print(a)            # -> 2
 ```
+
+<br>
+
+- Iterators
+  - `iter(iterable)`: Return an iterator over the elements of an iterable value
+  - `next(iterator)`: Return the next element in an iterator 
+  - print out an element in the list and remove it from the list at same time
+
+<br>
+
+- Built-in functions for Iteration
+  - `map(func, iterable)`: Iterate over `func(x)` for `x` in iterable
+  - `filter(func, iterable)`: Iterate over `x` iterable if `func(x)`
+  - `reversed(sequence)`: Iterate over x in a sequence in reverse order 
+
+<br>
+
+- Generators and Generator Functions
+  - `yield var_name`
+  - A generator function is a function that `yield`s values insted of `return`ing them. And can `yield` multiple times.
+  - A generator is an iterator created automatically by calling a generator function.
+
+<br>
+
+- Object Oriented Programming (OOP)
+  - `class`: a template for creating objects
+  - `instance`: a single object created from a class
+  - `instance attribute`: a property of an object, specific to an instance
+  - `class attribute`: a property of an object, shared by all instances of a class 
+  - `method`: an action (function) that all instances of a class may perform
+
+```python
+class Student:
+    students = 0                            # class attribute 
+    def __init__(self, name, staff):
+        self.name = name                    # instance attribute 
+        self.understanding = 0
+        Student.students += 1
+        print("There are now", Student.students, "students") 
+        staff.add_student(self)
+
+    def visit_office_hours(self, staff): 
+        staff.assist(self) 
+        print("Thanks, " + staff.name)
+
+
+class Professor:
+    def __init__(self, name):
+        self.name = name
+        self.students = {}
+
+    def add_student(self, student): 
+        self.students[student.name] = student
+
+    def assist(self, student): 
+        student.understanding += 1
+        
+# ------------------------- Some Tests ------------------------- #
+>>> callahan = Professor("Callahan")				# Initial a professor 'Callahan'
+>>> elle = Student("Elle", callahan)				# Initial a student 'Elle' by 'Callahan'
+There are now 1 students
+>>> elle.visit_office_hours(callahan)				# Invoke function 
+Thanks, Callahan
+>>> elle.visit_office_hours(Professor("Paulette"))
+Thanks, Paulette
+>>> elle.understanding
+2
+>>> [name for name in callahan.students]
+['Elle']
+>>> x = Student("Vivian", Professor("Stromwell")).name
+There are now 2 students
+>>> x
+'Vivian'
+>>> [name for name in callahan.students]
+['Elle']
+```
+
+<br>
+
+- Inheritance: to reduce the repeated code.
+
+```python
+# ------------------------- Original ------------------------- #
+class Dog():
+    def __init__(self, name, owner):
+        self.is_alive = True 
+        self.name = name 
+        self.owner = owner 
+        
+    def eat(self, thing):
+        print(self.name + " ate a " + str(thing) + "!") 
+        
+    def talk(self):
+        print(self.name + " says woof!")
+
+class Cat():
+    def __init__(self, name, owner, lives=9):
+        self.is_alive = True 
+        self.name = name 
+        self.owner = owner 
+        self.lives = lives 
+    
+    def eat(self, thing):
+        print(self.name + " ate a " + str(thing) + "!") 
+    
+    def talk(self):
+        print(self.name + " says meow!")
+```
+
+To avoid redefining attributes and methods for similar classes use **superclass** from which the similar classes **inherit**. For example, create a class `Pet` and redefine `Dog` as a subclass of `Pet`.
+
+```python
+# ------------------------- Inheritance ------------------------- #
+class Pet():
+    def __init__(self, name, owner):
+        self.is_alive = True    
+        self.name = name 
+        self.owner = owner 
+        
+    def eat(self, thing):
+        print(self.name + " ate a " + str(thing) + "!") 
+        
+    def talk(self):
+        print(self.name)
+
+class Dog(Pet):
+    def talk(self):
+        print(self.name + ' says woof!')
+        
+        
+# ------------------------- Some Tests ------------------------- #       
+>>> dog = Dog('doggy','my')
+>>> dog.name
+'doggy'
+>>> dog.owner
+'my'
+>>> dog.eat('meat')
+doggy ate a meat!
+>>> dog.talk()
+doggy says woof!
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
