@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-09T12:10:16+00:00</updated>
+  <updated>2022-06-11T12:34:48+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>Python Note</title>
     <link href="http://localhost:4000/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
-    <published>2022-06-01T10:11:00+00:00</published>
+    <published>2022-06-01T10:11:11+00:00</published>
   
-    <updated>2022-06-09T12:03:06+00:00</updated>
+    <updated>2022-06-10T14:08:50+00:00</updated>
   
     <id>http://localhost:4000/posts/Python-Note/</id>
     <content src="http://localhost:4000/posts/Python-Note/" />
@@ -68,9 +68,9 @@
       python3 -i name.py
       handle = open(filename, mode)
       quit(): break
-      append() to add elements in list
-      sort() to sort elements in list
-      split() to remove element (here...
+      dict_name.get(xxx, 0) + 1: if in dict() has xxx then xxx+1 otherwise 0+1
+      range(start, stop, step)
+    ...
     </summary>
   
 

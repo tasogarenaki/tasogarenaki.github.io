@@ -338,9 +338,18 @@ print(square(4))
 <br>
 
 - List
-  - `append()` to add an elements in list
+  - `append()` to add an element in list
+  
+  - `insert()` to add an element in a position of list, e.g.: 
+  
+    ​		`>>> lst = [1, 2, 3]` 
+  
+    ​		`>>> lst.insert(1,5)`
+  
+    ​		`[1,5,2,3]` in position [1] add 5
+  
   - `extend(['a', 'b'])` to add elements in list  
-  - `pop()` to remove the final element
+  - `pop()` to remove the final element or `pop(x)` to remove element at position `x`
   - `remove('xx')` remove the first element named `xx`
   - `sort()` to sort elements in list
   - `split()` to remove element (here (none)) from the list
@@ -512,7 +521,50 @@ def find_path(tree, x):
 {3: 9, 4: 16, 5: 25}
 ```
 
+<br>
 
+- Non-Local and Global Assignment
+  - `nonlocal <var_name>`: defines outer function, which means only use it if there's a inside function. Otherwise should use `global <var_name>` 
+  - place in top of inner function
+
+```python
+def outer_func():
+    a = 1               # Initial a = 1
+    
+    # 1) Normal 
+    def inner_func():
+        a = 2           # Update a = 2, irrelevant with `a = 1` above 
+        print(a)        # -> 2
+    inner_func()          
+    print(a)            # -> 1, print a under `outer_func()` out
+    
+    # 2) UnboundLocalError
+    def inner_func():
+        print(a)        # -> Error! Call `a` which didn't initialize yet 
+        a = 2           # Initial
+    inner_func()      
+    print(a)
+    
+    # 3) with `nonlocal`
+    def inner_func():
+        nonlocal a      # def a is a variabl from outside function `outer_func()`
+        print(a)        # -> 1, here is `a` from outside
+        a = 2           # Update a = 2  
+    inner_func()      
+    print(a)            # -> 2
+```
+
+<br>
+
+```python
+a = 1               # Initial a = 1
+def inner_func():
+    global a        # def that a is global, which means inside this function is `a = 1`
+    print(a)        # -> 1, here is `a` from outside
+    a = 2           # Update a = 2  
+inner_func()      
+print(a)            # -> 2
+```
 
 
 
@@ -969,6 +1021,90 @@ Some Examples from **hw03**:
  ```
 
 For case like this, its usefull to via **recursion** to get into the `leaf` by `is_leaf()` then `label` it. The recursion is relate to `branches`.
+
+<br>
+<br>
+
+Some Examples from **lab06**:
+
+- full codes see [here]()
+
+```python
+# -------------------------------------- Q1 -------------------------------------- #
+def make_fib():
+    """Returns a function that returns the next Fibonacci number
+    every time it is called."""
+    "*** YOUR CODE HERE ***"
+    pre, pro = -1, 1
+    def count_fib():
+        nonlocal pre, pro
+        fib = pre + pro
+        pre = pro
+        pro = fib
+        return fib
+    return count_fib
+  
+  
+  
+  
+# -------------------------------------- Q4 -------------------------------------- #
+def insert_items(lst, entry, elem):
+    """
+    >>> test_lst = [1, 5, 8, 5, 2, 3]
+    >>> new_lst = insert_items(test_lst, 5, 7)
+    >>> new_lst
+    [1, 5, 7, 8, 5, 7, 2, 3]
+    >>> large_lst = [1, 4, 8]
+    >>> large_lst2 = insert_items(large_lst, 4, 4)
+    >>> large_lst2
+    [1, 4, 4, 8]
+    """
+    "*** YOUR CODE HERE ***"
+    new_lst = lst
+    flag = 0
+    for i, num in enumerate(lst):
+        # additional conditions flag to avoid stuck in the loop
+        if num == entry and flag == 0:
+            # insert the value in position i + 1
+            new_lst.insert(i+1, elem)
+            # update flag with continue to get out of loop
+            flag = 1
+            continue
+        flag = 0
+    return new_lst
+```
+
+Q4: for case with quivalent value from `entry` and `elem` could caused the infinitely long list, e.g. `[1, 4, 8]` with `entry, elem = 4, 4`. That is because insert `4` after `4`, then for next loop checked the second `4` again, and so on. Thats why should add two additional conditions `flag` and `continue` to avoid this issue. Only one of them will not work. With `flag = 1` avoid get into the `if` condition and with `continue` to skip the current iteration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

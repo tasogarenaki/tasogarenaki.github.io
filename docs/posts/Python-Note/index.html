@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-09T18:51:41+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-10T14:08:50+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-06-09 20:51:41 +0200
+    date="2022-06-10 16:08:50 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Thu, Jun  9, 2022,  8:51 PM +0200"
-    >Jun  9</em>
+      title="Fri, Jun 10, 2022,  4:08 PM +0200"
+    >Jun 10</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3841 words">
-  <em>21 min</em> read</span>
+  title="4395 words">
+  <em>24 min</em> read</span>
 
 
       <!-- page views -->
@@ -1367,9 +1367,20 @@
 <ul>
   <li>List
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">append()</code> to add an elements in list</li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">append()</code> to add an element in list</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">insert()</code> to add an element in a position of list, e.g.:</p>
+
+        <p>​		<code class="language-plaintext highlighter-rouge">&gt;&gt;&gt; lst = [1, 2, 3]</code></p>
+
+        <p>​		<code class="language-plaintext highlighter-rouge">&gt;&gt;&gt; lst.insert(1,5)</code></p>
+
+        <p>​		<code class="language-plaintext highlighter-rouge">[1,5,2,3]</code> in position [1] add 5</p>
+      </li>
       <li><code class="language-plaintext highlighter-rouge">extend(['a', 'b'])</code> to add elements in list</li>
-      <li><code class="language-plaintext highlighter-rouge">pop()</code> to remove the final element</li>
+      <li><code class="language-plaintext highlighter-rouge">pop()</code> to remove the final element or <code class="language-plaintext highlighter-rouge">pop(x)</code> to remove element at position <code class="language-plaintext highlighter-rouge">x</code></li>
       <li><code class="language-plaintext highlighter-rouge">remove('xx')</code> remove the first element named <code class="language-plaintext highlighter-rouge">xx</code></li>
       <li><code class="language-plaintext highlighter-rouge">sort()</code> to sort elements in list</li>
       <li><code class="language-plaintext highlighter-rouge">split()</code> to remove element (here (none)) from the list</li>
@@ -1680,6 +1691,89 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="p">([(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)])</span>
 <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li>Non-Local and Global Assignment
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">nonlocal &lt;var_name&gt;</code>: defines outer function, which means only use it if there’s a inside function. Otherwise should use <code class="language-plaintext highlighter-rouge">global &lt;var_name&gt;</code></li>
+      <li>place in top of inner function</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">outer_func</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>               <span class="c1"># Initial a = 1
+</span>    
+    <span class="c1"># 1) Normal 
+</span>    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># Update a = 2, irrelevant with `a = 1` above 
+</span>        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># -&gt; 2
+</span>    <span class="n">inner_func</span><span class="p">()</span>          
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>            <span class="c1"># -&gt; 1, print a under `outer_func()` out
+</span>    
+    <span class="c1"># 2) UnboundLocalError
+</span>    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># -&gt; Error! Call `a` which didn't initialize yet 
+</span>        <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># Initial
+</span>    <span class="n">inner_func</span><span class="p">()</span>      
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="c1"># 3) with `nonlocal`
+</span>    <span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">a</span>      <span class="c1"># def a is a variabl from outside function `outer_func()`
+</span>        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># -&gt; 1, here is `a` from outside
+</span>        <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># Update a = 2  
+</span>    <span class="n">inner_func</span><span class="p">()</span>      
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>            <span class="c1"># -&gt; 2
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>               <span class="c1"># Initial a = 1
+</span><span class="k">def</span> <span class="nf">inner_func</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">a</span>        <span class="c1"># def that a is global, which means inside this function is `a = 1`
+</span>    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>        <span class="c1"># -&gt; 1, here is `a` from outside
+</span>    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>           <span class="c1"># Update a = 2  
+</span><span class="n">inner_func</span><span class="p">()</span>      
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>            <span class="c1"># -&gt; 2
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="32-examples">3.2 Examples<a href="#32-examples" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -2489,6 +2583,105 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>For case like this, its usefull to via <strong>recursion</strong> to get into the <code class="language-plaintext highlighter-rouge">leaf</code> by <code class="language-plaintext highlighter-rouge">is_leaf()</code> then <code class="language-plaintext highlighter-rouge">label</code> it. The recursion is relate to <code class="language-plaintext highlighter-rouge">branches</code>.</p>
+
+<p><br />
+<br /></p>
+
+<p>Some Examples from <strong>lab06</strong>:</p>
+
+<ul>
+  <li>full codes see <a href="">here</a></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q1 -------------------------------------- #
+</span><span class="k">def</span> <span class="nf">make_fib</span><span class="p">():</span>
+    <span class="s">"""Returns a function that returns the next Fibonacci number
+    every time it is called."""</span>
+    <span class="s">"*** YOUR CODE HERE ***"</span>
+    <span class="n">pre</span><span class="p">,</span> <span class="n">pro</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">def</span> <span class="nf">count_fib</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">pre</span><span class="p">,</span> <span class="n">pro</span>
+        <span class="n">fib</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">+</span> <span class="n">pro</span>
+        <span class="n">pre</span> <span class="o">=</span> <span class="n">pro</span>
+        <span class="n">pro</span> <span class="o">=</span> <span class="n">fib</span>
+        <span class="k">return</span> <span class="n">fib</span>
+    <span class="k">return</span> <span class="n">count_fib</span>
+  
+  
+  
+  
+<span class="c1"># -------------------------------------- Q4 -------------------------------------- #
+</span><span class="k">def</span> <span class="nf">insert_items</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">elem</span><span class="p">):</span>
+    <span class="s">"""
+    &gt;&gt;&gt; test_lst = [1, 5, 8, 5, 2, 3]
+    &gt;&gt;&gt; new_lst = insert_items(test_lst, 5, 7)
+    &gt;&gt;&gt; new_lst
+    [1, 5, 7, 8, 5, 7, 2, 3]
+    &gt;&gt;&gt; large_lst = [1, 4, 8]
+    &gt;&gt;&gt; large_lst2 = insert_items(large_lst, 4, 4)
+    &gt;&gt;&gt; large_lst2
+    [1, 4, 4, 8]
+    """</span>
+    <span class="s">"*** YOUR CODE HERE ***"</span>
+    <span class="n">new_lst</span> <span class="o">=</span> <span class="n">lst</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+        <span class="c1"># additional conditions flag to avoid stuck in the loop
+</span>        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">entry</span> <span class="ow">and</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># insert the value in position i + 1
+</span>            <span class="n">new_lst</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+            <span class="c1"># update flag with continue to get out of loop
+</span>            <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">new_lst</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Q4: for case with quivalent value from <code class="language-plaintext highlighter-rouge">entry</code> and <code class="language-plaintext highlighter-rouge">elem</code> could caused the infinitely long list, e.g. <code class="language-plaintext highlighter-rouge">[1, 4, 8]</code> with <code class="language-plaintext highlighter-rouge">entry, elem = 4, 4</code>. That is because insert <code class="language-plaintext highlighter-rouge">4</code> after <code class="language-plaintext highlighter-rouge">4</code>, then for next loop checked the second <code class="language-plaintext highlighter-rouge">4</code> again, and so on. Thats why should add two additional conditions <code class="language-plaintext highlighter-rouge">flag</code> and <code class="language-plaintext highlighter-rouge">continue</code> to avoid this issue. Only one of them will not work. With <code class="language-plaintext highlighter-rouge">flag = 1</code> avoid get into the <code class="language-plaintext highlighter-rouge">if</code> condition and with <code class="language-plaintext highlighter-rouge">continue</code> to skip the current iteration.</p>
 
 
 </div>
