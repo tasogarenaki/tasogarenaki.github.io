@@ -583,18 +583,46 @@ print(a)            # -> 2
 <br>
 
 - Generators and Generator Functions
-  - `yield var_name`
-  - A generator function is a function that `yield`s values insted of `return`ing them. And can `yield` multiple times.
-  - A generator is an iterator created automatically by calling a generator function.
+  - `yield var_name`: iterable '`return`'
+  - A generator function is a function that `yield`s values insted of `return`ing them. And can `yield` multiple times. Pro: save the CPU.
+
+```python
+>>> def foo():
+...     print("starting...")
+...     while True:
+...             res = yield 4
+...             print("res:", res)
+
+>>> g = foo()
+>>> print(next(g))			
+starting...
+4
+>>> print(next(g))
+res: None
+4
+```
+
+1. Line 8: invoke `print(next(g))`, the `foo()` function starts executing. First invoke line 2 `print("starting...")` then get into the `while`. Finally at line 4 meet `yield`, so `return 4`. The process stopped. The line 5 `print("res:", res)` will **not** executed. So showing line 9 and 10.
+
+   
+
+2. Line 11: invoke `print(next(g))` again. But this time starts from last time `yield`ed, which is line 4 to give `res` the value, but the right side of `=` has no value, because the `4` already `return`ed. So showing line 12 with `res: None`. 
+
+   
+
+3. The process will continue to execute in the `while`-loop and meet `yield` again. At this time, it will returns `4` and then the process stops.
 
 <br>
 
 - Object Oriented Programming (OOP)
   - `class`: a template for creating objects
-  - `instance`: a single object created from a class
-  - `instance attribute`: a property of an object, specific to an instance
-  - `class attribute`: a property of an object, shared by all instances of a class 
-  - `method`: an action (function) that all instances of a class may perform
+  - **instance**: a single object created from a class
+  - **instance attribute**: a property of an object, specific to an instance
+  - **class attribute**: a property of an object, shared by all instances of a class 
+    - Accessing Attributes: `getattr(<name>, 'var')` and `hasattr(<name>, 'var')` 
+  - **method**: an action (function) that all instances of a class may perform
+    - `__init__` is called with the new object as its first argument (named `self`), along with any additional arguments.
+    - Invoke method: `<expression>.<name>`
 
 ```python
 class Student:
@@ -626,7 +654,7 @@ class Professor:
 >>> callahan = Professor("Callahan")				# Initial a professor 'Callahan'
 >>> elle = Student("Elle", callahan)				# Initial a student 'Elle' by 'Callahan'
 There are now 1 students
->>> elle.visit_office_hours(callahan)				# Invoke function 
+>>> elle.visit_office_hours(callahan)				# Invoke method 
 Thanks, Callahan
 >>> elle.visit_office_hours(Professor("Paulette"))
 Thanks, Paulette
@@ -697,11 +725,11 @@ class Dog(Pet):
         
 # ------------------------- Some Tests ------------------------- #       
 >>> dog = Dog('doggy','my')
->>> dog.name
+>>> dog.name									# invoke variable
 'doggy'
 >>> dog.owner
 'my'
->>> dog.eat('meat')
+>>> dog.eat('meat')						 # invoke method
 doggy ate a meat!
 >>> dog.talk()
 doggy says woof!
@@ -1240,6 +1268,63 @@ def insert_items(lst, entry, elem):
 ```
 
 Q4: for case with quivalent value from `entry` and `elem` could caused the infinitely long list, e.g. `[1, 4, 8]` with `entry, elem = 4, 4`. That is because insert `4` after `4`, then for next loop checked the second `4` again, and so on. Thats why should add two additional conditions `flag` and `continue` to avoid this issue. Only one of them will not work. With `flag = 1` avoid get into the `if` condition and with `continue` to skip the current iteration.
+
+<br>
+<br>
+
+Some Examples from **hw04**:
+
+- full codes see [here]()
+
+```python
+# ------------------------------ Q3 ------------------------------ #
+def repeated(t, k):
+    """Return the first value in iterator T that appears K times in a row.
+
+    >>> s = iter([3, 2, 2, 2, 1, 2, 1, 4, 4, 5, 5, 5])
+    >>> repeated(s, 3)
+    2
+    >>> repeated(s, 3)
+    5
+    """
+    assert k > 1
+    "*** YOUR CODE HERE ***"
+    # iter(): for-loop works like next()
+    count = 1
+    pro = 0
+    for i in t:
+        pre = i             # mark the current value
+        if pre == pro:      # if the pre and pro value are the same
+            count += 1
+            if count == k:  # appears k times in a row 
+                return i
+        else:
+            count = 1       # reset, if interrupted 
+        pro = pre   
+        
+        
+        
+        
+# ------------------------------ Q4 ------------------------------ #
+def permutations(seq):
+    """
+    >>> sorted(permutations([1, 2, 3])) 
+    [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+    """
+    "*** YOUR CODE HERE ***"
+    # use recursion to get into the single value
+    # use yield to invoke the function to get all the order 
+    if len(seq) == 1:
+        yield seq           
+    else:
+        # let the rest into next iteration, begin with the last one due to recursion 
+        for i in permutations(seq[1:]):   
+            for k in range(len(i)+1):
+                lst = list(i[:])        # initial a list with current value(s)
+                # add the pre-position value, [0] from last iteration due to [1:] 
+                lst.insert(k, seq[0])    
+                yield lst
+```
 
 
 
