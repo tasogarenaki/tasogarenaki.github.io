@@ -338,6 +338,10 @@ print(square(4))
 <br>
 
 - List
+  - Time increases with more elements
+  
+  - Memory small
+  
   - `append()` to add an element in list
   
   - `insert()` to add an element in a position of list, e.g.: 
@@ -349,7 +353,7 @@ print(square(4))
     ​		`[1,5,2,3]` in position [1] add 5
   
   - `extend(['a', 'b'])` to add elements in list  
-  - `pop()` to remove the final element or `pop(x)` to remove element at position `x`
+  - `pop()` to remove the final element or `pop(x)` to remove element at index `x`
   - `remove('xx')` remove the first element named `xx`
   - `sort()` to sort elements in list
   - `split()` to remove element (here (none)) from the list
@@ -505,7 +509,10 @@ def find_path(tree, x):
 <br>
 
 - Dictionaries
-  - e.g. `numerals = {'I': 1.0, 'V': 5, 'X': 10}`
+  - Quick even with Key increase 
+  - More memory
+  - Space trade time
+  - **Hashtable**
 
 
 ```python
@@ -519,6 +526,18 @@ def find_path(tree, x):
 
 >>> dict([(3, 9), (4, 16), (5, 25)])
 {3: 9, 4: 16, 5: 25}
+```
+
+```python
+# Example from LeetCode #1 Two Sum
+def two_sum(nums, target):
+    collect = {}									# Hash Map
+    for i, num in enumerate(nums):
+        result = target - num
+        if num not in collect:
+            collect[result] = i
+        else:
+            return [collect[num], i]
 ```
 
 <br>
@@ -576,15 +595,19 @@ print(a)            # -> 2
 <br>
 
 - Built-in functions for Iteration
-  - `map(func, iterable)`: Iterate over `func(x)` for `x` in iterable
+  - `map(func, iterable)`: Iterate over `func(x)` for `x` in `iterable`
   - `filter(func, iterable)`: Iterate over `x` iterable if `func(x)`
-  - `reversed(sequence)`: Iterate over x in a sequence in reverse order 
+  - `reversed(sequence)`: Iterate over all the elements in a sequence in reverse order 
+  - `list(iterable)`: Create a list containing all the elements in the input iterable 
+  - `tuple(iterable)`: Creates a tuple containing all the elements in the input iterable
+  - `sorted(iterable)`: Creates a sorted list containing all the elements in the input iterable
 
 <br>
 
 - Generators and Generator Functions
   - `yield var_name`: iterable '`return`'
-  - A generator function is a function that `yield`s values insted of `return`ing them. And can `yield` multiple times. Pro: save the CPU.
+  - A generator function is a function that `yield`s values insted of `return`ing them. And can `yield` multiple times. **Pro**: save the CPU.
+  - `yield from`: will yield all values from an iterator or iterable, e.g. a list.
 
 ```python
 >>> def foo():
@@ -602,11 +625,11 @@ res: None
 4
 ```
 
-1. Line 8: invoke `print(next(g))`, the `foo()` function starts executing. First invoke line 2 `print("starting...")` then get into the `while`. Finally at line 4 meet `yield`, so `return 4`. The process stopped. The line 5 `print("res:", res)` will **not** executed. So showing line 9 and 10.
+1. Line 8: invoke `print(next(g))`, the `foo()` function starts executing. First invoke line 2 `print("starting...")` then get into the `while`. Finally at line 4 meet `yield`, so `return 4`. The process stopped. The line 5 `print("res:", res)` will **not** executed. So showing line 9 and 10, but remember the state of the function for future `next`calls.
 
    
 
-2. Line 11: invoke `print(next(g))` again. But this time starts from last time `yield`ed, which is line 4 to give `res` the value, but the right side of `=` has no value, because the `4` already `return`ed. So showing line 12 with `res: None`. 
+2. Line 11: invoke `print(next(g))` again. But this time starts after the `yield` that was **previously executed**, which is line 4 to give `res` the value, but the **right** side of `=` has no value, because the `4` already `return`ed. So showing line 12 with `res: None`.  Then run until the next `yield` statement.
 
    
 
@@ -615,64 +638,47 @@ res: None
 <br>
 
 - Object Oriented Programming (OOP)
-  - `class`: a template for creating objects
-  - **instance**: a single object created from a class
-  - **instance attribute**: a property of an object, specific to an instance
+  - **class**: a template for creating objects, e.g. `Car`
+  - **instance**: a single object created from a class, e.g. `my_car = Car('red')` and `my_car` is an instance of the `Car` class
+  - **attribute**: a property of an object, specific to an instance. A **variable** that belongs to the class, e.g. `self.wheels` and `self.color`. Invoke: `my_car.wheels` and `    my_car.color` 
   - **class attribute**: a property of an object, shared by all instances of a class 
     - Accessing Attributes: `getattr(<name>, 'var')` and `hasattr(<name>, 'var')` 
-  - **method**: an action (function) that all instances of a class may perform
-    - `__init__` is called with the new object as its first argument (named `self`), along with any additional arguments.
-    - Invoke method: `<expression>.<name>`
+  - **method**: an action (function) that all instances of a class may perform, e.g. `drive` and `pop_tire`. Invoke: `my_car.drive()`
+  - **constructor**: how to build an instance of the class. `__init__` is called with the new object as its first argument (named `self`), along with any additional arguments. 
 
 ```python
-class Student:
-    students = 0                            # class attribute 
-    def __init__(self, name, staff):
-        self.name = name                    # instance attribute 
-        self.understanding = 0
-        Student.students += 1
-        print("There are now", Student.students, "students") 
-        staff.add_student(self)
+class Car(object):															 # class
+    num_wheels = 4
+	  
+    def __init__(self, color):										# constructor 
+        self.wheels = Car.num_wheels						   # attricute
+        self.color = color
 
-    def visit_office_hours(self, staff): 
-        staff.assist(self) 
-        print("Thanks, " + staff.name)
+    def drive(self):															# method
+        if self.wheels <= Car.num_wheels:
+            return self.color + ' car cannot drive!'
+        return self.color + ' car goes vroom!'
 
-
-class Professor:
-    def __init__(self, name):
-        self.name = name
-        self.students = {}
-
-    def add_student(self, student): 
-        self.students[student.name] = student
-
-    def assist(self, student): 
-        student.understanding += 1
+    def pop_tire(self):
+        if self.wheels > 0:
+            self.wheels -= 1
         
 # ------------------------- Some Tests ------------------------- #
->>> callahan = Professor("Callahan")				# Initial a professor 'Callahan'
->>> elle = Student("Elle", callahan)				# Initial a student 'Elle' by 'Callahan'
-There are now 1 students
->>> elle.visit_office_hours(callahan)				# Invoke method 
-Thanks, Callahan
->>> elle.visit_office_hours(Professor("Paulette"))
-Thanks, Paulette
->>> elle.understanding
-2
->>> [name for name in callahan.students]
-['Elle']
->>> x = Student("Vivian", Professor("Stromwell")).name
-There are now 2 students
->>> x
-'Vivian'
->>> [name for name in callahan.students]
-['Elle']
+>>> my_car = Car('red')														# instance
+>>> my_car.color																 # invoke the attribute 
+'red'
+>>> my_car.wheels
+4
+>>> my_car = Car('red')
+>>> my_car.drive()																# invoke the method
+'red car goes vroom!'
 ```
 
 <br>
 
 - Inheritance: to reduce the repeated code.
+  - `class <name>(<base class>):`
+
 
 ```python
 # ------------------------- Original ------------------------- #
@@ -1274,7 +1280,7 @@ Q4: for case with quivalent value from `entry` and `elem` could caused the infin
 
 Some Examples from **hw04**:
 
-- full codes see [here]()
+- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/HW/hw04)
 
 ```python
 # ------------------------------ Q3 ------------------------------ #
@@ -1326,9 +1332,44 @@ def permutations(seq):
                 yield lst
 ```
 
+<br>
+<br>
 
+Some Examples from **lab07**:
 
+- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab07)
 
+```python
+# This is a method from the class ProfessorCard
+def effect(self, other_card, player, opponent):
+        orig_opponent_deck_length = len(opponent.deck.cards)
+        "*** YOUR CODE HERE ***"
+        # adds the power of the opponent's card to all of mine 
+        for my_card in player.deck.cards:
+            my_card.attack += other_card.attack
+            my_card.defense += other_card.defense
+
+        # if a card in deck have same power as the opponent's card remove it
+        for card in opponent.deck.cards[:]:             # copy the deck
+            if card.attack == other_card.attack \
+                or card.defense == other_card.defense:  # Check if same power
+                opponent.deck.cards.remove(card)        # remove the card 
+
+        discarded = orig_opponent_deck_length - len(opponent.deck.cards)
+        if discarded:
+            print('{} cards were discarded from {}\'s deck!'.format(discarded, opponent.name))
+            return
+          
+# Copy a list 
+>>> lst = [1, 2, 3, 4]
+>>> copy = lst[:]
+>>> copy
+[1, 2, 3, 4]
+>>> copy is lst
+False
+```
+
+Copy a list to avoid trouble when mutate a list as iterating through it. In line 11 directly used the copy `opponent.deck.cards[:]` with for-loop.
 
 
 
