@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-13T15:44:23+00:00</updated>
+  <updated>2022-06-20T17:44:41+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -20,11 +20,63 @@
 
   
   <entry>
+    <title>LeetCode Python</title>
+    <link href="https://tasogarenaki.github.io/posts/LeetCode-Python/" rel="alternate" type="text/html" title="LeetCode Python" />
+    <published>2022-06-15T10:11:11+00:00</published>
+  
+    <updated>2022-06-15T10:11:11+00:00</updated>
+  
+    <id>https://tasogarenaki.github.io/posts/LeetCode-Python/</id>
+    <content src="https://tasogarenaki.github.io/posts/LeetCode-Python/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      HashTable (Algo catalog by use ##2)
+
+Simple / Medium / Hard Catalog
+
+1. Two Sum (name of the questions)
+
+Inhalt
+
+Idea for the solution, explanation
+
+Code
+
+using ** ** without  space to create a line betwenn two questions
+
+
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Python Note</title>
     <link href="https://tasogarenaki.github.io/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
     <published>2022-06-01T10:11:11+00:00</published>
   
-    <updated>2022-06-12T16:49:56+00:00</updated>
+    <updated>2022-06-13T15:44:32+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/Python-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/Python-Note/" />

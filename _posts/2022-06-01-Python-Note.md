@@ -5,7 +5,7 @@ author:
   link: https://github.com/tasogarenaki
 date: 2022-06-01 11:11:11 +0100
 categories: [Note, CS]
-tags: [note]
+tags: [note, python]
 math: true
 mermaid: true
 ---
@@ -15,7 +15,7 @@ mermaid: true
 
 # 1 Fundations
 
-- install pip:  
+- **install pip**:  
 
 ```console
   $ curl https://bootstrap.pypa.io/pip/get-pip.py -o get-pip.py
@@ -24,7 +24,7 @@ mermaid: true
 
 <br>
 
-- Some Commands: 
+- **Some Commands**: 
   - control + d: `exit()`
   - control + l: `clear` 
   - `python3 -i name.py`
@@ -36,7 +36,7 @@ mermaid: true
 
 <br>
 
-- Position of numbers without `[]`:
+- **Position of numbers without** `[]`:
 
 ```python
 >>> n = 18117
@@ -47,7 +47,7 @@ last = 7              # via %
 
 <br>
 
-- Placeholder: 
+- **Placeholder**: 
   - `%d`: decimal
   - `%f`: float
   - `%%`: percent
@@ -58,7 +58,7 @@ last = 7              # via %
 
 ## 2.1 Fundations
 
-- Regular Expressions and Extracting Data:
+- **Regular Expressions and Extracting Data**:
   - `import re`
   - `re.search()`
   - `re.findall()`
@@ -82,14 +82,14 @@ last = 7              # via %
 
 <br>
 
-- Socket
+- **Socket**
   - `import socket`
   - `Port 80`: Web Server, HTTP(80) 
   - `decode()`
 
 <br>
 
-- Retrieving Web Pages
+- **Retrieving Web Pages**
   - use Chrome to view the page source 
   - `import urllib.request, urllib.parse, urllib.error`
 
@@ -101,7 +101,8 @@ for line in fhand:
 
 <br>
 
-- Beautifulsoup4: **e11.py**
+- **Beautifulsoup4**: **e11.py**
+  
   - `from bs4 import BeautifulSoup`
   - Example to get img: https://divertingpan.github.io/post/python_tieba/
   
@@ -115,21 +116,21 @@ for line in fhand:
 
 <br>
 
-- eXtensible Markup Language (XML)
+- **eXtensible Markup Language (XML)**
   - share structured data 
   - `import xml.etree.ElementTree as ET`
   - `xxx.findall(‘a/b’)`: find all tags `b` from `a`
 
 <br>
 
-- JavaScript Object Notation (JSON)
+- **JavaScript Object Notation (JSON)**
   - `import json`
   - `'''[ xxx ]'''`
   - `info = json.loads(xxx)`
 
 <br>
 
-- Service Oriented Approach
+- **Service Oriented Approach**
   - Application Programming Interfaces (API)
   - `import twurl`
   - `twurl.augment(url, {‘xx’})`
@@ -137,15 +138,7 @@ for line in fhand:
 
 <br>
 
-- Class and Object
-  - `class xxx:` 
-  - object: `test = xxx():`
-  - function: `def xxx:`
-  - subclass: `class name2(class_name1):`
-
-<br>
-
-- assert expression: 
+- **assert expression**: 
   - test if expression is `False`: `assert 1 == 0, 'xxx'`. This is `False`, so show `'xxx'`
   - `assert 1 == 1, ‘xxx’`. This is `True`, show nothing. 
 
@@ -258,7 +251,7 @@ print(sum)
 
 <br>
 
-- Databases: **e17.py** and **e18.py**
+- **Databases**: **e17.py** and **e18.py**
   - SQLite Browser
   - `import sqlite3`
   - Reconstructing Data with JOIN: select … from … join … on …
@@ -282,7 +275,7 @@ See [here](https://inst.eecs.berkeley.edu/~cs61a/fa20/) for this course.
 
 ## 3.1 Fundations
 
-- `*args` and `**kwargs`: 
+- **`*args` and `**kwargs`**: 
   - `*args`: unknown functions/parameters 
   - `**kwargs`: same but list 
 
@@ -307,7 +300,7 @@ Result: 10
 
 <br>
 
-- Higher-Order Functions:
+- **Higher-Order Functions:**
   - use function inside of function 
   
 ```python
@@ -323,7 +316,7 @@ def square(x):
 
 <br>
 
-- Lambda Expressions:
+- **Lambda Expressions:**
   - `lambda <parameters>: <return expression>`
   - `(lambda <parameters A>: <return function>)(lambda <parameters A>: lambda <parameters B>:  <return expression>)`
   - `lambda` is a function with formal parameter `x=10` that returns the value of `x*x`, it’s like `def`
@@ -337,7 +330,8 @@ print(square(4))
 
 <br>
 
-- List
+- **List**
+  
   - Time increases with more elements
   
   - Memory small
@@ -367,7 +361,7 @@ print(square(4))
 
 <br>
 
-- List Comprehensions
+- **List Comprehensions**
   - `[<expression> for <element> in <sequence> if <conditional>]` 
 
 ```python
@@ -407,7 +401,7 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 
 <br>
 
-- Trees 
+- **Trees**
   
   <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/python_note/trees.png?raw=true" alt="trees" style="zoom:50%;" />
   
@@ -508,11 +502,11 @@ def find_path(tree, x):
 
 <br>
 
-- Dictionaries
+- **Dictionaries**
   - Quick even with Key increase 
   - More memory
   - Space trade time
-  - **Hashtable**
+  - **HashTable**
 
 
 ```python
@@ -528,21 +522,23 @@ def find_path(tree, x):
 {3: 9, 4: 16, 5: 25}
 ```
 
+
+
 ```python
 # Example from LeetCode #1 Two Sum
 def two_sum(nums, target):
-    collect = {}									# Hash Map
-    for i, num in enumerate(nums):
-        result = target - num
-        if num not in collect:
-            collect[result] = i
-        else:
-            return [collect[num], i]
+    dic = {}                                # initial a dic
+    for i, num in enumerate(nums):              
+        targ_num = target - num             # calc difference between targ and current value
+        if targ_num in dic:                 # if the difference already in dic
+            return [dic[targ_num], i]       # direct return the index of both nums 
+        dic[num] = i                        # otherwise save the num in dic for next search
+
 ```
 
 <br>
 
-- Non-Local and Global Assignment
+- **Non-Local and Global Assignment**
   - `nonlocal <var_name>`: defines outer function, which means only use it if there's a inside function. Otherwise should use `global <var_name>` 
   - place in top of inner function
 
@@ -551,21 +547,21 @@ def outer_func():
     a = 1               # Initial a = 1
     
     # 1) Normal 
-    def inner_func():
+    def inner_func1():
         a = 2           # Update a = 2, irrelevant with `a = 1` above 
         print(a)        # -> 2
     inner_func()          
     print(a)            # -> 1, print a under `outer_func()` out
     
     # 2) UnboundLocalError
-    def inner_func():
+    def inner_func2():
         print(a)        # -> Error! Call `a` which didn't initialize yet 
         a = 2           # Initial
     inner_func()      
     print(a)
     
     # 3) with `nonlocal`
-    def inner_func():
+    def inner_func3():
         nonlocal a      # def a is a variabl from outside function `outer_func()`
         print(a)        # -> 1, here is `a` from outside
         a = 2           # Update a = 2  
@@ -577,7 +573,7 @@ def outer_func():
 
 ```python
 a = 1               # Initial a = 1
-def inner_func():
+def func():
     global a        # def that a is global, which means inside this function is `a = 1`
     print(a)        # -> 1, here is `a` from outside
     a = 2           # Update a = 2  
@@ -587,14 +583,14 @@ print(a)            # -> 2
 
 <br>
 
-- Iterators
+- **Iterators**
   - `iter(iterable)`: Return an iterator over the elements of an iterable value
   - `next(iterator)`: Return the next element in an iterator 
   - print out an element in the list and remove it from the list at same time
 
 <br>
 
-- Built-in functions for Iteration
+- **Built-in functions for Iteration**
   - `map(func, iterable)`: Iterate over `func(x)` for `x` in `iterable`
   - `filter(func, iterable)`: Iterate over `x` iterable if `func(x)`
   - `reversed(sequence)`: Iterate over all the elements in a sequence in reverse order 
@@ -604,7 +600,7 @@ print(a)            # -> 2
 
 <br>
 
-- Generators and Generator Functions
+- **Generators and Generator Functions**
   - `yield var_name`: iterable '`return`'
   - A generator function is a function that `yield`s values insted of `return`ing them. And can `yield` multiple times. **Pro**: save the CPU.
   - `yield from`: will yield all values from an iterator or iterable, e.g. a list.
@@ -637,12 +633,13 @@ res: None
 
 <br>
 
-- Object Oriented Programming (OOP)
+- **Object Oriented Programming (OOP)**
   - **class**: a template for creating objects, e.g. `Car`
   - **instance**: a single object created from a class, e.g. `my_car = Car('red')` and `my_car` is an instance of the `Car` class
   - **attribute**: a property of an object, specific to an instance. A **variable** that belongs to the class, e.g. `self.wheels` and `self.color`. Invoke: `my_car.wheels` and `    my_car.color` 
   - **class attribute**: a property of an object, shared by all instances of a class 
     - Accessing Attributes: `getattr(<name>, 'var')` and `hasattr(<name>, 'var')` 
+    - e.g. `num_whells`
   - **method**: an action (function) that all instances of a class may perform, e.g. `drive` and `pop_tire`. Invoke: `my_car.drive()`
   - **constructor**: how to build an instance of the class. `__init__` is called with the new object as its first argument (named `self`), along with any additional arguments. 
 
@@ -676,7 +673,7 @@ class Car(object):															 # class
 
 <br>
 
-- Inheritance: to reduce the repeated code.
+- **Inheritance**: to reduce the repeated code.
   - `class <name>(<base class>):`
 
 
@@ -1183,9 +1180,9 @@ The idea of the solution for this question can split into two parts:
 <br>
 <br>
 
-Some Examples from **hw03**:
+- Some Examples from **hw03**:
+  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw03/hw03.py)
 
-- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw03/hw03.py)
 
  ```python
  # ------------------------------------- Q4 ------------------------------------- #
@@ -1224,9 +1221,9 @@ For case like this, its usefull to via **recursion** to get into the `leaf` by `
 <br>
 <br>
 
-Some Examples from **lab06**:
+- Some Examples from **lab06**:
+  - full codes see [here]()
 
-- full codes see [here]()
 
 ```python
 # -------------------------------------- Q1 -------------------------------------- #
@@ -1278,9 +1275,9 @@ Q4: for case with quivalent value from `entry` and `elem` could caused the infin
 <br>
 <br>
 
-Some Examples from **hw04**:
+- Some Examples from **hw04**:
+  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/HW/hw04)
 
-- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/HW/hw04)
 
 ```python
 # ------------------------------ Q3 ------------------------------ #
@@ -1335,9 +1332,9 @@ def permutations(seq):
 <br>
 <br>
 
-Some Examples from **lab07**:
+- Some Examples from **lab07**:
+  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab07)
 
-- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab07)
 
 ```python
 # This is a method from the class ProfessorCard
@@ -1371,7 +1368,8 @@ False
 
 Copy a list to avoid trouble when mutate a list as iterating through it. In line 11 directly used the copy `opponent.deck.cards[:]` with for-loop.
 
-
+<br>
+<br>
 
 
 
