@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-13T15:44:32+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-20T17:44:51+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-06-13 17:44:32 +0200
+    date="2022-06-20 19:44:51 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jun 13, 2022,  5:44 PM +0200"
-    >Jun 13</em>
+      title="Mon, Jun 20, 2022,  7:44 PM +0200"
+    >Jun 20</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="5763 words">
-  <em>32 min</em> read</span>
+  title="6100 words">
+  <em>33 min</em> read</span>
 
 
       <!-- page views -->
@@ -2895,7 +2895,7 @@
 <ul>
   <li>Some Examples from <strong>lab06</strong>:
     <ul>
-      <li>full codes see <a href="">here</a></li>
+      <li>full codes see <a href="https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Labor/lab06/lab06.py">here</a></li>
     </ul>
   </li>
 </ul>
@@ -3172,6 +3172,83 @@
 
 <p><br />
 <br /></p>
+
+<p>Some Examples from <strong>hw05</strong>:</p>
+
+<ul>
+  <li>full codes see <a href="https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw05/hw05.py">here</a></li>
+  <li>A tree is a binary search tree (BST) if:
+    <ul>
+      <li>Each <code class="language-plaintext highlighter-rouge">node</code> has at most two <code class="language-plaintext highlighter-rouge">children (branches)</code>, which means a <code class="language-plaintext highlighter-rouge">leaf</code> is automatically a valid BST</li>
+      <li>The <code class="language-plaintext highlighter-rouge">children</code> are valid binary search trees, which means both side of the tree must be BST</li>
+      <li>For every node, <code class="language-plaintext highlighter-rouge">node</code>’s <strong>left</strong> <code class="language-plaintext highlighter-rouge">child</code> are <strong>less</strong> than or <strong>equal</strong> to the <code class="language-plaintext highlighter-rouge">label</code> of the <code class="language-plaintext highlighter-rouge">node</code></li>
+      <li>For every node, <code class="language-plaintext highlighter-rouge">node</code>’s <strong>right</strong> <code class="language-plaintext highlighter-rouge">child</code> are <strong>greater</strong> than the <code class="language-plaintext highlighter-rouge">label</code> of the <code class="language-plaintext highlighter-rouge">node</code></li>
+      <li>If theres only <strong>one</strong> <code class="language-plaintext highlighter-rouge">child</code>, so it can consider as <strong>left</strong> or <strong>right</strong>, which means theres no rules, it’s automatically a BST</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">is_bst</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="c1"># search for the minimum of the right child (branches)
+</span>    <span class="k">def</span> <span class="nf">bst_min</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">t</span><span class="p">.</span><span class="n">is_leaf</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">t</span><span class="p">.</span><span class="n">label</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">label</span><span class="p">,</span> <span class="n">bst_min</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="c1"># search for the maximum of the left child (branches)
+</span>    <span class="k">def</span> <span class="nf">bst_max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">t</span><span class="p">.</span><span class="n">is_leaf</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">t</span><span class="p">.</span><span class="n">label</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">label</span><span class="p">,</span> <span class="n">bst_max</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">t</span><span class="p">.</span><span class="n">is_leaf</span><span class="p">():</span>             <span class="c1"># a leaf is automatically a bst
+</span>        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>    <span class="c1"># if only one child
+</span>        <span class="k">return</span> <span class="bp">True</span>             
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>		<span class="c1"># max 2 children
+</span>      	<span class="c1"># 1) the label greater than or equal to all nodes on the left branches and
+</span>        <span class="c1"># smaller than all nodes on the right branches 
+</span>        <span class="c1"># 2) both children are BST
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">bst_max</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">.</span><span class="n">label</span> <span class="o">&lt;</span> <span class="n">bst_min</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="ow">and</span> 
+        <span class="n">is_bst</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="n">is_bst</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">[</span><span class="mi">1</span><span class="p">])):</span>
+                <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Used two helper functions <code class="language-plaintext highlighter-rouge">bst_max()</code> and  <code class="language-plaintext highlighter-rouge">bst_min()</code> to find the max and the min of the left and right branches. So if the <code class="language-plaintext highlighter-rouge">label</code> is bigger than the max of the left and smaller than / equal to the min of the right branches, it’s a BST. The helper function used the recursion to locate the min / max value, if didn’t find it until the leaf, so the leaf is the min / max value. To be clear: <code class="language-plaintext highlighter-rouge">branches[0]</code> is the left side and <code class="language-plaintext highlighter-rouge">branches[1]</code> it the right side.</p>
 
 
 </div>

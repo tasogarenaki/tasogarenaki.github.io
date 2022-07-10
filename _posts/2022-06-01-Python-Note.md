@@ -1222,7 +1222,7 @@ For case like this, its usefull to via **recursion** to get into the `leaf` by `
 <br>
 
 - Some Examples from **lab06**:
-  - full codes see [here]()
+  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Labor/lab06/lab06.py)
 
 
 ```python
@@ -1371,7 +1371,48 @@ Copy a list to avoid trouble when mutate a list as iterating through it. In line
 <br>
 <br>
 
+Some Examples from **hw05**:
 
+- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw05/hw05.py)
+- A tree is a binary search tree (BST) if:
+  - Each `node` has at most two `children (branches)`, which means a `leaf` is automatically a valid BST
+  - The `children` are valid binary search trees, which means both side of the tree must be BST
+  - For every node, `node`'s **left** `child` are **less** than or **equal** to the `label` of the `node`
+  - For every node, `node`'s **right** `child` are **greater** than the `label` of the `node`
+  - If theres only **one** `child`, so it can consider as **left** or **right**, which means theres no rules, it's automatically a BST 
+
+```python
+def is_bst(t):
+    # search for the minimum of the right child (branches)
+    def bst_min(t):
+        if t.is_leaf():
+            return t.label
+        return min(t.label, bst_min(t.branches[0]))
+
+    # search for the maximum of the left child (branches)
+    def bst_max(t):
+        if t.is_leaf():
+            return t.label
+        return max(t.label, bst_max(t.branches[0]))
+
+    if t.is_leaf():             # a leaf is automatically a bst
+        return True
+
+    if len(t.branches) == 1:    # if only one child
+        return True             
+    
+    if len(t.branches) == 2:		# max 2 children
+      	# 1) the label greater than or equal to all nodes on the left branches and
+        # smaller than all nodes on the right branches 
+        # 2) both children are BST
+        if (bst_max(t.branches[0]) <= t.label < bst_min(t.branches[1]) and 
+        is_bst(t.branches[0]) and is_bst(t.branches[1])):
+                return True
+
+    return False
+```
+
+Used two helper functions `bst_max()` and  `bst_min()` to find the max and the min of the left and right branches. So if the `label` is bigger than the max of the left and smaller than / equal to the min of the right branches, it's a BST. The helper function used the recursion to locate the min / max value, if didn't find it until the leaf, so the leaf is the min / max value. To be clear: `branches[0]` is the left side and `branches[1]` it the right side.
 
 
 
