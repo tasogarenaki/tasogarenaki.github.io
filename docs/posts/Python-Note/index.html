@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-20T17:44:51+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-10T16:34:53+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-06-20 19:44:51 +0200
+    date="2022-07-10 18:34:53 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jun 20, 2022,  7:44 PM +0200"
-    >Jun 20</em>
+      title="Sun, Jul 10, 2022,  6:34 PM +0200"
+    >Jul 10</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6100 words">
-  <em>33 min</em> read</span>
+  title="6386 words">
+  <em>35 min</em> read</span>
 
 
       <!-- page views -->
@@ -1424,6 +1424,65 @@
 <p><br /></p>
 
 <ul>
+  <li><strong>Linked Lists</strong>
+    <ul>
+      <li>recursive object only stores 1) its first value 2) a reference to the rest of the list, which is another linked list.</li>
+      <li>Linked lists are a list of items pointing to their neighbors. Notice that there’s no explicit index for each item.</li>
+      <li>In Python, if want to add an item at the head of the list, must create a new list and move all the items in the new list. With a linked list, the neighbor of the new item is the old beginning of the list.</li>
+      <li>To get an Index from the built-in list: lst[x] with x is the index. But with the linked list must start at the first item, then repeatedly follow the <code class="language-plaintext highlighter-rouge">rest</code> attribute, e.g. <code class="language-plaintext highlighter-rouge">link.rest.rest.first</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">Link</span><span class="p">:</span>
+    <span class="n">empty</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">rest</span><span class="o">=</span><span class="n">empty</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">rest</span> <span class="ow">is</span> <span class="n">Link</span><span class="p">.</span><span class="n">empty</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">Link</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">rest</span> <span class="o">=</span> <span class="n">rest</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">rest</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Link</span><span class="p">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">rest_repr</span> <span class="o">=</span> <span class="s">', '</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rest</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rest_repr</span> <span class="o">=</span> <span class="s">''</span>
+        <span class="k">return</span> <span class="s">'Link('</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">first</span><span class="p">)</span> <span class="o">+</span> <span class="n">rest_repr</span> <span class="o">+</span> <span class="s">')'</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s">'&lt;'</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="p">.</span><span class="n">rest</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Link</span><span class="p">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">first</span><span class="p">)</span> <span class="o">+</span> <span class="s">' '</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">rest</span>
+        <span class="k">return</span> <span class="n">string</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">first</span><span class="p">)</span> <span class="o">+</span> <span class="s">'&gt;'</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<ul>
   <li><code class="language-plaintext highlighter-rouge">enumerate()</code></li>
 </ul>
 
@@ -1479,7 +1538,7 @@
 
     <ul>
       <li><code class="language-plaintext highlighter-rouge">from sklearn import tree</code></li>
-      <li>consider <strong>recursion</strong></li>
+      <li>consider <strong>recursion</strong>, a tree is a recursive abstract data type that has a <code class="language-plaintext highlighter-rouge">lable</code> and <code class="language-plaintext highlighter-rouge">branches</code></li>
       <li><strong>root</strong>: the node at the top of the tree, e.g. <strong>7</strong></li>
       <li><strong>label</strong>: the value in a node, selected by the <code class="language-plaintext highlighter-rouge">label()</code> function, <strong>up layer</strong>, e.g. <strong>all of the integers</strong> are values of this picture</li>
       <li><strong>branch</strong>: a subtree of the root, selected by the <code class="language-plaintext highlighter-rouge">branches()</code> function, <strong>under layer</strong>, e.g. <strong>1</strong></li>
@@ -2077,6 +2136,20 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dog</span><span class="p">.</span><span class="n">talk</span><span class="p">()</span>
 <span class="n">doggy</span> <span class="n">says</span> <span class="n">woof</span><span class="err">!</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Order of Growth</strong> (time):
+    <ul>
+      <li>Exponential growth, incrementing n multiplies time by a constant: $O(b^n)$</li>
+      <li>Quadratic growth, incrementing n increases time by n times a constant: $O(n^2)$</li>
+      <li>Linear growth, incrementing n increases time by a constant: $O(n)$</li>
+      <li>Logarithmic growth, doubling n only increaments time by a constant: $O(\mathrm{log} \, n)$</li>
+      <li>Constant growth, increasing n doesn’t affect time: $O(1)$</li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="32-examples">3.2 Examples<a href="#32-examples" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 

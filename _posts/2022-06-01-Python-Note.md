@@ -375,6 +375,38 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
 
 <br>
 
+- **Linked Lists**
+  - recursive object only stores 1) its first value 2) a reference to the rest of the list, which is another linked list.
+  - Linked lists are a list of items pointing to their neighbors. Notice that there's no explicit index for each item. 
+  - In Python, if want to add an item at the head of the list, must create a new list and move all the items in the new list. With a linked list, the neighbor of the new item is the old beginning of the list.
+  - To get an Index from the built-in list: lst[x] with x is the index. But with the linked list must start at the first item, then repeatedly follow the `rest` attribute, e.g. `link.rest.rest.first`.
+
+```python
+class Link:
+    empty = ()
+
+    def __init__(self, first, rest=empty):
+        assert rest is Link.empty or isinstance(rest, Link)
+        self.first = first
+        self.rest = rest
+
+    def __repr__(self):
+        if self.rest is not Link.empty:
+            rest_repr = ', ' + repr(self.rest)
+        else:
+            rest_repr = ''
+        return 'Link(' + repr(self.first) + rest_repr + ')'
+
+    def __str__(self):
+        string = '<'
+        while self.rest is not Link.empty:
+            string += str(self.first) + ' '
+            self = self.rest
+        return string + str(self.first) + '>'
+```
+
+<br>
+
 - `enumerate()`
 
 ```python
@@ -406,7 +438,7 @@ First check the `if` statement with `x` from the List `[1, 2, 3, 4, 5]`, then ap
   <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/python_note/trees.png?raw=true" alt="trees" style="zoom:50%;" />
   
   - `from sklearn import tree`
-  - consider **recursion**
+  - consider **recursion**, a tree is a recursive abstract data type that has a `lable` and `branches`
   - **root**: the node at the top of the tree, e.g. **7**
   - **label**: the value in a node, selected by the `label()` function, **up layer**, e.g. **all of the integers** are values of this picture
   - **branch**: a subtree of the root, selected by the `branches()` function, **under layer**, e.g. **1**
@@ -737,6 +769,15 @@ doggy ate a meat!
 >>> dog.talk()
 doggy says woof!
 ```
+
+<br>
+
+- **Order of Growth** (time): 
+  - Exponential growth, incrementing n multiplies time by a constant: $O(b^n)$
+  - Quadratic growth, incrementing n increases time by n times a constant: $O(n^2)$
+  - Linear growth, incrementing n increases time by a constant: $O(n)$
+  - Logarithmic growth, doubling n only increaments time by a constant: $O(\mathrm{log} \, n)$
+  - Constant growth, increasing n doesn't affect time: $O(1)$
 
 
 
