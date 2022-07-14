@@ -1453,9 +1453,40 @@ def is_bst(t):
     return False
 ```
 
-Used two helper functions `bst_max()` and  `bst_min()` to find the max and the min of the left and right branches. So if the `label` is bigger than the max of the left and smaller than / equal to the min of the right branches, it's a BST. The helper function used the recursion to locate the min / max value, if didn't find it until the leaf, so the leaf is the min / max value. To be clear: `branches[0]` is the left side and `branches[1]` it the right side.
+Used two helper functions `bst_max()` and  `bst_min()` to find the max and the min of the left and right branches. So if the `label` is bigger than the max of the left and smaller than / equal to the min of the right branches, it's a BST. The helper function used the recursion to locate the min / max value, if didn't find it until the leaf, so the leaf is the min / max value. To be clear: `branches[0]` is the left side and `branches[1]` is the right side.
 
+<br>
+<br>
 
+Some Examples from **hw05**:
+
+- full codes see [here]()
+
+```python
+# -------------------------------------- Q3 -------------------------------------- # 
+"""remove the odd-indiced (0-based) elements from a linked list, if only one elment, return it directly"""
+def every_other(s):
+    # while s != s.empty and s.rest != empty 
+    # -> if only one element, will not get into the loop
+    while s and s.rest:             
+        s.rest = s.rest.rest        # remove the odd index (0-based)
+        s = s.rest                  # let the rest elements into the loop
+```
+
+Linked list has no `len()` or index, so just "replace" the odd one with others. Set the loop condition with `and` so if a linked list has only one elment will not get into the loop.
+
+```python
+# -------------------------------------- Q4 -------------------------------------- # 
+"""Mutates t so that each node's label becomes the product of all labels in the corresponding subtree rooted at t."""
+def cumulative_mul(t):
+    if t.is_leaf():             # if recursion get the leaf, return nothing
+        return
+    for b in t.branches:        
+        cumulative_mul(b)       # let the branches into the recursion
+        t.label *= b.label      # product of layer by layer 
+```
+
+Use the recursion and definition of branches, multiply layer by layer. Line 8 make sure every time only calculate the "new" label from the "new" Tree with is the `branches`, it's like stairs.
 
 
 

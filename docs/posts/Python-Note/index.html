@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-10T16:34:53+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-11T19:31:32+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-10 18:34:53 +0200
+    date="2022-07-11 21:31:32 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Sun, Jul 10, 2022,  6:34 PM +0200"
-    >Jul 10</em>
+      title="Mon, Jul 11, 2022,  9:31 PM +0200"
+    >Jul 11</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6386 words">
-  <em>35 min</em> read</span>
+  title="6606 words">
+  <em>36 min</em> read</span>
 
 
       <!-- page views -->
@@ -3321,7 +3321,60 @@
     <span class="k">return</span> <span class="bp">False</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Used two helper functions <code class="language-plaintext highlighter-rouge">bst_max()</code> and  <code class="language-plaintext highlighter-rouge">bst_min()</code> to find the max and the min of the left and right branches. So if the <code class="language-plaintext highlighter-rouge">label</code> is bigger than the max of the left and smaller than / equal to the min of the right branches, it’s a BST. The helper function used the recursion to locate the min / max value, if didn’t find it until the leaf, so the leaf is the min / max value. To be clear: <code class="language-plaintext highlighter-rouge">branches[0]</code> is the left side and <code class="language-plaintext highlighter-rouge">branches[1]</code> it the right side.</p>
+<p>Used two helper functions <code class="language-plaintext highlighter-rouge">bst_max()</code> and  <code class="language-plaintext highlighter-rouge">bst_min()</code> to find the max and the min of the left and right branches. So if the <code class="language-plaintext highlighter-rouge">label</code> is bigger than the max of the left and smaller than / equal to the min of the right branches, it’s a BST. The helper function used the recursion to locate the min / max value, if didn’t find it until the leaf, so the leaf is the min / max value. To be clear: <code class="language-plaintext highlighter-rouge">branches[0]</code> is the left side and <code class="language-plaintext highlighter-rouge">branches[1]</code> is the right side.</p>
+
+<p><br />
+<br /></p>
+
+<p>Some Examples from <strong>hw05</strong>:</p>
+
+<ul>
+  <li>full codes see <a href="">here</a></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q3 -------------------------------------- # 
+</span><span class="s">"""remove the odd-indiced (0-based) elements from a linked list, if only one elment, return it directly"""</span>
+<span class="k">def</span> <span class="nf">every_other</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="c1"># while s != s.empty and s.rest != empty 
+</span>    <span class="c1"># -&gt; if only one element, will not get into the loop
+</span>    <span class="k">while</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">s</span><span class="p">.</span><span class="n">rest</span><span class="p">:</span>             
+        <span class="n">s</span><span class="p">.</span><span class="n">rest</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">rest</span><span class="p">.</span><span class="n">rest</span>        <span class="c1"># remove the odd index (0-based)
+</span>        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">rest</span>                  <span class="c1"># let the rest elements into the loop
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>Linked list has no <code class="language-plaintext highlighter-rouge">len()</code> or index, so just “replace” the odd one with others. Set the loop condition with <code class="language-plaintext highlighter-rouge">and</code> so if a linked list has only one elment will not get into the loop.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q4 -------------------------------------- # 
+</span><span class="s">"""Mutates t so that each node's label becomes the product of all labels in the corresponding subtree rooted at t."""</span>
+<span class="k">def</span> <span class="nf">cumulative_mul</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">t</span><span class="p">.</span><span class="n">is_leaf</span><span class="p">():</span>             <span class="c1"># if recursion get the leaf, return nothing
+</span>        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">:</span>        
+        <span class="n">cumulative_mul</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>       <span class="c1"># let the branches into the recursion
+</span>        <span class="n">t</span><span class="p">.</span><span class="n">label</span> <span class="o">*=</span> <span class="n">b</span><span class="p">.</span><span class="n">label</span>      <span class="c1"># product of layer by layer 
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>Use the recursion and definition of branches, multiply layer by layer. Line 8 make sure every time only calculate the “new” label from the “new” Tree with is the <code class="language-plaintext highlighter-rouge">branches</code>, it’s like stairs.</p>
 
 
 </div>
