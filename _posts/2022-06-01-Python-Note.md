@@ -1488,7 +1488,45 @@ def cumulative_mul(t):
 
 Use the recursion and definition of branches, multiply layer by layer. Line 8 make sure every time only calculate the "new" label from the "new" Tree with is the `branches`, it's like stairs.
 
+```python
+# -------------------------------------- Q5 -------------------------------------- # 
+"""The idea is to check whether a link contains a cycle."""
+# version 1
+def has_cycle(link):
+    # similar as Q2 (except Line 9!)
+    lst = []                # create a list to save the passed link
+    while link:
+        if link in lst:     # if list contains the link, return True         
+            return True
+        lst.append(link)    # save the linked list in the list, thinking about two pointer!
+        link = link.rest    # let the rest of the linked list in the loop
+    return False 
 
+
+# Version 2 with constant space 
+def has_cycle_constant(link):
+    # two pointers 
+    if not link:                                    # if is empty, return False
+        return False
+
+    slow, fast = link, link.rest                    # define two ponters 
+
+    while fast:                                     # while not empty
+        # if fast is empty, which means no more elements to compair
+        if not fast.rest:                           
+            return False
+        # if both pointers contain each other
+        # which means, fast one catch up the slow one by one more cycle
+        elif fast is slow or fast.rest is slow:     # compair two steps, faster     
+            return True
+        else:                                       # let rest elements into loop                                           
+            slow, fast = slow.rest, fast.rest.rest  # let fast one two steps faster, otherwise too slow
+    return False
+```
+
+- Version 1: The idea of the solution is to create a **list** to save all linked list went through the loop. By next loop will only save the rest of the linked list. Eventuell has this **list** a whole variante of the linked list. Similar like two pointer. If the linked list is a cycle, it will find the same part of the elements in the **list**.
+  - e.g. by first run: original `link = [1 2 3 / 1 2 3 / 1 2 3 ....]`, `lst = [1 2 3 / 1 2 3 / 1 2 3/ ...]` $\neq$ `link = [2 3 / 1 2 3 / 1 2 3 ....]`. By 2. run: `lst = [1 2 3 /... 2 3 / 1 2 3 ...]` $\neq$ `link = [3 / 1 2 3 / 1 2 3 ....]`. By 3. run: `lst = [1 2 3 /... 2 3 / 1 2 3 .../ 3 / 1 2 3 ....]` $=$ `link = [1 2 3 / 1 2 3 ....]`. As the 3. run shows, the `lst` contains the `link`.
+- Version 2: The idea is to create two pointers, one fast and one slow, eventuell compair them, if is the same then is cycled. Important is Line 29: two conditions to compair two steps, it's faster. And Line 32, if the linked list is a cycle, so it's getting there how ever it takes. So with `fast.rest.rest` can make it faster, analog can with `fast.rest.rest.rest`.
 
 
 

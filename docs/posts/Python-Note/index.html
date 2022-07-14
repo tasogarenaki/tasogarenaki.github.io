@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-11T19:31:32+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-14T19:12:34+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-11 21:31:32 +0200
+    date="2022-07-14 21:12:34 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jul 11, 2022,  9:31 PM +0200"
-    >Jul 11</em>
+      title="Thu, Jul 14, 2022,  9:12 PM +0200"
+    >Jul 14</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6606 words">
-  <em>36 min</em> read</span>
+  title="7089 words">
+  <em>39 min</em> read</span>
 
 
       <!-- page views -->
@@ -3375,6 +3375,85 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <p>Use the recursion and definition of branches, multiply layer by layer. Line 8 make sure every time only calculate the “new” label from the “new” Tree with is the <code class="language-plaintext highlighter-rouge">branches</code>, it’s like stairs.</p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q5 -------------------------------------- # 
+</span><span class="s">"""The idea is to check whether a link contains a cycle."""</span>
+<span class="c1"># version 1
+</span><span class="k">def</span> <span class="nf">has_cycle</span><span class="p">(</span><span class="n">link</span><span class="p">):</span>
+    <span class="c1"># similar as Q2 (except Line 9!)
+</span>    <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>                <span class="c1"># create a list to save the passed link
+</span>    <span class="k">while</span> <span class="n">link</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>     <span class="c1"># if list contains the link, return True         
+</span>            <span class="k">return</span> <span class="bp">True</span>
+        <span class="n">lst</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>    <span class="c1"># save the linked list in the list, thinking about two pointer!
+</span>        <span class="n">link</span> <span class="o">=</span> <span class="n">link</span><span class="p">.</span><span class="n">rest</span>    <span class="c1"># let the rest of the linked list in the loop
+</span>    <span class="k">return</span> <span class="bp">False</span> 
+
+
+<span class="c1"># Version 2 with constant space 
+</span><span class="k">def</span> <span class="nf">has_cycle_constant</span><span class="p">(</span><span class="n">link</span><span class="p">):</span>
+    <span class="c1"># two pointers 
+</span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">link</span><span class="p">:</span>                                    <span class="c1"># if is empty, return False
+</span>        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="n">slow</span><span class="p">,</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">link</span><span class="p">,</span> <span class="n">link</span><span class="p">.</span><span class="n">rest</span>                    <span class="c1"># define two ponters 
+</span>
+    <span class="k">while</span> <span class="n">fast</span><span class="p">:</span>                                     <span class="c1"># while not empty
+</span>        <span class="c1"># if fast is empty, which means no more elements to compair
+</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">fast</span><span class="p">.</span><span class="n">rest</span><span class="p">:</span>                           
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="c1"># if both pointers contain each other
+</span>        <span class="c1"># which means, fast one catch up the slow one by one more cycle
+</span>        <span class="k">elif</span> <span class="n">fast</span> <span class="ow">is</span> <span class="n">slow</span> <span class="ow">or</span> <span class="n">fast</span><span class="p">.</span><span class="n">rest</span> <span class="ow">is</span> <span class="n">slow</span><span class="p">:</span>     <span class="c1"># compair two steps, faster     
+</span>            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>                                       <span class="c1"># let rest elements into loop                                           
+</span>            <span class="n">slow</span><span class="p">,</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">slow</span><span class="p">.</span><span class="n">rest</span><span class="p">,</span> <span class="n">fast</span><span class="p">.</span><span class="n">rest</span><span class="p">.</span><span class="n">rest</span>  <span class="c1"># let fast one two steps faster, otherwise too slow
+</span>    <span class="k">return</span> <span class="bp">False</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>Version 1: The idea of the solution is to create a <strong>list</strong> to save all linked list went through the loop. By next loop will only save the rest of the linked list. Eventuell has this <strong>list</strong> a whole variante of the linked list. Similar like two pointer. If the linked list is a cycle, it will find the same part of the elements in the <strong>list</strong>.
+    <ul>
+      <li>e.g. by first run: original <code class="language-plaintext highlighter-rouge">link = [1 2 3 / 1 2 3 / 1 2 3 ....]</code>, <code class="language-plaintext highlighter-rouge">lst = [1 2 3 / 1 2 3 / 1 2 3/ ...]</code> $\neq$ <code class="language-plaintext highlighter-rouge">link = [2 3 / 1 2 3 / 1 2 3 ....]</code>. By 2. run: <code class="language-plaintext highlighter-rouge">lst = [1 2 3 /... 2 3 / 1 2 3 ...]</code> $\neq$ <code class="language-plaintext highlighter-rouge">link = [3 / 1 2 3 / 1 2 3 ....]</code>. By 3. run: <code class="language-plaintext highlighter-rouge">lst = [1 2 3 /... 2 3 / 1 2 3 .../ 3 / 1 2 3 ....]</code> $=$ <code class="language-plaintext highlighter-rouge">link = [1 2 3 / 1 2 3 ....]</code>. As the 3. run shows, the <code class="language-plaintext highlighter-rouge">lst</code> contains the <code class="language-plaintext highlighter-rouge">link</code>.</li>
+    </ul>
+  </li>
+  <li>Version 2: The idea is to create two pointers, one fast and one slow, eventuell compair them, if is the same then is cycled. Important is Line 29: two conditions to compair two steps, it’s faster. And Line 32, if the linked list is a cycle, so it’s getting there how ever it takes. So with <code class="language-plaintext highlighter-rouge">fast.rest.rest</code> can make it faster, analog can with <code class="language-plaintext highlighter-rouge">fast.rest.rest.rest</code>.</li>
+</ul>
 
 
 </div>
