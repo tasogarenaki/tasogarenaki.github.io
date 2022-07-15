@@ -565,7 +565,6 @@ def two_sum(nums, target):
         if targ_num in dic:                 # if the difference already in dic
             return [dic[targ_num], i]       # direct return the index of both nums 
         dic[num] = i                        # otherwise save the num in dic for next search
-
 ```
 
 <br>
@@ -864,12 +863,6 @@ To run this function i.e. `my_cycle = cycle(add1, times2, add3)(2)(1)`:
 ```python
 # ----------------------------------------- Q1 ---------------------------------- #
 def choose(paragraphs, select, k):
-    """Return the Kth paragraph from PARAGRAPHS for which SELECT called on the
-    paragraph returns true. If there are fewer than K such paragraphs, return
-    the empty string.
-    """
-    # BEGIN PROBLEM 1
-    "*** YOUR CODE HERE ***"    
     # Check the List with full Indexs
     for i in range(len(paragraphs)):
         if select(paragraphs[i]):
@@ -888,21 +881,6 @@ def choose(paragraphs, select, k):
 ```python
 # ----------------------------------------- Q2 ---------------------------------- #
 def about(topic):
-    """Return a select function that returns whether a paragraph contains one
-    of the words in TOPIC.
-
-    >>> about_dogs = about(['dog', 'dogs', 'pup', 'puppy'])
-    >>> choose(['Cute Dog!', 'That is a cat.', 'Nice pup!'], about_dogs, 0)
-    'Cute Dog!'
-    >>> choose(['Cute Dog!', 'That is a cat.', 'Nice pup.'], about_dogs, 1)
-    'Nice pup.'
-    
-    >>> dogs = about(['dogs', 'hounds'])
-    >>> dogs('A paragraph about cats.')
-    False
-    >>> dogs('"DOGS" stands for Department Of Geophysical Science.')
-    True
-    """
     assert all([lower(x) == x for x in topic]), 'topics should be lowercase.'
     # BEGIN PROBLEM 2
     "*** YOUR CODE HERE ***"
@@ -924,11 +902,6 @@ def about(topic):
 ```python
 # ----------------------------------------- Q6 ---------------------------------- #
 def shifty_shifts(start, goal, limit):
-    """A diff function for autocorrect that determines how many letters
-    in START need to be substituted to create GOAL, then adds the difference in
-    their lengths.
-    """
-    # BEGIN PROBLEM 6
     diff = abs(len(start)-len(goal))
 
     # version 1: 
@@ -945,7 +918,6 @@ def shifty_shifts(start, goal, limit):
     # recursion: use [1:] -> by running every time the length of string will -1
     # + count, cause will reset as 0 every time
     return shifty_shifts(start[1:], goal[1:], limit) + count
-
 
     # version 2: 
     def counting(start, goal, limit, count):
@@ -1001,9 +973,6 @@ If there's different `char`, there's three conditions:
 ```python
 # ----------------------------------------- Q8 ---------------------------------- #
 def report_progress(typed, prompt, user_id, send):
-    """Send a report of your id and progress so far to the multiplayer server."""
-    # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
     i = 0
     for k in typed:
         # located the first incorrect word
@@ -1022,28 +991,6 @@ def report_progress(typed, prompt, user_id, send):
 ```python
 # ----------------------------------------- Q9 ---------------------------------- #
 def time_per_word(times_per_player, words):
-    """Given timing data, return a game data abstraction, which contains a list
-    of words and the amount of time each player took to type each word.
-    
-    >>> p = [[1, 4, 6, 7], [0, 4, 6, 9]]
-    >>> words = ['This', 'is', 'fun']
-    >>> game = time_per_word(p, words)
-    >>> all_words(game)   ----> game[0]
-    ['This', 'is', 'fun']
-    >>> all_times(game)   ----> game[1]
-    [[3,2,1],[4,2,3]]
-
-    >>> p = [[0, 2, 3], [2, 4, 7]]
-    >>> game = time_per_word(p, ['hello', 'world'])
-    >>> word_at(game, 1)   ----> game[0][word_index]
-    'world'
-    >>> all_times(game)
-    [[2,1],[2,3]]
-    >>> time(game, 0, 1)   ----> game[1][player_num][word_index]
-    1: 0 -> [2,1] -> 1 -> [1]
-    """
-    # BEGIN PROBLEM 9
-    "*** YOUR CODE HERE ***"
     # Initial 2D-Array
     # times[i][j] with player i (num) and index of word j (num)
     times = [[0 for i in range(len(j)-1)] for j in times_per_player]
@@ -1067,24 +1014,9 @@ def time_per_word(times_per_player, words):
 ```python
 # ----------------------------------------- Q10 ---------------------------------- #
 def fastest_words(game):
-    """Return a list of lists of which words each player typed fastest.
-    >>> p0 = [2, 2, 3]
-    >>> p1 = [6, 1, 2]
-    >>> fastest_words(game(['What', 'great', 'luck'], [p0, p1]))
-    # p0 has only 'What' faster than p1, so ['What']
-    # p1 has both 'great' and 'luck' faster than p0, so ['great','luck']
-    [['What'],['great','luck']]
-
-    >>> p0 = [2, 2, 3]
-    >>> p1 = [6, 1, 3]
-    >>> fastest_words(game(['What', 'great', 'luck'], [p0, p1]))  
-    # with a tie, choose the first player
-    [['What','luck'],['great']]
-    """
     player_indices = range(len(all_times(game)))  # contains an *index* for each player
     word_indices = range(len(all_words(game)))    # contains an *index* for each word
-    # BEGIN PROBLEM 10
-    "*** YOUR CODE HERE ***"
+
     # see exmaple with time() by Q9
     # Initial a empty Array
     result = [[] for i in player_indices]
@@ -1106,8 +1038,6 @@ def fastest_words(game):
         # add the word in the array
         result[winer] += [word_at(game, word)]
     return result 
-
-
 ```
 
 <br>
@@ -1119,17 +1049,6 @@ def fastest_words(game):
 ```python
 # ------------------------------------- Q5 ------------------------------------- #
 def berry_finder(t):
-    """Returns True if t contains a node with the value 'berry' and 
-    False otherwise.
-
-    >>> scrat = tree('berry')
-    >>> berry_finder(scrat)
-    True
-    >>> sproul = tree('roots', [tree('branch1', [tree('leaf'), tree('berry')]), tree('branch2')])
-    >>> berry_finder(sproul)
-    True
-    """
-    "*** YOUR CODE HERE ***"
     if label(t) == 'berry':
         return True
     # if branch is empty, return False, cause the label already checked 
@@ -1148,25 +1067,6 @@ def berry_finder(t):
 ```python
 # ------------------------------------- Q6 ------------------------------------- #
 def sprout_leaves(t, leaves):
-    """Sprout new leaves containing the data in leaves at each leaf in
-    the original tree t and return the resulting tree.
-
-    >>> t1 = tree(1, [tree(2), tree(3)])
-    >>> print_tree(t1)
-    1
-      2
-      3
-    >>> new1 = sprout_leaves(t1, [4, 5])
-    >>> print_tree(new1)
-    1
-      2
-        4
-        5
-      3
-        4
-        5
-    """
-    "*** YOUR CODE HERE ***"
     # use recursion --> into lowest leaves that branch is empty (leaf)
     # if branch is empty, add the leaves
     if is_leaf(t):
@@ -1183,13 +1083,6 @@ def sprout_leaves(t, leaves):
 ```python
 # ------------------------------------- Q10 ------------------------------------- #
 def add_trees(t1, t2):
-    """
-    >>> print_tree(add_trees(tree(2), tree(3, [tree(4), tree(5)])))
-    5
-      4
-      5
-    """
-    "*** YOUR CODE HERE ***"
     # use ADT and recursion
     length1, length2 = len(branches(t1)), len(branches(t2))
 
@@ -1228,20 +1121,6 @@ The idea of the solution for this question can split into two parts:
  ```python
  # ------------------------------------- Q4 ------------------------------------- #
  def replace_leaf(t, find_value, replace_value):
-     """Returns a new tree where every leaf value equal to find_value has
-     been replaced with replace_value.
- 
-     >>> yggdrasil = tree('odin',
-     ...                  [tree('balder',
-     ...                        [tree('thor'),
-     ...                         tree('freya')])])
-     >>> print_tree(replace_leaf(yggdrasil, 'thor', 'freya'))
-     odin
-       balder
-         freya
-         freya
-     """
-     "*** YOUR CODE HERE ***"
      # use recursion into leaf
      if is_leaf(t):
          if label(t) == find_value:
@@ -1269,9 +1148,6 @@ For case like this, its usefull to via **recursion** to get into the `leaf` by `
 ```python
 # -------------------------------------- Q1 -------------------------------------- #
 def make_fib():
-    """Returns a function that returns the next Fibonacci number
-    every time it is called."""
-    "*** YOUR CODE HERE ***"
     pre, pro = -1, 1
     def count_fib():
         nonlocal pre, pro
@@ -1282,21 +1158,8 @@ def make_fib():
     return count_fib
   
   
-  
-  
 # -------------------------------------- Q4 -------------------------------------- #
 def insert_items(lst, entry, elem):
-    """
-    >>> test_lst = [1, 5, 8, 5, 2, 3]
-    >>> new_lst = insert_items(test_lst, 5, 7)
-    >>> new_lst
-    [1, 5, 7, 8, 5, 7, 2, 3]
-    >>> large_lst = [1, 4, 8]
-    >>> large_lst2 = insert_items(large_lst, 4, 4)
-    >>> large_lst2
-    [1, 4, 4, 8]
-    """
-    "*** YOUR CODE HERE ***"
     new_lst = lst
     flag = 0
     for i, num in enumerate(lst):
@@ -1323,16 +1186,8 @@ Q4: for case with quivalent value from `entry` and `elem` could caused the infin
 ```python
 # ------------------------------ Q3 ------------------------------ #
 def repeated(t, k):
-    """Return the first value in iterator T that appears K times in a row.
-
-    >>> s = iter([3, 2, 2, 2, 1, 2, 1, 4, 4, 5, 5, 5])
-    >>> repeated(s, 3)
-    2
-    >>> repeated(s, 3)
-    5
-    """
     assert k > 1
-    "*** YOUR CODE HERE ***"
+
     # iter(): for-loop works like next()
     count = 1
     pro = 0
@@ -1347,15 +1202,8 @@ def repeated(t, k):
         pro = pre   
         
         
-        
-        
 # ------------------------------ Q4 ------------------------------ #
 def permutations(seq):
-    """
-    >>> sorted(permutations([1, 2, 3])) 
-    [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-    """
-    "*** YOUR CODE HERE ***"
     # use recursion to get into the single value
     # use yield to invoke the function to get all the order 
     if len(seq) == 1:
@@ -1381,7 +1229,7 @@ def permutations(seq):
 # This is a method from the class ProfessorCard
 def effect(self, other_card, player, opponent):
         orig_opponent_deck_length = len(opponent.deck.cards)
-        "*** YOUR CODE HERE ***"
+
         # adds the power of the opponent's card to all of mine 
         for my_card in player.deck.cards:
             my_card.attack += other_card.attack
@@ -1458,9 +1306,9 @@ Used two helper functions `bst_max()` and  `bst_min()` to find the max and the m
 <br>
 <br>
 
-Some Examples from **hw05**:
+- Some Examples from **lab08**:
+  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Labor/lab08/lab08.py)
 
-- full codes see [here]()
 
 ```python
 # -------------------------------------- Q3 -------------------------------------- # 
@@ -1479,7 +1327,7 @@ Linked list has no `len()` or index, so just "replace" the odd one with others. 
 # -------------------------------------- Q4 -------------------------------------- # 
 """Mutates t so that each node's label becomes the product of all labels in the corresponding subtree rooted at t."""
 def cumulative_mul(t):
-    if t.is_leaf():             # if recursion get the leaf, return nothing
+    if t.is_leaf():             # if get the leaf, return nothing
         return
     for b in t.branches:        
         cumulative_mul(b)       # let the branches into the recursion
@@ -1524,11 +1372,38 @@ def has_cycle_constant(link):
     return False
 ```
 
-- Version 1: The idea of the solution is to create a **list** to save all linked list went through the loop. By next loop will only save the rest of the linked list. Eventuell has this **list** a whole variante of the linked list. Similar like two pointer. If the linked list is a cycle, it will find the same part of the elements in the **list**.
-  - e.g. by first run: original `link = [1 2 3 / 1 2 3 / 1 2 3 ....]`, `lst = [1 2 3 / 1 2 3 / 1 2 3/ ...]` $\neq$ `link = [2 3 / 1 2 3 / 1 2 3 ....]`. By 2. run: `lst = [1 2 3 /... 2 3 / 1 2 3 ...]` $\neq$ `link = [3 / 1 2 3 / 1 2 3 ....]`. By 3. run: `lst = [1 2 3 /... 2 3 / 1 2 3 .../ 3 / 1 2 3 ....]` $=$ `link = [1 2 3 / 1 2 3 ....]`. As the 3. run shows, the `lst` contains the `link`.
-- Version 2: The idea is to create two pointers, one fast and one slow, eventuell compair them, if is the same then is cycled. Important is Line 29: two conditions to compair two steps, it's faster. And Line 32, if the linked list is a cycle, so it's getting there how ever it takes. So with `fast.rest.rest` can make it faster, analog can with `fast.rest.rest.rest`.
+**Version 1:** The idea of the solution is to create a **list** to save all linked list went through the loop. By next loop will only save the rest of the linked list. Eventuell has this **list** a whole variante of the linked list. Similar like two pointer. If the linked list is a cycle, it will find the same part of the elements in the **list**.
+
+- e.g. by first run: original `link = [1 2 3 / 1 2 3 / 1 2 3 ....]`, `lst = [1 2 3 / 1 2 3 / 1 2 3/ ...]` $\neq$ `link = [2 3 / 1 2 3 / 1 2 3 ....]`. By 2. run: `lst = [1 2 3 /... 2 3 / 1 2 3 ...]` $\neq$ `link = [3 / 1 2 3 / 1 2 3 ....]`. By 3. run: `lst = [1 2 3 /... 2 3 / 1 2 3 .../ 3 / 1 2 3 ....]` $=$ `link = [1 2 3 / 1 2 3 ....]`. As the 3. run shows, the `lst` contains the `link`.
 
 
+
+**Version 2:** The idea is to create two pointers, one fast and one slow, eventuell compair them, if is the same then is cycled. Important is Line 29: two conditions to compair two steps, it's faster. And Line 32, if the linked list is a cycle, so it's getting there how ever it takes. So with `fast.rest.rest` can make it faster, analog can with `fast.rest.rest.rest`.
+
+```python
+# -------------------------------------- Q6 -------------------------------------- # 
+"""Reverse labels every odd level of the tree."""
+def reverse_other(t):
+    def subfunc(t, level):
+        if t.is_leaf():                         # if get the leaf, return nothing
+            return
+
+        if level:                               # if it's odd level -> need reversed  
+            temp = []                           # create a temp list to store the labels
+            for b in t.branches:                # add all labels in the temp list,
+                temp.append(b.label)
+            temp.reverse()                      # then reverse it
+
+            for i in range(len(t.branches)):    # save the reversed label for each level
+              	t.branches[i].label = temp[i]   # in opposite position 
+
+        for b in t.branches:                    # recursion for the next level
+            subfunc(b, not level)               
+
+    subfunc(t, False)                           # begin with the first level 0 -> even 
+```
+
+Just create a blank `temp` list to save all `label`s of odd level and reverse it, then replace it into the true `tree`. To locate the odd level, just simply use `flag` with `True` or `False` to marke it and starting by the even level with `False`.
 
 
 
