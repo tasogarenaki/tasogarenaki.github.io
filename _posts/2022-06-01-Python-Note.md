@@ -785,9 +785,29 @@ doggy says woof!
   - `str()`: "Human-readable" form
   - `repr()`: "Computer-readable" form
 
+<br>
 
+- **Example for Iterable:**
 
+```python
+# Does every element equal some other element?
+def all_have_an_equals(s):
+  """
+  >>> all_have_an_equals([4, 3, 2, 3, 2, 4])
+  True
+  """
+  return all([s[i] in s[:i]+s[i+1:] for i in range(len(s))])
+```
 
+Example take `s[i]=s[1]=3`, we cann see `s[:i]=4` + `s[i+1:]=[2, 3, 2, 4]` = `[4, 2, 3, 2, 4]` without `[3]`. So simply use `for`-loop to checke if there has same element in the list as `s[i]`. 
+
+```python
+# V2
+def all_have_an_equals(s):
+  return min([s.count(x) for x in s]) > 1
+```
+
+The simply version, count if a element `x` comes at least twice.
 
 
 
