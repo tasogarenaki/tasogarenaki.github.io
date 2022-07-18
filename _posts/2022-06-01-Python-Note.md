@@ -778,7 +778,12 @@ doggy says woof!
   - Logarithmic growth, doubling n only increaments time by a constant: $O(\mathrm{log} \, n)$
   - Constant growth, increasing n doesn't affect time: $O(1)$
 
+<br>
 
+- **Str and Repr:**
+  - Both are built-in functions. Be invoked by calling `repr(obj)` or `str(obj)` rather than `obj.__repr__()` or `obj.__str__()`.
+  - `str()`: "Human-readable" form
+  - `repr()`: "Computer-readable" form
 
 
 
