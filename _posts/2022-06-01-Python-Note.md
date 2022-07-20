@@ -1430,9 +1430,31 @@ def reverse_other(t):
 
 Just create a blank `temp` list to save all `label`s of odd level and reverse it, then replace it into the true `tree`. To locate the odd level, just simply use `flag` with `True` or `False` to marke it and starting by the even level with `False`.
 
+<br>
+<br>
 
+- Some Examples from **lab09**:
 
+  - full codes see [here]()
 
+  - A **full binary tree (FBT)** is a tree with each node has either 0 or 2 branches (never 1 branch). 
+
+```python
+# -------------------------------------- Q3 -------------------------------------- #
+def num_trees(n):
+    if n == 1:
+        return 1
+    # 1) Catalan number with recursive formula: C_{n+1} = \sum C_i * C_{n-i}
+    res = 0
+    for i in range(1, n):
+        res += num_trees(i) * num_trees(n - i)
+    return res
+
+    # 2) simplify the 1)
+    return num_trees(n-1) * (4*n-6)//n
+```
+
+One can consider that the FBT can be used with the Catalan number formula is if the left tree has `1` node, then the right tree must has `n-1` nodes, which means there is `f(1)*f(n-1)` possibilies. Analog, if the left tree has `2` nodes, then the right tree must has `n-2` nodes, so there is `f(2)*f(n-2)` possibilities. And so on we can use the formula `f(i)*f(n-i)`, which is the Catalan number recursive formula.
 
 
 

@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-18T19:31:02+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-18T19:56:01+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,12 +739,12 @@
 
 
 <em class="timeago"
-    date="2022-07-18 21:31:02 +0200
+    date="2022-07-18 21:56:01 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jul 18, 2022,  9:31 PM +0200"
+      title="Mon, Jul 18, 2022,  9:56 PM +0200"
     >Jul 18</em>
 
       </span>
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6589 words">
-  <em>36 min</em> read</span>
+  title="6754 words">
+  <em>37 min</em> read</span>
 
 
       <!-- page views -->
@@ -3247,6 +3247,54 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <p>Just create a blank <code class="language-plaintext highlighter-rouge">temp</code> list to save all <code class="language-plaintext highlighter-rouge">label</code>s of odd level and reverse it, then replace it into the true <code class="language-plaintext highlighter-rouge">tree</code>. To locate the odd level, just simply use <code class="language-plaintext highlighter-rouge">flag</code> with <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code> to marke it and starting by the even level with <code class="language-plaintext highlighter-rouge">False</code>.</p>
+
+<p><br />
+<br /></p>
+
+<ul>
+  <li>
+    <p>Some Examples from <strong>lab09</strong>:</p>
+
+    <ul>
+      <li>
+        <p>full codes see <a href="">here</a></p>
+      </li>
+      <li>
+        <p>A <strong>full binary tree (FBT)</strong> is a tree with each node has either 0 or 2 branches (never 1 branch).</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q3 -------------------------------------- #
+</span><span class="k">def</span> <span class="nf">num_trees</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="c1"># 1) Catalan number with recursive formula: C_{n+1} = \sum C_i * C_{n-i}
+</span>    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">num_trees</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">num_trees</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+    <span class="c1"># 2) simplify the 1)
+</span>    <span class="k">return</span> <span class="n">num_trees</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">//</span><span class="n">n</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>One can consider that the FBT can be used with the Catalan number formula is if the left tree has <code class="language-plaintext highlighter-rouge">1</code> node, then the right tree must has <code class="language-plaintext highlighter-rouge">n-1</code> nodes, which means there is <code class="language-plaintext highlighter-rouge">f(1)*f(n-1)</code> possibilies. Analog, if the left tree has <code class="language-plaintext highlighter-rouge">2</code> nodes, then the right tree must has <code class="language-plaintext highlighter-rouge">n-2</code> nodes, so there is <code class="language-plaintext highlighter-rouge">f(2)*f(n-2)</code> possibilities. And so on we can use the formula <code class="language-plaintext highlighter-rouge">f(i)*f(n-i)</code>, which is the Catalan number recursive formula.</p>
 
 
 </div>
