@@ -1348,6 +1348,8 @@ def every_other(s):
 
 Linked list has no `len()` or index, so just "replace" the odd one with others. Set the loop condition with `and` so if a linked list has only one elment will not get into the loop.
 
+<br>
+
 ```python
 # -------------------------------------- Q4 -------------------------------------- # 
 """Mutates t so that each node's label becomes the product of all labels in the corresponding subtree rooted at t."""
@@ -1360,6 +1362,8 @@ def cumulative_mul(t):
 ```
 
 Use the recursion and definition of branches, multiply layer by layer. Line 8 make sure every time only calculate the "new" label from the "new" Tree with is the `branches`, it's like stairs.
+
+<br>
 
 ```python
 # -------------------------------------- Q5 -------------------------------------- # 
@@ -1401,9 +1405,9 @@ def has_cycle_constant(link):
 
 - e.g. by first run: original `link = [1 2 3 / 1 2 3 / 1 2 3 ....]`, `lst = [1 2 3 / 1 2 3 / 1 2 3/ ...]` $\neq$ `link = [2 3 / 1 2 3 / 1 2 3 ....]`. By 2. run: `lst = [1 2 3 /... 2 3 / 1 2 3 ...]` $\neq$ `link = [3 / 1 2 3 / 1 2 3 ....]`. By 3. run: `lst = [1 2 3 /... 2 3 / 1 2 3 .../ 3 / 1 2 3 ....]` $=$ `link = [1 2 3 / 1 2 3 ....]`. As the 3. run shows, the `lst` contains the `link`.
 
-
-
 **Version 2:** The idea is to create two pointers, one fast and one slow, eventuell compair them, if is the same then is cycled. Important is Line 29: two conditions to compair two steps, it's faster. And Line 32, if the linked list is a cycle, so it's getting there how ever it takes. So with `fast.rest.rest` can make it faster, analog can with `fast.rest.rest.rest`.
+
+<br>
 
 ```python
 # -------------------------------------- Q6 -------------------------------------- # 
@@ -1456,7 +1460,40 @@ def num_trees(n):
 
 One can consider that the FBT can be used with the Catalan number formula is if the left tree has `1` node, then the right tree must has `n-1` nodes, which means there is `f(1)*f(n-1)` possibilies. Analog, if the left tree has `2` nodes, then the right tree must has `n-2` nodes, so there is `f(2)*f(n-2)` possibilities. And so on we can use the formula `f(i)*f(n-i)`, which is the Catalan number recursive formula.
 
+<br>
 
+```python
+# -------------------------------------- Q10 ------------------------------------- #
+# insert a value in an index of a linked list
+def insert(link, value, index):
+    if not index:                                   # to changed index is 0
+        link.rest = Link(link.first, link.rest)     # let the rest of linked list as new linked list
+        link.first = value                          # add the value in the index 0
+    elif link.rest is link.empty:                   # out of the range
+        print('IndexError')
+    else:
+         insert(link.rest, value, index-1)          # recursion with rest of linked list
+```
+
+Note that a linked list has no length or index. 
+
+<br>
+
+**Deep Linked List**
+
+```python
+# -------------------------------------- Q11 ------------------------------------- #
+# Returns the deep length of a possibly deep linked list
+def deep_len(lnk):
+    if lnk is Link.empty:
+        return 0
+    elif not isinstance(lnk, Link):            # the deepest (which is not a linked list)
+        return 1
+    else:
+        return deep_len(lnk.first) + deep_len(lnk.rest)     # split the list into the recursion
+```
+
+The idea is to split the list into the two lists and recurse on them (line 9). And if the list reaches the deppest, then `lnk.first` is not a linked list but a `int`, so can use `isinstance(object, classinfo)` to check if a object belongs to the classinfo, e.g. `a = 5` then `isinstance(a, int)` is `True`. So at line 6, if reaches the deppest, then will return `False`, so the length is `1`. 
 
 
 

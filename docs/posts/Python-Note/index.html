@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-18T19:56:01+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-20T20:07:43+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-18 21:56:01 +0200
+    date="2022-07-20 22:07:43 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jul 18, 2022,  9:56 PM +0200"
-    >Jul 18</em>
+      title="Wed, Jul 20, 2022, 10:07 PM +0200"
+    >Jul 20</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6754 words">
-  <em>37 min</em> read</span>
+  title="6987 words">
+  <em>38 min</em> read</span>
 
 
       <!-- page views -->
@@ -3102,6 +3102,8 @@
 
 <p>Linked list has no <code class="language-plaintext highlighter-rouge">len()</code> or index, so just “replace” the odd one with others. Set the loop condition with <code class="language-plaintext highlighter-rouge">and</code> so if a linked list has only one elment will not get into the loop.</p>
 
+<p><br /></p>
+
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span label-text="Python"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -3123,6 +3125,8 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <p>Use the recursion and definition of branches, multiply layer by layer. Line 8 make sure every time only calculate the “new” label from the “new” Tree with is the <code class="language-plaintext highlighter-rouge">branches</code>, it’s like stairs.</p>
+
+<p><br /></p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span label-text="Python"><i class="fas fa-code small"></i></span>
@@ -3201,6 +3205,8 @@
 </ul>
 
 <p><strong>Version 2:</strong> The idea is to create two pointers, one fast and one slow, eventuell compair them, if is the same then is cycled. Important is Line 29: two conditions to compair two steps, it’s faster. And Line 32, if the linked list is a cycle, so it’s getting there how ever it takes. So with <code class="language-plaintext highlighter-rouge">fast.rest.rest</code> can make it faster, analog can with <code class="language-plaintext highlighter-rouge">fast.rest.rest.rest</code>.</p>
+
+<p><br /></p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span label-text="Python"><i class="fas fa-code small"></i></span>
@@ -3295,6 +3301,62 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>One can consider that the FBT can be used with the Catalan number formula is if the left tree has <code class="language-plaintext highlighter-rouge">1</code> node, then the right tree must has <code class="language-plaintext highlighter-rouge">n-1</code> nodes, which means there is <code class="language-plaintext highlighter-rouge">f(1)*f(n-1)</code> possibilies. Analog, if the left tree has <code class="language-plaintext highlighter-rouge">2</code> nodes, then the right tree must has <code class="language-plaintext highlighter-rouge">n-2</code> nodes, so there is <code class="language-plaintext highlighter-rouge">f(2)*f(n-2)</code> possibilities. And so on we can use the formula <code class="language-plaintext highlighter-rouge">f(i)*f(n-i)</code>, which is the Catalan number recursive formula.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q10 ------------------------------------- #
+# insert a value in an index of a linked list
+</span><span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">index</span><span class="p">:</span>                                   <span class="c1"># to changed index is 0
+</span>        <span class="n">link</span><span class="p">.</span><span class="n">rest</span> <span class="o">=</span> <span class="n">Link</span><span class="p">(</span><span class="n">link</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">link</span><span class="p">.</span><span class="n">rest</span><span class="p">)</span>     <span class="c1"># let the rest of linked list as new linked list
+</span>        <span class="n">link</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">value</span>                          <span class="c1"># add the value in the index 0
+</span>    <span class="k">elif</span> <span class="n">link</span><span class="p">.</span><span class="n">rest</span> <span class="ow">is</span> <span class="n">link</span><span class="p">.</span><span class="n">empty</span><span class="p">:</span>                   <span class="c1"># out of the range
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">'IndexError'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+         <span class="n">insert</span><span class="p">(</span><span class="n">link</span><span class="p">.</span><span class="n">rest</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>          <span class="c1"># recursion with rest of linked list
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>Note that a linked list has no length or index.</p>
+
+<p><br /></p>
+
+<p><strong>Deep Linked List</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q11 ------------------------------------- #
+# Returns the deep length of a possibly deep linked list
+</span><span class="k">def</span> <span class="nf">deep_len</span><span class="p">(</span><span class="n">lnk</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">lnk</span> <span class="ow">is</span> <span class="n">Link</span><span class="p">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">lnk</span><span class="p">,</span> <span class="n">Link</span><span class="p">):</span>            <span class="c1"># the deepest (which is not a linked list)
+</span>        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">deep_len</span><span class="p">(</span><span class="n">lnk</span><span class="p">.</span><span class="n">first</span><span class="p">)</span> <span class="o">+</span> <span class="n">deep_len</span><span class="p">(</span><span class="n">lnk</span><span class="p">.</span><span class="n">rest</span><span class="p">)</span>     <span class="c1"># split the list into the recursion
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>The idea is to split the list into the two lists and recurse on them (line 9). And if the list reaches the deppest, then <code class="language-plaintext highlighter-rouge">lnk.first</code> is not a linked list but a <code class="language-plaintext highlighter-rouge">int</code>, so can use <code class="language-plaintext highlighter-rouge">isinstance(object, classinfo)</code> to check if a object belongs to the classinfo, e.g. <code class="language-plaintext highlighter-rouge">a = 5</code> then <code class="language-plaintext highlighter-rouge">isinstance(a, int)</code> is <code class="language-plaintext highlighter-rouge">True</code>. So at line 6, if reaches the deppest, then will return <code class="language-plaintext highlighter-rouge">False</code>, so the length is <code class="language-plaintext highlighter-rouge">1</code>.</p>
 
 
 </div>
