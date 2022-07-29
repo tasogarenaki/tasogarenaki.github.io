@@ -810,13 +810,87 @@ def all_have_an_equals(s):
 
 The simply version, count if a element `x` comes at least twice.
 
+<br>
 
+- **SQL**
 
+Show the Informations (colum):
 
+```sql
+# format: choose an attribut from the table 
+SELECT attribut FROM table;
 
+# choose two attributs with "," 
+SELECT attribut_a, attribut_b FROM table;
 
+# choose all the attributs
+SELECT * FROM table;
+```
 
+Conditions:
 
+```sql
+# format, conditions after WHERE
+SELECT attribut FROM table WHERE conditions;
+
+# two conditions
+SELECT attribut FROM table WHERE condition_a or condition_b;
+```
+
+Insert datas:
+
+```sql
+# format
+INSERT INTO table (attribut_a, attribut_b, ...) 
+VALUES (data_a, data_b, ...);
+
+# one table has contact with other tables, which means one attribut belongs to several tables
+INSERT INTO table (attribut_a, attribut_b, ..., other_attribut) 
+VALUES (data_a, data_b, ..., other_data);
+```
+
+Delete the data:
+```sql
+# format
+DELETE FROM table WHERE conditions;
+```
+
+Change the data:
+
+```sql
+# format
+UPDATE table SET attribut = new_data WHERE conditions;
+```
+
+Create a data:
+
+```sql
+# format
+CREATE TABLE name AS
+SELECT data AS name;
+```
+
+Delete the attribut:
+
+- Do not delete the data, just change the value to default `null`.
+
+``` sql
+UPDATE table SET attribut = null 
+WHERE conditions;
+```
+
+Search for data with key words:
+
+```sql
+# search attribut with "ABC", e.g. "11ABC11" can also befind.
+SELECT attribut FROM table
+WHERE (attribut LIKE '%ABC%');
+```
+
+Python
+
+- use `namedtuple` funktion form the `collections` package to create a table
+- use `product` funktion form the `itertools` package to merge all combinations of rows in the input tables
 
 
 

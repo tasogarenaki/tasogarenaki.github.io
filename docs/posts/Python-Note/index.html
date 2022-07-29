@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-25T20:02:18+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-29T14:21:18+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-25 22:02:18 +0200
+    date="2022-07-29 16:21:18 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jul 25, 2022, 10:02 PM +0200"
-    >Jul 25</em>
+      title="Fri, Jul 29, 2022,  4:21 PM +0200"
+    >Jul 29</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7090 words">
-  <em>39 min</em> read</span>
+  title="7336 words">
+  <em>40 min</em> read</span>
 
 
       <!-- page views -->
@@ -2199,6 +2199,134 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>The simply version, count if a element <code class="language-plaintext highlighter-rouge">x</code> comes at least twice.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>SQL</strong></li>
+</ul>
+
+<p>Show the Informations (colum):</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span><span class="p">:</span> <span class="n">choose</span> <span class="n">an</span> <span class="n">attribut</span> <span class="k">from</span> <span class="n">the</span> <span class="k">table</span> 
+<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+
+<span class="o">#</span> <span class="n">choose</span> <span class="n">two</span> <span class="n">attributs</span> <span class="k">with</span> <span class="nv">","</span> 
+<span class="k">SELECT</span> <span class="n">attribut_a</span><span class="p">,</span> <span class="n">attribut_b</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+
+<span class="o">#</span> <span class="n">choose</span> <span class="k">all</span> <span class="n">the</span> <span class="n">attributs</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Conditions:</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span><span class="p">,</span> <span class="n">conditions</span> <span class="k">after</span> <span class="k">WHERE</span>
+<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+
+<span class="o">#</span> <span class="n">two</span> <span class="n">conditions</span>
+<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">condition_a</span> <span class="k">or</span> <span class="n">condition_b</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Insert datas:</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span> <span class="p">(</span><span class="n">attribut_a</span><span class="p">,</span> <span class="n">attribut_b</span><span class="p">,</span> <span class="p">...)</span> 
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">data_a</span><span class="p">,</span> <span class="n">data_b</span><span class="p">,</span> <span class="p">...);</span>
+
+<span class="o">#</span> <span class="n">one</span> <span class="k">table</span> <span class="n">has</span> <span class="n">contact</span> <span class="k">with</span> <span class="n">other</span> <span class="n">tables</span><span class="p">,</span> <span class="n">which</span> <span class="n">means</span> <span class="n">one</span> <span class="n">attribut</span> <span class="n">belongs</span> <span class="k">to</span> <span class="n">several</span> <span class="n">tables</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span> <span class="p">(</span><span class="n">attribut_a</span><span class="p">,</span> <span class="n">attribut_b</span><span class="p">,</span> <span class="p">...,</span> <span class="n">other_attribut</span><span class="p">)</span> 
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">data_a</span><span class="p">,</span> <span class="n">data_b</span><span class="p">,</span> <span class="p">...,</span> <span class="n">other_data</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Delete the data:</p>
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Change the data:</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
+<span class="k">UPDATE</span> <span class="k">table</span> <span class="k">SET</span> <span class="n">attribut</span> <span class="o">=</span> <span class="n">new_data</span> <span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Create a data:</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">name</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="k">data</span> <span class="k">AS</span> <span class="n">name</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Delete the attribut:</p>
+
+<ul>
+  <li>Do not delete the data, just change the value to default <code class="language-plaintext highlighter-rouge">null</code>.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">UPDATE</span> <span class="k">table</span> <span class="k">SET</span> <span class="n">attribut</span> <span class="o">=</span> <span class="k">null</span> 
+<span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Search for data with key words:</p>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="k">search</span> <span class="n">attribut</span> <span class="k">with</span> <span class="nv">"ABC"</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="k">g</span><span class="p">.</span> <span class="nv">"11ABC11"</span> <span class="n">can</span> <span class="n">also</span> <span class="n">befind</span><span class="p">.</span>
+<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span>
+<span class="k">WHERE</span> <span class="p">(</span><span class="n">attribut</span> <span class="k">LIKE</span> <span class="s1">'%ABC%'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Python</p>
+
+<ul>
+  <li>use <code class="language-plaintext highlighter-rouge">namedtuple</code> funktion form the <code class="language-plaintext highlighter-rouge">collections</code> package to create a table</li>
+  <li>use <code class="language-plaintext highlighter-rouge">product</code> funktion form the <code class="language-plaintext highlighter-rouge">itertools</code> package to merge all combinations of rows in the input tables</li>
+</ul>
 
 <h2 id="32-examples">3.2 Examples<a href="#32-examples" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
