@@ -439,6 +439,7 @@ class Link:
   
   - `from sklearn import tree`
   - consider **recursion**, a tree is a recursive abstract data type that has a `lable` and `branches`
+  - remove a label use `remove()`
   - **root**: the node at the top of the tree, e.g. **7**
   - **label**: the value in a node, selected by the `label()` function, **up layer**, e.g. **all of the integers** are values of this picture
   - **branch**: a subtree of the root, selected by the `branches()` function, **under layer**, e.g. **1**
@@ -1495,9 +1496,20 @@ def deep_len(lnk):
 
 The idea is to split the list into the two lists and recurse on them (line 9). And if the list reaches the deppest, then `lnk.first` is not a linked list but a `int`, so can use `isinstance(object, classinfo)` to check if a object belongs to the classinfo, e.g. `a = 5` then `isinstance(a, int)` is `True`. So at line 6, if reaches the deppest, then will return `False`, so the length is `1`. 
 
+<br>
 
+```python
+# -------------------------------------- Q13 ------------------------------------- #
+# Prune the tree, keeping only the n branches of each node with the smallest label.
+def prune_small(t, n):
+    while len(t.branches) > n:                                  # prune tree until n branches
+        largest = max(t.branches, key = lambda t: t.label)      # compair the branches due to their label
+        t.branches.remove(largest)                              # remove the large branches
+    for b in t.branches:
+        prune_small(b, n)                                       # next leaf
+```
 
-
+Use `remove()` to remove the branches / labels. Line 5: The `Branches` of the trees are compaired with the largest being indicated by the `label`.
 
 
 

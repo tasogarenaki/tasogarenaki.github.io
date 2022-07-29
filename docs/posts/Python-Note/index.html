@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-20T20:07:43+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-25T20:02:18+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-20 22:07:43 +0200
+    date="2022-07-25 22:02:18 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Jul 20, 2022, 10:07 PM +0200"
-    >Jul 20</em>
+      title="Mon, Jul 25, 2022, 10:02 PM +0200"
+    >Jul 25</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6987 words">
-  <em>38 min</em> read</span>
+  title="7090 words">
+  <em>39 min</em> read</span>
 
 
       <!-- page views -->
@@ -1539,6 +1539,7 @@
     <ul>
       <li><code class="language-plaintext highlighter-rouge">from sklearn import tree</code></li>
       <li>consider <strong>recursion</strong>, a tree is a recursive abstract data type that has a <code class="language-plaintext highlighter-rouge">lable</code> and <code class="language-plaintext highlighter-rouge">branches</code></li>
+      <li>remove a label use <code class="language-plaintext highlighter-rouge">remove()</code></li>
       <li><strong>root</strong>: the node at the top of the tree, e.g. <strong>7</strong></li>
       <li><strong>label</strong>: the value in a node, selected by the <code class="language-plaintext highlighter-rouge">label()</code> function, <strong>up layer</strong>, e.g. <strong>all of the integers</strong> are values of this picture</li>
       <li><strong>branch</strong>: a subtree of the root, selected by the <code class="language-plaintext highlighter-rouge">branches()</code> function, <strong>under layer</strong>, e.g. <strong>1</strong></li>
@@ -3357,6 +3358,30 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <p>The idea is to split the list into the two lists and recurse on them (line 9). And if the list reaches the deppest, then <code class="language-plaintext highlighter-rouge">lnk.first</code> is not a linked list but a <code class="language-plaintext highlighter-rouge">int</code>, so can use <code class="language-plaintext highlighter-rouge">isinstance(object, classinfo)</code> to check if a object belongs to the classinfo, e.g. <code class="language-plaintext highlighter-rouge">a = 5</code> then <code class="language-plaintext highlighter-rouge">isinstance(a, int)</code> is <code class="language-plaintext highlighter-rouge">True</code>. So at line 6, if reaches the deppest, then will return <code class="language-plaintext highlighter-rouge">False</code>, so the length is <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1"># -------------------------------------- Q13 ------------------------------------- #
+# Prune the tree, keeping only the n branches of each node with the smallest label.
+</span><span class="k">def</span> <span class="nf">prune_small</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>                                  <span class="c1"># prune tree until n branches
+</span>        <span class="n">largest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">.</span><span class="n">label</span><span class="p">)</span>      <span class="c1"># compair the branches due to their label
+</span>        <span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">largest</span><span class="p">)</span>                              <span class="c1"># remove the large branches
+</span>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">t</span><span class="p">.</span><span class="n">branches</span><span class="p">:</span>
+        <span class="n">prune_small</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>                                       <span class="c1"># next leaf
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<p>Use <code class="language-plaintext highlighter-rouge">remove()</code> to remove the branches / labels. Line 5: The <code class="language-plaintext highlighter-rouge">Branches</code> of the trees are compaired with the largest being indicated by the <code class="language-plaintext highlighter-rouge">label</code>.</p>
 
 
 </div>
