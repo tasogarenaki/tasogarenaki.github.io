@@ -814,60 +814,70 @@ The simply version, count if a element `x` comes at least twice.
 
 - **SQL**
 
-Show the Informations (colum):
+Select the Informations (colums) from tables:
 
 ```sql
-# format: choose an attribut from the table 
-SELECT attribut FROM table;
+-- format: choose an attribut / column from the table 
+SELECT [columns] FROM [table];
 
-# choose two attributs with "," 
-SELECT attribut_a, attribut_b FROM table;
+-- choose two columns with "," 
+SELECT [column1], [column2] FROM [table];
 
-# choose all the attributs
-SELECT * FROM table;
+-- choose all the columns
+SELECT * FROM [table];
 ```
 
 Conditions:
 
 ```sql
-# format, conditions after WHERE
-SELECT attribut FROM table WHERE conditions;
+-- format, conditions after WHERE
+SELECT [column] FROM [table] WHERE [conditions] ORDER BY [order];
 
-# two conditions
-SELECT attribut FROM table WHERE condition_a or condition_b;
+-- two conditions
+SELECT [column] FROM [table] WHERE [condition1] OR [condition2];
 ```
 
 Insert datas:
 
 ```sql
-# format
-INSERT INTO table (attribut_a, attribut_b, ...) 
-VALUES (data_a, data_b, ...);
+-- format
+INSERT INTO [table] (column1, column2, ...) 
+VALUES (value1, value2, ...);
 
-# one table has contact with other tables, which means one attribut belongs to several tables
-INSERT INTO table (attribut_a, attribut_b, ..., other_attribut) 
-VALUES (data_a, data_b, ..., other_data);
+-- one table has contact with other tables, which means one attribut belongs to several tables
+INSERT INTO [table] (column1, column2, ..., other_column) 
+VALUES (value1, value2, ..., other_value);
 ```
 
 Delete the data:
 ```sql
-# format
-DELETE FROM table WHERE conditions;
+-- format
+DELETE FROM [table] WHERE [conditions];
 ```
 
 Change the data:
 
 ```sql
-# format
-UPDATE table SET attribut = new_data WHERE conditions;
+-- format
+UPDATE [table] SET [column = new_data] WHERE [conditions];
 ```
 
-Create a data:
+Create a table:
+
+- `UNION` join rows together
+- `AS` give a name of column
 
 ```sql
-# format
-CREATE TABLE name AS
-SELECT data AS name;
+-- format
+CREATE TABLE [table_name] AS
+SELECT [val1] AS [column1], [val2] AS [column2],... UNION	
+SELECT [val3]						 , [val4] AS          ,...;		   
+
+-- or
+SELECT [expression] AS [name];
+
+-- or 
+SELECT [expression] AS [name], [expression] AS [name];
 ```
 
 Delete the attribut:
@@ -875,17 +885,46 @@ Delete the attribut:
 - Do not delete the data, just change the value to default `null`.
 
 ``` sql
-UPDATE table SET attribut = null 
-WHERE conditions;
+UPDATE [table] SET [column = null] 
+WHERE [conditions];
 ```
 
 Search for data with key words:
 
 ```sql
-# search attribut with "ABC", e.g. "11ABC11" can also befind.
-SELECT attribut FROM table
-WHERE (attribut LIKE '%ABC%');
+-- search attribut with "ABC", e.g. "11ABC11" can also befind.
+SELECT [column] FROM [table]
+WHERE ([column] LIKE '%ABC%');
 ```
+
+Joins:
+
+- To select data from multiple tables.
+- `LIMIT [limit]` limits the number of rows in the output table 
+
+```sql
+-- format
+SELECT [columns] FROM [table1], [table2], ... WHERE [conditions] ORDER BY [columns] LIMIT [limit];
+
+-- two tables share a column name
+SELECT [columns] FROM [table] WHERE [conditions] ORDER BY [order]; 
+
+-- When joining table names where column names are the same, use dot notation to distinguish which columns are from which table: use [table_name].[column_name]
+SELECT <[alias1].[column name1], [alias2].[columnname2]...>
+FROM <[table_name1] AS [alias1],[table_name2] AS [alias2]...> ...
+
+-- e.g.
+CREATE TABLE matchmaker AS
+SELECT a.pet, a.song, a.color, b.color FROM students AS a, students AS b    
+WHERE a.time < b.time AND a.pet = b.pet AND a.song = b.song;
+```
+
+Operators
+
+- comparison operators: `=`, `>`, `<`, `<=`, `>=`, `<>` or `!=`
+- boolean operators: `AND`, `OR`
+- arithmetic operators: `+`, `-`, `*`, `/`
+- concatenation operator: `||`
 
 Python
 

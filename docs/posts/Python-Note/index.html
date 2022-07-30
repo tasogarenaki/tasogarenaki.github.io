@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-29T14:21:18+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-29T16:27:48+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,12 +739,12 @@
 
 
 <em class="timeago"
-    date="2022-07-29 16:21:18 +0200
+    date="2022-07-29 18:27:48 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Fri, Jul 29, 2022,  4:21 PM +0200"
+      title="Fri, Jul 29, 2022,  6:27 PM +0200"
     >Jul 29</em>
 
       </span>
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7336 words">
-  <em>40 min</em> read</span>
+  title="7537 words">
+  <em>41 min</em> read</span>
 
 
       <!-- page views -->
@@ -2206,7 +2206,7 @@
   <li><strong>SQL</strong></li>
 </ul>
 
-<p>Show the Informations (colum):</p>
+<p>Select the Informations (colums) from tables:</p>
 
 <div class="language-sql highlighter-rouge"><div class="code-header">
         <span label-text="Sql"><i class="fas fa-code small"></i></span>
@@ -2218,14 +2218,14 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span><span class="p">:</span> <span class="n">choose</span> <span class="n">an</span> <span class="n">attribut</span> <span class="k">from</span> <span class="n">the</span> <span class="k">table</span> 
-<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format: choose an attribut / column from the table </span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">];</span>
 
-<span class="o">#</span> <span class="n">choose</span> <span class="n">two</span> <span class="n">attributs</span> <span class="k">with</span> <span class="nv">","</span> 
-<span class="k">SELECT</span> <span class="n">attribut_a</span><span class="p">,</span> <span class="n">attribut_b</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+<span class="c1">-- choose two columns with "," </span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">column1</span><span class="p">],</span> <span class="p">[</span><span class="n">column2</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">];</span>
 
-<span class="o">#</span> <span class="n">choose</span> <span class="k">all</span> <span class="n">the</span> <span class="n">attributs</span>
-<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">;</span>
+<span class="c1">-- choose all the columns</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Conditions:</p>
@@ -2237,11 +2237,11 @@
 3
 4
 5
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span><span class="p">,</span> <span class="n">conditions</span> <span class="k">after</span> <span class="k">WHERE</span>
-<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format, conditions after WHERE</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="k">column</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">]</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">[</span><span class="k">order</span><span class="p">];</span>
 
-<span class="o">#</span> <span class="n">two</span> <span class="n">conditions</span>
-<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">condition_a</span> <span class="k">or</span> <span class="n">condition_b</span><span class="p">;</span>
+<span class="c1">-- two conditions</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="k">column</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">condition1</span><span class="p">]</span> <span class="k">OR</span> <span class="p">[</span><span class="n">condition2</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Insert datas:</p>
@@ -2255,13 +2255,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span> <span class="p">(</span><span class="n">attribut_a</span><span class="p">,</span> <span class="n">attribut_b</span><span class="p">,</span> <span class="p">...)</span> 
-<span class="k">VALUES</span> <span class="p">(</span><span class="n">data_a</span><span class="p">,</span> <span class="n">data_b</span><span class="p">,</span> <span class="p">...);</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="p">(</span><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span><span class="p">,</span> <span class="p">...)</span> 
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="p">...);</span>
 
-<span class="o">#</span> <span class="n">one</span> <span class="k">table</span> <span class="n">has</span> <span class="n">contact</span> <span class="k">with</span> <span class="n">other</span> <span class="n">tables</span><span class="p">,</span> <span class="n">which</span> <span class="n">means</span> <span class="n">one</span> <span class="n">attribut</span> <span class="n">belongs</span> <span class="k">to</span> <span class="n">several</span> <span class="n">tables</span>
-<span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table</span> <span class="p">(</span><span class="n">attribut_a</span><span class="p">,</span> <span class="n">attribut_b</span><span class="p">,</span> <span class="p">...,</span> <span class="n">other_attribut</span><span class="p">)</span> 
-<span class="k">VALUES</span> <span class="p">(</span><span class="n">data_a</span><span class="p">,</span> <span class="n">data_b</span><span class="p">,</span> <span class="p">...,</span> <span class="n">other_data</span><span class="p">);</span>
+<span class="c1">-- one table has contact with other tables, which means one attribut belongs to several tables</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="p">(</span><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span><span class="p">,</span> <span class="p">...,</span> <span class="n">other_column</span><span class="p">)</span> 
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="p">...,</span> <span class="n">other_value</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Delete the data:</p>
@@ -2269,8 +2269,8 @@
         <span label-text="Sql"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
-<span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Change the data:</p>
@@ -2279,20 +2279,39 @@
         <span label-text="Sql"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
-<span class="k">UPDATE</span> <span class="k">table</span> <span class="k">SET</span> <span class="n">attribut</span> <span class="o">=</span> <span class="n">new_data</span> <span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format</span>
+<span class="k">UPDATE</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">SET</span> <span class="p">[</span><span class="k">column</span> <span class="o">=</span> <span class="n">new_data</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Create a data:</p>
+<p>Create a table:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">UNION</code> join rows together</li>
+  <li><code class="language-plaintext highlighter-rouge">AS</code> give a name of column</li>
+</ul>
 
 <div class="language-sql highlighter-rouge"><div class="code-header">
         <span label-text="Sql"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="n">format</span>
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">name</span> <span class="k">AS</span>
-<span class="k">SELECT</span> <span class="k">data</span> <span class="k">AS</span> <span class="n">name</span><span class="p">;</span>
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">table_name</span><span class="p">]</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">val1</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">column1</span><span class="p">],</span> <span class="p">[</span><span class="n">val2</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">column2</span><span class="p">],...</span> <span class="k">UNION</span>	
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">val3</span><span class="p">]</span>						 <span class="p">,</span> <span class="p">[</span><span class="n">val4</span><span class="p">]</span> <span class="k">AS</span>          <span class="p">,...;</span>		   
+
+<span class="c1">-- or</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">name</span><span class="p">];</span>
+
+<span class="c1">-- or </span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">name</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Delete the attribut:</p>
@@ -2305,8 +2324,8 @@
         <span label-text="Sql"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="k">UPDATE</span> <span class="k">table</span> <span class="k">SET</span> <span class="n">attribut</span> <span class="o">=</span> <span class="k">null</span> 
-<span class="k">WHERE</span> <span class="n">conditions</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="k">UPDATE</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">SET</span> <span class="p">[</span><span class="k">column</span> <span class="o">=</span> <span class="k">null</span><span class="p">]</span> 
+<span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Search for data with key words:</p>
@@ -2316,10 +2335,58 @@
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="o">#</span> <span class="k">search</span> <span class="n">attribut</span> <span class="k">with</span> <span class="nv">"ABC"</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="k">g</span><span class="p">.</span> <span class="nv">"11ABC11"</span> <span class="n">can</span> <span class="n">also</span> <span class="n">befind</span><span class="p">.</span>
-<span class="k">SELECT</span> <span class="n">attribut</span> <span class="k">FROM</span> <span class="k">table</span>
-<span class="k">WHERE</span> <span class="p">(</span><span class="n">attribut</span> <span class="k">LIKE</span> <span class="s1">'%ABC%'</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">-- search attribut with "ABC", e.g. "11ABC11" can also befind.</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="k">column</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span>
+<span class="k">WHERE</span> <span class="p">([</span><span class="k">column</span><span class="p">]</span> <span class="k">LIKE</span> <span class="s1">'%ABC%'</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<p>Joins:</p>
+
+<ul>
+  <li>To select data from multiple tables.</li>
+  <li><code class="language-plaintext highlighter-rouge">LIMIT [limit]</code> limits the number of rows in the output table</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="c1">-- format</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">table1</span><span class="p">],</span> <span class="p">[</span><span class="n">table2</span><span class="p">],</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">]</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">LIMIT</span> <span class="p">[</span><span class="k">limit</span><span class="p">];</span>
+
+<span class="c1">-- two tables share a column name</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">]</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">[</span><span class="k">order</span><span class="p">];</span> 
+
+<span class="c1">-- When joining table names where column names are the same, use dot notation to distinguish which columns are from which table: use [table_name].[column_name]</span>
+<span class="k">SELECT</span> <span class="o">&lt;</span><span class="p">[</span><span class="n">alias1</span><span class="p">].[</span><span class="k">column</span> <span class="n">name1</span><span class="p">],</span> <span class="p">[</span><span class="n">alias2</span><span class="p">].[</span><span class="n">columnname2</span><span class="p">]...</span><span class="o">&gt;</span>
+<span class="k">FROM</span> <span class="o">&lt;</span><span class="p">[</span><span class="n">table_name1</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">alias1</span><span class="p">],[</span><span class="n">table_name2</span><span class="p">]</span> <span class="k">AS</span> <span class="p">[</span><span class="n">alias2</span><span class="p">]...</span><span class="o">&gt;</span> <span class="p">...</span>
+
+<span class="c1">-- e.g.</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">matchmaker</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="n">pet</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">song</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">color</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">color</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">AS</span> <span class="n">a</span><span class="p">,</span> <span class="n">students</span> <span class="k">AS</span> <span class="n">b</span>    
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="nb">time</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="nb">time</span> <span class="k">AND</span> <span class="n">a</span><span class="p">.</span><span class="n">pet</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">pet</span> <span class="k">AND</span> <span class="n">a</span><span class="p">.</span><span class="n">song</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">song</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Operators</p>
+
+<ul>
+  <li>comparison operators: <code class="language-plaintext highlighter-rouge">=</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&lt;=</code>, <code class="language-plaintext highlighter-rouge">&gt;=</code>, <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> or <code class="language-plaintext highlighter-rouge">!=</code></li>
+  <li>boolean operators: <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code></li>
+  <li>arithmetic operators: <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code></li>
+  <li>concatenation operator: <code class="language-plaintext highlighter-rouge">||</code></li>
+</ul>
 
 <p>Python</p>
 
