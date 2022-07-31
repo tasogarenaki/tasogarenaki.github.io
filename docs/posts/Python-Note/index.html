@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-29T16:27:48+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-30T14:38:55+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-29 18:27:48 +0200
+    date="2022-07-30 16:38:55 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Fri, Jul 29, 2022,  6:27 PM +0200"
-    >Jul 29</em>
+      title="Sat, Jul 30, 2022,  4:38 PM +0200"
+    >Jul 30</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7537 words">
-  <em>41 min</em> read</span>
+  title="7577 words">
+  <em>42 min</em> read</span>
 
 
       <!-- page views -->
@@ -2391,9 +2391,39 @@
 <p>Python</p>
 
 <ul>
+  <li>call in the terminal: <code class="language-plaintext highlighter-rouge">sqlite3 -init name.sql</code></li>
   <li>use <code class="language-plaintext highlighter-rouge">namedtuple</code> funktion form the <code class="language-plaintext highlighter-rouge">collections</code> package to create a table</li>
   <li>use <code class="language-plaintext highlighter-rouge">product</code> funktion form the <code class="language-plaintext highlighter-rouge">itertools</code> package to merge all combinations of rows in the input tables</li>
 </ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="n">Connection</span><span class="p">(</span><span class="s">"name.db"</span><span class="p">)</span>
+<span class="n">db</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"Syntax of SQL"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Aggregate Functions</strong>
+    <ul>
+      <li>use syntax like <code class="language-plaintext highlighter-rouge">max(), avg(), count()</code> etc.</li>
+      <li>Grouping Rows</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="k">HAVING</span> <span class="p">[</span><span class="n">expression</span><span class="p">];</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="32-examples">3.2 Examples<a href="#32-examples" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 

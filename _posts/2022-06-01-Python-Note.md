@@ -928,8 +928,26 @@ Operators
 
 Python
 
+- call in the terminal: `sqlite3 -init name.sql`
 - use `namedtuple` funktion form the `collections` package to create a table
 - use `product` funktion form the `itertools` package to merge all combinations of rows in the input tables
+
+```python
+import sqlite3
+
+db = sqlite3.Connection("name.db")
+db.execute("Syntax of SQL")
+```
+
+<br>
+
+- **Aggregate Functions**
+  - use syntax like `max(), avg(), count()` etc.
+  - Grouping Rows
+
+```sql
+SELECT [columns] FROM [table] GROUP BY [expression] HAVING [expression];
+```
 
 
 

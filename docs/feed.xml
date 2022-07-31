@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-07-30T14:38:42+00:00</updated>
+  <updated>2022-07-31T14:23:26+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -76,7 +76,7 @@ using ** ** without  space to create a line betwenn two questions
     <link href="https://tasogarenaki.github.io/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
     <published>2022-06-01T10:11:11+00:00</published>
   
-    <updated>2022-07-29T16:27:48+00:00</updated>
+    <updated>2022-07-30T14:38:55+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/Python-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/Python-Note/" />
