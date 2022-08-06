@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Python Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-30T14:38:55+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-07-31T14:23:38+00:00","datePublished":"2022-06-01T10:11:11+00:00","description":"1 Fundations","headline":"Python Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Python-Note/"},"url":"https://tasogarenaki.github.io/posts/Python-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -739,13 +739,13 @@
 
 
 <em class="timeago"
-    date="2022-07-30 16:38:55 +0200
+    date="2022-07-31 16:23:38 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Sat, Jul 30, 2022,  4:38 PM +0200"
-    >Jul 30</em>
+      title="Sun, Jul 31, 2022,  4:23 PM +0200"
+    >Jul 31</em>
 
       </span>
       
@@ -770,8 +770,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7577 words">
-  <em>42 min</em> read</span>
+  title="7759 words">
+  <em>43 min</em> read</span>
 
 
       <!-- page views -->
@@ -2237,11 +2237,23 @@
 3
 4
 5
+6
+7
+8
+9
+10
+11
 </pre></td><td class="rouge-code"><pre><span class="c1">-- format, conditions after WHERE</span>
 <span class="k">SELECT</span> <span class="p">[</span><span class="k">column</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">]</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">[</span><span class="k">order</span><span class="p">];</span>
 
 <span class="c1">-- two conditions</span>
 <span class="k">SELECT</span> <span class="p">[</span><span class="k">column</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">condition1</span><span class="p">]</span> <span class="k">OR</span> <span class="p">[</span><span class="n">condition2</span><span class="p">];</span>
+
+<span class="c1">-- e.g. individual order by using `ORDER BY (CASE ... WHEN ... THEN 1 ... END)`</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">shopping_list</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">store</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">,</span> <span class="n">lowest_prices</span> 
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="n">item</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">category</span> <span class="k">HAVING</span> <span class="k">MIN</span><span class="p">(</span><span class="n">MSRP</span><span class="o">/</span><span class="n">rating</span><span class="p">)</span> 
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="p">(</span><span class="k">CASE</span> <span class="n">category</span> <span class="k">WHEN</span> <span class="nv">"games"</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">WHEN</span> <span class="nv">"phone"</span> <span class="k">THEN</span> <span class="mi">2</span> <span class="k">ELSE</span> <span class="mi">3</span> <span class="k">END</span><span class="p">);</span> 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Insert datas:</p>
@@ -2363,6 +2375,12 @@
 12
 13
 14
+15
+16
+17
+18
+19
+20
 </pre></td><td class="rouge-code"><pre><span class="c1">-- format</span>
 <span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="n">table1</span><span class="p">],</span> <span class="p">[</span><span class="n">table2</span><span class="p">],</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">conditions</span><span class="p">]</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">LIMIT</span> <span class="p">[</span><span class="k">limit</span><span class="p">];</span>
 
@@ -2377,6 +2395,12 @@
 <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">matchmaker</span> <span class="k">AS</span>
 <span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="n">pet</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">song</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">color</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">color</span> <span class="k">FROM</span> <span class="n">students</span> <span class="k">AS</span> <span class="n">a</span><span class="p">,</span> <span class="n">students</span> <span class="k">AS</span> <span class="n">b</span>    
 <span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="nb">time</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="nb">time</span> <span class="k">AND</span> <span class="n">a</span><span class="p">.</span><span class="n">pet</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">pet</span> <span class="k">AND</span> <span class="n">a</span><span class="p">.</span><span class="n">song</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">song</span><span class="p">;</span>
+
+<span class="c1">-- e.g.</span>
+<span class="c1">-- All dogs with parents ordered by decreasing height of their parent</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">by_parent_height</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">a</span><span class="p">.</span><span class="n">child</span> <span class="k">FROM</span> <span class="n">parents</span> <span class="k">AS</span> <span class="n">a</span><span class="p">,</span> <span class="n">dogs</span> <span class="k">AS</span> <span class="n">b</span>
+<span class="k">WHERE</span> <span class="n">a</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">name</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>   <span class="c1">-- sort from high to low with "-"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Operators</p>
@@ -2385,7 +2409,7 @@
   <li>comparison operators: <code class="language-plaintext highlighter-rouge">=</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&lt;=</code>, <code class="language-plaintext highlighter-rouge">&gt;=</code>, <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> or <code class="language-plaintext highlighter-rouge">!=</code></li>
   <li>boolean operators: <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">OR</code></li>
   <li>arithmetic operators: <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code></li>
-  <li>concatenation operator: <code class="language-plaintext highlighter-rouge">||</code></li>
+  <li>concatenation operator: <code class="language-plaintext highlighter-rouge">||</code> to concatenate two strings into one</li>
 </ul>
 
 <p>Python</p>
@@ -2411,10 +2435,16 @@
 <p><br /></p>
 
 <ul>
-  <li><strong>Aggregate Functions</strong>
+  <li>
+    <p><strong>Aggregate Functions</strong></p>
+
     <ul>
-      <li>use syntax like <code class="language-plaintext highlighter-rouge">max(), avg(), count()</code> etc.</li>
-      <li>Grouping Rows</li>
+      <li>
+        <p>use syntax like <code class="language-plaintext highlighter-rouge">max(), avg(), count()</code> etc.</p>
+      </li>
+      <li>
+        <p>Grouping Rows</p>
+      </li>
     </ul>
   </li>
 </ul>
@@ -2422,7 +2452,27 @@
 <div class="language-sql highlighter-rouge"><div class="code-header">
         <span label-text="Sql"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="k">HAVING</span> <span class="p">[</span><span class="n">expression</span><span class="p">];</span>
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1">-- Format</span>
+<span class="k">SELECT</span> <span class="p">[</span><span class="n">columns</span><span class="p">]</span> <span class="k">FROM</span> <span class="p">[</span><span class="k">table</span><span class="p">]</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="k">HAVING</span> <span class="p">[</span><span class="n">expression</span><span class="p">];</span>
+
+<span class="c1">-- e.g. search for the average price of each category (by using "GROUP BY")</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">average_prices</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">category</span><span class="p">,</span> <span class="k">AVG</span><span class="p">(</span><span class="n">MSRP</span><span class="p">)</span> <span class="k">AS</span> <span class="n">average_price</span> <span class="k">FROM</span> <span class="n">products</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">category</span><span class="p">;</span> 
+
+<span class="c1">-- e.g. search for best deal (min(MSRP/rating) and the store to buy it </span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">shopping_list</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">store</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">,</span> <span class="n">lowest_prices</span> 
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="n">item</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">category</span> <span class="k">HAVING</span> <span class="k">MIN</span><span class="p">(</span><span class="n">MSRP</span><span class="o">/</span><span class="n">rating</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="32-examples">3.2 Examples<a href="#32-examples" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>

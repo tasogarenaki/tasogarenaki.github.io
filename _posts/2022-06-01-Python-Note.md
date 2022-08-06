@@ -835,6 +835,12 @@ SELECT [column] FROM [table] WHERE [conditions] ORDER BY [order];
 
 -- two conditions
 SELECT [column] FROM [table] WHERE [condition1] OR [condition2];
+
+-- e.g. individual order by using `ORDER BY (CASE ... WHEN ... THEN 1 ... END)`
+CREATE TABLE shopping_list AS
+SELECT name, store FROM products, lowest_prices 
+WHERE name = item GROUP BY category HAVING MIN(MSRP/rating) 
+ORDER BY (CASE category WHEN "games" THEN 1 WHEN "phone" THEN 2 ELSE 3 END); 
 ```
 
 Insert datas:
@@ -917,6 +923,12 @@ FROM <[table_name1] AS [alias1],[table_name2] AS [alias2]...> ...
 CREATE TABLE matchmaker AS
 SELECT a.pet, a.song, a.color, b.color FROM students AS a, students AS b    
 WHERE a.time < b.time AND a.pet = b.pet AND a.song = b.song;
+
+-- e.g.
+-- All dogs with parents ordered by decreasing height of their parent
+CREATE TABLE by_parent_height AS
+SELECT a.child FROM parents AS a, dogs AS b
+WHERE a.parent = b.name ORDER BY -b.height;   -- sort from high to low with "-"
 ```
 
 Operators
@@ -924,7 +936,7 @@ Operators
 - comparison operators: `=`, `>`, `<`, `<=`, `>=`, `<>` or `!=`
 - boolean operators: `AND`, `OR`
 - arithmetic operators: `+`, `-`, `*`, `/`
-- concatenation operator: `||`
+- concatenation operator: `||` to concatenate two strings into one
 
 Python
 
@@ -942,11 +954,23 @@ db.execute("Syntax of SQL")
 <br>
 
 - **Aggregate Functions**
+  
   - use syntax like `max(), avg(), count()` etc.
+  
   - Grouping Rows
 
 ```sql
+-- Format
 SELECT [columns] FROM [table] GROUP BY [expression] HAVING [expression];
+
+-- e.g. search for the average price of each category (by using "GROUP BY")
+CREATE TABLE average_prices AS
+SELECT category, AVG(MSRP) AS average_price FROM products GROUP BY category; 
+
+-- e.g. search for best deal (min(MSRP/rating) and the store to buy it 
+CREATE TABLE shopping_list AS
+SELECT name, store FROM products, lowest_prices 
+WHERE name = item GROUP BY category HAVING MIN(MSRP/rating);
 ```
 
 
