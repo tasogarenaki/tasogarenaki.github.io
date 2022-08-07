@@ -1666,7 +1666,33 @@ def prune_small(t, n):
 
 Use `remove()` to remove the branches / labels. Line 5: The `Branches` of the trees are compaired with the largest being indicated by the `label`.
 
+`False`.
 
+<br>
+<br>
+
+- Some Examples from **lab14**:
+
+  - full codes see [here]()
+
+```python
+# Split the list and return the number of ways the sum of the first list 
+# is within d
+# ------------------------------------- Q4 -------------------------------------#
+def num_splits(s, d):
+    def subfunc(s, n):
+        if not len(s):              # the last index
+            if abs(n) <= d:         # sum of the first is within d 
+                return 1
+            else:
+                return 0
+        first, rest = s[0], s[1:]   # split the list
+        # forwards and backwards  
+        return subfunc(rest, n + first) + subfunc(rest, n - first)
+    return subfunc(s, 0) // 2       
+```
+
+Line 14: the order of the subsets does not matter, e.g. `[1, 2], [3]` and `[3], [1, 2]` are the same, so the result must `// 2`. 
 
 
 
