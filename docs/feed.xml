@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-08-30T18:07:55+00:00</updated>
+  <updated>2022-08-30T20:05:12+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -24,7 +24,7 @@
     <link href="https://tasogarenaki.github.io/posts/Java-Note/" rel="alternate" type="text/html" title="Java Note" />
     <published>2022-08-30T18:00:00+00:00</published>
   
-    <updated>2022-08-30T18:00:00+00:00</updated>
+    <updated>2022-08-30T18:08:10+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/Java-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/Java-Note/" />
@@ -51,9 +51,26 @@
       1 Fundations
 
 
-  test test
+  
+    Set the course code
 
+    
+      
+        Create a repository from GitHub
+      
+      
+        Create a folder A on local
+      
+      
+        $ cd A
+$ git clone https://github.com/my_repository.git
+$ cd B (Folder inside A)
+$ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
+$ git pull skeleton master
 
+      
+      
+        Move the HelloWorld.ja...
     </summary>
   
 

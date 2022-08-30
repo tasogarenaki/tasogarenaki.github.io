@@ -4,7 +4,7 @@
     "title": "Java Note",
     "url": "/posts/Java-Note/",
     "categories": "Note, CS",
-    "tags": "note, java",
+    "tags": "note, java, cs61b",
     "date": "2022-08-30 18:00:00 +0000",
     
 
@@ -12,7 +12,7 @@
 
 
 
-    "snippet": "1 Fundations  test test"
+    "snippet": "1 Fundations      Set the course code                  Create a repository from GitHub                    Create a folder A on local                    $ cd A$ git clone https://github.com/my_repository.git$ cd B (Folder inside A)$ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git$ git pull skeleton master                    Move the HelloWorld.java and HelloNumbers.java that you previously created into the lab1directory.                    $ git add lab1/*$ git commit -m &quot;completed first part of lab1&quot;$ git push origin master                    "
   },
   
   {

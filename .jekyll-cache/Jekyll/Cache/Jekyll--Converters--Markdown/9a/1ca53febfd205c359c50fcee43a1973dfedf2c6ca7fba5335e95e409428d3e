@@ -1,0 +1,38 @@
+I"<h1 id="1-fundations">1 Fundations</h1>
+
+<ul>
+  <li>
+    <p>Set the course code</p>
+
+    <ol>
+      <li>
+        <p>Create a repository from GitHub</p>
+      </li>
+      <li>
+        <p>Create a folder <code class="language-plaintext highlighter-rouge">A</code> on local</p>
+      </li>
+      <li>
+        <pre><code class="language-console ">$ cd A
+$ git clone https://github.com/my_repository.git
+$ cd B (Folder inside A)
+$ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
+$ git pull skeleton master
+</code></pre>
+      </li>
+      <li>
+        <p>Move the <code class="language-plaintext highlighter-rouge">HelloWorld.java</code> and <code class="language-plaintext highlighter-rouge">HelloNumbers.java</code> that you previously created into the <code class="language-plaintext highlighter-rouge">lab1</code>directory.</p>
+      </li>
+      <li>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>$ git add lab1/*
+$ git commit -m "completed first part of lab1"
+$ git push origin master
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+:ET
