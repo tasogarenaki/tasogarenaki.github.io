@@ -34,23 +34,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Terry" />
+<meta property="og:title" content="LeetCode Python" />
+<meta name="author" content="Terry" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation." />
-<meta property="og:description" content="A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation." />
-<link rel="canonical" href="https://tasogarenaki.github.io/" />
-<meta property="og:url" content="https://tasogarenaki.github.io/" />
+<meta name="description" content="HashTable (Algo catalog by use ##2)" />
+<meta property="og:description" content="HashTable (Algo catalog by use ##2)" />
+<link rel="canonical" href="http://localhost:4000/posts/LeetCode-Python/" />
+<meta property="og:url" content="http://localhost:4000/posts/LeetCode-Python/" />
 <meta property="og:site_name" content="Terry" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-15T10:11:11+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Terry" />
+<meta property="twitter:title" content="LeetCode Python" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.","headline":"Terry","name":"tasogarenaki","sameAs":["https://github.com/tasogarenaki"],"url":"https://tasogarenaki.github.io/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-06-15T10:11:11+00:00","datePublished":"2022-06-15T10:11:11+00:00","description":"HashTable (Algo catalog by use ##2)","headline":"LeetCode Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/LeetCode-Python/"},"url":"http://localhost:4000/posts/LeetCode-Python/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Terry
+  <title>LeetCode Python | Terry
   </title>
 
   <!--
@@ -96,7 +98,13 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 
 
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
 
+
+
+  <!-- Manific Popup -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
 
 
 
@@ -266,7 +274,7 @@
   <ul class="w-100">
 
     <!-- home -->
-    <li class="nav-item active">
+    <li class="nav-item">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
         <span>HOME</span>
@@ -384,8 +392,33 @@
     
 
     
-      <!-- index page -->
-      <span>Home</span>
+
+      
+
+        
+          <span>
+            <a href="/">
+              Home
+            </a>
+          </span>
+
+        
+
+      
+
+        
+
+      
+
+        
+
+          
+            <span>LeetCode Python</span>
+          
+
+        
+
+      
 
     
 
@@ -394,7 +427,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      Terry
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -428,161 +461,174 @@
     
       
       
-        
-
-
-
-
-
-
-
-
-<!-- Get pinned posts -->
-
-
-
-
-
-
-
-<!-- Get default posts -->
-
-
-
-
-
-
-
-
-
-
-<div id="post-list">
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/Java-Note/">Java Note</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        1 Fundations
-
-
-  test test
-
-
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
         <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
+  Refactor the HTML structure.
 -->
 
 
 
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
 
 
-<em class="timeago"
-    date="2022-08-30 18:00:00 +0000"
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Add attribute 'hide-bullet' to the checkbox list -->
+
+
+
+<!-- images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
     
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Tue, Aug 30, 2022,  6:00 PM +0000"
-    >Aug 30</em>
+    
 
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="4 words">
-  <em>1 min</em></span>
-
-
-        <!-- categories -->
+    
+      
         
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Note,
-            CS
-          </span>
         
-      </div>
+      
+
+      
+      
+
+      
+      
+      
+      
 
       
 
-    </div> <!-- .post-meta -->
+    
 
-  </div> <!-- .post-review -->
+    
 
+  
 
+  
+  
 
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/LeetCode-Python/">LeetCode Python</a>
-    </h1>
+  
+    
+    
 
-    <div class="post-content">
-      <p>
+    
+      
         
+        
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
 
 
 
 
 
-        HashTable (Algo catalog by use ##2)
 
-Simple / Medium / Hard Catalog
 
-1. Two Sum (name of the questions)
+<h1 data-toc-skip>LeetCode Python</h1>
 
-Inhalt
+<div class="post-meta text-muted">
 
-Idea for the solution, explanation
+  <!-- author -->
+  <div>
+    
+    
 
-Code
+    
 
-using ** ** without  space to create a lin...
-      </p>
-    </div>
+    By
+    <em>
+      
+        <a href="https://github.com/tasogarenaki">Terry</a>
+      
+    </em>
+  </div>
 
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
+  <div class="d-flex">
+    <div>
+      <!-- published date -->
+      <span>
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/timeago.js
@@ -600,10 +646,13 @@ using ** ** without  space to create a lin...
       title="Wed, Jun 15, 2022, 10:11 AM +0000"
     >Jun 15</em>
 
+      </span>
 
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
+      <!-- lastmod date -->
+      
+
+      <!-- read time -->
+      <!--
   Calculate the post's reading time, and display the word count in tooltip
  -->
 
@@ -623,185 +672,123 @@ using ** ** without  space to create a lin...
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
   title="38 words">
-  <em>1 min</em></span>
+  <em>1 min</em> read</span>
 
 
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Note,
-            CS
-          </span>
-        
-      </div>
-
+      <!-- page views -->
       
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/Python-Note/">Python Note</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        1 Fundations
-
-
-  install pip:
-
-
-  $ curl https://bootstrap.pypa.io/pip/get-pip.py -o get-pip.py
-  $ sudo python3 get-pip.py
-
-
-
-
-
-  Some Commands:
-    
-      control + d: exit()
-      control + l: c...
-      </p>
     </div>
 
-    <div class="post-meta text-muted d-flex">
+  </div> <!-- .d-flex -->
 
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <h2 id="hashtable-algo-catalog-by-use-2">HashTable (Algo catalog by use ##2)<a href="#hashtable-algo-catalog-by-use-2" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h3 id="simple--medium--hard-catalog">Simple / Medium / Hard Catalog<a href="#simple--medium--hard-catalog" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<h4 id="1-two-sum-name-of-the-questions">1. Two Sum (name of the questions)<a href="#1-two-sum-name-of-the-questions" class="anchor"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<p><strong>Inhalt</strong></p>
+
+<p><strong>Idea for the solution, explanation</strong></p>
+
+<p><strong>Code</strong></p>
+
+<p>using ** ** without  space to create a line betwenn two questions</p>
+
+<hr />
 
 
+</div>
 
+<div class="post-tail-wrapper text-muted">
 
-
-<em class="timeago"
-    date="2022-06-01 10:11:11 +0000"
+  <!-- categories -->
+  
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      data-toggle="tooltip"
-      data-placement="bottom"
-      title="Wed, Jun  1, 2022, 10:11 AM +0000"
-    >Jun  1</em>
+      <a href='/categories/note/'>Note</a>,
+      <a href='/categories/cs/'>CS</a>
+  </div>
+  
 
+  <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/leetcode/"
+          class="post-tag no-text-decoration" >leetcode</a>
+      
+      <a href="/tags/python/"
+          class="post-tag no-text-decoration" >python</a>
+      
+  </div>
+  
 
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7891 words">
-  <em>43 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            Note,
-            CS
-          </span>
-        
-      </div>
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
 
       
 
-    </div> <!-- .post-meta -->
+        
 
-  </div> <!-- .post-review -->
+        This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
 
+      
+    </div>
 
-
-</div> <!-- #post-list -->
-
-
-  <!--
-  The paginator for post list on HomgPage.
+    <!--
+ Post sharing snippet
 -->
 
-<ul class="pagination align-items-center mt-4 mb-0 pl-lg-2">
-  <!-- left arrow -->
-  
-
-  <li class="page-item disabled">
-    <a class="page-link btn-box-shadow" href="#" aria-label="previous-page">
-      <i class="fas fa-angle-left"></i>
-    </a>
-  </li>
-
-  <!-- page numbers -->
-  
-  
-
-  
-
-    
-    
-    
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">Share</span>
+  <span class="share-icons">
     
     
 
     
-
+      
+        <a href="https://twitter.com/intent/tweet?text=LeetCode Python - Terry&url=http://localhost:4000/posts/LeetCode-Python/" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
     
-      <!-- show number -->
-      <li class="page-item  active">
-        <a class="page-link btn-box-shadow" href="/">1</a>
-      </li>
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=LeetCode Python - Terry&u=http://localhost:4000/posts/LeetCode-Python/" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://telegram.me/share?text=LeetCode Python - Terry&url=http://localhost:4000/posts/LeetCode-Python/" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
     
 
-  
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="Copy link"
+        title-succeed="Link copied successfully!">
+    </i>
 
-  <!-- mobile pagination -->
-  <li class="page-index align-middle">
-    <span>1</span>
-    <span class="text-muted">/ 1</span>
-  </li>
+  </span>
+</div>
 
-  <!-- right arrow -->
-  
 
-  <li class="page-item disabled">
-    <a class="page-link btn-box-shadow" href="#" aria-label="next-page">
-      <i class="fas fa-angle-right"></i>
-    </a>
-  </li>
+  </div><!-- .post-tail-bottom -->
 
-</ul> <!-- .pagination -->
-
+</div><!-- div.post-tail-wrapper -->
 
 
       
@@ -958,11 +945,244 @@ using ** ** without  space to create a lin...
     </div>
 
     
+      
+      
+
+
+
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
+
+
+    
   </div>
 
 </div>
 
 <!-- tail -->
+
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+      
+        
+        <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+
+  
+    
+    
+      
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+    
+  
+
+
+
+
+
+  <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
+    <h3 class="pt-2 mt-1 mb-4 ml-1"
+      data-toc-skip>Further Reading</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Python-Note/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2022-06-01 10:11:11 +0000"
+    >Jun  1</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python Note</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                1 Fundations
+
+
+  install pip:
+
+
+  $ curl https://bootstrap.pypa.io/pip/get-pip.py -o get-pip.py
+  $ sudo python3 get-pip.py
+
+
+
+
+
+  Some Commands:
+    
+      control + d: exit()
+      control + l: c...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Java-Note/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2022-08-30 18:00:00 +0000"
+    >Aug 30</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Java Note</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                1 Fundations
+
+
+  test test
+
+
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+
+      
+        
+        <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/Python-Note/" class="btn btn-outline-primary"
+    prompt="Older">
+    <p>Python Note</p>
+  </a>
+  
+
+  
+  <a href="/posts/Java-Note/" class="btn btn-outline-primary"
+    prompt="Newer">
+    <p>Java Note</p>
+  </a>
+  
+
+</div>
+
+      
+        
+        <!--  The comments switcher -->
+
+
+      
+    </div>
+  </div>
+</div> <!-- .row -->
 
 
 
@@ -1129,6 +1349,65 @@ using ** ** without  space to create a lin...
     </div> <!-- #main-wrapper -->
 
     
+      <!--
+  mermaid-js loader
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+
+<script>
+  $(function() {
+    function updateMermaid(event) {
+      if (event.source === window && event.data &&
+            event.data.direction === ModeToggle.ID) {
+
+        const mode = event.data.message;
+
+        if (typeof mermaid === "undefined") {
+          return;
+        }
+
+        let expectedTheme = (mode === ModeToggle.DARK_MODE? "dark" : "default");
+        let config = { theme: expectedTheme };
+
+        /* Re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */
+        $(".mermaid").each(function() {
+          let svgCode = $(this).prev().children().html();
+          $(this).removeAttr("data-processed");
+          $(this).html(svgCode);
+        });
+
+        mermaid.initialize(config);
+        mermaid.init(undefined, ".mermaid");
+      }
+    }
+
+    let initTheme = "default";
+
+    if ($("html[mode=dark]").length > 0
+      || ($("html[mode]").length == 0
+        && window.matchMedia("(prefers-color-scheme: dark)").matches ) ) {
+      initTheme = "dark";
+    }
+
+    let mermaidConf = {
+      theme: initTheme  /* <default|dark|forest|neutral> */
+    };
+
+    /* Markdown converts to HTML */
+    $("pre").has("code.language-mermaid").each(function() {
+      let svgCode = $(this).children().html();
+      $(this).addClass("unloaded");
+      $(this).after(`<div class=\"mermaid\">${svgCode}</div>`);
+    });
+
+    mermaid.initialize(mermaidConf);
+
+    window.addEventListener("message", updateMermaid);
+  });
+</script>
+
+    
 
     <div id="mask"></div>
 
@@ -1182,14 +1461,40 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+
+
+
+  <!-- image lazy-loading & popup -->
+  <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
 
 
 
 
 
+<script defer src="/assets/js/dist/post.min.js"></script>
 
-<script defer src="/assets/js/dist/home.min.js"></script>
 
+  <!-- MathJax -->
+  <script>
+  /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
+  MathJax = {
+    tex: {
+      inlineMath: [              /* start/end delimiter pairs for in-line math */
+        ['$','$'],
+        ['\\(','\\)']
+      ],
+      displayMath: [             /* start/end delimiter pairs for display math */
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ]
+    }
+  };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
 
 
 <!-- commons -->

@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "Java Note",
+    "url": "/posts/Java-Note/",
+    "categories": "Note, CS",
+    "tags": "note, java",
+    "date": "2022-08-30 18:00:00 +0000",
+    
+
+
+
+
+
+    "snippet": "1 Fundations  test test"
+  },
+  
+  {
     "title": "LeetCode Python",
     "url": "/posts/LeetCode-Python/",
     "categories": "Note, CS",

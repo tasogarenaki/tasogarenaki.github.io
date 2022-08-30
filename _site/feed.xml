@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-06-11T12:34:48+00:00</updated>
+  <updated>2022-08-30T18:06:42+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,104 @@
 
   
   <entry>
+    <title>Java Note</title>
+    <link href="http://localhost:4000/posts/Java-Note/" rel="alternate" type="text/html" title="Java Note" />
+    <published>2022-08-30T18:00:00+00:00</published>
+  
+    <updated>2022-08-30T18:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/Java-Note/</id>
+    <content src="http://localhost:4000/posts/Java-Note/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      1 Fundations
+
+
+  test test
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>LeetCode Python</title>
+    <link href="http://localhost:4000/posts/LeetCode-Python/" rel="alternate" type="text/html" title="LeetCode Python" />
+    <published>2022-06-15T10:11:11+00:00</published>
+  
+    <updated>2022-06-15T10:11:11+00:00</updated>
+  
+    <id>http://localhost:4000/posts/LeetCode-Python/</id>
+    <content src="http://localhost:4000/posts/LeetCode-Python/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      HashTable (Algo catalog by use ##2)
+
+Simple / Medium / Hard Catalog
+
+1. Two Sum (name of the questions)
+
+Inhalt
+
+Idea for the solution, explanation
+
+Code
+
+using ** ** without  space to create a line betwenn two questions
+
+
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Python Note</title>
     <link href="http://localhost:4000/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
     <published>2022-06-01T10:11:11+00:00</published>
   
-    <updated>2022-06-10T14:08:50+00:00</updated>
+    <updated>2022-08-07T14:42:45+00:00</updated>
   
     <id>http://localhost:4000/posts/Python-Note/</id>
     <content src="http://localhost:4000/posts/Python-Note/" />
