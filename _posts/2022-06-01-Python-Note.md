@@ -996,7 +996,7 @@ WHERE name = item GROUP BY category HAVING MIN(MSRP/rating);
 ## 3.2 Examples 
 
 - Some Examples from **lab02**:
-  - full cases see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab02) 
+  - full cases see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab02) 
 
 ```python
 def cycle(f1, f2, f3):
@@ -1039,7 +1039,7 @@ To run this function i.e. `my_cycle = cycle(add1, times2, add3)(2)(1)`:
 <br>
 
 - Some Examples from **project cats**:
-  - full cases see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Projects/cats/cats.py) 
+  - full cases see [here](https://github.com/tasogarenaki/CS61A/tree/master/Projects/cats) 
 
 ```python
 # ----------------------------------------- Q1 ---------------------------------- #
@@ -1225,7 +1225,7 @@ def fastest_words(game):
 <br>
 
 - Some Examples from **lab05**:
-  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab05)
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab05)
 
 ```python
 # ------------------------------------- Q5 ------------------------------------- #
@@ -1296,7 +1296,7 @@ The idea of the solution for this question can split into two parts:
 <br>
 
 - Some Examples from **hw03**:
-  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw03/hw03.py)
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/HW/hw03)
 
 
  ```python
@@ -1323,7 +1323,7 @@ For case like this, its usefull to via **recursion** to get into the `leaf` by `
 <br>
 
 - Some Examples from **lab06**:
-  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Labor/lab06/lab06.py)
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab06)
 
 
 ```python
@@ -1361,7 +1361,7 @@ Q4: for case with quivalent value from `entry` and `elem` could caused the infin
 <br>
 
 - Some Examples from **hw04**:
-  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/HW/hw04)
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/HW/hw04)
 
 
 ```python
@@ -1403,7 +1403,7 @@ def permutations(seq):
 <br>
 
 - Some Examples from **lab07**:
-  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/tree/master/Python/CS61A/Labor/lab07)
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab07)
 
 
 ```python
@@ -1443,7 +1443,7 @@ Copy a list to avoid trouble when mutate a list as iterating through it. In line
 
 Some Examples from **hw05**:
 
-- full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/HW/hw05/hw05.py)
+- full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/HW/hw05)
 - A tree is a binary search tree (BST) if:
   - Each `node` has at most two `children (branches)`, which means a `leaf` is automatically a valid BST
   - The `children` are valid binary search trees, which means both side of the tree must be BST
@@ -1488,7 +1488,7 @@ Used two helper functions `bst_max()` and  `bst_min()` to find the max and the m
 <br>
 
 - Some Examples from **lab08**:
-  - full codes see [here](https://github.com/tasogarenaki/CS-Lectures/blob/master/Python/CS61A/Labor/lab08/lab08.py)
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab08)
 
 
 ```python
@@ -1595,7 +1595,7 @@ Just create a blank `temp` list to save all `label`s of odd level and reverse it
 
 - Some Examples from **lab09**:
 
-  - full codes see [here]()
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab09)
 
   - A **full binary tree (FBT)** is a tree with each node has either 0 or 2 branches (never 1 branch). 
 
@@ -1673,7 +1673,7 @@ Use `remove()` to remove the branches / labels. Line 5: The `Branches` of the tr
 
 - Some Examples from **lab14**:
 
-  - full codes see [here]()
+  - full codes see [here](https://github.com/tasogarenaki/CS61A/tree/master/Labor/lab14)
 
 ```python
 # Split the list and return the number of ways the sum of the first list 
