@@ -37,8 +37,8 @@
 <meta property="og:title" content="CS61B Note" />
 <meta name="author" content="Terry" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="1 Fundations" />
-<meta property="og:description" content="1 Fundations" />
+<meta name="description" content="1 Introduction" />
+<meta property="og:description" content="1 Introduction" />
 <link rel="canonical" href="https://tasogarenaki.github.io/posts/CS61B-Note/" />
 <meta property="og:url" content="https://tasogarenaki.github.io/posts/CS61B-Note/" />
 <meta property="og:site_name" content="Terry" />
@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-05T19:31:10+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Fundations","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-06T18:47:14+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -614,13 +614,13 @@
 
 
 <em class="timeago"
-    date="2022-09-05 21:31:10 +0200
+    date="2022-09-06 20:47:14 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Sep  5, 2022,  9:31 PM +0200"
-    >Sep  5</em>
+      title="Tue, Sep  6, 2022,  8:47 PM +0200"
+    >Sep  6</em>
 
       </span>
       
@@ -645,8 +645,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="327 words">
-  <em>1 min</em> read</span>
+  title="689 words">
+  <em>3 min</em> read</span>
 
 
       <!-- page views -->
@@ -658,7 +658,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="1-fundations">1 Fundations</h1>
+  <h1 id="1-introduction">1 Introduction</h1>
 
 <ul>
   <li>
@@ -709,18 +709,17 @@ $ git push origin master
       <li>Statements must end with semi-colons <code class="language-plaintext highlighter-rouge">;</code>.</li>
       <li>Comments with <code class="language-plaintext highlighter-rouge">/* */</code> or <code class="language-plaintext highlighter-rouge">//</code>.</li>
       <li>Javadoc: <code class="language-plaintext highlighter-rouge">/** */</code> for methods or classes.</li>
-      <li>Compiler and Run Java program via Terminal:</li>
-    </ul>
+      <li>
+        <p>Compiler and Run Java program via Terminal:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>$ javac name.java
-$ java name
-</pre></td></tr></tbody></table></code></div>    </div>
-
-    <ul>
+</pre></td><td class="rouge-code"><pre>  $ javac name.java
+  $ java name
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
       <li>
         <p><code class="language-plaintext highlighter-rouge">static</code> type for all variables and expressions</p>
 
@@ -738,22 +737,66 @@ $ java name
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    
-<span class="n">string</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"test"</span><span class="o">;</span>  <span class="c1">// error</span>
+</pre></td><td class="rouge-code"><pre>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+      
+  <span class="n">string</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"test"</span><span class="o">;</span>  <span class="c1">// error</span>
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
-      <li>
-        <p><code class="language-plaintext highlighter-rouge">System.out.print</code> will not print a newline (return), <code class="language-plaintext highlighter-rouge">System.out.println</code> will print a newline.</p>
-      </li>
-      <li>
-        <p>Functions:</p>
+      <li><code class="language-plaintext highlighter-rouge">System.out.print</code> will not print a newline (return), <code class="language-plaintext highlighter-rouge">System.out.println</code> will print a newline.</li>
+    </ul>
 
+    <p><br /></p>
+  </li>
+  <li>
+    <p>Functions:</p>
+
+    <ul>
+      <li>Functions must be declared as part of a class. A function that is part of a class is method, so all functions are methods.
         <ul>
-          <li>Functions must be declared as part of a class. A function that is part of a class is method, so all functions are methods.</li>
           <li>To define a function use <code class="language-plaintext highlighter-rouge">public static</code> (e.g. Python <code class="language-plaintext highlighter-rouge">def</code>).</li>
           <li>All parameters of a functions must be declared.</li>
         </ul>
+      </li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LargerDemo</span> <span class="o">{</span>
+      <span class="cm">/** Returns the larger of x and y. */</span>
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">larger</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+              <span class="k">return</span> <span class="n">x</span><span class="o">;</span>
+          <span class="o">}</span>
+          <span class="k">return</span> <span class="n">y</span><span class="o">;</span>
+      <span class="o">}</span>
+    
+      <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">larger</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>Class</p>
+
+    <ul>
+      <li>
+        <p>Examle:</p>
 
         <div class="language-java highlighter-rouge"><div class="code-header">
         <span label-text="Java"><i class="fas fa-code small"></i></span>
@@ -770,22 +813,107 @@ $ java name
 11
 12
 13
-</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LargerDemo</span> <span class="o">{</span>
-    <span class="cm">/** Returns the larger of x and y. */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">larger</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">x</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">y</span><span class="o">;</span>
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="cm">/* Dog.java */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>		<span class="c1">// non-static</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">weightInPounds</span><span class="o">;</span>		<span class="c1">// instance variable </span>
+        
+    <span class="cm">/* One integer constructor for dogs */</span>
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="o">(</span><span class="kt">int</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>		<span class="c1">// e.g. python def __init__</span>
+        <span class="n">weightInPounds</span> <span class="o">=</span> <span class="n">w</span><span class="o">;</span>
     <span class="o">}</span>
-    
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">larger</span><span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
+        
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">()</span> <span class="o">{</span>		<span class="c1">// non-static method </span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">weightInPounds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"yip!"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">weightInPounds</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"bark"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"wooof!"</span><span class="o">);</span>
+        <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
+    
+<span class="cm">/* DogLauncher.java */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DogLauncher</span> <span class="o">{</span>		<span class="c1">// client of Dog class</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Dog</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>			<span class="c1">// Declaration </span>
+        <span class="n">d</span><span class="o">.</span><span class="na">weightInPounds</span> <span class="o">=</span> <span class="mi">51</span><span class="o">;</span>	<span class="c1">// Instantiation</span>
+        <span class="n">d</span><span class="o">.</span><span class="na">makeNoise</span><span class="o">();</span>				 <span class="c1">// Invocation</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+    
+<span class="o">&gt;</span> <span class="n">javac</span> <span class="nc">Dog</span><span class="o">.</span><span class="na">java</span>
+<span class="o">&gt;</span> <span class="n">javac</span> <span class="nc">DogLauncher</span><span class="o">.</span><span class="na">java</span>
+<span class="o">&gt;</span> <span class="n">java</span> <span class="nc">DogLauncher</span>
+<span class="n">wooof</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div>        </div>
+
+        <ul>
+          <li>A class that uses another class is sometimes called a “client” of that class, i.e. <code class="language-plaintext highlighter-rouge">DogLauncher</code> is a client of <code class="language-plaintext highlighter-rouge">Dog</code>.</li>
+          <li>Instance variables or non-static variables must be declared inside the class.</li>
+          <li>The <code class="language-plaintext highlighter-rouge">makeNoise()</code> is a <strong>non-static / instance</strong> method, and do not have the <code class="language-plaintext highlighter-rouge">static</code> keyword. If the method is going to be invoked by an instance of the class, then it should be non-static. It means, if one method needs to use the instance variable, the method must be non-static.
+            <ul>
+              <li>To call the <code class="language-plaintext highlighter-rouge">makeNoise</code> method should using the <code class="language-plaintext highlighter-rouge">new</code> keyword to instantiate a <code class="language-plaintext highlighter-rouge">Dog</code>, then call <code class="language-plaintext highlighter-rouge">d.makeNoise()</code>.</li>
+            </ul>
+          </li>
+          <li>The constructor with signature <code class="language-plaintext highlighter-rouge">public Dog(int w)</code> will be invoked anytime that we try to create a <code class="language-plaintext highlighter-rouge">Dog</code> using the <code class="language-plaintext highlighter-rouge">new</code> keyword and a single integer parameter. Similar to Python <code class="language-plaintext highlighter-rouge">__init__</code> method.</li>
+        </ul>
+
+        <p><br /></p>
       </li>
     </ul>
+  </li>
+  <li>
+    <p>Arrays of objects</p>
+
+    <ul>
+      <li>use <code class="language-plaintext highlighter-rouge">new</code> keyword to create the array</li>
+      <li>use <code class="language-plaintext highlighter-rouge">new</code> again for each object that needs to put in the array</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="cm">/* example 1 */</span>
+<span class="nc">Dog</span><span class="o">[]</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>		<span class="c1">// Creates an array of Dogs of size 2</span>
+<span class="n">dogs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>			  <span class="c1">// dog 1 has value of 8 </span>
+<span class="n">dogs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
+<span class="n">dogs</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">makeNoise</span><span class="o">();</span>			  <span class="c1">// dog 1 invoke the method </span>
+  
+<span class="cm">/* example 2 */</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">name</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">];</span>
+<span class="n">name</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="n">name</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> 
+</pre></td></tr></tbody></table></code></div>    </div>
   </li>
 </ul>
 
@@ -1222,7 +1350,7 @@ $ java name
 
 
 
-                1 Fundations
+                1 Introduction
 
 
   install pip:
@@ -1238,7 +1366,7 @@ $ java name
   Some Commands:
     
       control + d: exit()
-      control + l: c...
+      control + l:...
               </p>
             </div>
           </div>

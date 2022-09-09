@@ -13,7 +13,7 @@ mermaid: true
 
 
 
-# 1 Fundations
+# 1 Introduction
 
 - **install pip**:  
 
@@ -273,7 +273,7 @@ yyy.execute('SQL code')
 
 See [here](https://inst.eecs.berkeley.edu/~cs61a/fa20/) for this course.
 
-## 3.1 Fundations
+## 3.1 Introduction
 
 - **`*args` and `**kwargs`**: 
   - `*args`: unknown functions/parameters 
