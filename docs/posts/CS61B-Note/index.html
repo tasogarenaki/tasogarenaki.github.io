@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-06T18:47:14+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-09T14:50:47+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -614,13 +614,13 @@
 
 
 <em class="timeago"
-    date="2022-09-06 20:47:14 +0200
+    date="2022-09-09 16:50:47 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Tue, Sep  6, 2022,  8:47 PM +0200"
-    >Sep  6</em>
+      title="Fri, Sep  9, 2022,  4:50 PM +0200"
+    >Sep  9</em>
 
       </span>
       
@@ -645,8 +645,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="689 words">
-  <em>3 min</em> read</span>
+  title="854 words">
+  <em>4 min</em> read</span>
 
 
       <!-- page views -->
@@ -704,7 +704,15 @@ $ git push origin master
       <li>
         <p><code class="language-plaintext highlighter-rouge">public class</code>: all code lives inside of classes.</p>
       </li>
-      <li>The code that is run is inside of a method called <code class="language-plaintext highlighter-rouge">main</code>, which is declared as <code class="language-plaintext highlighter-rouge">public static void main(String[] args)</code>.</li>
+      <li>
+        <p>The code that is run is inside of a method called <code class="language-plaintext highlighter-rouge">main</code>, which is declared as <code class="language-plaintext highlighter-rouge">public static void main(String[] args)</code>.</p>
+
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">void</code>: It has no return type.</li>
+          <li><code class="language-plaintext highlighter-rouge">main</code>: This is the name of the method.</li>
+          <li><code class="language-plaintext highlighter-rouge">String[] args</code>: This is a parameter that is passed to the main method.</li>
+        </ul>
+      </li>
       <li>Use <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code> to denote the beginning and the end of a section of code.</li>
       <li>Statements must end with semi-colons <code class="language-plaintext highlighter-rouge">;</code>.</li>
       <li>Comments with <code class="language-plaintext highlighter-rouge">/* */</code> or <code class="language-plaintext highlighter-rouge">//</code>.</li>
@@ -854,9 +862,9 @@ $ git push origin master
 <span class="o">}</span>
     
 <span class="cm">/* DogLauncher.java */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DogLauncher</span> <span class="o">{</span>		<span class="c1">// client of Dog class</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DogLauncher</span> <span class="o">{</span>		  <span class="c1">// client of Dog class</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">Dog</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>			<span class="c1">// Declaration </span>
+        <span class="nc">Dog</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>			<span class="c1">// Declaration a new variable of type Dog</span>
         <span class="n">d</span><span class="o">.</span><span class="na">weightInPounds</span> <span class="o">=</span> <span class="mi">51</span><span class="o">;</span>	<span class="c1">// Instantiation</span>
         <span class="n">d</span><span class="o">.</span><span class="na">makeNoise</span><span class="o">();</span>				 <span class="c1">// Invocation</span>
     <span class="o">}</span>
@@ -878,10 +886,82 @@ $ git push origin master
           </li>
           <li>The constructor with signature <code class="language-plaintext highlighter-rouge">public Dog(int w)</code> will be invoked anytime that we try to create a <code class="language-plaintext highlighter-rouge">Dog</code> using the <code class="language-plaintext highlighter-rouge">new</code> keyword and a single integer parameter. Similar to Python <code class="language-plaintext highlighter-rouge">__init__</code> method.</li>
         </ul>
+      </li>
+      <li>
+        <p><strong>Non-static</strong> Methods are actions that can be taken only by a specific instance of a class.</p>
 
-        <p><br /></p>
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nc">Math</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Math</span><span class="o">();</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p><strong>Static</strong> methods are actions that are taken by the class itself.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>Static and non-static:</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">Dog</span> <span class="nf">maxDog</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">d2</span><span class="o">)</span> <span class="o">{</span>	 <span class="c1">// non-static method</span>
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">weightInPounds</span> <span class="o">&gt;</span> <span class="n">d2</span><span class="o">.</span><span class="na">weightInPounds</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>	<span class="c1">// use the keyword this to refer to the current object</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">d2</span><span class="o">;</span>
+<span class="o">}</span>
+    
+<span class="cm">/* invoke */</span>
+<span class="nc">Dog</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">15</span><span class="o">);</span>	
+<span class="nc">Dog</span> <span class="n">d2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+<span class="n">d</span><span class="o">.</span><span class="na">maxDog</span><span class="o">(</span><span class="n">d2</span><span class="o">);</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>Static Variables</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">weightInPounds</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="n">binomen</span> <span class="o">=</span> <span class="s">"Canis familiaris"</span><span class="o">;</span>	<span class="c1">// static variable</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+    
+<span class="cm">/* invoke */</span>
+<span class="nc">Dog</span><span class="o">.</span><span class="na">binomen</span>
+</pre></td></tr></tbody></table></code></div>        </div>
       </li>
     </ul>
+
+    <p><br /></p>
   </li>
   <li>
     <p>Arrays of objects</p>
@@ -1049,12 +1129,12 @@ $ git push origin master
         
         
         
-      <li><a href="/posts/CS61B-Note/">CS61B Note</a></li>
+      <li><a href="/posts/Python-Note/">Python Note</a></li>
       
         
         
         
-      <li><a href="/posts/Python-Note/">Python Note</a></li>
+      <li><a href="/posts/CS61B-Note/">CS61B Note</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
