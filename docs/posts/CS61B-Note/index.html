@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-09T14:50:47+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-11T15:56:03+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -535,6 +535,43 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -614,13 +651,13 @@
 
 
 <em class="timeago"
-    date="2022-09-09 16:50:47 +0200
+    date="2022-09-11 17:56:03 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Fri, Sep  9, 2022,  4:50 PM +0200"
-    >Sep  9</em>
+      title="Sun, Sep 11, 2022,  5:56 PM +0200"
+    >Sep 11</em>
 
       </span>
       
@@ -645,8 +682,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="854 words">
-  <em>4 min</em> read</span>
+  title="1248 words">
+  <em>6 min</em> read</span>
 
 
       <!-- page views -->
@@ -997,7 +1034,183 @@ $ git push origin master
   </li>
 </ul>
 
-<h2 id="11-theme-x">1.1 Theme x<a href="#11-theme-x" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="11-lists">1.1 Lists<a href="#11-lists" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h3 id="111-sllist-singly-linked-list">1.1.1 SLList (Singly Linked List)<a href="#111-sllist-singly-linked-list" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntNode</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">item</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nc">IntNode</span> <span class="n">next</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">IntNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="nc">IntNode</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SLList</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">IntNode</span> <span class="n">first</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">SLList</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="cm">/** Adds x to the front of the list. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFirst</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">first</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+  <span class="cm">/** Returns the first item in the list. */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFirst</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">first</span><span class="o">.</span><span class="na">item</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="cm">/* Creates a list of one integer, namely 10 */</span>
+      	<span class="nc">SLList</span> <span class="no">L</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="no">L</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="no">L</span><span class="o">.</span><span class="na">getFirst</span><span class="o">();</span>	<span class="c1">// outputs 10</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>
+    <p>Public vs. Private</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="cm">/* change public to private */</span>
+<span class="kd">private</span> <span class="nc">IntNode</span> <span class="n">first</span><span class="o">;</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>Private variables and methods can only be accessed by code inside the same <code class="language-plaintext highlighter-rouge">.java</code> file, e.g. in this case <code class="language-plaintext highlighter-rouge">SLList.java</code>. Other class can not invoke <code class="language-plaintext highlighter-rouge">first</code>. But can through <code class="language-plaintext highlighter-rouge">public</code> methods like <code class="language-plaintext highlighter-rouge">public void addFirst</code> to invoke or edit <code class="language-plaintext highlighter-rouge">first</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>Nested Class</p>
+
+    <ul>
+      <li>Put a class inside of another class. Do not need two java files.</li>
+      <li>If the nested class has no need to use any of the instance methods or variables of enclosing class, then can declare with <code class="language-plaintext highlighter-rouge">static</code>. Which means that methods inside of static class can not access any of the members of the enclosing class.</li>
+      <li>e.g. <code class="language-plaintext highlighter-rouge">IntNode</code> class is depends on <code class="language-plaintext highlighter-rouge">SLList</code> class, so can put in inside of <code class="language-plaintext highlighter-rouge">SLList</code></li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SLList</span> <span class="o">{</span> 
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">IntNode</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">int</span> <span class="n">item</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="nc">Node</span> <span class="n">next</span><span class="o">;</span>
+  
+        <span class="kd">public</span> <span class="nf">IntNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="nc">IntNode</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="nc">IntNode</span> <span class="n">first</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">SLList</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="o">}</span>
+      
+    <span class="cm">/** Adds an item to the front of the list */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFirst</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">first</span><span class="o">);</span>
+    <span class="o">}</span>
+      
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFirst</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">first</span><span class="o">.</span><span class="na">item</span><span class="o">;</span>
+    <span class="o">}</span>
+      
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SLList</span> <span class="no">L</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">(</span><span class="mi">15</span><span class="o">);</span>
+        <span class="no">L</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="no">L</span><span class="o">.</span><span class="na">getFirst</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h3 id="112-dllist">1.1.2 DLList<a href="#112-dllist" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
 
 <h1 id="2-examples">2 Examples</h1>
 
@@ -1129,12 +1342,12 @@ $ git push origin master
         
         
         
-      <li><a href="/posts/Python-Note/">Python Note</a></li>
+      <li><a href="/posts/CS61B-Note/">CS61B Note</a></li>
       
         
         
         
-      <li><a href="/posts/CS61B-Note/">CS61B Note</a></li>
+      <li><a href="/posts/Python-Note/">Python Note</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
