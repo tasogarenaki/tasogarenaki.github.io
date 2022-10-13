@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-09-11T15:56:03+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-10T19:56:18+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -651,13 +651,13 @@
 
 
 <em class="timeago"
-    date="2022-09-11 17:56:03 +0200
+    date="2022-10-10 21:56:18 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Sun, Sep 11, 2022,  5:56 PM +0200"
-    >Sep 11</em>
+      title="Mon, Oct 10, 2022,  9:56 PM +0200"
+    >Oct 10</em>
 
       </span>
       
@@ -682,8 +682,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1248 words">
-  <em>6 min</em> read</span>
+  title="1563 words">
+  <em>8 min</em> read</span>
 
 
       <!-- page views -->
@@ -1112,6 +1112,8 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<p><br /></p>
+
 <ul>
   <li>
     <p>Public vs. Private</p>
@@ -1207,6 +1209,154 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>
+        <p>addLast and size</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Adds an itemto the end of the list. */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">){</span>
+  <span class="nc">IntNote</span> <span class="n">p</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span>
+      
+  <span class="cm">/* Move p until it reaches the end of the list. */</span>
+  <span class="k">while</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+  <span class="o">}</span>
+      
+  <span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNote</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="o">}</span>
+    
+<span class="cm">/** helper function 
+	* Returns the size of the list that starts at IntNode p. */</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">(</span><span class="nc">IntNode</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">size</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">);</span>
+<span class="o">}</span>
+    
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nf">size</span><span class="o">(</span><span class="n">first</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+
+        <ul>
+          <li>use <code class="language-plaintext highlighter-rouge">private static</code> for helper function, to define this function can not invoked by outside.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><br /></p>
+
+    <ul>
+      <li>
+        <p><strong>Sentinel Nodes:</strong></p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Creates an empty SLList */</span>
+<span class="kd">public</span> <span class="nf">SLList</span><span class="o">(){</span>
+  <span class="n">sentinel</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+  <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="o">}</span>
+    
+<span class="kd">public</span> <span class="nf">SLList</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">){</span>
+  <span class="n">sentinel</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+  <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+  <span class="n">size</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span> 
+    
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFirst</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">){</span>
+  <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span><span class="o">);</span>
+  <span class="n">size</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+    
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFirst</span><span class="o">(){</span>
+  <span class="k">return</span> <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">item</span><span class="o">;</span>
+<span class="o">}</span>
+    
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">size</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="nc">IntNode</span> <span class="n">p</span> <span class="o">=</span> <span class="n">sentinel</span><span class="o">;</span>
+      
+    <span class="k">while</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+
+        <ul>
+          <li>It’s the first node and it’s a dummy node, and not contains in the list.</li>
+          <li>It can be any number, because it will not be used. Its for <code class="language-plaintext highlighter-rouge">addLast</code>.</li>
+          <li>A <code class="language-plaintext highlighter-rouge">SLList</code> with a sentinel node has at least the following invariants:
+            <ul>
+              <li>The <code class="language-plaintext highlighter-rouge">sentinel</code> reference always points to a sentinel node.</li>
+              <li>The front item (if it exists), is always at <code class="language-plaintext highlighter-rouge">sentinel.next.item</code>.</li>
+              <li>The <code class="language-plaintext highlighter-rouge">size</code> variable is always the total number of items that have been added.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
 
