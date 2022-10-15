@@ -1,0 +1,191 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://tasogarenaki.github.io/</id>
+  <title>Terry</title>
+  <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
+  <updated>2022-10-15T15:55:44+00:00</updated>
+  <author>
+    <name>tasogarenaki</name>
+    <uri>https://tasogarenaki.github.io/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://tasogarenaki.github.io/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="https://tasogarenaki.github.io/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+  <rights> © 2022 tasogarenaki </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>CS61B Note</title>
+    <link href="https://tasogarenaki.github.io/posts/CS61B-Note/" rel="alternate" type="text/html" title="CS61B Note" />
+    <published>2022-08-30T18:00:00+00:00</published>
+  
+    <updated>2022-10-13T18:48:29+00:00</updated>
+  
+    <id>https://tasogarenaki.github.io/posts/CS61B-Note/</id>
+    <content src="https://tasogarenaki.github.io/posts/CS61B-Note/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      1 Introduction
+
+
+  
+    Set the course code
+
+    
+      
+        Create a repository from GitHub
+      
+      
+        Create a folder A on local
+      
+      
+        $ cd A
+$ git clone https://github.com/my_repository.git
+$ cd B (Folder inside A)
+$ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
+$ git pull skeleton master
+
+      
+      
+        Move the HelloWorld....
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>LeetCode Python</title>
+    <link href="https://tasogarenaki.github.io/posts/LeetCode-Python/" rel="alternate" type="text/html" title="LeetCode Python" />
+    <published>2022-06-15T10:11:11+00:00</published>
+  
+    <updated>2022-06-15T10:11:11+00:00</updated>
+  
+    <id>https://tasogarenaki.github.io/posts/LeetCode-Python/</id>
+    <content src="https://tasogarenaki.github.io/posts/LeetCode-Python/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      HashTable (Algo catalog by use ##2)
+
+Simple / Medium / Hard Catalog
+
+1. Two Sum (name of the questions)
+
+Inhalt
+
+Idea for the solution, explanation
+
+Code
+
+using ** ** without  space to create a line betwenn two questions
+
+
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Python Note</title>
+    <link href="https://tasogarenaki.github.io/posts/Python-Note/" rel="alternate" type="text/html" title="Python Note" />
+    <published>2022-06-01T10:11:11+00:00</published>
+  
+    <updated>2022-09-09T14:50:47+00:00</updated>
+  
+    <id>https://tasogarenaki.github.io/posts/Python-Note/</id>
+    <content src="https://tasogarenaki.github.io/posts/Python-Note/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      1 Introduction
+
+
+  install pip:
+
+
+  $ curl https://bootstrap.pypa.io/pip/get-pip.py -o get-pip.py
+  $ sudo python3 get-pip.py
+
+
+
+
+
+  Some Commands:
+    
+      control + d: exit()
+      control + l: clear
+      python3 -i name.py
+      handle = open(filename, mode)
+      quit(): break
+      dict_name.get(xxx, 0) + 1: if in dict() has xxx then xxx+1 otherwise 0+1
+      range(start, stop, step)
+  ...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
