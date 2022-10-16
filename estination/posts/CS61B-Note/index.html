@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-13T18:48:29+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-15T15:56:03+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -715,6 +715,19 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -798,13 +811,13 @@
 
 
 <em class="timeago"
-    date="2022-10-13 20:48:29 +0200
+    date="2022-10-15 17:56:03 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Thu, Oct 13, 2022,  8:48 PM +0200"
-    >Oct 13</em>
+      title="Sat, Oct 15, 2022,  5:56 PM +0200"
+    >Oct 15</em>
 
       </span>
       
@@ -829,8 +842,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1797 words">
-  <em>9 min</em> read</span>
+  title="1927 words">
+  <em>10 min</em> read</span>
 
 
       <!-- page views -->
@@ -1415,6 +1428,7 @@ $ git push origin master
 
         <ul>
           <li>use <code class="language-plaintext highlighter-rouge">private static</code> for helper function, to define this function can not invoked by outside.</li>
+          <li><code class="language-plaintext highlighter-rouge">addLast()</code> is slow. Because we have to start at the front, and loop all the way to the back of our list before adding our element.</li>
         </ul>
       </li>
     </ul>
@@ -1512,7 +1526,7 @@ $ git push origin master
 
 <ul>
   <li>
-    <p>A node has a pointer to the next and the previous node. There’s two way to implement it:</p>
+    <p>A node has a pointer to the next and the previous node. 4There’s two way to implement it:</p>
 
     <ol>
       <li>
@@ -1588,6 +1602,50 @@ $ git push origin master
       <li>boolean: Boolean</li>
       <li>long: Long</li>
     </ul>
+  </li>
+</ul>
+
+<h3 id="113-alist-array-list">1.1.3 AList (Array List)<a href="#113-alist-array-list" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<ul>
+  <li>There are three valid notations for array creation
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">y = new int[3];</code></li>
+      <li><code class="language-plaintext highlighter-rouge">x = new int[]{1, 2, 3, 4, 5};</code></li>
+      <li><code class="language-plaintext highlighter-rouge">int[] w = {9, 10, 11, 12, 13};</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>2D Array</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span><span class="o">[][]</span> <span class="n">pascalsTriangle</span><span class="o">;</span>					<span class="c1">// declaration</span>
+<span class="n">pasacalsTriangle</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">][];</span>	<span class="c1">// a 2D array contains four 1D array</span>
+  
+<span class="n">pascalsTriangle</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">};</span><span class="c1">// give a value at position 0</span>
+  
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">matrix</span><span class="o">;</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">4</span><span class="o">];</span>					 <span class="c1">// four 2D array contain 5 int 1D array </span>
+  
+<span class="cm">/** all togher */</span>
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">pascalAgain</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[][]{</span> <span class="o">{</span><span class="mi">1</span><span class="o">},</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">},</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">1</span><span class="o">},</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">1</span><span class="o">}};</span>
+</pre></td></tr></tbody></table></code></div>    </div>
   </li>
 </ul>
 
