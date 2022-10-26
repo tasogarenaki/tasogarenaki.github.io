@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-21T17:58:23+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-24T18:35:24+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -801,13 +801,13 @@
 
 
 <em class="timeago"
-    date="2022-10-21 19:58:23 +0200
+    date="2022-10-24 20:35:24 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Fri, Oct 21, 2022,  7:58 PM +0200"
-    >Oct 21</em>
+      title="Mon, Oct 24, 2022,  8:35 PM +0200"
+    >Oct 24</em>
 
       </span>
       
@@ -832,8 +832,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2365 words">
-  <em>13 min</em> read</span>
+  title="2929 words">
+  <em>16 min</em> read</span>
 
 
       <!-- page views -->
@@ -1829,6 +1829,265 @@ $ git push origin master
         <span class="n">items</span><span class="o">[</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>	
         <span class="n">size</span> <span class="o">=</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
         <span class="k">return</span> <span class="n">last</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h1 id="3-testing">3. Testing</h1>
+
+<ul>
+  <li><strong>Ad Hoc Testing</strong></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Tests the Sort class. */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestSort</span> <span class="o">{</span>
+    <span class="cm">/** Tests the sort method of the Sort class. */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testSort</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="o">{</span><span class="s">"i"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">expected</span> <span class="o">=</span> <span class="o">{</span><span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">};</span>
+      
+        <span class="nc">Sort</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+      
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">input</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">equals</span><span class="o">(</span><span class="n">expected</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Mismatch in position "</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">", 
+                                   expected: "</span> <span class="o">+</span> <span class="n">expected</span> <span class="o">+</span> <span class="s">", but got: "</span> <span class="o">+</span>
+                                   <span class="n">input</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">"."</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">testSort</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>
+    <p><strong>JUnit Testing</strong></p>
+
+    <ul>
+      <li>Precede each method with <code class="language-plaintext highlighter-rouge">@org.junit.Test</code> (no semi-colon).</li>
+      <li>Change each test method to be <strong>non</strong>-static.</li>
+      <li>Remove our <code class="language-plaintext highlighter-rouge">main</code> method from the <code class="language-plaintext highlighter-rouge">TestSort</code> class.</li>
+      <li>Run the Code: Run -&gt; Run</li>
+      <li><code class="language-plaintext highlighter-rouge">import org.junit.Test;</code> -&gt; simply use <code class="language-plaintext highlighter-rouge">@Test</code></li>
+      <li><code class="language-plaintext highlighter-rouge">import static org.junit.Assert.*;</code> -&gt; <code class="language-plaintext highlighter-rouge">assertEquals(expected2, actual2)</code></li>
+      <li>See “Selection Sort”</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testSort</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">String</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="o">{</span><span class="s">"i"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
+    <span class="nc">String</span><span class="o">[]</span> <span class="n">expected</span> <span class="o">=</span> <span class="o">{</span><span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">};</span>
+    <span class="nc">Sort</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+  	<span class="cm">/** Use `org.junit` library */</span>
+    <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertArrayEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">input</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>Selection Sort</p>
+
+    <ol>
+      <li>Find the smallest item.</li>
+      <li>Move it to the front.</li>
+      <li>Selection sort the remaining N-1 items (without touching the front item).</li>
+    </ol>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre></td><td class="rouge-code"><pre><span class="cm">/* Sort Class */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sort</span> <span class="o">{</span>
+    <span class="cm">/** Sorts strings destructively. */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span> 
+       <span class="c1">// selection sort the rest (using recursion by helper methods) </span>
+			<span class="n">sort</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+  	<span class="cm">/** Sorts strings destructively starting from item start. */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">)</span> <span class="o">{</span> 
+       <span class="k">if</span> <span class="o">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">x</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+           <span class="k">return</span><span class="o">;</span>
+       <span class="o">}</span>
+       <span class="c1">// find the smallest item</span>
+   		<span class="kt">int</span> <span class="n">smallestIndex</span> <span class="o">=</span> <span class="n">findSmallest</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">start</span><span class="o">);</span>
+       <span class="c1">// move it to the front</span>
+       <span class="n">swap</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">smallestIndex</span><span class="o">);</span>
+       <span class="n">sort</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+  
+  	<span class="cm">/** Swap item a with b */</span>
+  	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span><span class="o">[</span><span class="n">a</span><span class="o">];</span>
+        <span class="n">x</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">[</span><span class="n">b</span><span class="o">];</span>
+        <span class="n">x</span><span class="o">[</span><span class="n">b</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+		<span class="o">}</span>
+    
+    <span class="cm">/** Returns the smallest string in x. */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">findSmallest</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">smallestIndex</span> <span class="o">=</span> <span class="n">start</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">cmp</span> <span class="o">=</span> <span class="n">x</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">compareTo</span><span class="o">(</span><span class="n">x</span><span class="o">[</span><span class="n">smallestIndex</span><span class="o">]);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cmp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">smallestIndex</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">smallestIndex</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.*;</span>
+  
+<span class="cm">/* TestSort Class */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestSort</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="cm">/** Test the Sort.findSmallest method. */</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testFindSmallest</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="o">{</span><span class="s">"i"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
+        <span class="kt">int</span> <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+  
+        <span class="kt">int</span> <span class="n">actual</span> <span class="o">=</span> <span class="nc">Sort</span><span class="o">.</span><span class="na">findSmallest</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="c1">// org.junit.Assert.assertEquals(expected, actual);   </span>
+      	<span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span> 
+  
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">input2</span> <span class="o">=</span> <span class="o">{</span><span class="s">"there"</span><span class="o">,</span> <span class="s">"are"</span><span class="o">,</span> <span class="s">"many"</span><span class="o">,</span> <span class="s">"pigs"</span><span class="o">};</span>
+        <span class="kt">int</span> <span class="n">expected2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+  
+        <span class="kt">int</span> <span class="n">actual2</span> <span class="o">=</span> <span class="nc">Sort</span><span class="o">.</span><span class="na">findSmallest</span><span class="o">(</span><span class="n">input2</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+        <span class="c1">// org.junit.Assert.assertEquals(expected2, actual2);</span>
+      	<span class="n">assertEquals</span><span class="o">(</span><span class="n">expected2</span><span class="o">,</span> <span class="n">actual2</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="cm">/** Test the Sort.swap method. */</span>
+  	<span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testSwap</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="o">{</span><span class="s">"i"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">expected</span> <span class="o">=</span> <span class="o">{</span><span class="s">"an"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
+  
+        <span class="nc">Sort</span><span class="o">.</span><span class="na">swap</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+        <span class="c1">// org.junit.Assert.assertArrayEquals(expected, input);</span>
+      	<span class="n">assertArrayEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">input</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
