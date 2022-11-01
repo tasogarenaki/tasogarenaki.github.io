@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-24T18:35:24+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-26T18:52:51+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -713,6 +713,19 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -801,13 +814,13 @@
 
 
 <em class="timeago"
-    date="2022-10-24 20:35:24 +0200
+    date="2022-10-26 20:52:51 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Oct 24, 2022,  8:35 PM +0200"
-    >Oct 24</em>
+      title="Wed, Oct 26, 2022,  8:52 PM +0200"
+    >Oct 26</em>
 
       </span>
       
@@ -832,8 +845,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2929 words">
-  <em>16 min</em> read</span>
+  title="3219 words">
+  <em>17 min</em> read</span>
 
 
       <!-- page views -->
@@ -2091,6 +2104,146 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h1 id="4-inheritance">4. Inheritance</h1>
+
+<h2 id="41-intro-and-interfaces">4.1 Intro and Interfaces<a href="#41-intro-and-interfaces" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p><strong>Method Overloading:</strong> Java allows multiple methods with same name, but different parameters.</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">longest</span><span class="o">(</span><span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">longest</span><span class="o">(</span><span class="nc">AList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>When you call <code class="language-plaintext highlighter-rouge">WordUtils.longest</code>, Java knows which one to run according to what kind of parameter you supply it. If you supply it with an AList, it will call the AList method. Same with an SLList.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Interface:</strong> is a specification of waht a List is able to do (methods and parameters), not how to do.</p>
+
+    <ul>
+      <li>Step 1:</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">voif</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">getLast</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">removeLast</span><span class="o">();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">insert</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFirst</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="no">T</span> <span class="nf">getFirst</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>Step 2: use the keyword <code class="language-plaintext highlighter-rouge">implements</code></li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p><strong>Overriding and Overloading:</strong></p>
+
+    <ul>
+      <li>
+        <p>Override: a subclass has a method with the exact same signature as in the superclass</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">();</span>
+<span class="o">}</span>
+    
+<span class="cm">/** Pig overrides makeNoise() */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pig</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">()</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"oink"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>Overload: a subclass has a method with the same name but different signatures as in the superclass</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="cm">/** makeNoise is overloaded */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+		<span class="o">...</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+    
+<span class="cm">/** absis overloaded */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Math</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">abs</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">double</span> <span class="nf">abs</span><span class="o">(</span><span class="kt">double</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>use <code class="language-plaintext highlighter-rouge">@Override</code> tag at the top for all methods that been overrided.</p>
+      </li>
+    </ul>
   </li>
 </ul>
 
