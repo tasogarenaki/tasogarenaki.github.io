@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-10-26T18:52:51+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-01T19:58:20+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -814,13 +814,13 @@
 
 
 <em class="timeago"
-    date="2022-10-26 20:52:51 +0200
+    date="2022-11-01 20:58:20 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Oct 26, 2022,  8:52 PM +0200"
-    >Oct 26</em>
+      title="Tue, Nov  1, 2022,  8:58 PM +0100"
+    >Nov  1</em>
 
       </span>
       
@@ -845,8 +845,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3219 words">
-  <em>17 min</em> read</span>
+  title="3349 words">
+  <em>18 min</em> read</span>
 
 
       <!-- page views -->
@@ -2128,7 +2128,7 @@ $ git push origin master
     </ul>
   </li>
   <li>
-    <p><strong>Interface:</strong> is a specification of waht a List is able to do (methods and parameters), not how to do.</p>
+    <p><strong>Interface Inheritance:</strong> is a specification of what a List is able to do (methods and parameters), not how to do. THe subclass must have all methods of the interface.</p>
 
     <ul>
       <li>Step 1:</li>
@@ -2244,6 +2244,49 @@ $ git push origin master
         <p>use <code class="language-plaintext highlighter-rouge">@Override</code> tag at the top for all methods that been overrided.</p>
       </li>
     </ul>
+  </li>
+  <li>
+    <p><strong>Implementation Inheritance:</strong> tells the subclasses how they should behave. Subclasses can inherit signatures and implementation. You must include the <code class="language-plaintext highlighter-rouge">default</code> keyword in the method signature.</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="k">default</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <p>For an <code class="language-plaintext highlighter-rouge">SLList</code>, the <code class="language-plaintext highlighter-rouge">get</code> method needs to jump through the entirety of the list. during each call. It’s much better to just override the <code class="language-plaintext highlighter-rouge">print</code> method.</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Node</span> <span class="n">p</span> <span class="o">=</span> <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span><span class="o">;</span> <span class="n">p</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">item</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
   </li>
 </ul>
 
