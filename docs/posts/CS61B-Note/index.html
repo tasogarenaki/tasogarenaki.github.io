@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-01T19:58:20+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-02T19:22:39+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -814,13 +814,13 @@
 
 
 <em class="timeago"
-    date="2022-11-01 20:58:20 +0100
+    date="2022-11-02 20:22:39 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Tue, Nov  1, 2022,  8:58 PM +0100"
-    >Nov  1</em>
+      title="Wed, Nov  2, 2022,  8:22 PM +0100"
+    >Nov  2</em>
 
       </span>
       
@@ -845,8 +845,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3349 words">
-  <em>18 min</em> read</span>
+  title="3445 words">
+  <em>19 min</em> read</span>
 
 
       <!-- page views -->
@@ -1284,6 +1284,9 @@ $ git push origin master
 8
 9
 10
+11
+12
+13
 </pre></td><td class="rouge-code"><pre><span class="cm">/* example 1 */</span>
 <span class="nc">Dog</span><span class="o">[]</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>		<span class="c1">// Creates an array of Dogs of size 2</span>
 <span class="n">dogs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>			  <span class="c1">// dog 1 has value of 8 </span>
@@ -1294,6 +1297,9 @@ $ git push origin master
 <span class="kt">int</span><span class="o">[]</span> <span class="n">name</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">];</span>
 <span class="n">name</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
 <span class="n">name</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> 
+  
+<span class="cm">/* example 3*/</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">myList</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
 </ul>
@@ -1823,7 +1829,7 @@ $ git push origin master
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
         <span class="cm">/* Resize items since its full */</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">size</span> <span class="o">==</span> <span class="n">items</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
-          <span class="c1">// faster </span>
+          <span class="cm">/* faster */</span> 
           <span class="n">resize</span><span class="o">(</span><span class="n">size</span> <span class="o">*</span> <span class="mi">2</span><span class="o">);</span> 
         <span class="o">}</span>
         <span class="n">items</span><span class="o">[</span><span class="n">size</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
@@ -1912,9 +1918,14 @@ $ git push origin master
       <li>Precede each method with <code class="language-plaintext highlighter-rouge">@org.junit.Test</code> (no semi-colon).</li>
       <li>Change each test method to be <strong>non</strong>-static.</li>
       <li>Remove our <code class="language-plaintext highlighter-rouge">main</code> method from the <code class="language-plaintext highlighter-rouge">TestSort</code> class.</li>
-      <li>Run the Code: Run -&gt; Run</li>
+      <li>Run the Code: Run -&gt; Run…</li>
       <li><code class="language-plaintext highlighter-rouge">import org.junit.Test;</code> -&gt; simply use <code class="language-plaintext highlighter-rouge">@Test</code></li>
-      <li><code class="language-plaintext highlighter-rouge">import static org.junit.Assert.*;</code> -&gt; <code class="language-plaintext highlighter-rouge">assertEquals(expected2, actual2)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">import static org.junit.Assert.*;</code> -&gt; <code class="language-plaintext highlighter-rouge">assertEquals(&lt;expected&gt;, &lt;actual&gt;)</code></li>
+      <li>default renderer: red/green arrows</li>
+    </ul>
+  </li>
+  <li>jh61b renderer: white/blue boxes
+    <ul>
       <li>See “Selection Sort”</li>
     </ul>
 
@@ -1931,7 +1942,7 @@ $ git push origin master
     <span class="nc">String</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="o">{</span><span class="s">"i"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
     <span class="nc">String</span><span class="o">[]</span> <span class="n">expected</span> <span class="o">=</span> <span class="o">{</span><span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">};</span>
     <span class="nc">Sort</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
-  	<span class="cm">/** Use `org.junit` library */</span>
+  	<span class="cm">/* Use `org.junit` library */</span>
     <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertArrayEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">input</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
@@ -1990,7 +2001,7 @@ $ git push origin master
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sort</span> <span class="o">{</span>
     <span class="cm">/** Sorts strings destructively. */</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span> 
-       <span class="c1">// selection sort the rest (using recursion by helper methods) </span>
+       <span class="cm">/* selection sort the rest (using recursion by helper methods) */</span>
 			<span class="n">sort</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
     <span class="o">}</span>
     
@@ -1999,9 +2010,9 @@ $ git push origin master
        <span class="k">if</span> <span class="o">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">x</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
            <span class="k">return</span><span class="o">;</span>
        <span class="o">}</span>
-       <span class="c1">// find the smallest item</span>
+       <span class="cm">/* find the smallest item */</span>
    		<span class="kt">int</span> <span class="n">smallestIndex</span> <span class="o">=</span> <span class="n">findSmallest</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">start</span><span class="o">);</span>
-       <span class="c1">// move it to the front</span>
+       <span class="cm">/* move it to the front */</span>
        <span class="n">swap</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">smallestIndex</span><span class="o">);</span>
        <span class="n">sort</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
     <span class="o">}</span>
@@ -2079,14 +2090,14 @@ $ git push origin master
         <span class="kt">int</span> <span class="n">expected</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
   
         <span class="kt">int</span> <span class="n">actual</span> <span class="o">=</span> <span class="nc">Sort</span><span class="o">.</span><span class="na">findSmallest</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-        <span class="c1">// org.junit.Assert.assertEquals(expected, actual);   </span>
+        <span class="cm">/* org.junit.Assert.assertEquals(expected, actual); */</span>  
       	<span class="n">assertEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">actual</span><span class="o">);</span> 
   
         <span class="nc">String</span><span class="o">[]</span> <span class="n">input2</span> <span class="o">=</span> <span class="o">{</span><span class="s">"there"</span><span class="o">,</span> <span class="s">"are"</span><span class="o">,</span> <span class="s">"many"</span><span class="o">,</span> <span class="s">"pigs"</span><span class="o">};</span>
         <span class="kt">int</span> <span class="n">expected2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
   
         <span class="kt">int</span> <span class="n">actual2</span> <span class="o">=</span> <span class="nc">Sort</span><span class="o">.</span><span class="na">findSmallest</span><span class="o">(</span><span class="n">input2</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
-        <span class="c1">// org.junit.Assert.assertEquals(expected2, actual2);</span>
+        <span class="cm">/* org.junit.Assert.assertEquals(expected2, actual2); */</span>
       	<span class="n">assertEquals</span><span class="o">(</span><span class="n">expected2</span><span class="o">,</span> <span class="n">actual2</span><span class="o">);</span>
     <span class="o">}</span>
     
@@ -2099,11 +2110,29 @@ $ git push origin master
         <span class="nc">String</span><span class="o">[]</span> <span class="n">expected</span> <span class="o">=</span> <span class="o">{</span><span class="s">"an"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
   
         <span class="nc">Sort</span><span class="o">.</span><span class="na">swap</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
-        <span class="c1">// org.junit.Assert.assertArrayEquals(expected, input);</span>
+        <span class="cm">/* org.junit.Assert.assertArrayEquals(expected, input); */</span>
       	<span class="n">assertArrayEquals</span><span class="o">(</span><span class="n">expected</span><span class="o">,</span> <span class="n">input</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">of</code> method: for example, to create an <code class="language-plaintext highlighter-rouge">IntList</code> containing the numbers 0, 1, 2, and 3, we could use the method as follows:</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nc">IntList</span> <span class="n">myList</span> <span class="o">=</span> <span class="nc">IntList</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+<span class="c1">// Creates the IntList 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; null</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">myList.first</code> returns 0</li>
+      <li><code class="language-plaintext highlighter-rouge">myList.rest</code> returns 1 -&gt; 2 -&gt; 3 -&gt; null</li>
+      <li><code class="language-plaintext highlighter-rouge">myList.rest.rest.rest</code> returns 3 -&gt; null</li>
+      <li><code class="language-plaintext highlighter-rouge">myList.rest.rest.rest.rest</code> returns null</li>
+    </ul>
   </li>
 </ul>
 
@@ -2128,7 +2157,7 @@ $ git push origin master
     </ul>
   </li>
   <li>
-    <p><strong>Interface Inheritance:</strong> is a specification of what a List is able to do (methods and parameters), not how to do. THe subclass must have all methods of the interface.</p>
+    <p><strong>Interface Inheritance:</strong> is a specification of what a List is able to do (methods and parameters), not how to do. The subclass must have all methods of the interface. Use the keyword <code class="language-plaintext highlighter-rouge">interface</code>.</p>
 
     <ul>
       <li>Step 1:</li>
