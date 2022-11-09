@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-02T19:22:39+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-08T20:21:31+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -648,6 +648,81 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -674,6 +749,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -814,13 +902,13 @@
 
 
 <em class="timeago"
-    date="2022-11-02 20:22:39 +0100
+    date="2022-11-08 21:21:31 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Nov  2, 2022,  8:22 PM +0100"
-    >Nov  2</em>
+      title="Tue, Nov  8, 2022,  9:21 PM +0100"
+    >Nov  8</em>
 
       </span>
       
@@ -845,8 +933,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3445 words">
-  <em>19 min</em> read</span>
+  title="3621 words">
+  <em>20 min</em> read</span>
 
 
       <!-- page views -->
@@ -1636,7 +1724,7 @@ $ git push origin master
 
 <ul>
   <li>
-    <p>A node has a pointer to the next and the previous node. 4There’s two way to implement it:</p>
+    <p>A node has a pointer to the next and the previous node. There’s two way to implement it:</p>
 
     <ol>
       <li>
@@ -1851,6 +1939,25 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h2 id="24-deque-double-ended-queue">2.4 Deque (Double ended queue)<a href="#24-deque-double-ended-queue" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/deque.png?raw=true" alt="deque" style="zoom:50%;" data-proofer-ignore></p>
+
+<ul>
+  <li>Specifically, any deque implementation must have exactly the following operations:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">public void addFirst(T item)</code>: Adds an item of type <code class="language-plaintext highlighter-rouge">T</code> to the front of the deque.</li>
+      <li><code class="language-plaintext highlighter-rouge">public void addLast(T item)</code>: Adds an item of type <code class="language-plaintext highlighter-rouge">T</code> to the back of the deque.</li>
+      <li><code class="language-plaintext highlighter-rouge">public boolean isEmpty()</code>: Returns true if deque is empty, false otherwise.</li>
+      <li><code class="language-plaintext highlighter-rouge">public int size()</code>: Returns the number of items in the deque.</li>
+      <li><code class="language-plaintext highlighter-rouge">public void printDeque()</code>: Prints the items in the deque from first to last, separated by a space.</li>
+      <li><code class="language-plaintext highlighter-rouge">public T removeFirst()</code>: Removes and returns the item at the front of the deque. If no such item exists, returns null.</li>
+      <li><code class="language-plaintext highlighter-rouge">public T removeLast()</code>: Removes and returns the item at the back of the deque. If no such item exists, returns null.</li>
+      <li><code class="language-plaintext highlighter-rouge">public T get(int index)</code>: Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth. If no such item exists, returns null. Must not alter the deque!</li>
+    </ul>
   </li>
 </ul>
 
@@ -2134,6 +2241,7 @@ $ git push origin master
       <li><code class="language-plaintext highlighter-rouge">myList.rest.rest.rest.rest</code> returns null</li>
     </ul>
   </li>
+  <li>Style Checker: right Klic at the .java in IDEA - Checking Style</li>
 </ul>
 
 <h1 id="4-inheritance">4. Inheritance</h1>
