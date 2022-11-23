@@ -1,4 +1,4 @@
-I"\�<h1 id="1-introduction">1 Introduction</h1>
+I"Z�<h1 id="1-introduction">1 Introduction</h1>
 
 <ul>
   <li>
@@ -1155,7 +1155,7 @@ $ git push origin master
               <li>If the array is full, it should double its size.</li>
             </ul>
 
-            <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/addfirst.png?raw=true" alt="deque" style="zoom:50%;" /></p>
+            <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/addfirst.jpeg?raw=true" alt="deque" style="zoom:100%;" /></p>
           </li>
           <li>
             <p><code class="language-plaintext highlighter-rouge">addLast():</code></p>
@@ -1236,7 +1236,7 @@ $ git push origin master
               <li>If after remove the value the array size is too big ((the number of elements / the array’s length) &lt; usage Factor), the array should reduce to save the memory.</li>
             </ul>
 
-            <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/removefirst.png?raw=true" alt="deque" style="zoom:50%;" /></p>
+            <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/removefirst.jpeg?raw=true" alt="deque" style="zoom:100%;" /></p>
           </li>
           <li>
             <p><code class="language-plaintext highlighter-rouge">removeLast()</code>:</p>
@@ -1331,6 +1331,8 @@ $ git push origin master
     <span class="n">tail</span> <span class="o">=</span> <span class="n">size</span><span class="o">;</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>            </div>
+
+            <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/changecap.jpeg?raw=true" alt="deque" style="zoom:100%;" /></p>
 
             <ul>
               <li>If the array is full, it should double its size. If the usage factor is too low, it should reduce its size. There’s two way to implementate this.</li>
@@ -1816,6 +1818,91 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Extends:</strong> uses the <code class="language-plaintext highlighter-rouge">extends</code> keyword to inherit a class not interface. Subclasses inherit all <strong>members</strong> of the parent class. “Members” includes: all instance and static variables, all methods and all nested classes.</p>
+
+    <ul>
+      <li>
+        <p>Note that <strong>constructors</strong> are not inherited, and <strong>private</strong> members cannot be directly accessed by subclasses.</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RotatingSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="cm">/** Rotates list to the right. */</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">rotateRight</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">Item</span> <span class="n">x</span> <span class="o">=</span> <span class="n">removeLast</span><span class="o">();</span>
+    <span class="n">addFirst</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>
+        <p>If we want to <strong>override</strong> a method and call this method defined in the parent class, using the <code class="language-plaintext highlighter-rouge">super</code> keyword. e.g. <code class="language-plaintext highlighter-rouge">removeLast</code></p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VengefulSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">deletedItems</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">deletedItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;();</span>
+    <span class="o">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Item</span> <span class="nf">removeLast</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Item</span> <span class="n">x</span> <span class="o">=</span> <span class="kd">super</span><span class="o">.</span><span class="na">removeLast</span><span class="o">();</span>	<span class="c1">// Using super keyword</span>
+        <span class="n">deletedItems</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="cm">/** Prints deleted items. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printLostItems</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">deletedItems</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>
+        <p><strong>Constructors Are Not Inherited</strong>: Uses the <code class="language-plaintext highlighter-rouge">super</code> keyword to call parent’s constructor.</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">();</span>
+    <span class="n">deletedItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+
+        <ul>
+          <li>Adding <code class="language-plaintext highlighter-rouge">super()</code> has no difference from the constructor before (Line 4 to 6).</li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
 
