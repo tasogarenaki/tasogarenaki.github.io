@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-09T20:53:04+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-23T19:56:11+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -873,6 +873,81 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -1052,13 +1127,13 @@
 
 
 <em class="timeago"
-    date="2022-11-09 21:53:04 +0100
+    date="2022-11-23 20:56:11 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Nov  9, 2022,  9:53 PM +0100"
-    >Nov  9</em>
+      title="Wed, Nov 23, 2022,  8:56 PM +0100"
+    >Nov 23</em>
 
       </span>
       
@@ -1083,8 +1158,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="4718 words">
-  <em>26 min</em> read</span>
+  title="4942 words">
+  <em>27 min</em> read</span>
 
 
       <!-- page views -->
@@ -1130,8 +1205,6 @@ $ git pull skeleton master
 $ git commit -m "completed first part of lab1"
 $ git push origin master
 </pre></td></tr></tbody></table></code></div>        </div>
-
-        <p><br /></p>
       </li>
     </ol>
   </li>
@@ -1144,11 +1217,6 @@ $ git push origin master
       <li>File - New Projects Setup - Structure - Project - SDK: choose one - OK - open a file - Setup SDK</li>
     </ol>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>Debugger
     <ul>
       <li>Breakpoints (right click for the breakpoint conditional)</li>
@@ -1158,11 +1226,6 @@ $ git push origin master
       <li>Resum</li>
     </ul>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>Some key syntactic features:</p>
 
@@ -1291,8 +1354,6 @@ $ git push origin master
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
     </ul>
-
-    <p><br /></p>
   </li>
   <li>
     <p>Functions:</p>
@@ -1335,8 +1396,6 @@ $ git push origin master
       <span class="o">}</span>
   <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
-
-    <p><br /></p>
   </li>
   <li>
     <p>Class</p>
@@ -1499,8 +1558,6 @@ $ git push origin master
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
     </ul>
-
-    <p><br /></p>
   </li>
   <li>
     <p>Arrays of objects</p>
@@ -1620,8 +1677,6 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><br /></p>
-
 <ul>
   <li>
     <p>Public vs. Private</p>
@@ -1638,11 +1693,6 @@ $ git push origin master
       <li>Private variables and methods can only be accessed by code inside the same <code class="language-plaintext highlighter-rouge">.java</code> file, e.g. in this case <code class="language-plaintext highlighter-rouge">SLList.java</code>. Other class can not invoke <code class="language-plaintext highlighter-rouge">first</code>. But can through <code class="language-plaintext highlighter-rouge">public</code> methods like <code class="language-plaintext highlighter-rouge">public void addFirst</code> to invoke or edit <code class="language-plaintext highlighter-rouge">first</code>.</li>
     </ul>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>Nested Class</p>
 
@@ -1779,11 +1829,6 @@ $ git push origin master
           <li><code class="language-plaintext highlighter-rouge">addLast()</code> is slow. Because we have to start at the front, and loop all the way to the back of our list before adding our element.</li>
         </ul>
       </li>
-    </ul>
-
-    <p><br /></p>
-
-    <ul>
       <li>
         <p><strong>Sentinel Nodes:</strong></p>
 
@@ -1889,11 +1934,6 @@ $ git push origin master
       </li>
     </ol>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>Generic List: <code class="language-plaintext highlighter-rouge">&lt;PLACEHOLDER&gt;</code> after the class name. This allows the list to work not only for <code class="language-plaintext highlighter-rouge">int</code>, but also for i.e., <code class="language-plaintext highlighter-rouge">string</code> too.</p>
 
@@ -1963,11 +2003,6 @@ $ git push origin master
       <li><code class="language-plaintext highlighter-rouge">int[] w = {9, 10, 11, 12, 13};</code></li>
     </ul>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>2D Array</p>
 
@@ -2301,7 +2336,7 @@ $ git push origin master
               <li>If the array is full, it should double its size.</li>
             </ul>
 
-            <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/addfirst.png?raw=true" alt="deque" style="zoom:50%;" data-proofer-ignore></p>
+            <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/addfirst.jpeg?raw=true" alt="deque" style="zoom:100%;" data-proofer-ignore></p>
           </li>
           <li>
             <p><code class="language-plaintext highlighter-rouge">addLast():</code></p>
@@ -2386,7 +2421,7 @@ $ git push origin master
               <li>If after remove the value the array size is too big ((the number of elements / the array’s length) &lt; usage Factor), the array should reduce to save the memory.</li>
             </ul>
 
-            <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/removefirst.png?raw=true" alt="deque" style="zoom:50%;" data-proofer-ignore></p>
+            <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/removefirst.jpeg?raw=true" alt="deque" style="zoom:100%;" data-proofer-ignore></p>
           </li>
           <li>
             <p><code class="language-plaintext highlighter-rouge">removeLast()</code>:</p>
@@ -2485,6 +2520,8 @@ $ git push origin master
     <span class="n">tail</span> <span class="o">=</span> <span class="n">size</span><span class="o">;</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>            </div>
+
+            <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/changecap.jpeg?raw=true" alt="deque" style="zoom:100%;" data-proofer-ignore></p>
 
             <ul>
               <li>If the array is full, it should double its size. If the usage factor is too low, it should reduce its size. There’s two way to implementate this.</li>
@@ -2996,6 +3033,97 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p><strong>Extends:</strong> uses the <code class="language-plaintext highlighter-rouge">extends</code> keyword to inherit a class not interface, this defines “is-a” relationship. Subclasses inherit all <strong>members</strong> of the parent class. “Members” includes: all instance and static variables, all methods and all nested classes.</p>
+
+    <ul>
+      <li>
+        <p>Note that <strong>constructors</strong> are not inherited, and <strong>private</strong> members cannot be directly accessed by subclasses.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RotatingSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="cm">/** Rotates list to the right. */</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">rotateRight</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">Item</span> <span class="n">x</span> <span class="o">=</span> <span class="n">removeLast</span><span class="o">();</span>
+    <span class="n">addFirst</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>If we want to <strong>override</strong> a method and call this method defined in the parent class, using the <code class="language-plaintext highlighter-rouge">super</code> keyword. e.g. <code class="language-plaintext highlighter-rouge">removeLast</code></p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VengefulSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">deletedItems</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">deletedItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;();</span>
+    <span class="o">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Item</span> <span class="nf">removeLast</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Item</span> <span class="n">x</span> <span class="o">=</span> <span class="kd">super</span><span class="o">.</span><span class="na">removeLast</span><span class="o">();</span>	<span class="c1">// Using super keyword</span>
+        <span class="n">deletedItems</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="cm">/** Prints deleted items. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printLostItems</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">deletedItems</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p><strong>Constructors Are Not Inherited</strong>: Uses the <code class="language-plaintext highlighter-rouge">super</code> keyword to call parent’s constructor.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">();</span>
+    <span class="n">deletedItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+
+        <ul>
+          <li>Adding <code class="language-plaintext highlighter-rouge">super()</code> has no difference from the constructor before (Line 4 to 6). And <code class="language-plaintext highlighter-rouge">super()</code> will implicit call to the default constructor, so it must call the constructor explict e.g. <code class="language-plaintext highlighter-rouge">super(x)</code>.</li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
 

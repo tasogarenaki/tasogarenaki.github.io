@@ -1,4 +1,4 @@
-I"Ê‰<h1 id="1-introduction">1 Introduction</h1>
+I"Â‰<h1 id="1-introduction">1 Introduction</h1>
 
 <ul>
   <li>
@@ -30,8 +30,6 @@ $ git pull skeleton master
 $ git commit -m "completed first part of lab1"
 $ git push origin master
 </pre></td></tr></tbody></table></code></pre></div>        </div>
-
-        <p><br /></p>
       </li>
     </ol>
   </li>
@@ -44,11 +42,6 @@ $ git push origin master
       <li>File - New Projects Setup - Structure - Project - SDK: choose one - OK - open a file - Setup SDK</li>
     </ol>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>Debugger
     <ul>
       <li>Breakpoints (right click for the breakpoint conditional)</li>
@@ -58,11 +51,6 @@ $ git push origin master
       <li>Resum</li>
     </ul>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>Some key syntactic features:</p>
 
@@ -181,8 +169,6 @@ $ git push origin master
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
     </ul>
-
-    <p><br /></p>
   </li>
   <li>
     <p>Functions:</p>
@@ -223,8 +209,6 @@ $ git push origin master
       <span class="o">}</span>
   <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
-
-    <p><br /></p>
   </li>
   <li>
     <p>Class</p>
@@ -377,8 +361,6 @@ $ git push origin master
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
     </ul>
-
-    <p><br /></p>
   </li>
   <li>
     <p>Arrays of objects</p>
@@ -492,8 +474,6 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p><br /></p>
-
 <ul>
   <li>
     <p>Public vs. Private</p>
@@ -508,11 +488,6 @@ $ git push origin master
       <li>Private variables and methods can only be accessed by code inside the same <code class="language-plaintext highlighter-rouge">.java</code> file, e.g. in this case <code class="language-plaintext highlighter-rouge">SLList.java</code>. Other class can not invoke <code class="language-plaintext highlighter-rouge">first</code>. But can through <code class="language-plaintext highlighter-rouge">public</code> methods like <code class="language-plaintext highlighter-rouge">public void addFirst</code> to invoke or edit <code class="language-plaintext highlighter-rouge">first</code>.</li>
     </ul>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>Nested Class</p>
 
@@ -645,11 +620,6 @@ $ git push origin master
           <li><code class="language-plaintext highlighter-rouge">addLast()</code> is slow. Because we have to start at the front, and loop all the way to the back of our list before adding our element.</li>
         </ul>
       </li>
-    </ul>
-
-    <p><br /></p>
-
-    <ul>
       <li>
         <p><strong>Sentinel Nodes:</strong></p>
 
@@ -753,11 +723,6 @@ $ git push origin master
       </li>
     </ol>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>Generic List: <code class="language-plaintext highlighter-rouge">&lt;PLACEHOLDER&gt;</code> after the class name. This allows the list to work not only for <code class="language-plaintext highlighter-rouge">int</code>, but also for i.e., <code class="language-plaintext highlighter-rouge">string</code> too.</p>
 
@@ -825,11 +790,6 @@ $ git push origin master
       <li><code class="language-plaintext highlighter-rouge">int[] w = {9, 10, 11, 12, 13};</code></li>
     </ul>
   </li>
-</ul>
-
-<p><br /></p>
-
-<ul>
   <li>
     <p>2D Array</p>
 
@@ -1820,7 +1780,7 @@ $ git push origin master
 </pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>
   <li>
-    <p><strong>Extends:</strong> uses the <code class="language-plaintext highlighter-rouge">extends</code> keyword to inherit a class not interface. Subclasses inherit all <strong>members</strong> of the parent class. ‚ÄúMembers‚Äù includes: all instance and static variables, all methods and all nested classes.</p>
+    <p><strong>Extends:</strong> uses the <code class="language-plaintext highlighter-rouge">extends</code> keyword to inherit a class not interface, this defines ‚Äúis-a‚Äù relationship. Subclasses inherit all <strong>members</strong> of the parent class. ‚ÄúMembers‚Äù includes: all instance and static variables, all methods and all nested classes.</p>
 
     <ul>
       <li>
@@ -1899,7 +1859,7 @@ $ git push origin master
 </pre></td></tr></tbody></table></code></pre></div>        </div>
 
         <ul>
-          <li>Adding <code class="language-plaintext highlighter-rouge">super()</code> has no difference from the constructor before (Line 4 to 6).</li>
+          <li>Adding <code class="language-plaintext highlighter-rouge">super()</code> has no difference from the constructor before (Line 4 to 6). And <code class="language-plaintext highlighter-rouge">super()</code> will implicit call to the default constructor, so it must call the constructor explict e.g. <code class="language-plaintext highlighter-rouge">super(x)</code>.</li>
         </ul>
       </li>
     </ul>
