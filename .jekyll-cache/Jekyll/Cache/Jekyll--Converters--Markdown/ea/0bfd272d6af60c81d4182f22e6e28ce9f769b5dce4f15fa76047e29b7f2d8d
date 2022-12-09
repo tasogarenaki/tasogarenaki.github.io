@@ -1,4 +1,4 @@
-I"ед<h1 id="1-introduction">1 Introduction</h1>
+I"Iф<h1 id="1-introduction">1 Introduction</h1>
 
 <ul>
   <li>
@@ -1863,6 +1863,59 @@ $ git push origin master
         </ul>
       </li>
     </ul>
+  </li>
+  <li>
+    <p><strong>Higher Order Functions:</strong></p>
+
+    <ul>
+      <li>In old school Java (Java 7 and earlier), memory boxes (variables) could not contain pointers to functions. To get around this we can take advantage of interface inheritance.</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Reprensent a function that takes in an integer and returns an integer */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TenX</span> <span class="kd">implements</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">x</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Demonstrates higher orfer functions in java */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HofDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">do_twice</span><span class="o">(</span><span class="nc">IntUnaryFunction</span> <span class="n">f</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
+    <span class="o">}</span>
+      
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">IntUnaryFunction</span> <span class="n">tenX</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TenX</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">do_twice</span><span class="o">(</span><span class="n">tenX</span><span class="o">,</span> <span class="mi">2</span><span class="o">))</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>
 </ul>
 
