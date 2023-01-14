@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2022-12-09T15:04:39+00:00</updated>
+  <updated>2023-01-14T16:07:51+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -13,7 +13,7 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="https://tasogarenaki.github.io/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
-  <rights> © 2022 tasogarenaki </rights>
+  <rights> © 2023 tasogarenaki </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
@@ -24,7 +24,7 @@
     <link href="https://tasogarenaki.github.io/posts/CS61B-Note/" rel="alternate" type="text/html" title="CS61B Note" />
     <published>2022-08-30T18:00:00+00:00</published>
   
-    <updated>2022-11-29T19:55:50+00:00</updated>
+    <updated>2022-12-09T15:04:54+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/CS61B-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/CS61B-Note/" />
