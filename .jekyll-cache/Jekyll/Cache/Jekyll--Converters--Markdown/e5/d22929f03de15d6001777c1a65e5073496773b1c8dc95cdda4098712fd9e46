@@ -1,4 +1,4 @@
-I"�<h1 id="1-introduction">1 Introduction</h1>
+I"a&<h1 id="1-introduction">1 Introduction</h1>
 
 <ul>
   <li>
@@ -23,10 +23,10 @@ $ git pull skeleton master
         <p>Move the <code class="language-plaintext highlighter-rouge">HelloWorld.java</code> and <code class="language-plaintext highlighter-rouge">HelloNumbers.java</code> that you previously created into the <code class="language-plaintext highlighter-rouge">lab1</code>directory.</p>
       </li>
       <li>
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre>$ git add lab1/*
+</pre></td><td class="rouge-code"><pre>$ git add lab1/*
 $ git commit -m "completed first part of lab1"
 $ git push origin master
 </pre></td></tr></tbody></table></code></pre></div>        </div>
@@ -74,9 +74,9 @@ $ git push origin master
       <li>
         <p>Compiler and Run Java program via Terminal:</p>
 
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td> --><td class="rouge-code"><pre>  $ javac name.java
+</pre></td><td class="rouge-code"><pre>  $ javac name.java
   $ java name
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
@@ -92,10 +92,10 @@ $ git push origin master
           </li>
         </ul>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</pre></td><td class="rouge-code"><pre>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
       
   <span class="n">string</span> <span class="n">x</span> <span class="o">=</span> <span class="s">"test"</span><span class="o">;</span>  <span class="c1">// error</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
@@ -106,7 +106,7 @@ $ git push origin master
       <li>
         <p><code class="language-plaintext highlighter-rouge">@param</code> name a varialbe</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -114,7 +114,7 @@ $ git push origin master
 6
 7
 8
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/**
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
 * @param variable name 
 * @param expected Expected double
 * 
@@ -127,14 +127,14 @@ $ git push origin master
       <li>
         <p><code class="language-plaintext highlighter-rouge">static final</code> to declare any constans, e.g. the gravitational constant G</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td> --><td class="rouge-code"><pre><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">G</span> <span class="o">=</span> <span class="mf">6.67</span><span class="n">e</span><span class="o">-</span><span class="mi">11</span><span class="o">;</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">G</span> <span class="o">=</span> <span class="mf">6.67</span><span class="n">e</span><span class="o">-</span><span class="mi">11</span><span class="o">;</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li>
         <p><code class="language-plaintext highlighter-rouge">for-each</code> loop: to iterate through elements of arrays and collections</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -150,7 +150,7 @@ $ git push origin master
 14
 15
 16
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/* for (type var : array) { }; */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/* for (type var : array) { }; */</span>
 <span class="kt">int</span><span class="o">[]</span> <span class="n">numArray</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span> <span class="o">};</span>    
     
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">numArray</span><span class="o">)</span> <span class="o">{</span>      
@@ -182,7 +182,7 @@ $ git push origin master
       </li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -195,7 +195,7 @@ $ git push origin master
 11
 12
 13
-</pre></td> --><td class="rouge-code"><pre>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LargerDemo</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LargerDemo</span> <span class="o">{</span>
       <span class="cm">/** Returns the larger of x and y. */</span>
       <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">larger</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
           <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
@@ -217,7 +217,7 @@ $ git push origin master
       <li>
         <p>Examle:</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -250,7 +250,7 @@ $ git push origin master
 31
 32
 33
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/* Dog.java */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/* Dog.java */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>		<span class="c1">// non-static</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">weightInPounds</span><span class="o">;</span>		<span class="c1">// instance variable </span>
         
@@ -299,23 +299,23 @@ $ git push origin master
       <li>
         <p><strong>Non-static</strong> Methods are actions that can be taken only by a specific instance of a class.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td> --><td class="rouge-code"><pre><span class="nc">Math</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Math</span><span class="o">();</span>
+</pre></td><td class="rouge-code"><pre><span class="nc">Math</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Math</span><span class="o">();</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li>
         <p><strong>Static</strong> methods are actions that are taken by the class itself.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td> --><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
       </li>
       <li>
         <p>Non-static:</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -326,7 +326,7 @@ $ git push origin master
 9
 10
 11
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">Dog</span> <span class="nf">maxDog</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">d2</span><span class="o">)</span> <span class="o">{</span>	 <span class="c1">// non-static method</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nc">Dog</span> <span class="nf">maxDog</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">d2</span><span class="o">)</span> <span class="o">{</span>	 <span class="c1">// non-static method</span>
     <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">weightInPounds</span> <span class="o">&gt;</span> <span class="n">d2</span><span class="o">.</span><span class="na">weightInPounds</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="o">;</span>	<span class="c1">// use the keyword this to refer to the current object</span>
     <span class="o">}</span>
@@ -342,7 +342,7 @@ $ git push origin master
       <li>
         <p>Static:</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -350,7 +350,7 @@ $ git push origin master
 6
 7
 8
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">weightInPounds</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="n">binomen</span> <span class="o">=</span> <span class="s">"Canis familiaris"</span><span class="o">;</span>	<span class="c1">// static variable</span>
     <span class="o">...</span>
@@ -370,7 +370,7 @@ $ git push origin master
       <li>use <code class="language-plaintext highlighter-rouge">new</code> again for each object that needs to put in the array</li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -383,7 +383,7 @@ $ git push origin master
 11
 12
 13
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/* example 1 */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/* example 1 */</span>
 <span class="nc">Dog</span><span class="o">[]</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>		<span class="c1">// Creates an array of Dogs of size 2</span>
 <span class="n">dogs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>			  <span class="c1">// dog 1 has value of 8 </span>
 <span class="n">dogs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
@@ -404,7 +404,7 @@ $ git push origin master
 
 <h2 id="21-sllist-singly-linked-list">2.1 SLList (Singly Linked List)</h2>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -413,7 +413,7 @@ $ git push origin master
 7
 8
 9
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntNode</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntNode</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">item</span><span class="o">;</span>
     <span class="kd">public</span> <span class="nc">IntNode</span> <span class="n">next</span><span class="o">;</span>
 
@@ -424,7 +424,7 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -448,7 +448,7 @@ $ git push origin master
 22
 23
 24
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SLList</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SLList</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="nc">IntNode</span> <span class="n">first</span><span class="o">;</span>
     
     <span class="kd">public</span> <span class="nf">SLList</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
@@ -478,9 +478,9 @@ $ git push origin master
   <li>
     <p>Public vs. Private</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/* change public to private */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/* change public to private */</span>
 <span class="kd">private</span> <span class="nc">IntNode</span> <span class="n">first</span><span class="o">;</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
@@ -497,7 +497,7 @@ $ git push origin master
       <li>e.g. <code class="language-plaintext highlighter-rouge">IntNode</code> class is depends on <code class="language-plaintext highlighter-rouge">SLList</code> class, so can put in inside of <code class="language-plaintext highlighter-rouge">SLList</code></li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -528,7 +528,7 @@ $ git push origin master
 29
 30
 31
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SLList</span> <span class="o">{</span> 
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SLList</span> <span class="o">{</span> 
     <span class="kd">private</span> <span class="kd">class</span> <span class="nc">IntNode</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="kt">int</span> <span class="n">item</span><span class="o">;</span>
         <span class="kd">public</span> <span class="nc">Node</span> <span class="n">next</span><span class="o">;</span>
@@ -565,7 +565,7 @@ $ git push origin master
       <li>
         <p>addLast and size</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -589,7 +589,7 @@ $ git push origin master
 22
 23
 24
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Adds an itemto the end of the list. */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Adds an itemto the end of the list. */</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">){</span>
   <span class="nc">IntNote</span> <span class="n">p</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span>
       
@@ -623,7 +623,7 @@ $ git push origin master
       <li>
         <p><strong>Sentinel Nodes:</strong></p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -654,7 +654,7 @@ $ git push origin master
 29
 30
 31
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Creates an empty SLList */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Creates an empty SLList */</span>
 <span class="kd">public</span> <span class="nf">SLList</span><span class="o">(){</span>
   <span class="n">sentinel</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntNode</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
   <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
@@ -726,7 +726,7 @@ $ git push origin master
   <li>
     <p>Generic List: <code class="language-plaintext highlighter-rouge">&lt;PLACEHOLDER&gt;</code> after the class name. This allows the list to work not only for <code class="language-plaintext highlighter-rouge">int</code>, but also for i.e., <code class="language-plaintext highlighter-rouge">string</code> too.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -747,7 +747,7 @@ $ git push origin master
 19
 20
 21
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Make a placeholder for this class, so you can declare the type later */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Make a placeholder for this class, so you can declare the type later */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DLList</span><span class="o">&lt;</span><span class="no">HERE</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="nc">IntNode</span> <span class="n">sentinel</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
@@ -793,7 +793,7 @@ $ git push origin master
   <li>
     <p>2D Array</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -803,7 +803,7 @@ $ git push origin master
 8
 9
 10
-</pre></td> --><td class="rouge-code"><pre><span class="kt">int</span><span class="o">[][]</span> <span class="n">pascalsTriangle</span><span class="o">;</span>					<span class="c1">// declaration</span>
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span><span class="o">[][]</span> <span class="n">pascalsTriangle</span><span class="o">;</span>					<span class="c1">// declaration</span>
 <span class="n">pasacalsTriangle</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">][];</span>	<span class="c1">// a 2D array contains four 1D array</span>
   
 <span class="n">pascalsTriangle</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="mi">1</span><span class="o">};</span><span class="c1">// give a value at position 0</span>
@@ -818,7 +818,7 @@ $ git push origin master
   <li>
     <p>Alist:</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -862,7 +862,7 @@ $ git push origin master
 42
 43
 44
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="no">T</span><span class="o">[]</span> <span class="n">items</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
       
@@ -930,7 +930,7 @@ $ git push origin master
   <li>
     <p><strong>Linked List Deque:</strong></p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -998,7 +998,7 @@ $ git push origin master
 66
 67
 68
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/* Empty Linked List -&gt; sentinel is a node with value null. */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/* Empty Linked List -&gt; sentinel is a node with value null. */</span>
 <span class="kd">public</span> <span class="nf">LinkedListDeque</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">sentinel</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;();</span>
     <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">sentinel</span><span class="o">;</span>
@@ -1082,7 +1082,7 @@ $ git push origin master
           <li>
             <p><code class="language-plaintext highlighter-rouge">addFirst()</code>:</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1095,7 +1095,7 @@ $ git push origin master
 11
 12
 13
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFirst</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">addFirst</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">if</span> <span class="o">(</span><span class="n">item</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">throw</span> <span class="k">new</span> <span class="nf">NullPointerException</span><span class="o">();</span>
   <span class="o">}</span>
@@ -1120,7 +1120,7 @@ $ git push origin master
           <li>
             <p><code class="language-plaintext highlighter-rouge">addLast():</code></p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1133,7 +1133,7 @@ $ git push origin master
 11
 12
 13
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">if</span> <span class="o">(</span><span class="n">item</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">throw</span> <span class="k">new</span> <span class="nf">NullPointerException</span><span class="o">();</span>
   <span class="o">}</span>
@@ -1155,7 +1155,7 @@ $ git push origin master
           <li>
             <p><code class="language-plaintext highlighter-rouge">removeFirst()</code>:</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1172,7 +1172,7 @@ $ git push origin master
 15
 16
 17
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="no">T</span> <span class="nf">removeFirst</span><span class="o">()</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="no">T</span> <span class="nf">removeFirst</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">())</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
@@ -1201,7 +1201,7 @@ $ git push origin master
           <li>
             <p><code class="language-plaintext highlighter-rouge">removeLast()</code>:</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1218,7 +1218,7 @@ $ git push origin master
 15
 16
 17
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="no">T</span> <span class="nf">removeLast</span><span class="o">()</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="no">T</span> <span class="nf">removeLast</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">())</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
@@ -1244,7 +1244,7 @@ $ git push origin master
           <li>
             <p><code class="language-plaintext highlighter-rouge">calculateSize()</code>:</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1267,7 +1267,7 @@ $ git push origin master
 21
 22
 23
-</pre></td> --><td class="rouge-code"><pre><span class="kd">private</span> <span class="kt">void</span> <span class="nf">calculateSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">newSize</span><span class="o">)</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="kt">void</span> <span class="nf">calculateSize</span><span class="o">(</span><span class="kt">int</span> <span class="n">newSize</span><span class="o">)</span> <span class="o">{</span>
     <span class="no">T</span><span class="o">[]</span> <span class="n">resized</span> <span class="o">=</span> <span class="o">(</span><span class="no">T</span><span class="o">[])</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="n">newSize</span><span class="o">];</span>
     <span class="cm">/* V1 */</span>
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
@@ -1311,7 +1311,7 @@ $ git push origin master
           <li>
             <p><code class="language-plaintext highlighter-rouge">get()</code>:</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1319,7 +1319,7 @@ $ git push origin master
 6
 7
 8
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">()</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
@@ -1345,7 +1345,7 @@ $ git push origin master
   <li><strong>Ad Hoc Testing</strong></li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1368,7 +1368,7 @@ $ git push origin master
 21
 22
 23
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Tests the Sort class. */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Tests the Sort class. */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestSort</span> <span class="o">{</span>
     <span class="cm">/** Tests the sort method of the Sort class. */</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testSort</span><span class="o">()</span> <span class="o">{</span>
@@ -1412,14 +1412,14 @@ $ git push origin master
       <li>See “Selection Sort”</li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testSort</span><span class="o">()</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testSort</span><span class="o">()</span> <span class="o">{</span>
     <span class="nc">String</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="o">{</span><span class="s">"i"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">};</span>
     <span class="nc">String</span><span class="o">[]</span> <span class="n">expected</span> <span class="o">=</span> <span class="o">{</span><span class="s">"an"</span><span class="o">,</span> <span class="s">"egg"</span><span class="o">,</span> <span class="s">"have"</span><span class="o">,</span> <span class="s">"i"</span><span class="o">};</span>
     <span class="nc">Sort</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
@@ -1437,7 +1437,7 @@ $ git push origin master
       <li>Selection sort the remaining N-1 items (without touching the front item).</li>
     </ol>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1476,7 +1476,7 @@ $ git push origin master
 37
 38
 39
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/* Sort Class */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/* Sort Class */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sort</span> <span class="o">{</span>
     <span class="cm">/** Sorts strings destructively. */</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span> 
@@ -1517,7 +1517,7 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1554,7 +1554,7 @@ $ git push origin master
 35
 36
 37
-</pre></td> --><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.*;</span>
   
 <span class="cm">/* TestSort Class */</span>
@@ -1596,9 +1596,9 @@ $ git push origin master
   <li>
     <p><code class="language-plaintext highlighter-rouge">of</code> method: for example, to create an <code class="language-plaintext highlighter-rouge">IntList</code> containing the numbers 0, 1, 2, and 3, we could use the method as follows:</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td> --><td class="rouge-code"><pre><span class="nc">IntList</span> <span class="n">myList</span> <span class="o">=</span> <span class="nc">IntList</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+</pre></td><td class="rouge-code"><pre><span class="nc">IntList</span> <span class="n">myList</span> <span class="o">=</span> <span class="nc">IntList</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
 <span class="c1">// Creates the IntList 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; null</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
@@ -1620,9 +1620,9 @@ $ git push origin master
   <li>
     <p><strong>Method Overloading:</strong> Java allows multiple methods with same name, but different parameters.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">longest</span><span class="o">(</span><span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">longest</span><span class="o">(</span><span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">longest</span><span class="o">(</span><span class="nc">AList</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
@@ -1637,7 +1637,7 @@ $ git push origin master
       <li>Step 1:</li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1647,7 +1647,7 @@ $ git push origin master
 8
 9
 10
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="n">voif</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">);</span>
     <span class="kd">public</span> <span class="no">T</span> <span class="nf">getLast</span><span class="o">();</span>
     <span class="kd">public</span> <span class="no">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">);</span>
@@ -1663,19 +1663,31 @@ $ git push origin master
       <li>Step 2: use the keyword <code class="language-plaintext highlighter-rouge">implements</code></li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="o">...</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addLast</span><span class="o">(</span><span class="no">T</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
         <span class="o">...</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <ul>
+      <li>The qualities of interfaces:
+        <ul>
+          <li>All methods must be public.</li>
+          <li>All variables must be public static final.</li>
+          <li>Cannot be instantiated</li>
+          <li>All methods are by default abstract unless specified to be <code class="language-plaintext highlighter-rouge">default</code></li>
+          <li>Can implement more than one interface per class</li>
+        </ul>
+      </li>
+    </ul>
   </li>
   <li>
     <p><strong>Overriding and Overloading:</strong></p>
@@ -1684,7 +1696,7 @@ $ git push origin master
       <li>
         <p>Override: a subclass has a method with the exact same signature as in the superclass</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1694,7 +1706,7 @@ $ git push origin master
 8
 9
 10
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Animal</span> <span class="o">{</span>
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">();</span>
 <span class="o">}</span>
     
@@ -1709,7 +1721,7 @@ $ git push origin master
       <li>
         <p>Overload: a subclass has a method with the same name but different signatures as in the superclass</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1721,7 +1733,7 @@ $ git push origin master
 10
 11
 12
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** makeNoise is overloaded */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** makeNoise is overloaded */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Animal</span> <span class="o">{</span>
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">makeNoise</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
 		<span class="o">...</span>
@@ -1743,7 +1755,7 @@ $ git push origin master
   <li>
     <p><strong>Implementation Inheritance:</strong> tells the subclasses how they should behave. Subclasses can inherit signatures and implementation. You must include the <code class="language-plaintext highlighter-rouge">default</code> keyword in the method signature.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1752,7 +1764,7 @@ $ git push origin master
 7
 8
 9
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List61B</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="o">...</span>
     <span class="k">default</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
@@ -1765,13 +1777,13 @@ $ git push origin master
 
     <p>For an <code class="language-plaintext highlighter-rouge">SLList</code>, the <code class="language-plaintext highlighter-rouge">get</code> method needs to jump through the entirety of the list. during each call. It’s much better to just override the <code class="language-plaintext highlighter-rouge">print</code> method.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td> --><td class="rouge-code"><pre><span class="nd">@Override</span>
+</pre></td><td class="rouge-code"><pre><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">for</span> <span class="o">(</span><span class="nc">Node</span> <span class="n">p</span> <span class="o">=</span> <span class="n">sentinel</span><span class="o">.</span><span class="na">next</span><span class="o">;</span> <span class="n">p</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">{</span>
         <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">item</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
@@ -1786,14 +1798,14 @@ $ git push origin master
       <li>
         <p>Note that <strong>constructors</strong> are not inherited, and <strong>private</strong> members cannot be directly accessed by subclasses.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RotatingSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RotatingSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
   <span class="cm">/** Rotates list to the right. */</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">rotateRight</span><span class="o">()</span> <span class="o">{</span>
     <span class="nc">Item</span> <span class="n">x</span> <span class="o">=</span> <span class="n">removeLast</span><span class="o">();</span>
@@ -1805,7 +1817,7 @@ $ git push origin master
       <li>
         <p>If we want to <strong>override</strong> a method and call this method defined in the parent class, using the <code class="language-plaintext highlighter-rouge">super</code> keyword. e.g. <code class="language-plaintext highlighter-rouge">removeLast</code></p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1824,7 +1836,7 @@ $ git push origin master
 17
 18
 19
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VengefulSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VengefulSLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;</span> <span class="n">deletedItems</span><span class="o">;</span>
     
     <span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
@@ -1848,11 +1860,11 @@ $ git push origin master
       <li>
         <p><strong>Constructors Are Not Inherited</strong>: Uses the <code class="language-plaintext highlighter-rouge">super</code> keyword to call parent’s constructor.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nf">VengefulSLList</span><span class="o">()</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">();</span>
     <span class="n">deletedItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SLList</span><span class="o">&lt;</span><span class="nc">Item</span><span class="o">&gt;();</span>
 <span class="o">}</span>
@@ -1871,29 +1883,29 @@ $ git push origin master
       <li>In old school Java (Java 7 and earlier), memory boxes (variables) could not contain pointers to functions. To get around this we can take advantage of interface inheritance.</li>
     </ul>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Reprensent a function that takes in an integer and returns an integer */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Reprensent a function that takes in an integer and returns an integer */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TenX</span> <span class="kd">implements</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TenX</span> <span class="kd">implements</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">x</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1904,7 +1916,7 @@ $ git push origin master
 9
 10
 11
-</pre></td> --><td class="rouge-code"><pre><span class="cm">/** Demonstrates higher order functions in java */</span>
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Demonstrates higher order functions in java */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HofDemo</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">do_twice</span><span class="o">(</span><span class="nc">IntUnaryFunction</span> <span class="n">f</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
@@ -1926,7 +1938,7 @@ $ git push origin master
   <li>
     <p>We can create an <strong>interface</strong> that guarantees that any implementing class, like Dog, contains a comparison method, which we’ll call <code class="language-plaintext highlighter-rouge">compareTo</code>.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1936,7 +1948,7 @@ $ git push origin master
 8
 9
 10
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="nc">OurComparable</span> <span class="nf">max</span><span class="o">(</span><span class="nc">OurComparable</span><span class="o">[]</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="nc">OurComparable</span> <span class="nf">max</span><span class="o">(</span><span class="nc">OurComparable</span><span class="o">[]</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">maxDex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">items</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">cmp</span> <span class="o">=</span> <span class="n">items</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">compareTo</span><span class="o">(</span><span class="n">items</span><span class="o">[</span><span class="n">maxDex</span><span class="o">]);</span>
@@ -1948,7 +1960,7 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1957,7 +1969,7 @@ $ git push origin master
 7
 8
 9
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OurComparable</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OurComparable</span> <span class="o">{</span>
     
     <span class="cm">/** 
     	* Return negative number if this &lt; o
@@ -1968,7 +1980,7 @@ $ git push origin master
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1988,7 +2000,7 @@ $ git push origin master
 18
 19
 20
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">OurComparable</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">OurComparable</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
       
@@ -2014,21 +2026,21 @@ $ git push origin master
       <li>
         <p>By declaring that it <code class="language-plaintext highlighter-rouge">implements OurComparable</code>, the Dog class makes a claim that it “is-an” OurComparable. As a result, the compiler checks that this claim is actually true, but sees that Dog <strong>doesn’t</strong> implement <code class="language-plaintext highlighter-rouge">compareTo</code>. The solution is to use the built-in interface <code class="language-plaintext highlighter-rouge">Comparable&lt;T&gt;</code>.</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="no">T</span> <span class="n">obj</span><span class="o">);</span>  
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>        </div>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">Dog</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">Dog</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="cm">/** Avoid cast an object */</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">uddaDog</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">-</span> <span class="n">uddaDog</span><span class="o">.</span><span class="na">size</span><span class="o">;</span>
@@ -2041,14 +2053,70 @@ $ git push origin master
   <li>
     <p><strong>Comparator</strong>: use <code class="language-plaintext highlighter-rouge">java.util.Comparator</code> to define how two objects compare, e.g. by their name.</p>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td> --><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">o1</span><span class="o">,</span> <span class="no">T</span> <span class="n">o2</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>
 </ul>
+
+<h2 id="43-abstract-class">4.3 Abstract Class</h2>
+
+<ul>
+  <li>
+    <p>The three most important Abstract data type (ADTs) come in the java.util library:</p>
+
+    <ul>
+      <li>
+        <p><strong>List</strong>: an ordered collection of items, e.g. Linked List, ArrayList</p>
+      </li>
+      <li>
+        <p><strong>Set</strong>: an unordered collection of strictly unique items (no repeats), e.g. HashSet, TreeSet</p>
+      </li>
+      <li>
+        <p><strong>Map</strong>: a collection of key/value pairs like dictionary in python. You access the value via the key, e.g. HashMap, TreeMap</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Abstract Classes:</p>
+
+    <ul>
+      <li>Use the keyword <code class="language-plaintext highlighter-rouge">abstract</code>.</li>
+      <li>Subclass use the keyword <code class="language-plaintext highlighter-rouge">extends</code> and can only extend one abstract class.</li>
+      <li>Can do anything an interface can do and more.</li>
+      <li>Methods can be public or private</li>
+      <li>Can have any types of variables</li>
+      <li>Cannot be instantiated</li>
+      <li>Methods are by default concrete unless specified to be <code class="language-plaintext highlighter-rouge">abstract</code></li>
+      <li>Can only implement one per class</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">GraphicObject</span> <span class="o">{</span>    
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">;</span>    
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">moveTo</span><span class="o">(</span><span class="kt">int</span> <span class="n">newX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newY</span><span class="o">)</span> <span class="o">{...}</span>    
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">();</span> 
+<span class="o">}</span> 
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="44-pakages">4.4 Pakages</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">package_name</span><span class="o">.</span><span class="na">classname</span><span class="o">.</span><span class="na">subclassname</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">package_name</span><span class="o">.</span><span class="na">classname</span><span class="o">.</span><span class="na">subclassname</span><span class="o">();</span>
+
+<span class="kn">import</span> <span class="nn">package_name.classname.subclassname</span><span class="o">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 :ET
