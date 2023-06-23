@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2022-11-23T19:56:11+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-01-16T15:34:46+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1039,6 +1039,45 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1109,7 +1148,7 @@
       data-toggle="tooltip"
       data-placement="bottom"
       title="Tue, Aug 30, 2022,  6:00 PM +0000"
-    >Aug 30</em>
+    >Aug 30, 2022</em>
 
       </span>
 
@@ -1127,13 +1166,13 @@
 
 
 <em class="timeago"
-    date="2022-11-23 20:56:11 +0100
+    date="2023-01-16 16:34:46 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Nov 23, 2022,  8:56 PM +0100"
-    >Nov 23</em>
+      title="Mon, Jan 16, 2023,  4:34 PM +0100"
+    >Jan 16</em>
 
       </span>
       
@@ -1158,8 +1197,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="4942 words">
-  <em>27 min</em> read</span>
+  title="5609 words">
+  <em>31 min</em> read</span>
 
 
       <!-- page views -->
@@ -2923,6 +2962,18 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>The qualities of interfaces:
+        <ul>
+          <li>All methods must be public.</li>
+          <li>All variables must be public static final.</li>
+          <li>Cannot be instantiated</li>
+          <li>All methods are by default abstract unless specified to be <code class="language-plaintext highlighter-rouge">default</code></li>
+          <li>Can implement more than one interface per class</li>
+        </ul>
+      </li>
+    </ul>
   </li>
   <li>
     <p><strong>Overriding and Overloading:</strong></p>
@@ -3125,7 +3176,270 @@ $ git push origin master
       </li>
     </ul>
   </li>
+  <li>
+    <p><strong>Higher Order Functions:</strong></p>
+
+    <ul>
+      <li>In old school Java (Java 7 and earlier), memory boxes (variables) could not contain pointers to functions. To get around this we can take advantage of interface inheritance.</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Reprensent a function that takes in an integer and returns an integer */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TenX</span> <span class="kd">implements</span> <span class="nc">IntUnaryFunction</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">apply</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">x</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="cm">/** Demonstrates higher order functions in java */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HofDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">do_twice</span><span class="o">(</span><span class="nc">IntUnaryFunction</span> <span class="n">f</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
+    <span class="o">}</span>
+      
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">IntUnaryFunction</span> <span class="n">tenX</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TenX</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">do_twice</span><span class="o">(</span><span class="n">tenX</span><span class="o">,</span> <span class="mi">2</span><span class="o">))</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
 </ul>
+
+<h2 id="42-polymorphism">4.2 Polymorphism<a href="#42-polymorphism" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li><strong>Polymorphism</strong> refers to how objects can have many forms or types. In object-oriented programming, polymorphism relates to how an object can be regarded as an instance of its own class, an instance of its superclass, an instance of its superclass’s superclass, and so on.</li>
+  <li>
+    <p>We can create an <strong>interface</strong> that guarantees that any implementing class, like Dog, contains a comparison method, which we’ll call <code class="language-plaintext highlighter-rouge">compareTo</code>.</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="nc">OurComparable</span> <span class="nf">max</span><span class="o">(</span><span class="nc">OurComparable</span><span class="o">[]</span> <span class="n">items</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">maxDex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">items</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">cmp</span> <span class="o">=</span> <span class="n">items</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">compareTo</span><span class="o">(</span><span class="n">items</span><span class="o">[</span><span class="n">maxDex</span><span class="o">]);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">maxDex</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">items</span><span class="o">[</span><span class="n">maxDex</span><span class="o">];</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OurComparable</span> <span class="o">{</span>
+    
+    <span class="cm">/** 
+    	* Return negative number if this &lt; o
+      * Return 0 if this equals o
+   	  * Return positive number if this &gt; o
+   	  */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">OurComparable</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+      
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="o">(</span><span class="nc">String</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+    <span class="o">}</span>
+      
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bark</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">" says: bark"</span><span class="o">);</span>
+    <span class="o">}</span>
+      
+    <span class="cm">/** the interface */</span> 
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Dog</span> <span class="n">uddaDog</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Dog</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">-</span> <span class="n">uddaDog</span><span class="o">.</span><span class="na">size</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>
+        <p>By declaring that it <code class="language-plaintext highlighter-rouge">implements OurComparable</code>, the Dog class makes a claim that it “is-an” OurComparable. As a result, the compiler checks that this claim is actually true, but sees that Dog <strong>doesn’t</strong> implement <code class="language-plaintext highlighter-rouge">compareTo</code>. The solution is to use the built-in interface <code class="language-plaintext highlighter-rouge">Comparable&lt;T&gt;</code>.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="no">T</span> <span class="n">obj</span><span class="o">);</span>  
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">Dog</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="cm">/** Avoid cast an object */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">uddaDog</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">-</span> <span class="n">uddaDog</span><span class="o">.</span><span class="na">size</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Comparator</strong>: use <code class="language-plaintext highlighter-rouge">java.util.Comparator</code> to define how two objects compare, e.g. by their name.</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">o1</span><span class="o">,</span> <span class="no">T</span> <span class="n">o2</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h2 id="43-abstract-class">4.3 Abstract Class<a href="#43-abstract-class" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>The three most important Abstract data type (ADTs) come in the java.util library:</p>
+
+    <ul>
+      <li>
+        <p><strong>List</strong>: an ordered collection of items, e.g. Linked List, ArrayList</p>
+      </li>
+      <li>
+        <p><strong>Set</strong>: an unordered collection of strictly unique items (no repeats), e.g. HashSet, TreeSet</p>
+      </li>
+      <li>
+        <p><strong>Map</strong>: a collection of key/value pairs like dictionary in python. You access the value via the key, e.g. HashMap, TreeMap</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Abstract Classes:</p>
+
+    <ul>
+      <li>Use the keyword <code class="language-plaintext highlighter-rouge">abstract</code>.</li>
+      <li>Subclass use the keyword <code class="language-plaintext highlighter-rouge">extends</code> and can only extend one abstract class.</li>
+      <li>Can do anything an interface can do and more.</li>
+      <li>Methods can be public or private</li>
+      <li>Can have any types of variables</li>
+      <li>Cannot be instantiated</li>
+      <li>Methods are by default concrete unless specified to be <code class="language-plaintext highlighter-rouge">abstract</code></li>
+      <li>Can only implement one per class</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">GraphicObject</span> <span class="o">{</span>    
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">;</span>    
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">moveTo</span><span class="o">(</span><span class="kt">int</span> <span class="n">newX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newY</span><span class="o">)</span> <span class="o">{...}</span>    
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">();</span> 
+<span class="o">}</span> 
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h2 id="44-pakages">4.4 Pakages<a href="#44-pakages" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">package_name</span><span class="o">.</span><span class="na">classname</span><span class="o">.</span><span class="na">subclassname</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">package_name</span><span class="o">.</span><span class="na">classname</span><span class="o">.</span><span class="na">subclassname</span><span class="o">();</span>
+
+<span class="kn">import</span> <span class="nn">package_name.classname.subclassname</span><span class="o">;</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 
 </div>
@@ -3545,7 +3859,7 @@ $ git push origin master
 
 <em class="timeago small"
     date="2022-06-01 10:11:11 +0000"
-    >Jun  1</em>
+    >Jun  1, 2022</em>
 
             <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Python Note</h3>
             <div class="text-muted small">
@@ -3595,7 +3909,7 @@ $ git push origin master
 
 <em class="timeago small"
     date="2022-06-15 10:11:11 +0000"
-    >Jun 15</em>
+    >Jun 15, 2022</em>
 
             <h3 class="pt-0 mt-1 mb-3" data-toc-skip>LeetCode Python</h3>
             <div class="text-muted small">
@@ -3672,7 +3986,7 @@ using ** ** without  space to create a lin...
   <div class="d-flex justify-content-between align-items-center text-muted">
     <div class="footer-left">
       <p class="mb-0">
-        © 2022
+        © 2023
         <a href="https://github.com/tasogarenaki">tasogarenaki</a>.
         
         <span data-toggle="tooltip" data-placement="top"

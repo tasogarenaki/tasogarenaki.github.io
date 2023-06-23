@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-01-14T16:08:12+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-01-27T15:51:26+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1052,6 +1052,58 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1140,13 +1192,13 @@
 
 
 <em class="timeago"
-    date="2023-01-14 17:08:12 +0100
+    date="2023-01-27 16:51:26 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Sat, Jan 14, 2023,  5:08 PM +0100"
-    >Jan 14</em>
+      title="Fri, Jan 27, 2023,  4:51 PM +0100"
+    >Jan 27</em>
 
       </span>
       
@@ -1171,8 +1223,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="5416 words">
-  <em>30 min</em> read</span>
+  title="5955 words">
+  <em>33 min</em> read</span>
 
 
       <!-- page views -->
@@ -1236,7 +1288,7 @@ $ git push origin master
       <li>Stepping over: step by step</li>
       <li>Stepping into: get into the method</li>
       <li>Stepping out: get out of the method</li>
-      <li>Resum</li>
+      <li>Resume</li>
     </ul>
   </li>
   <li>
@@ -2936,6 +2988,18 @@ $ git push origin master
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>The qualities of interfaces:
+        <ul>
+          <li>All methods must be public.</li>
+          <li>All variables must be public static final.</li>
+          <li>Cannot be instantiated</li>
+          <li>All methods are by default abstract unless specified to be <code class="language-plaintext highlighter-rouge">default</code></li>
+          <li>Can implement more than one interface per class</li>
+        </ul>
+      </li>
+    </ul>
   </li>
   <li>
     <p><strong>Overriding and Overloading:</strong></p>
@@ -3340,6 +3404,168 @@ $ git push origin master
     <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="no">T</span> <span class="n">o1</span><span class="o">,</span> <span class="no">T</span> <span class="n">o2</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h2 id="43-abstract-class">4.3 Abstract Class<a href="#43-abstract-class" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>The three most important Abstract data type (ADTs) come in the java.util library:</p>
+
+    <ul>
+      <li>
+        <p><strong>List</strong>: an ordered collection of items, e.g. Linked List, ArrayList</p>
+      </li>
+      <li>
+        <p><strong>Set</strong>: an unordered collection of strictly unique items (no repeats), e.g. HashSet, TreeSet</p>
+      </li>
+      <li>
+        <p><strong>Map</strong>: a collection of key/value pairs like dictionary in python. You access the value via the key, e.g. HashMap, TreeMap</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Abstract Classes:</p>
+
+    <ul>
+      <li>Use the keyword <code class="language-plaintext highlighter-rouge">abstract</code>.</li>
+      <li>Subclass use the keyword <code class="language-plaintext highlighter-rouge">extends</code> and can only extend one abstract class.</li>
+      <li>Can do anything an interface can do and more.</li>
+      <li>Methods can be public or private</li>
+      <li>Can have any types of variables</li>
+      <li>Cannot be instantiated</li>
+      <li>Methods are by default concrete unless specified to be <code class="language-plaintext highlighter-rouge">abstract</code></li>
+      <li>Can only implement one per class</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">GraphicObject</span> <span class="o">{</span>    
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">;</span>    
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">moveTo</span><span class="o">(</span><span class="kt">int</span> <span class="n">newX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newY</span><span class="o">)</span> <span class="o">{...}</span>    
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">draw</span><span class="o">();</span> 
+<span class="o">}</span> 
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h2 id="44-pakages">4.4 Pakages<a href="#44-pakages" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">package_name</span><span class="o">.</span><span class="na">classname</span><span class="o">.</span><span class="na">subclassname</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">package_name</span><span class="o">.</span><span class="na">classname</span><span class="o">.</span><span class="na">subclassname</span><span class="o">();</span>
+
+<span class="kn">import</span> <span class="nn">package_name.classname.subclassname</span><span class="o">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h1 id="5-java-syntax">5. Java Syntax</h1>
+
+<h2 id="51-autoboxing--auto-unboxing">5.1 Autoboxing &amp; Auto-unboxing<a href="#51-autoboxing--auto-unboxing" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>Autoboxing is the Java’s automatic conversion of between wrappers (Integer) to primitives (int).</p>
+  </li>
+  <li>
+    <p>Automatic Conversions:</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicArrayList</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="no">L</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
+        <span class="no">L</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>   					<span class="c1">// normally should be: L.add(new Integer(5))</span>
+        <span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="no">L</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>  <span class="c1">// normally should be: L.get(0).valueOf();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>
+        <p>If Java code expects a wrapper type (e.g. <code class="language-plaintext highlighter-rouge">Integer</code>) and gets a primitive, it is auto boxed.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">blah</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+<span class="o">}</span>
+    
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+<span class="n">blah</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>Likewise, if the code expects a primitive (e.g. <code class="language-plaintext highlighter-rouge">int</code>) and gets a wrapper, it is unboxed.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">blahPrimitive</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+<span class="o">}</span>
+    
+<span class="nc">Integer</span> <span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Integer</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
+<span class="n">blahPrimitive</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>There are a few things to keep in mind when it comes to autoboxing and unboxing:</p>
+
+    <ul>
+      <li>Arrays are never autoboxes or auto-unboxed, e.g. if you have an array of integers <code class="language-plaintext highlighter-rouge">int[] x</code>, and try to put its address into a variable of type <code class="language-plaintext highlighter-rouge">Integer[]</code>, the compiler will <strong>not</strong> allow your program to compile.</li>
+      <li>Autoboxing and unboxing also has a measurable performance impact. That is, code that relies on autoboxing and unboxing will be slower than code that eschews such automatic conversions.</li>
+      <li>Additionally, wrapper types use much more memory than primitive types. On most modern comptuers, not only must your code hold a 64 bit reference to the object, but every object also requires 64 bits of overhead used to store things like the dynamic type of the object.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="52-immutability">5.2 Immutability<a href="#52-immutability" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>An immutable data type is a data type whose instances cannot change in any observable way after instantiation. The <code class="language-plaintext highlighter-rouge">final</code> keyword will help the compiler ensure immutability.</p>
+  </li>
+  <li>
+    <p>Declaring a reference as <strong>final</strong> does not make the object that reference is pointing to immutable! For example, consider the following code snippet:</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">final</span> <span class="nc">ArrayDeque</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="n">deque</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayDeque</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;();</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">deque</code> variable is final and can never be reassigned, but the array deque object its pointing to can change! ArrayDeques are always mutable!</li>
+    </ul>
   </li>
 </ul>
 
