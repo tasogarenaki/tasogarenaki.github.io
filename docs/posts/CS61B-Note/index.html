@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-01-27T15:51:26+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-06-23T12:00:16+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1104,6 +1104,45 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1192,13 +1231,13 @@
 
 
 <em class="timeago"
-    date="2023-01-27 16:51:26 +0100
+    date="2023-06-23 14:00:16 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Fri, Jan 27, 2023,  4:51 PM +0100"
-    >Jan 27</em>
+      title="Fri, Jun 23, 2023,  2:00 PM +0200"
+    >Jun 23</em>
 
       </span>
       
@@ -1223,8 +1262,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="5955 words">
-  <em>33 min</em> read</span>
+  title="6223 words">
+  <em>34 min</em> read</span>
 
 
       <!-- page views -->
@@ -2635,6 +2674,61 @@ $ git push origin master
   </li>
 </ul>
 
+<h2 id="25-built-in-list">2.5 Built-in List<a href="#25-built-in-list" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>Lists:</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+  
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Example</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="no">L</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="no">L</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+        <span class="no">L</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="no">L</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>Sets:</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+  
+<span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+<span class="n">s</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Tokyo"</span><span class="o">);</span>
+<span class="n">s</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Lagos"</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="no">S</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"Tokyo"</span><span class="o">));</span> <span class="c1">// true</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
 <h1 id="3-testing">3. Testing</h1>
 
 <ul>
@@ -3565,6 +3659,112 @@ $ git push origin master
 
     <ul>
       <li>The <code class="language-plaintext highlighter-rouge">deque</code> variable is final and can never be reassigned, but the array deque object its pointing to can change! ArrayDeques are always mutable!</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="53-exception">5.3 Exception<a href="#53-exception" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>e.g. If the value at <code class="language-plaintext highlighter-rouge">items[i]</code> is null, then we are calling <code class="language-plaintext highlighter-rouge">null.equals(x)</code> -&gt; NullPointerException. In Java, Exceptions are objects and we throw exceptions explicit using the following format:</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">throw</span> <span class="k">new</span> <span class="nc">ExceptionObject</span><span class="o">(</span><span class="n">parameter1</span><span class="o">,</span> <span class="o">...);</span>
+    
+  <span class="c1">// e.g.</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"..."</span><span class="o">);</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<h2 id="54-iteration">5.4 Iteration<a href="#54-iteration" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li>
+    <p>Enhanced For Loop, its like <code class="language-plaintext highlighter-rouge">for … in</code> from Python.</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+<span class="n">s</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Tokyo"</span><span class="o">);</span>
+<span class="n">s</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Lagos"</span><span class="o">);</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">city</span> <span class="o">:</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">city</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>Iterator: to run the code below, be sure that</p>
+
+    <ol>
+      <li>the List interface has an <code class="language-plaintext highlighter-rouge">iterator()</code> method, since <code class="language-plaintext highlighter-rouge">friends</code> is a List, on which <code class="language-plaintext highlighter-rouge">iterator()</code> is called.</li>
+      <li>And the Iterator interface has <code class="language-plaintext highlighter-rouge">next/hasNext()</code> methods, since <code class="language-plaintext highlighter-rouge">seer</code> is an Iterator, on which <code class="language-plaintext highlighter-rouge">hasNext()</code> and <code class="language-plaintext highlighter-rouge">next()</code> are called.</li>
+    </ol>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">friends</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;();</span>
+<span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">seer</span> <span class="o">=</span> <span class="n">friends</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+  
+<span class="k">while</span> <span class="o">(</span><span class="n">seer</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">seer</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>
+        <p>To implement these requirements, the <code class="language-plaintext highlighter-rouge">List&lt;T&gt;</code> interface extends the <code class="language-plaintext highlighter-rouge">Iterable</code> interface, inheriting the abstract <code class="language-plaintext highlighter-rouge">iterator()</code> method. Then check that Iterators have <code class="language-plaintext highlighter-rouge">hasNext()</code> and <code class="language-plaintext highlighter-rouge">next()</code>.</p>
+
+        <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1.</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterable</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nc">Iterator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">();</span>
+<span class="o">}</span>
+    
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="nc">Iterable</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+    
+<span class="c1">// 2.</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Iterator</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kt">boolean</span> <span class="nf">hasNext</span><span class="o">();</span>
+    <span class="no">T</span> <span class="nf">next</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
     </ul>
   </li>
 </ul>
