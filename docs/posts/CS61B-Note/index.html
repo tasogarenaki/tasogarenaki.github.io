@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-06-26T13:11:13+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-07-05T09:50:34+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1169,6 +1169,19 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1257,13 +1270,13 @@
 
 
 <em class="timeago"
-    date="2023-06-26 15:11:13 +0200
+    date="2023-07-05 11:50:34 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Jun 26, 2023,  3:11 PM +0200"
-    >Jun 26</em>
+      title="Wed, Jul  5, 2023, 11:50 AM +0200"
+    >Jul  5</em>
 
       </span>
       
@@ -1288,7 +1301,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6663 words">
+  title="6697 words">
   <em>37 min</em> read</span>
 
 
@@ -1354,6 +1367,13 @@ $ git push origin master
       <li>Stepping into: get into the method</li>
       <li>Stepping out: get out of the method</li>
       <li>Resume</li>
+    </ul>
+  </li>
+  <li>
+    <p>Some shortcuts:</p>
+
+    <ul>
+      <li>Run: control + option + R</li>
     </ul>
   </li>
   <li>
@@ -3934,6 +3954,15 @@ $ git push origin master
 <ul>
   <li><code class="language-plaintext highlighter-rouge">b.get(0)</code>: This line errors because <code class="language-plaintext highlighter-rouge">b</code> is of static type <code class="language-plaintext highlighter-rouge">BlackHole</code>, but the <code class="language-plaintext highlighter-rouge">BlackHole</code> interface does not define a <code class="language-plaintext highlighter-rouge">get</code> method! Even though that <code class="language-plaintext highlighter-rouge">b</code> is dynamically a <code class="language-plaintext highlighter-rouge">HasHair</code>, and thus has the <code class="language-plaintext highlighter-rouge">get</code> method, the compiler bases its checks off the static type.</li>
   <li><code class="language-plaintext highlighter-rouge">HasHair hb = (HasHair) b</code>: the <code class="language-plaintext highlighter-rouge">HasHair</code> class doesn’t have access modifier, so is not a public class - it’s package-private. This means that <code class="language-plaintext highlighter-rouge">Client</code>, a class outside of the <code class="language-plaintext highlighter-rouge">universe</code> package, can’t see that the <code class="language-plaintext highlighter-rouge">HasHair</code> class exists.</li>
+</ul>
+
+<h1 id="6-tree">6. Tree</h1>
+
+<h2 id="61-asymptotics">6.1 Asymptotics<a href="#61-asymptotics" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li><strong>Time complexity</strong>: How much time does it take for your program to execute?</li>
+  <li><strong>Space complexity</strong>: How much memory does your program require?</li>
 </ul>
 
 
