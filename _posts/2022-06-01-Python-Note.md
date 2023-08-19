@@ -17,7 +17,7 @@ mermaid: true
 
 - **install pip**:  
 
-```console
+```bash
   $ curl https://bootstrap.pypa.io/pip/get-pip.py -o get-pip.py
   $ sudo python3 get-pip.py
 ```
@@ -275,6 +275,8 @@ See [here](https://inst.eecs.berkeley.edu/~cs61a/fa20/) for this course.
 
 ## 3.1 Introduction
 
+### 3.1.1 Some Functions
+
 - **`*args` and `**kwargs`**: 
   - `*args`: unknown functions/parameters 
   - `**kwargs`: same but list 
@@ -328,7 +330,7 @@ square = lambda x: x * x
 print(square(4))
 ```
 
-<br>
+### 3.1.2 Lists
 
 - **List**
   
@@ -519,7 +521,7 @@ def find_path(tree, x):
             return [label(tree)] + path
 ```
 
-<br>
+### 3.1.3 Some Other Things
 
 - `zip(first_iter, second_iter)`
   - Iterate over co-indexed `(x,y)` pairs. Return a `list` with `tuple` from lists
@@ -810,9 +812,7 @@ def all_have_an_equals(s):
 
 The simply version, count if a element `x` comes at least twice.
 
-<br>
-
-- **SQL**
+### 3.1.4 **SQL**
 
 Select the Informations (colums) from tables:
 
@@ -931,6 +931,58 @@ SELECT a.child FROM parents AS a, dogs AS b
 WHERE a.parent = b.name ORDER BY -b.height;   -- sort from high to low with "-"
 ```
 
+```sql
+SELECT * FROM Table_B		
+WHERE Conditions_Table_B = xxxx			
+AND Attribut_Table_B IN (SELECT Attribut_Table_A		
+FROM Table_A					
+WHERE Conditions_Table_A = xxxx);	
+```
+
+```sql
+SELECT from_unixtime(a.time_xx/1000, '%Y-%m-%d') AS time_xx, 		-- use form_unixtime conver time
+b.test1, c.test2
+FROM abc AS a
+JOIN def AS b
+ON a.test1 = b.test2
+AND b.xxx IS NOT null
+AND b.bbb = c.ddd 
+
+-----------
+
+SELECT from_unixtime(a.time_xx/1000, '%Y-%m-%d') AS time_xx, 
+date_format(b.xxx, '%Y-%m-%d') AS xxx,
+CASE WHEN date_format(from_unixtime(a.time_xx/1000), '%Y-%m-%d') =
+date_format(b.xxx, '%Y-%m-%d'),
+c.test1, d.test2
+THEN 'YES' ELSE 'NO' END AS same_date
+FROM aaa AS a
+join bbb AS b
+JOIN ccc AS c
+JOIN ddd AS d
+ON a.tt = b.xx
+AND b.xx IS NOT null
+```
+
+```sql
+SELECT h.xxx AS xxx, a.ccc AS ccc, 
+b.ddd AS ddd, count(b.name) AS name_count
+FROM aaa AS a
+JOIN bbb AS b
+JOIN ccc AS c
+JOIN ddd AS d
+JOIN eee AS e
+JOIN fff AS f
+JOIN ggg AS g
+JOIN hhh AS h
+ON a.aaa = b.aaa AND a.bbb = d.bbb AND a.ccc = e.ccc
+AND c.ddd = e.ddd AND f.eee = c.eee AND g.fff = f.fff
+AND h.mmm = d.mmm
+GROUP BY h.xxx, a.ccc, b.ddd
+HAVING name_count >=4 AND name_count <=10
+ORDER BY name_count DESC
+```
+
 Operators
 
 - comparison operators: `=`, `>`, `<`, `<=`, `>=`, `<>` or `!=`
@@ -972,26 +1024,6 @@ CREATE TABLE shopping_list AS
 SELECT name, store FROM products, lowest_prices 
 WHERE name = item GROUP BY category HAVING MIN(MSRP/rating);
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## 3.2 Examples 
 

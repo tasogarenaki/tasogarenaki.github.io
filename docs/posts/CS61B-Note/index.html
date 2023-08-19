@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-07-05T09:50:34+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-08-18T14:57:58+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1270,13 +1270,13 @@
 
 
 <em class="timeago"
-    date="2023-07-05 11:50:34 +0200
+    date="2023-08-18 16:57:58 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Jul  5, 2023, 11:50 AM +0200"
-    >Jul  5</em>
+      title="Fri, Aug 18, 2023,  4:57 PM +0200"
+    >Aug 18</em>
 
       </span>
       
@@ -1301,8 +1301,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6697 words">
-  <em>37 min</em> read</span>
+  title="6865 words">
+  <em>38 min</em> read</span>
 
 
       <!-- page views -->
@@ -1328,25 +1328,32 @@
         <p>Create a folder <code class="language-plaintext highlighter-rouge">A</code> on local</p>
       </li>
       <li>
-        <pre><code class="language-console ">$ cd A
-$ git clone https://github.com/my_repository.git
-$ cd B (Folder inside A)
-$ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
-$ git pull skeleton master
-</code></pre>
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">cd </span>A
+<span class="nv">$ </span>git clone https://github.com/my_repository.git
+<span class="nv">$ </span><span class="nb">cd </span>B <span class="o">(</span>Folder inside A<span class="o">)</span>
+<span class="nv">$ </span>git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
+<span class="nv">$ </span>git pull skeleton master
+</pre></td></tr></tbody></table></code></div>        </div>
       </li>
       <li>
         <p>Move the <code class="language-plaintext highlighter-rouge">HelloWorld.java</code> and <code class="language-plaintext highlighter-rouge">HelloNumbers.java</code> that you previously created into the <code class="language-plaintext highlighter-rouge">lab1</code>directory.</p>
       </li>
       <li>
-        <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span label-text="Plaintext"><i class="fas fa-code small"></i></span>
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>$ git add lab1/*
-$ git commit -m "completed first part of lab1"
-$ git push origin master
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git add lab1/<span class="k">*</span>
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"completed first part of lab1"</span>
+<span class="nv">$ </span>git push origin master
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
     </ol>
@@ -1399,12 +1406,12 @@ $ git push origin master
       <li>
         <p>Compiler and Run Java program via Terminal:</p>
 
-        <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span label-text="Plaintext"><i class="fas fa-code small"></i></span>
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>  $ javac name.java
-  $ java name
+</pre></td><td class="rouge-code"><pre>  <span class="nv">$ </span>javac name.java
+  <span class="nv">$ </span>java name
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
       <li>
@@ -3954,6 +3961,7 @@ $ git push origin master
 <ul>
   <li><code class="language-plaintext highlighter-rouge">b.get(0)</code>: This line errors because <code class="language-plaintext highlighter-rouge">b</code> is of static type <code class="language-plaintext highlighter-rouge">BlackHole</code>, but the <code class="language-plaintext highlighter-rouge">BlackHole</code> interface does not define a <code class="language-plaintext highlighter-rouge">get</code> method! Even though that <code class="language-plaintext highlighter-rouge">b</code> is dynamically a <code class="language-plaintext highlighter-rouge">HasHair</code>, and thus has the <code class="language-plaintext highlighter-rouge">get</code> method, the compiler bases its checks off the static type.</li>
   <li><code class="language-plaintext highlighter-rouge">HasHair hb = (HasHair) b</code>: the <code class="language-plaintext highlighter-rouge">HasHair</code> class doesn’t have access modifier, so is not a public class - it’s package-private. This means that <code class="language-plaintext highlighter-rouge">Client</code>, a class outside of the <code class="language-plaintext highlighter-rouge">universe</code> package, can’t see that the <code class="language-plaintext highlighter-rouge">HasHair</code> class exists.</li>
+  <li><code class="language-plaintext highlighter-rouge">equals(Object obj):</code> To determine if two objects have the same value, use <code class="language-plaintext highlighter-rouge">equals()</code>, while <code class="language-plaintext highlighter-rouge">==</code> is used to check if two objects are the same object. Note: The default implementation of <code class="language-plaintext highlighter-rouge">equals()</code> is <code class="language-plaintext highlighter-rouge">==</code>, so you need to override <code class="language-plaintext highlighter-rouge">equals()</code> yourself, e.g. proj2.byog.Core.Game.java: <code class="language-plaintext highlighter-rouge">processKey()</code> - Gold Points - Check the position of the door.</li>
 </ul>
 
 <h1 id="6-tree">6. Tree</h1>
@@ -3961,8 +3969,47 @@ $ git push origin master
 <h2 id="61-asymptotics">6.1 Asymptotics<a href="#61-asymptotics" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <ul>
-  <li><strong>Time complexity</strong>: How much time does it take for your program to execute?</li>
-  <li><strong>Space complexity</strong>: How much memory does your program require?</li>
+  <li>
+    <p><strong>Time complexity</strong>: How much time does it take for your program to execute?</p>
+
+    <ul>
+      <li>For N $\ge$ 100,000: $n$ – $n\log_2n$ – $n^2$ – $n^3$ – $2^n$ – $n!$</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Space complexity</strong>: How much memory does your program require?</p>
+  </li>
+  <li>
+    <p>Simplified Analysis Process</p>
+
+    <div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="no">N</span> <span class="o">=</span> <span class="no">A</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span>
+   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">)</span>
+      <span class="k">if</span> <span class="o">(</span><span class="no">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="no">A</span><span class="o">[</span><span class="n">j</span><span class="o">])</span>
+         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+
+    <ul>
+      <li>Worst case number of <code class="language-plaintext highlighter-rouge">==</code> operations: $C=1+2+3+\dots+(N-3)+(N-2)+(N-1)=N(N-1)/2$. Which means the worst case order of growth of runtime is $\Theta(N^2)$.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Order of Growth</p>
+    <ul>
+      <li>Big-Theta Notation: $R(N)\in\Theta(f(N))$. “equals” to $f(N)$.</li>
+      <li>Big O Notation: $R(N)\in O(f(N))$. “Less than or equal” to $f(N)$.</li>
+      <li>Big Omega Notation: $R(N)\in\Omega(f(N))$. “More than or equal” to $f(N)$.</li>
+    </ul>
+  </li>
 </ul>
 
 
@@ -4307,6 +4354,36 @@ $ git push origin master
   
 
   
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
 
   
 
@@ -4347,9 +4424,6 @@ $ git push origin master
   
     
     
-      
-      
-    
   
     
     
@@ -4357,6 +4431,14 @@ $ git push origin master
       
     
   
+    
+    
+      
+      
+        
+        
+        
+          
 
 
 
@@ -4463,6 +4545,52 @@ using ** ** without  space to create a lin...
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/LeetCode-Python/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago small"
+    date="2022-06-15 00:00:00 +0000"
+    >Jun 15, 2022</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Leetcode Python</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                HashTable (Algo catalog by use ##2)
+
+Simple / Medium / Hard Catalog
+
+1. Two Sum (name of the questions)
+
+Inhalt
+
+Idea for the solution, explanation
+
+Code
+
+using ** ** without  space to create a lin...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -4475,9 +4603,9 @@ using ** ** without  space to create a lin...
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/LeetCode-Python/" class="btn btn-outline-primary"
+  <a href="/posts/CS61B-Note/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>LeetCode Python</p>
+    <p>Cs61b Note</p>
   </a>
   
 
