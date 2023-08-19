@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2023-08-19T15:10:31+00:00</updated>
+  <updated>2023-08-19T15:11:40+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -24,7 +24,7 @@
     <link href="https://tasogarenaki.github.io/posts/CS61B-Note/" rel="alternate" type="text/html" title="CS61B Note" />
     <published>2022-08-30T18:00:00+00:00</published>
   
-    <updated>2023-08-19T15:04:39+00:00</updated>
+    <updated>2023-08-19T15:10:42+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/CS61B-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/CS61B-Note/" />
@@ -37,60 +37,6 @@
     <category term="Note" />
     
     <category term="CS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      1 Introduction
-
-
-  
-    Set the course code
-
-    
-      
-        Create a repository from GitHub
-      
-      
-        Create a folder A on local
-      
-      
-        $ cd A
-$ git clone https://github.com/my_repository.git
-$ cd B (Folder inside A)
-$ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
-$ git pull skeleton master
-        
-      
-      
-        Move the Hel...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Cs61b Note</title>
-    <link href="https://tasogarenaki.github.io/posts/CS61B-Note/" rel="alternate" type="text/html" title="Cs61b Note" />
-    <published>2022-08-30T00:00:00+00:00</published>
-  
-    <updated>2023-08-19T15:04:39+00:00</updated>
-  
-    <id>https://tasogarenaki.github.io/posts/CS61B-Note/</id>
-    <content src="https://tasogarenaki.github.io/posts/CS61B-Note/" />
-    <author>
-      <name>tasogarenaki</name>
-    </author>
-
-  
     
   
 
@@ -149,54 +95,6 @@ $ git pull skeleton master
     <category term="Note" />
     
     <category term="CS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      HashTable (Algo catalog by use ##2)
-
-Simple / Medium / Hard Catalog
-
-1. Two Sum (name of the questions)
-
-Inhalt
-
-Idea for the solution, explanation
-
-Code
-
-using ** ** without  space to create a line betwenn two questions
-
-
-
-
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Leetcode Python</title>
-    <link href="https://tasogarenaki.github.io/posts/LeetCode-Python/" rel="alternate" type="text/html" title="Leetcode Python" />
-    <published>2022-06-15T00:00:00+00:00</published>
-  
-    <updated>2022-06-15T00:00:00+00:00</updated>
-  
-    <id>https://tasogarenaki.github.io/posts/LeetCode-Python/</id>
-    <content src="https://tasogarenaki.github.io/posts/LeetCode-Python/" />
-    <author>
-      <name>tasogarenaki</name>
-    </author>
-
-  
     
   
 
