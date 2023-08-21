@@ -1023,6 +1023,306 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -1257,6 +1557,19 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1264,6 +1577,56 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -1376,8 +1739,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6904 words">
-  <em>38 min</em> read</span>
+  title="7436 words">
+  <em>41 min</em> read</span>
 
 
       <!-- page views -->
@@ -4089,14 +4452,153 @@
     <p>Merge Sort: $\Theta(N\text{log}N)$</p>
 
     <ul>
-      <li>Merging two sorted lists into one sorted list has a time complexity of $O(N)$. Therefore, by repeatedly performing the merge operation $\text{log}N$ times, we can achieve the merge sort.</li>
+      <li>Merging two sorted lists into one sorted list has a time complexity of $O(N)$. Therefore, by repeatedly performing the merge operation $\text{k=log}N$ times, we can achieve the merge sort.</li>
     </ul>
 
     <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/mergesort.png?raw=true" alt="mergesort" style="zoom:40%;" data-proofer-ignore></p>
   </li>
 </ul>
 
-<p>Test</p>
+<h2 id="62-disjoint-sets">6.2 Disjoint Sets<a href="#62-disjoint-sets" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h3 id="621-introduction">6.2.1 Introduction<a href="#621-introduction" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<p><strong>Disjoint Sets:</strong> Two sets are named <em>disjoint sets</em> if they have no elements in common.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">connect(p, q)</code>: connect <code class="language-plaintext highlighter-rouge">p</code> and <code class="language-plaintext highlighter-rouge">q</code>. Also known as <code class="language-plaintext highlighter-rouge">union</code></li>
+  <li><code class="language-plaintext highlighter-rouge">isConnected(p, q)</code>: returns true if <code class="language-plaintext highlighter-rouge">p</code> and <code class="language-plaintext highlighter-rouge">q</code> are connected (i.e. part of the same set).</li>
+</ul>
+
+<p>A <strong>Disjoint Sets data structure</strong> has a fixed number of elements that each start out in their own subset. By calling <code class="language-plaintext highlighter-rouge">connect(p, q)</code> for some elements <code class="language-plaintext highlighter-rouge">p</code> and <code class="language-plaintext highlighter-rouge">q</code>, we merge subsets together.</p>
+
+<p><strong>DisjointSets interface:</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DisjointSets</span> <span class="o">{</span>
+    <span class="cm">/** connects two items P and Q */</span>
+    <span class="kt">void</span> <span class="nf">connect</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">q</span><span class="o">);</span>
+
+    <span class="cm">/** checks to see if two items are connected */</span>
+    <span class="kt">boolean</span> <span class="nf">isConnected</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">q</span><span class="o">);</span> 
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="622-quick-uniton">6.2.2 Quick Uniton<a href="#622-quick-uniton" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<p>Although we represent the sets using only an array, but we can visualize it as trees. We assign each item the index of its parent (element (p/q)). If an item has no parent, then it is a ‘root’ and we assign it a negative value. A helper function <code class="language-plaintext highlighter-rouge">find(int item)</code> which returns the root of the tree <code class="language-plaintext highlighter-rouge">item</code>is in.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/quickunion1?raw=true" alt="quickunion1" style="zoom:40%;" data-proofer-ignore></p>
+
+<p>If two elements are part of the same set, then they will be in the same tree. Thus, they will have the same root. So for <code class="language-plaintext highlighter-rouge">isConnected(p, q)</code> we simply check if <code class="language-plaintext highlighter-rouge">find(p) == find(q)</code>.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/quickunion2?raw=true" alt="quickunion2" style="zoom:40%;" data-proofer-ignore></p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QuickUnionDS</span> <span class="kd">implements</span> <span class="nc">DisjointSets</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">parent</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="nf">QuickUnionDS</span><span class="o">(</span><span class="kt">int</span> <span class="no">N</span><span class="o">)</span> <span class="o">{</span>
+    	    <span class="n">parent</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="no">N</span><span class="o">];</span>
+    	    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+        	    <span class="n">parent</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+   	    <span class="o">}</span>
+ 
+  	<span class="kd">private</span> <span class="kt">int</span> <span class="nf">find</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+    	    <span class="k">while</span> <span class="o">(</span><span class="n">p</span> <span class="o">!=</span> <span class="n">parent</span><span class="o">[</span><span class="n">p</span><span class="o">])</span>
+        	    <span class="n">p</span> <span class="o">=</span> <span class="n">parent</span><span class="o">[</span><span class="n">p</span><span class="o">];</span>
+       	<span class="k">return</span> <span class="n">p</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isConnected</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">q</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="nf">find</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="o">==</span> <span class="n">find</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
+<span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">connect</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">q</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">find</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">find</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
+        <span class="n">parent</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Worst case: when there’s only one b ranch of the tree and the tree is very long, the time complexity of the <code class="language-plaintext highlighter-rouge">find</code> ist O(N).</p>
+
+<h3 id="623-weighted-quick-union-wqu">6.2.3 Weighted Quick Union (WQU)<a href="#623-weighted-quick-union-wqu" class="anchor"><i class="fas fa-hashtag"></i></a></h3></h3>
+
+<p>The shorter the tree the faster it takes to climb to the root of a tree. We should always link the root to the smaller tree to the larger tree.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/linktree1?raw=true" alt="linktree1" style="zoom:40%;" data-proofer-ignore></p>
+
+<p>There’s two options for connecting them:</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/linktree2?raw=true" alt="linktree2" style="zoom:40%;" data-proofer-ignore></p>
+
+<p>The <strong>second option is preferable</strong> as it only has a height of 2, rather than 3. We determine smaller / larger by the <strong>number of items</strong> in a tree. Thus, when connecting two trees we need to know their size. We can store this information in the root of the tree by replacing the <code class="language-plaintext highlighter-rouge">-1</code>’s with <code class="language-plaintext highlighter-rouge">-(size of tree)</code>. By extension, the runtimes of <code class="language-plaintext highlighter-rouge">connect</code> and <code class="language-plaintext highlighter-rouge">isConnected</code> are bounded by O(log N).</p>
+
+<p><strong>Note:</strong></p>
+
+<ol>
+  <li>Track tree size (number of elements).</li>
+  <li>Always link root of smaller tree to larger tree.</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">connect</span><span class="o">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">q</span><span class="o">)</span> <span class="o">{</span>
+	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">find</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
+	<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">find</span><span class="o">(</span><span class="n">q</span><span class="o">);</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">[</span><span class="n">j</span><span class="o">])</span> <span class="o">{</span> <span class="n">parent</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span> <span class="n">size</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">+=</span> <span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">];</span> <span class="o">}</span>
+	<span class="k">else</span> <span class="o">{</span> <span class="n">parent</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="n">size</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+=</span> <span class="n">size</span><span class="o">[</span><span class="n">j</span><span class="o">];</span> <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Example Implementations:</p>
+
+<ul>
+  <li>WQU: https://algs4.cs.princeton.edu/15uf/WeightedQuickUnionUF.java.html</li>
+  <li>Weighted Quick Union with Path Compression: https://algs4.cs.princeton.edu/15uf/QuickUnionPathCompressionUF.java.html</li>
+</ul>
 
 
 </div>
