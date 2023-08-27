@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2023-08-25T15:54:31+00:00</updated>
+  <updated>2023-08-27T14:43:19+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -24,7 +24,7 @@
     <link href="https://tasogarenaki.github.io/posts/CS61B-Note/" rel="alternate" type="text/html" title="CS61B Note" />
     <published>2022-08-30T18:00:00+00:00</published>
   
-    <updated>2023-08-24T12:51:45+00:00</updated>
+    <updated>2023-08-25T15:54:40+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/CS61B-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/CS61B-Note/" />
@@ -50,27 +50,25 @@
 
       1 Introduction
 
+Set the course code
+
 
   
-    Set the course code
-
-    
-      
-        Create a repository from GitHub
-      
-      
-        Create a folder A on local
-      
-      
-        $ cd A
+    Create a repository from GitHub
+  
+  
+    Create a folder A on local
+  
+  
+    $ cd A
 $ git clone https://github.com/my_repository.git
 $ cd B (Folder inside A)
 $ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp18.git
 $ git pull skeleton master
-        
-      
-      
-        Move the Hel...
+    
+  
+  
+    Move the HelloWorld.java and HelloNumbers.java that you previously creat...
     </summary>
   
 
