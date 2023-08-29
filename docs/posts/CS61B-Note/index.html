@@ -2597,6 +2597,19 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -2766,8 +2779,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="8923 words">
-  <em>49 min</em> read</span>
+  title="9057 words">
+  <em>50 min</em> read</span>
 
 
       <!-- page views -->
@@ -5777,6 +5790,47 @@
 </ul>
 
 <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/quadtree.png?raw=true" alt="quadtree.png" style="zoom:70%;" data-proofer-ignore></p>
+
+<h1 id="7-hasing">7. Hasing</h1>
+
+<h2 id="71-hash-table">7.1 Hash Table<a href="#71-hash-table" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Every <code class="language-plaintext highlighter-rouge">Object</code> in Java has a default <code class="language-plaintext highlighter-rouge">.hashcode()</code> method to transform data into an <code class="language-plaintext highlighter-rouge">index</code>. Java computes this by figuring out where the <code class="language-plaintext highlighter-rouge">Object</code> sits in memory and uses that memory’s address to do something similar to what we did with <code class="language-plaintext highlighter-rouge">String</code>s.  This methods gives a <em>unique</em> hashcode for every single Java object.</p>
+
+<p><strong>Concrete workflow:</strong></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">add</code> item</p>
+
+    <ul>
+      <li>
+        <p>Get hashcode (i.e., index) of item.</p>
+      </li>
+      <li>
+        <p>If index has no item, create new List, and place item there.</p>
+      </li>
+      <li>
+        <p>If index has a List already, check the List to see if item is already in there. If <em>not</em>, add item to List.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">contains</code> item</p>
+
+    <ul>
+      <li>
+        <p>Get hashcode (i.e., index) of item.</p>
+      </li>
+      <li>
+        <p>If index is empty, return <code class="language-plaintext highlighter-rouge">false</code>.</p>
+      </li>
+      <li>
+        <p>Otherwise, check all items in the List at that index, and if the item exists, return <code class="language-plaintext highlighter-rouge">true</code>.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 
 </div>
