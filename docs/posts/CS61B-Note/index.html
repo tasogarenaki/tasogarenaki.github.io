@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-08-28T14:48:13+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-08-29T16:00:34+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -498,6 +498,81 @@
     
       
       
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
     
 
     
@@ -2748,13 +2823,13 @@
 
 
 <em class="timeago"
-    date="2023-08-28 16:48:13 +0200
+    date="2023-08-29 18:00:34 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Mon, Aug 28, 2023,  4:48 PM +0200"
-    >Aug 28</em>
+      title="Tue, Aug 29, 2023,  6:00 PM +0200"
+    >Aug 29</em>
 
       </span>
       
@@ -2779,8 +2854,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="9057 words">
-  <em>50 min</em> read</span>
+  title="9513 words">
+  <em>52 min</em> read</span>
 
 
       <!-- page views -->
@@ -5791,7 +5866,7 @@
 
 <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/quadtree.png?raw=true" alt="quadtree.png" style="zoom:70%;" data-proofer-ignore></p>
 
-<h1 id="7-hasing">7. Hasing</h1>
+<h1 id="7-hasing--heaps">7. Hasing &amp; Heaps</h1>
 
 <h2 id="71-hash-table">7.1 Hash Table<a href="#71-hash-table" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -5831,6 +5906,81 @@
     </ul>
   </li>
 </ul>
+
+<p><strong>Hash Table:</strong> Since the size of a hash table is limited, when the number of items that need to be stored exceeds this hash table’s capacity, it inevitably leads to multiple items being stored in a single bucket of the hash table, e.g. potato, potato, totato. We can create a linked list structure for each bucket to store each object that needs to be stored in the corresponding hash table position.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/hash1.png?raw=true" alt="hash1.png" style="zoom:70%;" data-proofer-ignore></p>
+
+<p><strong>Load Factor:</strong> Depends on the number of items in the ‘bucket’. If N items are distributed across M buckets, average time grows with L = N / M, the Average runtime is $\Theta (\text{L})$.</p>
+
+<p><strong>Steps for Using the Hash Table: Every item is mapped to a bucket number using a hash function:</strong></p>
+
+<ol>
+  <li>Computing a hashCode: integer between $-2^{31}$ and $2^{31}-1$.</li>
+  <li>Computing index = hashCode modulo M. If the hashCode is negative, we can utilize Math.floorMod, for instance, -1 floormod 4 = 3.</li>
+  <li>If L = N / M gets too large, increase M.</li>
+</ol>
+
+<p><strong>The hashCode Function for Strings:</strong> $h(s)=s_0\times 31^{n-1}+s_1\times 31^{n-2}+\dots+s_{n-1}$, e.g.  $\text{‘c’}=s_0\times 31^{n-1}=1\times 31^{2}=31^2$.</p>
+
+<p>Java’s hashCode() Method for Strings:</p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">hash</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">h</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">value</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">val</span><span class="o">[]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+        
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">value</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">31</span> <span class="o">*</span> <span class="n">h</span> <span class="o">+</span> <span class="n">val</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="o">}</span>
+        <span class="n">hash</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">h</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Note that for recursive data structures, the hashCode also needs to be calculated using a recursive approach. Here’s the implementation of the <code class="language-plaintext highlighter-rouge">hashCode()</code> method for a BST:</p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">.</span><span class="na">hashCode</span><span class="o">()</span> <span class="o">+</span> <span class="mi">31</span> <span class="o">*</span> <span class="k">this</span><span class="o">.</span><span class="na">left</span><span class="o">.</span><span class="na">hashCode</span><span class="o">()</span> <span class="o">+</span> <span class="mi">31</span> <span class="o">*</span> <span class="mi">31</span> <span class="o">*</span> <span class="k">this</span><span class="o">.</span><span class="na">right</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>All Objects have <code class="language-plaintext highlighter-rouge">hashCode()</code> function.</p>
+
+<ul>
+  <li>Default: <code class="language-plaintext highlighter-rouge">returns this</code> (i.e. address of object). Can have strange consequences: “hello”.hashCode() is not the same as (“h” + “ello”).hashCode().</li>
+  <li>Can override for your type.</li>
+</ul>
+
+<p><strong>HashMap:</strong> HashMap implements the Map interface, allowing you to store objects in it using the <code class="language-plaintext highlighter-rouge">put(key, value)</code> method and retrieve objects from it using the <code class="language-plaintext highlighter-rouge">get(key)</code> method. When you use <code class="language-plaintext highlighter-rouge">put()</code> to provide a key and value, the <code class="language-plaintext highlighter-rouge">hashCode()</code> method is first applied to the key. Based on the calculated hashCode, the entry is determined to be placed in a specific bucket within the hash table. If a key in that bucket exists and is <code class="language-plaintext highlighter-rouge">.equals()</code> to the key you’re putting, then the value associated with that existing key is overwritten. Otherwise, the new key-value pair is inserted at the beginning of the linked list. When the load factor L becomes too large, M is increased by a factor of two, and then rehash it.</p>
 
 
 </div>
