@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-08-30T12:45:55+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-08-30T13:14:28+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -3198,6 +3198,81 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -3224,6 +3299,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -3674,12 +3762,12 @@
 
 
 <em class="timeago"
-    date="2023-08-30 14:45:55 +0200
+    date="2023-08-30 15:14:28 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Aug 30, 2023,  2:45 PM +0200"
+      title="Wed, Aug 30, 2023,  3:14 PM +0200"
     >Aug 30</em>
 
       </span>
@@ -3705,8 +3793,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="9898 words">
-  <em>54 min</em> read</span>
+  title="10106 words">
+  <em>56 min</em> read</span>
 
 
       <!-- page views -->
@@ -6872,7 +6960,7 @@
   <li>Complete: Missing items only at the bottom level (if any), all nodes are as far left as possible.</li>
 </ul>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/heap1.png?raw=true" alt="heap1.png" style="zoom:40%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/heap1.png?raw=true" alt="heap1.png" style="zoom:60%;" data-proofer-ignore></p>
 
 <p>Methods of Priority Queue:</p>
 
@@ -6914,7 +7002,7 @@
 
 <p>**Heap Implementation: **Store keys in an array. Offset everything by 1 spot, but leave spot array[0] empty.</p>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/head-imp.png?raw=true" alt="head-imp.png" style="zoom:40%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/head-imp.png?raw=true" alt="head-imp.png" style="zoom:70%;" data-proofer-ignore></p>
 
 <p>The function for computation of children and parents:</p>
 
@@ -6961,7 +7049,7 @@
 
 <h2 id="73-data-structures-summary">7.3 Data Structures Summary<a href="#73-data-structures-summary" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/datastructures.png?raw=true" alt="datastructures.png" style="zoom:40%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/datastructures.png?raw=true" alt="datastructures.png" style="zoom:50%;" data-proofer-ignore></p>
 
 <p><strong>Search Data Structures:</strong></p>
 
@@ -7007,6 +7095,61 @@
     </tr>
   </tbody>
 </table></div>
+
+<h1 id="8-graphs">8. Graphs</h1>
+
+<h2 id="81-intro-to-graphs">8.1 Intro to Graphs<a href="#81-intro-to-graphs" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>A graph consists of:</p>
+
+<ul>
+  <li>A set of nodes (or vertices)</li>
+  <li>A set of <strong>zero</strong> of <strong>more</strong> edges, each of which connects two nodes.</li>
+</ul>
+
+<p>In general, note that <strong>all trees are also graphs, but not all graphs are trees.</strong></p>
+
+<p>Based on whether the links have a direction, a graph can be categorized as directed (one-way) or undirected (both ways). If a node in a directed graph can follow a path and return to itself, then it is considered cyclic; otherwise, it is acyclic. In an undirected graph, if there are multiple paths from a node back to itself, then it is considered cyclic.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/graphtype.png?raw=true" alt="graphtype" style="zoom:50%;" data-proofer-ignore></p>
+
+<p><strong>API:</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graph</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Graph</span><span class="o">(</span><span class="kt">int</span> <span class="no">V</span><span class="o">);</span>  <span class="c1">// create empty graph with v vertices</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addEdge</span><span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">,</span> <span class="kt">int</span> <span class="n">w</span><span class="o">);</span>   <span class="c1">// add an edge v-w</span>
+    <span class="nc">Iterable</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="nf">adj</span><span class="o">(</span><span class="kt">int</span> <span class="n">v</span><span class="o">);</span>  <span class="c1">// vertices adjacent to v</span>
+    <span class="kt">int</span> <span class="nf">V</span><span class="o">();</span>  <span class="c1">// number of vertices</span>
+    <span class="kt">int</span> <span class="nf">E</span><span class="o">();</span>  <span class="c1">// number of edges</span>
+    
+    <span class="c1">// degree is the # of adjacent vertices connected to some vertex</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">degree</span><span class="o">(</span><span class="nc">Graph</span> <span class="no">G</span><span class="o">,</span> <span class="kt">int</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">w</span> <span class="o">:</span> <span class="no">G</span><span class="o">.</span><span class="na">adj</span><span class="o">(</span><span class="n">v</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">degree</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">degree</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 
 </div>
