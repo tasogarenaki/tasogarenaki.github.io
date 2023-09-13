@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-07T15:24:47+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-08T14:41:46+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -3648,6 +3648,231 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -3674,6 +3899,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -4150,13 +4388,13 @@
 
 
 <em class="timeago"
-    date="2023-09-07 17:24:47 +0200
+    date="2023-09-08 16:41:46 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Thu, Sep  7, 2023,  5:24 PM +0200"
-    >Sep  7</em>
+      title="Fri, Sep  8, 2023,  4:41 PM +0200"
+    >Sep  8</em>
 
       </span>
       
@@ -4181,8 +4419,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="10581 words">
-  <em>58 min</em> read</span>
+  title="10918 words">
+  <em>60 min</em> read</span>
 
 
       <!-- page views -->
@@ -7541,7 +7779,7 @@
 
 <h2 id="82-graph-traversal">8.2 Graph Traversal<a href="#82-graph-traversal" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<p><strong>Depth Frist Traversal (Stack, FILO):</strong> Determine whether there is a <strong>path</strong> from a node s to another node t:</p>
+<p><strong>Depth Frist Traversal (DFS, Stack, FILO):</strong> Determine whether there is a <strong>path</strong> from a node s to another node t. Worse for spindly graphs.</p>
 
 <ol>
   <li>Mark s.</li>
@@ -7591,7 +7829,7 @@
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>Breadth First Traversal (queue, FIFO):</strong> We visit all nodes 1 edges from our source. Then, all nodes 2 edges from our source, etc. The goal is to find the shortest path between ‘s’ and every other vertex.</p>
+<p><strong>Breadth First Traversal (BFS, queue, FIFO):</strong> We visit all nodes 1 edges from our source. Then, all nodes 2 edges from our source, etc. The goal is to find the shortest path between ‘s’ and every other vertex. Worse for bushy graphs.</p>
 
 <ol>
   <li>Initialize the fringe (a <strong>queue</strong> with the starting vertex s) and mark that vertex, initialize the pointer ‘v’ to ‘s’. Repeat 2 and 3 until queue is empty:</li>
@@ -7599,9 +7837,7 @@
   <li>For each unmarked neighbor n of v: Mark n and Add n to fringe, Set edgeTo[n] = v then Set distTo[n] = distTo[v] + 1.</li>
 </ol>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/bfs1.png?raw=true" alt="bfs1" style="zoom:50%;" data-proofer-ignore></p>
-
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/bfs2.png?raw=true" alt="bfs2" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/bfs1.png?raw=true" alt="bfs1" style="zoom:55%;" data-proofer-ignore> <img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/bfs2.png?raw=true" alt="bfs2" style="zoom:52.5%;" data-proofer-ignore></p>
 
 <div class="language-java highlighter-rouge"><div class="code-header">
         <span label-text="Java"><i class="fas fa-code small"></i></span>
@@ -7704,6 +7940,18 @@
 	<span class="o">{</span> <span class="k">return</span> <span class="n">reversePostorder</span><span class="o">;</span> <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="83-shortest-paths">8.3 Shortest Paths<a href="#83-shortest-paths" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><strong>Dijkstra’s Algorithm:</strong> For an unweighted edge graph, BFS can find the shortest path from one point to another (because it is sorted by level). However, for weighted edge graphs, the level does not fully reflect proximity, so Dijkstra’s algorithm is needed to calculate the shortest path. Note that the ‘Shortest Path Tree’ will always be a tree because for every node, there was exactly one ‘parent’ in the <code class="language-plaintext highlighter-rouge">edgeTo</code> array. Dijkstra’s algorithm takes in an input vertex <em>s</em> as source node, and outputs the shortest path tree from <em>s</em> to <em>v</em>. Insert all vertices into the fringe PQ, storing vertices in order of distance from the source. Note that the distance between <em>s</em> and <em>s</em> is 0. Then repeat: remove the closest vertex <em>v</em> from the PQ and relax all edges pointing from <em>v</em>.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/djk1.png?raw=true" alt="djk1" style="zoom:50%;" data-proofer-ignore></p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/djk2.png?raw=true" alt="djk2" style="zoom:50%;" data-proofer-ignore></p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/djk3.png?raw=true" alt="djk3" style="zoom:50%;" data-proofer-ignore></p>
+
+<p>The <strong>A* algorithm</strong> is suitable for situations where the destination is known, rather than finding the shortest path for all points. Unlike Dijkstra’s best-first search, Dijkstra’s algorithm only considers the distance from a point to the source as the basis for popping ‘v’ from the PQ. However, A* takes into account both the distance from the point to the source and the estimated distance from the point to the target. It uses this combined distance to determine the order of popping. The estimated distance should not be greater than the actual distance. But please note: when updating the ‘distTo’ array, the updates are still based on the distance from the point to the source. Additionally, when visiting the target point, you cannot immediately stop the traversal. You need to ensure that all neighboring points of the target points have also been visited before determining the shortest path. This is because, when considering the estimated distance, the nodes that have already been popped may not necessarily be part of the shortest path, so you need to compare all possible shortest paths to the target point ‘t’ before making a final determination.</p>
 
 
 </div>
