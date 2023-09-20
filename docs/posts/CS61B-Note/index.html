@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-13T13:37:26+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-14T09:22:20+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -4563,6 +4563,19 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -4701,13 +4714,13 @@
 
 
 <em class="timeago"
-    date="2023-09-13 15:37:26 +0200
+    date="2023-09-14 11:22:20 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Sep 13, 2023,  3:37 PM +0200"
-    >Sep 13</em>
+      title="Thu, Sep 14, 2023, 11:22 AM +0200"
+    >Sep 14</em>
 
       </span>
       
@@ -4732,8 +4745,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="11131 words">
-  <em>61 min</em> read</span>
+  title="11387 words">
+  <em>63 min</em> read</span>
 
 
       <!-- page views -->
@@ -8295,9 +8308,87 @@
 
 <p>Essentially, this algorithm runs via the same mechanism as Dijkstra’s algorithm, but while Dijkstra’s considers candidate nodes by their <strong>distance from the source</strong> node, Prim’s looks at each candidate node’s <strong>distance from the MST</strong> under construction.</p>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/prim1.png?raw=true" alt="prim1" style="zoom:50%;" data-proofer-ignore> <img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/prim2.png?raw=true" alt="prim2" style="zoom:50%;" data-proofer-ignore> <img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/prim3.png?raw=true" alt="prim3" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/prim1.png?raw=true" alt="prim1" style="zoom:50%;" data-proofer-ignore> <img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/prim2.png?raw=true" alt="prim2" style="zoom:55%;" data-proofer-ignore> <img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/prim3.png?raw=true" alt="prim3" style="zoom:50%;" data-proofer-ignore></p>
 
 <p><strong>Kruskal’s Algorithm:</strong> also used to find a MST from a graph. Insert all edges into minPQ then repeat: remove smallest weight, add to MST if no cycle created.</p>
+
+<h1 id="9-sorting-algorithm">9. Sorting Algorithm</h1>
+
+<h2 id="91-basic-sorting-algorithms">9.1 Basic Sorting Algorithms<a href="#91-basic-sorting-algorithms" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><strong>Selection Sort:</strong></p>
+
+<ul>
+  <li>Find the smallest item in the unsorted portion of the array.</li>
+  <li>Move it to the end of the sorted portion of the array.</li>
+  <li>Selection sort the remaining unsorted items.</li>
+</ul>
+
+<p><strong>Heap Sort:</strong></p>
+
+<ul>
+  <li>Insert all items into a max heap, and discard input array. Create output array.</li>
+  <li>Repeat N times:
+    <ul>
+      <li>Delete largest item from the max heap.</li>
+      <li>Put largest item at the end of the unused part of the output array.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>In-place Heap Sort:</strong></p>
+
+<ol>
+  <li>Heapification:
+    <ul>
+      <li>Bottom-up heaping input array:
+        <ul>
+          <li>Sink nodes in reverse level order: sink(k)</li>
+          <li>After sinking, guaranteed that tree rotted at position k is a heap.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Repeat N times:
+    <ul>
+      <li>Delete largest item from the max heap, swapping root with last item in the hap.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Top-Down Merge Sort:</strong></p>
+
+<ul>
+  <li>Split items into 2 roughly even pieces.</li>
+  <li>Mergesort each half.</li>
+  <li>Merge the two sorted halves to form the final result.
+    <ul>
+      <li>Compare input[I] &lt; input[j] (if necessary).</li>
+      <li>Copy smaller item and increment p and I or j.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>In-place Insertion Sort:</strong></p>
+
+<ul>
+  <li>Repeat for I = 0 to N-1:
+    <ul>
+      <li>Designate item I as the traveling item.</li>
+      <li>Swap item backwards until traveller is in the right place among all previously examined items.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For a sorted array, the time complex is $\Theta(N)$; otherwise, it is $\Theta(N^2)$.</p>
+
+<p><strong>Quick Sort - Partition:</strong> To partition an array a[] on element x=a[i] is to rearrange a[] so that:</p>
+
+<ul>
+  <li>x moves to position j (may be the same as i)</li>
+  <li>All entries to the left of x are &lt;= x.</li>
+  <li>All entries to the right of x are &gt;= x.</li>
+</ul>
 
 
 </div>
