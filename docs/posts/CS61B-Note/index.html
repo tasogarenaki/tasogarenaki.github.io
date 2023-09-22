@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-20T14:40:33+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-21T12:39:00+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -4323,6 +4323,81 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -4349,6 +4424,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -4864,13 +4952,13 @@
 
 
 <em class="timeago"
-    date="2023-09-20 16:40:33 +0200
+    date="2023-09-21 14:39:00 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Sep 20, 2023,  4:40 PM +0200"
-    >Sep 20</em>
+      title="Thu, Sep 21, 2023,  2:39 PM +0200"
+    >Sep 21</em>
 
       </span>
       
@@ -4895,8 +4983,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="11463 words">
-  <em>63 min</em> read</span>
+  title="11711 words">
+  <em>65 min</em> read</span>
 
 
       <!-- page views -->
@@ -8542,11 +8630,43 @@
 
 <p><strong>3-way merge approach:</strong> Given an array of colors where the 0th element is white, and the remaining elements are red (less) or blue (greater), rearrange the array so that all red squares are to the left of the white square, and all blue squares are to the right. Your algorithm must complete in Θ(N) time (no space restriction). Relative order of red and blues does NOT need to stay the same.</p>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/3way1.png?raw=true" alt="3way1" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/3way1.png?raw=true" alt="3way1" style="zoom:70%;" data-proofer-ignore></p>
 
 <p>If we have equal items:</p>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/3way2.png?raw=true" alt="3way2" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/3way2.png?raw=true" alt="3way2" style="zoom:70%;" data-proofer-ignore></p>
+
+<h2 id="92-radix-sort">9.2 Radix Sort<a href="#92-radix-sort" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Radix Sort: Sorting without comparison.
+<strong>LSD Radix Sort (Least Significant Digit):</strong> a radix sort starting from the least significant digit.</p>
+
+<p>First, find the number of digits in the largest number in the entire array, assuming it’s k. Then, repeat the sorting from the least significant digit to the kth digit. Suppose you have a series of numbers like 73, 22, 93, 43, 55, 14, 28, 65, 39, 81.nFirst, distribute them into buckets labeled 0-9 based on the values of their units digits:
+0
+1 8<strong>1</strong>
+2 2<strong>2</strong>
+3 7<strong>3</strong> 9<strong>3</strong> 4<strong>3</strong>
+4 1<strong>4</strong>
+5 5<strong>5</strong> 6<strong>5</strong>
+6
+7
+8 2<strong>8</strong>
+9 3<strong>9</strong>
+Collect the numbers in these buckets: 81, 22, 73, 93, 43, 14, 55, 65, 28, 39. Then, distribute them into buckets labeled 0-9 based on the values of their tens digits:
+0
+1 <strong>1</strong>4
+2 <strong>2</strong>2 <strong>2</strong>8
+3 <strong>3</strong>9
+4 <strong>4</strong>3
+5 <strong>5</strong>5
+6 <strong>6</strong>5
+7 <strong>7</strong>3
+8 <strong>8</strong>1
+9 <strong>9</strong>3
+Collect the numbers in these buckets: 14, 22, 28, 39, 43, 55, 65, 73, 81, 93. Since the highest digit is 2, the sorting is complete. The complexity is O(kN), where k is the number of digits in the largest number, and N is the number of elements in the array.
+<strong>MSD Radix Sort (Most Significant Digit):</strong> Sorting starts from the most significant digit, suitable for situations with high numbers of digits. Unlike LSD, MSD needs to split the array into multiple subarrays for sorting during the process of determining each digit.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/msd.png?raw=true" alt="msd" style="zoom:50%;" data-proofer-ignore></p>
 
 
 </div>
