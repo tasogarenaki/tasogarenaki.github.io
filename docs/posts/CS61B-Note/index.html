@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="CS61B Note" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-21T12:39:00+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-09-22T13:06:25+00:00","datePublished":"2022-08-30T18:00:00+00:00","description":"1 Introduction","headline":"CS61B Note","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/CS61B-Note/"},"url":"https://tasogarenaki.github.io/posts/CS61B-Note/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -4398,6 +4398,81 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -4424,6 +4499,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -4952,13 +5040,13 @@
 
 
 <em class="timeago"
-    date="2023-09-21 14:39:00 +0200
+    date="2023-09-22 15:06:25 +0200
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Thu, Sep 21, 2023,  2:39 PM +0200"
-    >Sep 21</em>
+      title="Fri, Sep 22, 2023,  3:06 PM +0200"
+    >Sep 22</em>
 
       </span>
       
@@ -4983,7 +5071,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="11711 words">
+  title="11764 words">
   <em>65 min</em> read</span>
 
 
@@ -8663,10 +8751,17 @@ Collect the numbers in these buckets: 81, 22, 73, 93, 43, 14, 55, 65, 28, 39. Th
 7 <strong>7</strong>3
 8 <strong>8</strong>1
 9 <strong>9</strong>3
-Collect the numbers in these buckets: 14, 22, 28, 39, 43, 55, 65, 73, 81, 93. Since the highest digit is 2, the sorting is complete. The complexity is O(kN), where k is the number of digits in the largest number, and N is the number of elements in the array.
-<strong>MSD Radix Sort (Most Significant Digit):</strong> Sorting starts from the most significant digit, suitable for situations with high numbers of digits. Unlike LSD, MSD needs to split the array into multiple subarrays for sorting during the process of determining each digit.</p>
+Collect the numbers in these buckets: 14, 22, 28, 39, 43, 55, 65, 73, 81, 93. Since the highest digit is 2, the sorting is complete. The complexity is O(kN), where k is the number of digits in the largest number, and N is the number of elements in the array.</p>
+
+<p><strong>MSD Radix Sort (Most Significant Digit):</strong> Sorting starts from the most significant digit, suitable for situations with high numbers of digits. Unlike LSD, MSD needs to split the array into multiple subarrays for sorting during the process of determining each digit.</p>
 
 <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/msd.png?raw=true" alt="msd" style="zoom:50%;" data-proofer-ignore></p>
+
+<h2 id="93-tries">9.3 Tries<a href="#93-tries" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/cs61b/tries.png?raw=true" alt="tries" style="zoom:50%;" data-proofer-ignore></p>
+
+<p>We insert “sam”, “sad”, “sap”, “same”, “a”, and “awls”. The blue nodes represent elements in the array that end with the corresponding node. Tries are primarily used for prefix-based searching. The character will not be saved in the node but will be implicitly saved in the link, e.g., link[0] is ‘a’.</p>
 
 
 </div>
