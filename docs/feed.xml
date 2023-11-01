@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2023-09-24T14:35:46+00:00</updated>
+  <updated>2023-11-01T09:28:06+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -20,11 +20,49 @@
 
   
   <entry>
+    <title>Princeton Algorithms</title>
+    <link href="https://tasogarenaki.github.io/posts/Princeton-Algorithms/" rel="alternate" type="text/html" title="Princeton Algorithms" />
+    <published>2023-11-01T08:00:00+00:00</published>
+  
+    <updated>2023-11-01T08:00:00+00:00</updated>
+  
+    <id>https://tasogarenaki.github.io/posts/Princeton-Algorithms/</id>
+    <content src="https://tasogarenaki.github.io/posts/Princeton-Algorithms/" />
+    <author>
+      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
+    </author>
+
+  
+    
+    <category term="Note" />
+    
+    <category term="CS" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      1 Introduction
+
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>CS61B Note</title>
     <link href="https://tasogarenaki.github.io/posts/CS61B-Note/" rel="alternate" type="text/html" title="CS61B Note" />
     <published>2022-08-30T18:00:00+00:00</published>
   
-    <updated>2023-09-22T13:06:25+00:00</updated>
+    <updated>2023-09-24T14:35:55+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/CS61B-Note/</id>
     <content src="https://tasogarenaki.github.io/posts/CS61B-Note/" />
@@ -69,58 +107,6 @@ $ git pull skeleton master
   
   
     Move the HelloWorld.java and HelloNumbers.java that you previously creat...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>LeetCode Python</title>
-    <link href="https://tasogarenaki.github.io/posts/LeetCode-Python/" rel="alternate" type="text/html" title="LeetCode Python" />
-    <published>2022-06-15T10:11:11+00:00</published>
-  
-    <updated>2022-06-15T10:11:11+00:00</updated>
-  
-    <id>https://tasogarenaki.github.io/posts/LeetCode-Python/</id>
-    <content src="https://tasogarenaki.github.io/posts/LeetCode-Python/" />
-    <author>
-      <name>{"name"=>"Terry", "link"=>"https://github.com/tasogarenaki"}</name>
-    </author>
-
-  
-    
-    <category term="Note" />
-    
-    <category term="CS" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      HashTable (Algo catalog by use ##2)
-
-Simple / Medium / Hard Catalog
-
-1. Two Sum (name of the questions)
-
-Inhalt
-
-Idea for the solution, explanation
-
-Code
-
-using ** ** without  space to create a line betwenn two questions
-
-
-
-
     </summary>
   
 
