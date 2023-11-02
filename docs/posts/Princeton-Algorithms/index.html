@@ -491,6 +491,242 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -504,6 +740,56 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -599,7 +885,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2 words">
+  title="193 words">
   <em>1 min</em> read</span>
 
 
@@ -613,6 +899,66 @@
 
 <div class="post-content">
   <h1 id="1-introduction">1 Introduction</h1>
+
+<p>The textbook is seen <a href="https://algs4.cs.princeton.edu/home/">here</a>, and the code is seen <a href="https://algs4.cs.princeton.edu/code/">here</a>.</p>
+
+<h1 id="2-union-find">2 Union-Find</h1>
+
+<h2 id="21-quick-find">2.1 Quick Find<a href="#21-quick-find" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Data structure</p>
+
+<ul>
+  <li>
+    <p>Integer array id[] of length N.</p>
+  </li>
+  <li>
+    <p>Interpretation: p and q are connected iff they have the same id.</p>
+  </li>
+</ul>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:50%;" data-proofer-ignore></p>
+
+<p><strong>Find:</strong> Check if p and q have the same id.</p>
+
+<p><strong>Union:</strong> To merge components containing p and q, change all entries whose id equals id[p] to id[q].</p>
+
+<h2 id="22-quick-union">2.2 Quick Union<a href="#22-quick-union" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Data structure</p>
+
+<ul>
+  <li>Integer array id[] of length N.</li>
+  <li>Interpretation: id[i] is parent of i.</li>
+  <li>Root of i is id[id[id[…id[i]…]]].</li>
+</ul>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:50%;" data-proofer-ignore></p>
+
+<p><strong>Find:</strong> Check if p and q have the same root.</p>
+
+<p><strong>Union:</strong> To merge components containing p and q, set the id of p’s root to the id of q’s root.</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:50%;" data-proofer-ignore></p>
+
+<h2 id="23-weighted-quick-union">2.3 Weighted Quick Union<a href="#23-weighted-quick-union" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Data structure: Same as quick-union, but maintain extra array sz[i] to count number of objects in the tree rooted at i.</p>
+
+<ul>
+  <li>Modify quick-union to avoid tall trees.</li>
+  <li>Keep track of size of each tree (number of objects).</li>
+  <li>Balance by linking root of smaller tree to root of larger tree.</li>
+</ul>
+
+<p>Finde: Identical to quick union.</p>
+
+<p>Union: Modify quick-union to:</p>
+
+<ul>
+  <li>Link root of smaller tree to root of larger tree.</li>
+  <li>Update the sz[] array.</li>
+</ul>
 
 
 </div>
@@ -905,6 +1251,14 @@
       
 
 
+
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
 
 
     

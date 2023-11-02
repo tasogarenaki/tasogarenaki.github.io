@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2023-11-01T09:28:06+00:00</updated>
+  <updated>2023-11-02T14:48:37+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -50,7 +50,32 @@
 
       1 Introduction
 
+The textbook is seen here, and the code is seen here.
 
+2 Union-Find
+
+2.1 Quick Find
+
+Data structure
+
+
+  
+    Integer array id[] of length N.
+  
+  
+    Interpretation: p and q are connected iff they have the same id.
+  
+
+
+
+
+Find: Check if p and q have the same id.
+
+Union: To merge components containing p and q, change all entries whose id equals id[p] to id[q].
+
+2.2 Quick Union
+
+...
     </summary>
   
 
