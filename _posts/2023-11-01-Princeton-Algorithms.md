@@ -14,11 +14,11 @@ mermaid: true
 
 
 
-# 1 Introduction
+# 1. Introduction
 
 The textbook is seen [here](https://algs4.cs.princeton.edu/home/), and the code is seen [here](https://algs4.cs.princeton.edu/code/).
 
-# 2 Union-Find
+# 2. Union-Find
 
 ## 2.1 Quick Find
 
@@ -28,7 +28,7 @@ Data structure
 
 - Interpretation: p and q are connected iff they have the same id.
 
-<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:50%;" />
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:70%;" />
 
 **Find:** Check if p and q have the same id.
 
@@ -42,13 +42,13 @@ Data structure
 - Interpretation: id[i] is parent of i. 
 - Root of i is id[id[id[...id[i]...]]].
 
-<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:50%;" />
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:40%;" />
 
 **Find:** Check if p and q have the same root.
 
 **Union:** To merge components containing p and q, set the id of p's root to the id of q's root.
 
-<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:50%;" />
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:40%;" />
 
 ## 2.3 Weighted Quick Union
 
@@ -65,7 +65,11 @@ Union: Modify quick-union to:
 - Link root of smaller tree to root of larger tree. 
 - Update the sz[] array.
 
+# 3. Analysis of Algorithms
 
+## 3.1 Order-of-Growth Classifications 
+
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:50%;" />
 
 
 

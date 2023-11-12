@@ -4,7 +4,7 @@
   <id>https://tasogarenaki.github.io/</id>
   <title>Terry</title>
   <subtitle>A minimal, portfolio, sidebar, bootstrap Jekyll theme with responsive web design and focuses on text presentation.</subtitle>
-  <updated>2023-11-02T14:48:37+00:00</updated>
+  <updated>2023-11-12T12:45:03+00:00</updated>
   <author>
     <name>tasogarenaki</name>
     <uri>https://tasogarenaki.github.io/</uri>
@@ -24,7 +24,7 @@
     <link href="https://tasogarenaki.github.io/posts/Princeton-Algorithms/" rel="alternate" type="text/html" title="Princeton Algorithms" />
     <published>2023-11-01T08:00:00+00:00</published>
   
-    <updated>2023-11-01T08:00:00+00:00</updated>
+    <updated>2023-11-02T14:48:52+00:00</updated>
   
     <id>https://tasogarenaki.github.io/posts/Princeton-Algorithms/</id>
     <content src="https://tasogarenaki.github.io/posts/Princeton-Algorithms/" />
@@ -48,11 +48,11 @@
 
 
 
-      1 Introduction
+      1. Introduction
 
 The textbook is seen here, and the code is seen here.
 
-2 Union-Find
+2. Union-Find
 
 2.1 Quick Find
 
@@ -73,9 +73,7 @@ Find: Check if p and q have the same id.
 
 Union: To merge components containing p and q, change all entries whose id equals id[p] to id[q].
 
-2.2 Quick Union
-
-...
+2.2 Quick Union...
     </summary>
   
 

@@ -37,8 +37,8 @@
 <meta property="og:title" content="Princeton Algorithms" />
 <meta name="author" content="Terry" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="1 Introduction" />
-<meta property="og:description" content="1 Introduction" />
+<meta name="description" content="1. Introduction" />
+<meta property="og:description" content="1. Introduction" />
 <link rel="canonical" href="https://tasogarenaki.github.io/posts/Princeton-Algorithms/" />
 <meta property="og:url" content="https://tasogarenaki.github.io/posts/Princeton-Algorithms/" />
 <meta property="og:site_name" content="Terry" />
@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Princeton Algorithms" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-01T08:00:00+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1 Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-02T14:48:52+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -723,6 +723,81 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -749,6 +824,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -864,6 +952,28 @@
 
       <!-- lastmod date -->
       
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+
+
+
+
+<em class="timeago"
+    date="2023-11-02 15:48:52 +0100
+"
+    
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="Thu, Nov  2, 2023,  3:48 PM +0100"
+    >Nov  2</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -885,7 +995,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="193 words">
+  title="200 words">
   <em>1 min</em> read</span>
 
 
@@ -898,11 +1008,11 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="1-introduction">1 Introduction</h1>
+  <h1 id="1-introduction">1. Introduction</h1>
 
 <p>The textbook is seen <a href="https://algs4.cs.princeton.edu/home/">here</a>, and the code is seen <a href="https://algs4.cs.princeton.edu/code/">here</a>.</p>
 
-<h1 id="2-union-find">2 Union-Find</h1>
+<h1 id="2-union-find">2. Union-Find</h1>
 
 <h2 id="21-quick-find">2.1 Quick Find<a href="#21-quick-find" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -917,7 +1027,7 @@
   </li>
 </ul>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:70%;" data-proofer-ignore></p>
 
 <p><strong>Find:</strong> Check if p and q have the same id.</p>
 
@@ -933,13 +1043,13 @@
   <li>Root of i is id[id[id[…id[i]…]]].</li>
 </ul>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:40%;" data-proofer-ignore></p>
 
 <p><strong>Find:</strong> Check if p and q have the same root.</p>
 
 <p><strong>Union:</strong> To merge components containing p and q, set the id of p’s root to the id of q’s root.</p>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:40%;" data-proofer-ignore></p>
 
 <h2 id="23-weighted-quick-union">2.3 Weighted Quick Union<a href="#23-weighted-quick-union" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -959,6 +1069,12 @@
   <li>Link root of smaller tree to root of larger tree.</li>
   <li>Update the sz[] array.</li>
 </ul>
+
+<h1 id="3-analysis-of-algorithms">3. Analysis of Algorithms</h1>
+
+<h2 id="31-order-of-growth-classifications">3.1 Order-of-Growth Classifications<a href="#31-order-of-growth-classifications" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:50%;" data-proofer-ignore></p>
 
 
 </div>
@@ -1084,6 +1200,11 @@
   <div id="access-lastmod" class="post">
     <div class="panel-heading">Recently Updated</div>
     <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/Princeton-Algorithms/">Princeton Algorithms</a></li>
       
         
         

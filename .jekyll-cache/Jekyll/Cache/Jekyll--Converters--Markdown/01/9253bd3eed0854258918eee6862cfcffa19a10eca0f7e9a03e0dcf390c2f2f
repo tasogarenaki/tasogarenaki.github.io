@@ -1,0 +1,69 @@
+I"�	<h1 id="1-introduction">1. Introduction</h1>
+
+<p>The textbook is seen <a href="https://algs4.cs.princeton.edu/home/">here</a>, and the code is seen <a href="https://algs4.cs.princeton.edu/code/">here</a>.</p>
+
+<h1 id="2-union-find">2. Union-Find</h1>
+
+<h2 id="21-quick-find">2.1 Quick Find</h2>
+
+<p>Data structure</p>
+
+<ul>
+  <li>
+    <p>Integer array id[] of length N.</p>
+  </li>
+  <li>
+    <p>Interpretation: p and q are connected iff they have the same id.</p>
+  </li>
+</ul>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:70%;" /></p>
+
+<p><strong>Find:</strong> Check if p and q have the same id.</p>
+
+<p><strong>Union:</strong> To merge components containing p and q, change all entries whose id equals id[p] to id[q].</p>
+
+<h2 id="22-quick-union">2.2 Quick Union</h2>
+
+<p>Data structure</p>
+
+<ul>
+  <li>Integer array id[] of length N.</li>
+  <li>Interpretation: id[i] is parent of i.</li>
+  <li>Root of i is id[id[id[…id[i]…]]].</li>
+</ul>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:40%;" /></p>
+
+<p><strong>Find:</strong> Check if p and q have the same root.</p>
+
+<p><strong>Union:</strong> To merge components containing p and q, set the id of p’s root to the id of q’s root.</p>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:40%;" /></p>
+
+<h2 id="23-weighted-quick-union">2.3 Weighted Quick Union</h2>
+
+<p>Data structure: Same as quick-union, but maintain extra array sz[i] to count number of objects in the tree rooted at i.</p>
+
+<ul>
+  <li>Modify quick-union to avoid tall trees.</li>
+  <li>Keep track of size of each tree (number of objects).</li>
+  <li>Balance by linking root of smaller tree to root of larger tree.</li>
+</ul>
+
+<p>Finde: Identical to quick union.</p>
+
+<p>Union: Modify quick-union to:</p>
+
+<ul>
+  <li>Link root of smaller tree to root of larger tree.</li>
+  <li>Update the sz[] array.</li>
+</ul>
+
+<h1 id="3-analysis-of-algorithms">3. Analysis of Algorithms</h1>
+
+<h2 id="31-order-of-growth-classifications">3.1 Order-of-Growth Classifications</h2>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:50%;" /></p>
+
+:ET
