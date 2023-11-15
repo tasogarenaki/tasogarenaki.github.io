@@ -69,15 +69,103 @@ Union: Modify quick-union to:
 
 ## 3.1 Order-of-Growth Classifications 
 
-<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:50%;" />
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:30%;" />
 
+# 4. Stacks and Queues
 
+## 4.1 Stacks
 
+Stack: 
 
+- LIFO
+- push: insert
+- pop: remove and return most recently added
+
+**Linked-List Implementation:** A stack with N items uses 40 N bytes.
+
+- pop: save item to return $\rightarrow$ delete first node and point to next $\rightarrow$ return saved item
+
+  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:30%;" />
+
+- push: save a link to the list $\rightarrow$ create a new node for the beginning $\rightarrow$ set the instance variables in the new node
+
+  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:30%;" />
+
+**Array Implementation:**
+
+- pop(): add new item at s[N].
+- push(): remove item from s[N-1].
+
+**Resizing-Array Implementation:** 
+
+- If array is full, create a new array of twice the size, and copy items.
+- To shrink array: push() $\rightarrow$ double size of s[] when array is full; pop() $\rightarrow$ halve size of s[] when array is 1/4 full.
+
+## 4.2 Queues
+
+Queue: with two pointers.
+
+- FIFO
+- enqueue: insert
+- dequeue: remove and return least recently added
+
+**Linked-List Implementation:** 
+
+- pop: identical to Stack.
+- push: save a link to the last node $\rightarrow$ create a new node for the end $\rightarrow$ link the new node to the end of the list.
+
+**Resizing-Array Implementation:** 
+
+- Use array q[] to store items in queue.
+- enqueue(): add new item at q[tail].
+- dequeue(): remove item from q[head].
+- Update head and tail modulo the capacity.
+- Add resizing array.
+
+## 4.3 Iteration
+
+Iterable has a method that returns an Iterator and `Iterator` has methods `hasNext()` and `next()`.
+
+```java
+/* "foreach" statement (shorthand) */
+for (String s : stack) 
+  StdOut.println(s);
+
+/* equivalent code (longhand) */
+Iterator<String> i = stack.iterator();
+while (i.hasNext()) {
+  String s= i.next();
+  StdOut.println(s);
+}
+```
 
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

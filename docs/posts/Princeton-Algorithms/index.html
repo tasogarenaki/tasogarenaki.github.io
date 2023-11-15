@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Princeton Algorithms" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-02T14:48:52+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-12T12:45:22+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -798,6 +798,156 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -824,6 +974,45 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -964,13 +1153,13 @@
 
 
 <em class="timeago"
-    date="2023-11-02 15:48:52 +0100
+    date="2023-11-12 13:45:22 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Thu, Nov  2, 2023,  3:48 PM +0100"
-    >Nov  2</em>
+      title="Sun, Nov 12, 2023,  1:45 PM +0100"
+    >Nov 12</em>
 
       </span>
       
@@ -995,8 +1184,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="200 words">
-  <em>1 min</em> read</span>
+  title="458 words">
+  <em>2 min</em> read</span>
 
 
       <!-- page views -->
@@ -1074,7 +1263,103 @@
 
 <h2 id="31-order-of-growth-classifications">3.1 Order-of-Growth Classifications<a href="#31-order-of-growth-classifications" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:50%;" data-proofer-ignore></p>
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:30%;" data-proofer-ignore></p>
+
+<h1 id="4-stacks-and-queues">4. Stacks and Queues</h1>
+
+<h2 id="41-stacks">4.1 Stacks<a href="#41-stacks" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Stack:</p>
+
+<ul>
+  <li>LIFO</li>
+  <li>push: insert</li>
+  <li>pop: remove and return most recently added</li>
+</ul>
+
+<p><strong>Linked-List Implementation:</strong> A stack with N items uses 40 N bytes.</p>
+
+<ul>
+  <li>
+    <p>pop: save item to return $\rightarrow$ delete first node and point to next $\rightarrow$ return saved item</p>
+
+    <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:30%;" data-proofer-ignore></p>
+  </li>
+  <li>
+    <p>push: save a link to the list $\rightarrow$ create a new node for the beginning $\rightarrow$ set the instance variables in the new node</p>
+
+    <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:30%;" data-proofer-ignore></p>
+  </li>
+</ul>
+
+<p><strong>Array Implementation:</strong></p>
+
+<ul>
+  <li>pop(): add new item at s[N].</li>
+  <li>push(): remove item from s[N-1].</li>
+</ul>
+
+<p><strong>Resizing-Array Implementation:</strong></p>
+
+<ul>
+  <li>If array is full, create a new array of twice the size, and copy items.</li>
+  <li>To shrink array: push() $\rightarrow$ double size of s[] when array is full; pop() $\rightarrow$ halve size of s[] when array is 1/4 full.</li>
+</ul>
+
+<h2 id="42-queues">4.2 Queues<a href="#42-queues" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Queue: with two pointers.</p>
+
+<ul>
+  <li>FIFO</li>
+  <li>enqueue: insert</li>
+  <li>dequeue: remove and return least recently added</li>
+</ul>
+
+<p><strong>Linked-List Implementation:</strong></p>
+
+<ul>
+  <li>pop: identical to Stack.</li>
+  <li>push: save a link to the last node $\rightarrow$ create a new node for the end $\rightarrow$ link the new node to the end of the list.</li>
+</ul>
+
+<p><strong>Resizing-Array Implementation:</strong></p>
+
+<ul>
+  <li>Use array q[] to store items in queue.</li>
+  <li>enqueue(): add new item at q[tail].</li>
+  <li>dequeue(): remove item from q[head].</li>
+  <li>Update head and tail modulo the capacity.</li>
+  <li>Add resizing array.</li>
+</ul>
+
+<h2 id="43-iteration">4.3 Iteration<a href="#43-iteration" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Iterable has a method that returns an Iterator and <code class="language-plaintext highlighter-rouge">Iterator</code> has methods <code class="language-plaintext highlighter-rouge">hasNext()</code> and <code class="language-plaintext highlighter-rouge">next()</code>.</p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span label-text="Java"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="cm">/* "foreach" statement (shorthand) */</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">stack</span><span class="o">)</span> 
+  <span class="nc">StdOut</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+
+<span class="cm">/* equivalent code (longhand) */</span>
+<span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">(</span><span class="n">i</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+  <span class="nc">String</span> <span class="n">s</span><span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+  <span class="nc">StdOut</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 
 </div>
