@@ -139,7 +139,15 @@ while (i.hasNext()) {
 }
 ```
 
+# 5. Sorting
 
+**Selection Sort:** In iteration i, find index min of smallest remaining entry. Then swap a[i] and a[min]. Each time must scan the full remaining entries.
+
+**Insertion Sort:** In iteration i, swap a[i] with each larger entry to its left.
+
+**Shellsort:** Move entries more than one position at a time by h-sorting the array. An h-sorted array is h interleaved sorted subsequences.
+
+**Knuth Shuffling:** In iteration i, pick integer r between 0 and I uniformly at **random**. Then swap a[i] and a[r].
 
  
 
