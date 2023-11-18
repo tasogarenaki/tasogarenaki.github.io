@@ -85,11 +85,11 @@ Stack:
 
 - pop: save item to return $\rightarrow$ delete first node and point to next $\rightarrow$ return saved item
 
-  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:30%;" />
+  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:80%;" />
 
 - push: save a link to the list $\rightarrow$ create a new node for the beginning $\rightarrow$ set the instance variables in the new node
 
-  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:30%;" />
+  <img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:80%;" />
 
 **Array Implementation:**
 
@@ -149,15 +149,35 @@ while (i.hasNext()) {
 
 **Knuth Shuffling:** In iteration i, pick integer r between 0 and I uniformly at **random**. Then swap a[i] and a[r].
 
- 
+ ## 5.1 Mergesort
 
+ Basic plan:
 
+- Divide array into two halves.
+- Recursively sort each half.
+- Merge two halves.
 
+Goal: Given two sorted subarrays a[lo] to a[mid] and a[mid+1] to a[hi], replace with sorted subarray a[lo] to a[hi].
 
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/mergesort1.png?raw=true" alt="mergesort1" style="zoom:50%;" />
 
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/mergesort2.png?raw=true" alt="mergesort2" style="zoom:50%;" />
 
+Mergesort uses at most N lg N compares and 6 N lg N array accesses to sort any array of size N. Mergesort uses extra space proportional to N.
 
+**Bottom-up Mergesort:**
 
+- Pass through array, merging subarrays of size 1. 
+- Repeat for subarrays of size 2, 4, 8, 16, ....
+
+## 5.2 Comparators
+
+Comparator interface: sort using an alternate order.
+
+To support comparators in our sort implementations:
+
+- Use **Object** instead of Comparable.
+- Pass Comparator to `sort()` and `less()` and use it in `less()`.
 
 
 

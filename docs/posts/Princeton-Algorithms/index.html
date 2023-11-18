@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Princeton Algorithms" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-15T10:48:18+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-16T13:54:23+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -948,6 +948,156 @@
     
 
   
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+
+      
+    
+
+    
+      
+
+        <!-- Add CDN URL -->
+        
+
+        <!-- Add image path -->
+        
+
+        
+        
+
+      
+
+      <!-- lazy-load images <https://github.com/ApoorvSaxena/lozad.js#usage> -->
+
+      
+
+    
+
+    <!-- Add SVG placehoder to prevent layout reflow -->
+
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+
+  
 
   
 
@@ -974,6 +1124,19 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1153,13 +1316,13 @@
 
 
 <em class="timeago"
-    date="2023-11-15 11:48:18 +0100
+    date="2023-11-16 14:54:23 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Nov 15, 2023, 11:48 AM +0100"
-    >Nov 15</em>
+      title="Thu, Nov 16, 2023,  2:54 PM +0100"
+    >Nov 16</em>
 
       </span>
       
@@ -1184,7 +1347,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="541 words">
+  title="658 words">
   <em>3 min</em> read</span>
 
 
@@ -1283,12 +1446,12 @@
   <li>
     <p>pop: save item to return $\rightarrow$ delete first node and point to next $\rightarrow$ return saved item</p>
 
-    <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:30%;" data-proofer-ignore></p>
+    <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:80%;" data-proofer-ignore></p>
   </li>
   <li>
     <p>push: save a link to the list $\rightarrow$ create a new node for the beginning $\rightarrow$ set the instance variables in the new node</p>
 
-    <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:30%;" data-proofer-ignore></p>
+    <p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:80%;" data-proofer-ignore></p>
   </li>
 </ul>
 
@@ -1370,6 +1533,42 @@
 <p><strong>Shellsort:</strong> Move entries more than one position at a time by h-sorting the array. An h-sorted array is h interleaved sorted subsequences.</p>
 
 <p><strong>Knuth Shuffling:</strong> In iteration i, pick integer r between 0 and I uniformly at <strong>random</strong>. Then swap a[i] and a[r].</p>
+
+<p>## 5.1 Mergesort</p>
+
+<p>Basic plan:</p>
+
+<ul>
+  <li>Divide array into two halves.</li>
+  <li>Recursively sort each half.</li>
+  <li>Merge two halves.</li>
+</ul>
+
+<p>Goal: Given two sorted subarrays a[lo] to a[mid] and a[mid+1] to a[hi], replace with sorted subarray a[lo] to a[hi].</p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/mergesort1.png?raw=true" alt="mergesort1" style="zoom:50%;" data-proofer-ignore></p>
+
+<p><img data-src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/mergesort2.png?raw=true" alt="mergesort2" style="zoom:50%;" data-proofer-ignore></p>
+
+<p>Mergesort uses at most N lg N compares and 6 N lg N array accesses to sort any array of size N. Mergesort uses extra space proportional to N.</p>
+
+<p><strong>Bottom-up Mergesort:</strong></p>
+
+<ul>
+  <li>Pass through array, merging subarrays of size 1.</li>
+  <li>Repeat for subarrays of size 2, 4, 8, 16, ….</li>
+</ul>
+
+<h2 id="52-comparators">5.2 Comparators<a href="#52-comparators" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Comparator interface: sort using an alternate order.</p>
+
+<p>To support comparators in our sort implementations:</p>
+
+<ul>
+  <li>Use <strong>Object</strong> instead of Comparable.</li>
+  <li>Pass Comparator to <code class="language-plaintext highlighter-rouge">sort()</code> and <code class="language-plaintext highlighter-rouge">less()</code> and use it in <code class="language-plaintext highlighter-rouge">less()</code>.</li>
+</ul>
 
 
 </div>
