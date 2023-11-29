@@ -181,6 +181,87 @@ To support comparators in our sort implementations:
 
 
 
+## 5.3 Quicksort
+
+**Basic plan:**
+
+- Shuffle the array.
+- Partition so that, for some j
+  - entry a[j] is in place
+  - no larger entry to the left of j
+  - no smaller entry to the right of j 
+- Sort each piece recursively.
+
+# 6. Priority Queues
+
+## 6.1 Binary Heaps
+
+Binary heap: Array representation of a heap-ordered complete binary tree.
+
+- Insert: Add node at the end, then swim it up.
+- Remove the max: Exchange root with node at end, then sink it down.
+
+Heap-ordered binary tree:
+
+- Keys in nodes.
+- Paren’s key no smaller than children’s keys.
+
+Array representation:
+
+- Indices start at 1.
+- Take nodes in level order. 
+- No explicit links needed!
+
+## 6.2 Heapsort
+
+Basic plan for in-place sort:
+
+- Create max-heap with all N keys.
+- Repeatedly remove the maximum key.
+
+## 6.3 Symbol tables
+
+Key-value pair abstraction:
+
+- Insert a value with specified key.
+- Given a key, search for the corresponding value.
+
+# 7. Binary Search Trees
+
+A binary tree is either:
+
+- Empty.
+- Two disjoint binary trees (left and right).
+
+Symmetric order: Each node has a key, and every node’s key is:
+
+- Larger than all keys in its left subtree. 
+- Smaller than all keys in its right subtree.
+
+A Node is comprised of four fields:
+
+- A Key and a Value.
+- A reference to the left and right subtree.
+
+To delete the minimum key:
+
+- Go left until finding a node with a null left link. 
+- Replace that node by its right link.
+- Update subtree counts.
+
+To delete a node with key k: search for node t containing key k.
+
+- Case 0 [0 children]: Delete t by setting parent link to null.
+- Case 1 [1 child]: Delete t by replacing parent link.
+- Case 2 [2 children]:
+  -  Find successor x of t.
+  - Delete the minimum in t's right subtree. 
+  - Put x in t's spot.
+
+
+
+
+
 
 
 

@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Princeton Algorithms" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-16T13:54:23+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2023-11-18T14:12:03+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1228,6 +1228,58 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1316,13 +1368,13 @@
 
 
 <em class="timeago"
-    date="2023-11-16 14:54:23 +0100
+    date="2023-11-18 15:12:03 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Thu, Nov 16, 2023,  2:54 PM +0100"
-    >Nov 16</em>
+      title="Sat, Nov 18, 2023,  3:12 PM +0100"
+    >Nov 18</em>
 
       </span>
       
@@ -1347,8 +1399,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="658 words">
-  <em>3 min</em> read</span>
+  title="949 words">
+  <em>5 min</em> read</span>
 
 
       <!-- page views -->
@@ -1568,6 +1620,111 @@
 <ul>
   <li>Use <strong>Object</strong> instead of Comparable.</li>
   <li>Pass Comparator to <code class="language-plaintext highlighter-rouge">sort()</code> and <code class="language-plaintext highlighter-rouge">less()</code> and use it in <code class="language-plaintext highlighter-rouge">less()</code>.</li>
+</ul>
+
+<h2 id="53-quicksort">5.3 Quicksort<a href="#53-quicksort" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p><strong>Basic plan:</strong></p>
+
+<ul>
+  <li>Shuffle the array.</li>
+  <li>Partition so that, for some j
+    <ul>
+      <li>entry a[j] is in place</li>
+      <li>no larger entry to the left of j</li>
+      <li>no smaller entry to the right of j</li>
+    </ul>
+  </li>
+  <li>Sort each piece recursively.</li>
+</ul>
+
+<h1 id="6-priority-queues">6. Priority Queues</h1>
+
+<h2 id="61-binary-heaps">6.1 Binary Heaps<a href="#61-binary-heaps" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Binary heap: Array representation of a heap-ordered complete binary tree.</p>
+
+<ul>
+  <li>Insert: Add node at the end, then swim it up.</li>
+  <li>Remove the max: Exchange root with node at end, then sink it down.</li>
+</ul>
+
+<p>Heap-ordered binary tree:</p>
+
+<ul>
+  <li>Keys in nodes.</li>
+  <li>Paren’s key no smaller than children’s keys.</li>
+</ul>
+
+<p>Array representation:</p>
+
+<ul>
+  <li>Indices start at 1.</li>
+  <li>Take nodes in level order.</li>
+  <li>No explicit links needed!</li>
+</ul>
+
+<h2 id="62-heapsort">6.2 Heapsort<a href="#62-heapsort" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Basic plan for in-place sort:</p>
+
+<ul>
+  <li>Create max-heap with all N keys.</li>
+  <li>Repeatedly remove the maximum key.</li>
+</ul>
+
+<h2 id="63-symbol-tables">6.3 Symbol tables<a href="#63-symbol-tables" class="anchor"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>Key-value pair abstraction:</p>
+
+<ul>
+  <li>Insert a value with specified key.</li>
+  <li>Given a key, search for the corresponding value.</li>
+</ul>
+
+<h1 id="7-binary-search-trees">7. Binary Search Trees</h1>
+
+<p>A binary tree is either:</p>
+
+<ul>
+  <li>Empty.</li>
+  <li>Two disjoint binary trees (left and right).</li>
+</ul>
+
+<p>Symmetric order: Each node has a key, and every node’s key is:</p>
+
+<ul>
+  <li>Larger than all keys in its left subtree.</li>
+  <li>Smaller than all keys in its right subtree.</li>
+</ul>
+
+<p>A Node is comprised of four fields:</p>
+
+<ul>
+  <li>A Key and a Value.</li>
+  <li>A reference to the left and right subtree.</li>
+</ul>
+
+<p>To delete the minimum key:</p>
+
+<ul>
+  <li>Go left until finding a node with a null left link.</li>
+  <li>Replace that node by its right link.</li>
+  <li>Update subtree counts.</li>
+</ul>
+
+<p>To delete a node with key k: search for node t containing key k.</p>
+
+<ul>
+  <li>Case 0 [0 children]: Delete t by setting parent link to null.</li>
+  <li>Case 1 [1 child]: Delete t by replacing parent link.</li>
+  <li>Case 2 [2 children]:
+    <ul>
+      <li>Find successor x of t.</li>
+      <li>Delete the minimum in t’s right subtree.</li>
+      <li>Put x in t’s spot.</li>
+    </ul>
+  </li>
 </ul>
 
 
