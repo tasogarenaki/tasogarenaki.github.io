@@ -258,13 +258,96 @@ To delete a node with key k: search for node t containing key k.
   - Delete the minimum in t's right subtree. 
   - Put x in t's spot.
 
+# 8. Balanced Search Trees
+
+## 8.1 2-3 Search Trees
+
+Allow 1 or 2 keys per node.
+
+- 2-node: one key, two children. 
+- 3-node: two keys, three children.
+
+Symmetric order: Inorder traversal yields keys in ascending order.
+
+Perfect balance: Every path from root to null link has same length.
+
+**Search:**
+
+- Compare search key against keys in node. 
+- Find interval containing search key.
+- Follow associated link (recursively).
+
+**Insert** into a 2-node at bottom:
+
+- Search for key.
+- Replace 2-node with 3-node.
+
+**Insert** into a 3-node at bottom:
+
+- Add new key to 3-node to create temporary 4-node.
+- Move middle key in 4-node into parent.
+- Repeat up the tree, as necessary.
+- If you reach the root and it's a 4-node, split it into three 2-nodes.
+
+## 8.2 Red-Black BSTs
+
+Left-leaning red-black BSTs:
+
+1. Represent 2–3 tree as a BST.
+
+2. Use "internal" left-leaning links as "glue" for 3–nodes.
+
+Search is the same as for elementary BST (ignore color), but runs faster because of better balance. 
+
+Insertion in a LLRB tree:
+
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb.png?raw=true" alt="llrb" style="zoom:50%;" />
+
+**Insert into a 3-node at the bottom:**
+
+1. Do standard BST insert; color new link red.
+2. Rotate to balance the 4-node (if needed).
+3. Flip colors to pass red link up one level.
+4. Rotate to make lean left (if needed).
+5. Repeat up the tree (if needed).
+
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb2.png?raw=true" alt="llrb2" style="zoom:50%;" />
+
+## 8.3 B-Trees
+
+Searching in a B-Tree:
+
+- Start at root. 
+- Find interval for search key and take corresponding link. 
+- Search terminates in external node.
+
+Insertion in a B-tree
+
+- Search for new key.
+- Insert at bottom. 
+- Split nodes with M key-link pairs on the way up the tree.
+
+## 8.4 Kd-Trees
+
+2-d orthogonal range search, Extension of ordered symbol-table to 2d keys.
+
+- Insert a 2d key.
+- Delete a 2d key.
+- Search for a 2d key.
+- Range search: find all keys that lie in a 2d range. 
+- Range count: number of keys that lie in a 2d range.
+
+Grid implementation.
+
+- Divide space into M-by-M grid of squares.
+- Create list of points contained in each square.
+- Use 2d array to directly index relevant square.
+- Insert: add (x, y) to list for corresponding square.
+- Range search: examine only squares that intersect 2d range query.
 
 
 
-
-
-
-
+  
 
 
 

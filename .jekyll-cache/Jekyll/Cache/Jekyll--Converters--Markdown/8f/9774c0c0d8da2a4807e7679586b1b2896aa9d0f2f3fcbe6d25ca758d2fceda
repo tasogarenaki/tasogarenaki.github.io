@@ -1,0 +1,424 @@
+I"�7<h1 id="1-introduction">1. Introduction</h1>
+
+<p>The textbook is seen <a href="https://algs4.cs.princeton.edu/home/">here</a>, and the code is seen <a href="https://algs4.cs.princeton.edu/code/">here</a>.</p>
+
+<h1 id="2-union-find">2. Union-Find</h1>
+
+<h2 id="21-quick-find">2.1 Quick Find</h2>
+
+<p>Data structure</p>
+
+<ul>
+  <li>
+    <p>Integer array id[] of length N.</p>
+  </li>
+  <li>
+    <p>Interpretation: p and q are connected iff they have the same id.</p>
+  </li>
+</ul>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickfind1.png?raw=true" alt="quickfind1" style="zoom:70%;" /></p>
+
+<p><strong>Find:</strong> Check if p and q have the same id.</p>
+
+<p><strong>Union:</strong> To merge components containing p and q, change all entries whose id equals id[p] to id[q].</p>
+
+<h2 id="22-quick-union">2.2 Quick Union</h2>
+
+<p>Data structure</p>
+
+<ul>
+  <li>Integer array id[] of length N.</li>
+  <li>Interpretation: id[i] is parent of i.</li>
+  <li>Root of i is id[id[id[…id[i]…]]].</li>
+</ul>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion1.png?raw=true" alt="quickunion1" style="zoom:40%;" /></p>
+
+<p><strong>Find:</strong> Check if p and q have the same root.</p>
+
+<p><strong>Union:</strong> To merge components containing p and q, set the id of p’s root to the id of q’s root.</p>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/quickunion2.png?raw=true" alt="quickunion2" style="zoom:40%;" /></p>
+
+<h2 id="23-weighted-quick-union">2.3 Weighted Quick Union</h2>
+
+<p>Data structure: Same as quick-union, but maintain extra array sz[i] to count number of objects in the tree rooted at i.</p>
+
+<ul>
+  <li>Modify quick-union to avoid tall trees.</li>
+  <li>Keep track of size of each tree (number of objects).</li>
+  <li>Balance by linking root of smaller tree to root of larger tree.</li>
+</ul>
+
+<p>Finde: Identical to quick union.</p>
+
+<p>Union: Modify quick-union to:</p>
+
+<ul>
+  <li>Link root of smaller tree to root of larger tree.</li>
+  <li>Update the sz[] array.</li>
+</ul>
+
+<h1 id="3-analysis-of-algorithms">3. Analysis of Algorithms</h1>
+
+<h2 id="31-order-of-growth-classifications">3.1 Order-of-Growth Classifications</h2>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/orderofgrowth.png?raw=true" alt="orderofgrowth" style="zoom:30%;" /></p>
+
+<h1 id="4-stacks-and-queues">4. Stacks and Queues</h1>
+
+<h2 id="41-stacks">4.1 Stacks</h2>
+
+<p>Stack:</p>
+
+<ul>
+  <li>LIFO</li>
+  <li>push: insert</li>
+  <li>pop: remove and return most recently added</li>
+</ul>
+
+<p><strong>Linked-List Implementation:</strong> A stack with N items uses 40 N bytes.</p>
+
+<ul>
+  <li>
+    <p>pop: save item to return $\rightarrow$ delete first node and point to next $\rightarrow$ return saved item</p>
+
+    <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_pop.png?raw=true" alt="stack_linked_pop" style="zoom:80%;" /></p>
+  </li>
+  <li>
+    <p>push: save a link to the list $\rightarrow$ create a new node for the beginning $\rightarrow$ set the instance variables in the new node</p>
+
+    <p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/stack_linked_push.png?raw=true" alt="stack_linked_push" style="zoom:80%;" /></p>
+  </li>
+</ul>
+
+<p><strong>Array Implementation:</strong></p>
+
+<ul>
+  <li>pop(): add new item at s[N].</li>
+  <li>push(): remove item from s[N-1].</li>
+</ul>
+
+<p><strong>Resizing-Array Implementation:</strong></p>
+
+<ul>
+  <li>If array is full, create a new array of twice the size, and copy items.</li>
+  <li>To shrink array: push() $\rightarrow$ double size of s[] when array is full; pop() $\rightarrow$ halve size of s[] when array is 1/4 full.</li>
+</ul>
+
+<h2 id="42-queues">4.2 Queues</h2>
+
+<p>Queue: with two pointers.</p>
+
+<ul>
+  <li>FIFO</li>
+  <li>enqueue: insert</li>
+  <li>dequeue: remove and return least recently added</li>
+</ul>
+
+<p><strong>Linked-List Implementation:</strong></p>
+
+<ul>
+  <li>pop: identical to Stack.</li>
+  <li>push: save a link to the last node $\rightarrow$ create a new node for the end $\rightarrow$ link the new node to the end of the list.</li>
+</ul>
+
+<p><strong>Resizing-Array Implementation:</strong></p>
+
+<ul>
+  <li>Use array q[] to store items in queue.</li>
+  <li>enqueue(): add new item at q[tail].</li>
+  <li>dequeue(): remove item from q[head].</li>
+  <li>Update head and tail modulo the capacity.</li>
+  <li>Add resizing array.</li>
+</ul>
+
+<h2 id="43-iteration">4.3 Iteration</h2>
+
+<p>Iterable has a method that returns an Iterator and <code class="language-plaintext highlighter-rouge">Iterator</code> has methods <code class="language-plaintext highlighter-rouge">hasNext()</code> and <code class="language-plaintext highlighter-rouge">next()</code>.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td> --><td class="rouge-code"><pre><span class="cm">/* "foreach" statement (shorthand) */</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">stack</span><span class="o">)</span> 
+  <span class="nc">StdOut</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+
+<span class="cm">/* equivalent code (longhand) */</span>
+<span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">(</span><span class="n">i</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+  <span class="nc">String</span> <span class="n">s</span><span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+  <span class="nc">StdOut</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="5-sorting">5. Sorting</h1>
+
+<p><strong>Selection Sort:</strong> In iteration i, find index min of smallest remaining entry. Then swap a[i] and a[min]. Each time must scan the full remaining entries.</p>
+
+<p><strong>Insertion Sort:</strong> In iteration i, swap a[i] with each larger entry to its left.</p>
+
+<p><strong>Shellsort:</strong> Move entries more than one position at a time by h-sorting the array. An h-sorted array is h interleaved sorted subsequences.</p>
+
+<p><strong>Knuth Shuffling:</strong> In iteration i, pick integer r between 0 and I uniformly at <strong>random</strong>. Then swap a[i] and a[r].</p>
+
+<p>## 5.1 Mergesort</p>
+
+<p>Basic plan:</p>
+
+<ul>
+  <li>Divide array into two halves.</li>
+  <li>Recursively sort each half.</li>
+  <li>Merge two halves.</li>
+</ul>
+
+<p>Goal: Given two sorted subarrays a[lo] to a[mid] and a[mid+1] to a[hi], replace with sorted subarray a[lo] to a[hi].</p>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/mergesort1.png?raw=true" alt="mergesort1" style="zoom:50%;" /></p>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/mergesort2.png?raw=true" alt="mergesort2" style="zoom:50%;" /></p>
+
+<p>Mergesort uses at most N lg N compares and 6 N lg N array accesses to sort any array of size N. Mergesort uses extra space proportional to N.</p>
+
+<p><strong>Bottom-up Mergesort:</strong></p>
+
+<ul>
+  <li>Pass through array, merging subarrays of size 1.</li>
+  <li>Repeat for subarrays of size 2, 4, 8, 16, ….</li>
+</ul>
+
+<h2 id="52-comparators">5.2 Comparators</h2>
+
+<p>Comparator interface: sort using an alternate order.</p>
+
+<p>To support comparators in our sort implementations:</p>
+
+<ul>
+  <li>Use <strong>Object</strong> instead of Comparable.</li>
+  <li>Pass Comparator to <code class="language-plaintext highlighter-rouge">sort()</code> and <code class="language-plaintext highlighter-rouge">less()</code> and use it in <code class="language-plaintext highlighter-rouge">less()</code>.</li>
+</ul>
+
+<h2 id="53-quicksort">5.3 Quicksort</h2>
+
+<p><strong>Basic plan:</strong></p>
+
+<ul>
+  <li>Shuffle the array.</li>
+  <li>Partition so that, for some j
+    <ul>
+      <li>entry a[j] is in place</li>
+      <li>no larger entry to the left of j</li>
+      <li>no smaller entry to the right of j</li>
+    </ul>
+  </li>
+  <li>Sort each piece recursively.</li>
+</ul>
+
+<h1 id="6-priority-queues">6. Priority Queues</h1>
+
+<h2 id="61-binary-heaps">6.1 Binary Heaps</h2>
+
+<p>Binary heap: Array representation of a heap-ordered complete binary tree.</p>
+
+<ul>
+  <li>Insert: Add node at the end, then swim it up.</li>
+  <li>Remove the max: Exchange root with node at end, then sink it down.</li>
+</ul>
+
+<p>Heap-ordered binary tree:</p>
+
+<ul>
+  <li>Keys in nodes.</li>
+  <li>Paren’s key no smaller than children’s keys.</li>
+</ul>
+
+<p>Array representation:</p>
+
+<ul>
+  <li>Indices start at 1.</li>
+  <li>Take nodes in level order.</li>
+  <li>No explicit links needed!</li>
+</ul>
+
+<h2 id="62-heapsort">6.2 Heapsort</h2>
+
+<p>Basic plan for in-place sort:</p>
+
+<ul>
+  <li>Create max-heap with all N keys.</li>
+  <li>Repeatedly remove the maximum key.</li>
+</ul>
+
+<h2 id="63-symbol-tables">6.3 Symbol tables</h2>
+
+<p>Key-value pair abstraction:</p>
+
+<ul>
+  <li>Insert a value with specified key.</li>
+  <li>Given a key, search for the corresponding value.</li>
+</ul>
+
+<h1 id="7-binary-search-trees">7. Binary Search Trees</h1>
+
+<p>A binary tree is either:</p>
+
+<ul>
+  <li>Empty.</li>
+  <li>Two disjoint binary trees (left and right).</li>
+</ul>
+
+<p>Symmetric order: Each node has a key, and every node’s key is:</p>
+
+<ul>
+  <li>Larger than all keys in its left subtree.</li>
+  <li>Smaller than all keys in its right subtree.</li>
+</ul>
+
+<p>A Node is comprised of four fields:</p>
+
+<ul>
+  <li>A Key and a Value.</li>
+  <li>A reference to the left and right subtree.</li>
+</ul>
+
+<p>To delete the minimum key:</p>
+
+<ul>
+  <li>Go left until finding a node with a null left link.</li>
+  <li>Replace that node by its right link.</li>
+  <li>Update subtree counts.</li>
+</ul>
+
+<p>To delete a node with key k: search for node t containing key k.</p>
+
+<ul>
+  <li>Case 0 [0 children]: Delete t by setting parent link to null.</li>
+  <li>Case 1 [1 child]: Delete t by replacing parent link.</li>
+  <li>Case 2 [2 children]:
+    <ul>
+      <li>Find successor x of t.</li>
+      <li>Delete the minimum in t’s right subtree.</li>
+      <li>Put x in t’s spot.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="8-balanced-search-trees">8. Balanced Search Trees</h1>
+
+<h2 id="81-2-3-search-trees">8.1 2-3 Search Trees</h2>
+
+<p>Allow 1 or 2 keys per node.</p>
+
+<ul>
+  <li>2-node: one key, two children.</li>
+  <li>3-node: two keys, three children.</li>
+</ul>
+
+<p>Symmetric order: Inorder traversal yields keys in ascending order.</p>
+
+<p>Perfect balance: Every path from root to null link has same length.</p>
+
+<p><strong>Search:</strong></p>
+
+<ul>
+  <li>Compare search key against keys in node.</li>
+  <li>Find interval containing search key.</li>
+  <li>Follow associated link (recursively).</li>
+</ul>
+
+<p><strong>Insert</strong> into a 2-node at bottom:</p>
+
+<ul>
+  <li>Search for key.</li>
+  <li>Replace 2-node with 3-node.</li>
+</ul>
+
+<p><strong>Insert</strong> into a 3-node at bottom:</p>
+
+<ul>
+  <li>Add new key to 3-node to create temporary 4-node.</li>
+  <li>Move middle key in 4-node into parent.</li>
+  <li>Repeat up the tree, as necessary.</li>
+  <li>If you reach the root and it’s a 4-node, split it into three 2-nodes.</li>
+</ul>
+
+<h2 id="82-red-black-bsts">8.2 Red-Black BSTs</h2>
+
+<p>Left-leaning red-black BSTs:</p>
+
+<ol>
+  <li>
+    <p>Represent 2–3 tree as a BST.</p>
+  </li>
+  <li>
+    <p>Use “internal” left-leaning links as “glue” for 3–nodes.</p>
+  </li>
+</ol>
+
+<p>Search is the same as for elementary BST (ignore color), but runs faster because of better balance.</p>
+
+<p>Insertion in a LLRB tree:</p>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb.png?raw=true" alt="llrb" style="zoom:50%;" /></p>
+
+<p><strong>Insert into a 3-node at the bottom:</strong></p>
+
+<ol>
+  <li>Do standard BST insert; color new link red.</li>
+  <li>Rotate to balance the 4-node (if needed).</li>
+  <li>Flip colors to pass red link up one level.</li>
+  <li>Rotate to make lean left (if needed).</li>
+  <li>Repeat up the tree (if needed).</li>
+</ol>
+
+<p><img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb2.png?raw=true" alt="llrb2" style="zoom:50%;" /></p>
+
+<h2 id="83-b-trees">8.3 B-Trees</h2>
+
+<p>Searching in a B-Tree:</p>
+
+<ul>
+  <li>Start at root.</li>
+  <li>Find interval for search key and take corresponding link.</li>
+  <li>Search terminates in external node.</li>
+</ul>
+
+<p>Insertion in a B-tree</p>
+
+<ul>
+  <li>Search for new key.</li>
+  <li>Insert at bottom.</li>
+  <li>Split nodes with M key-link pairs on the way up the tree.</li>
+</ul>
+
+<h2 id="84-kd-trees">8.4 Kd-Trees</h2>
+
+<p>2-d orthogonal range search, Extension of ordered symbol-table to 2d keys.</p>
+
+<ul>
+  <li>Insert a 2d key.</li>
+  <li>Delete a 2d key.</li>
+  <li>Search for a 2d key.</li>
+  <li>Range search: find all keys that lie in a 2d range.</li>
+  <li>Range count: number of keys that lie in a 2d range.</li>
+</ul>
+
+<p>Grid implementation.</p>
+
+<ul>
+  <li>Divide space into M-by-M grid of squares.</li>
+  <li>Create list of points contained in each square.</li>
+  <li>Use 2d array to directly index relevant square.</li>
+  <li>Insert: add (x, y) to list for corresponding square.</li>
+  <li>Range search: examine only squares that intersect 2d range query.</li>
+</ul>
+
+:ET
