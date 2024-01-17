@@ -301,7 +301,7 @@ Search is the same as for elementary BST (ignore color), but runs faster because
 
 Insertion in a LLRB tree:
 
-<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb.png?raw=true" alt="llrb" style="zoom:50%;" />
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb.png?raw=true" alt="llrb" style="zoom:100%;" />
 
 **Insert into a 3-node at the bottom:**
 
@@ -311,7 +311,7 @@ Insertion in a LLRB tree:
 4. Rotate to make lean left (if needed).
 5. Repeat up the tree (if needed).
 
-<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb2.png?raw=true" alt="llrb2" style="zoom:50%;" />
+<img src="https://github.com/tasogarenaki/tasogarenaki.github.io/blob/main/pics/algorithms/part_i/llrb2.png?raw=true" alt="llrb2" style="zoom:100%;" />
 
 ## 8.3 B-Trees
 
@@ -344,6 +344,51 @@ Grid implementation.
 - Use 2d array to directly index relevant square.
 - Insert: add (x, y) to list for corresponding square.
 - Range search: examine only squares that intersect 2d range query.
+
+# 9. Hash Tables
+
+## 9.1 Hash Functions
+
+All Java classes inherit a method `hashCode()`, which returns a 32-bit int. If `x.equals(y)`, then (`x.hashCode() == y.hashCode()`).
+
+"Standard" recipe for **user-defined** types:
+
+- Combine each significant field using the 31x + y rule.
+- If field is a primitive type, use wrapper type hashCode().
+- If field is null, return 0.
+- If field is a reference type, use hashCode(). 
+- If field is an array, apply to each entry.
+
+Uniform hashing assumption. Each key is equally likely to hash to an integer between 0 and M - 1.
+
+## 9.2 Separate Chaining
+
+- Easier to implement delete.
+- Performance degrades gracefully.
+- Clustering less sensitive to poorly-designed hash function.
+
+Use an array of M < N linked lists. 
+
+- Hash: map key to integer i between 0 and M - 1. 
+- Insert: put at front of i th chain (if not already there). 
+- Search: need to search only i th chain.
+
+## 9.3 Linear Probing
+
+- Less wasted space.
+- Better cache performance.
+
+Open addressing: When a new key collides, find next empty slot, and put it there.
+
+- Hash. Map key to integer i between 0 and M-1. Array size M must be greater than number of key-value pairs N.
+- Insert. Put at table index i if free; if not try i+1, i+2, etc.
+- Search. Search table index i; if occupied but no match, try i+1, i+2, etc.
+
+
+
+
+
+
 
 
 
