@@ -378,21 +378,77 @@ Use an array of M < N linked lists.
 - Less wasted space.
 - Better cache performance.
 
-Open addressing: When a new key collides, find next empty slot, and put it there.
+Open addressing: When a new key collides, find next empty slot, and put it there. 
 
 - Hash. Map key to integer i between 0 and M-1. Array size M must be greater than number of key-value pairs N.
 - Insert. Put at table index i if free; if not try i+1, i+2, etc.
 - Search. Search table index i; if occupied but no match, try i+1, i+2, etc.
 
+# 10. Graphs
+
+Two vertices are connected if there is a path between them.
+
+Vertex: use integers between 0 and V-1.
+
+## 10.1 DFS
+
+Put unvisited vertices on a stack.
+
+To visit a vertex v:
+
+- Marke vertex v as visited.
+- Recursively visit all unmarked vertices adjacent to v.
+
+The goal is find all vertices connected to s.
+
+Algorithm:
+
+- Use recursion (ball of string).
+- Mark each visited vertex (and keep track of edge taken to visit it). 
+- Return (retrace steps) when no unvisited options.
+
+Data structures:
+
+- `boolean[] marked` to mark visited vertices.
+- `int[] edgeTo` to keep tree of paths. (edgeTo[w] == v) means that edge v-w taken to visit w for first time
+
+## 10.2 BFS
+
+Put unvisited vertices on a queue.
+
+Repeat until queue is empty:
+
+- Remove vertex v from queue.
+- Add to queue all unmarked vertices adjacent to v and mark them.
+
+## 10.3 Connected components
+
+The relation "is connected to" is an equivalence relation:
+
+- Reflexive: v is connected to v.
+- Symmetric: if v is connected to w, then w is connected to v.
+- Transitive: if v connected to w and w connected to x, then v connected to x.
 
 
+## 10.4 Digraph Search
 
+Depth first search, to visit a vertex v:
 
+- Mark vertex v as visited.
+- Recursively visit all unmarked vertices pointing from v.
 
+BFS (from source vertex s): Put s onto a FIFO queue, and mark s as visited. Repeat until the queue is empty:
 
+- remove the least recently added vertex v
 
+- for each unmarked vertex pointing from v: add to queue and mark as visited.
 
-  
+## 10.5 Topological Sort
+
+Directed acyclic graph.
+
+- Run depth-first search.
+- Return vertices in reverse postorder.
 
 
 
