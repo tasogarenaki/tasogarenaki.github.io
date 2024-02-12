@@ -450,6 +450,54 @@ Directed acyclic graph.
 - Run depth-first search.
 - Return vertices in reverse postorder.
 
+# 11. Minimum Spanning Trees
+
+A spanning tree of G is a subgraph T that is both a tree (connected and acyclic) and spanning (includes all of the vertices). Goa: Find a min weight spanning tree.
+
+**Greedy Algorithm:**
+
+- Start with all edges coloured grey.
+- Find cut with no black crossing edges; color its min-weight edge black.
+- Repeat until V - 1 edges are coloured black.
+
+**Kruskal’s Algorithm:**
+
+Consider edges in ascending order of weight. Add next edge to tree T unless doing so would create a cycle.
+
+**Prim’s Algorithm:**
+
+- Start with vertex 0 and greedily grow tree T.
+- Add to T the min weight edge with exactly one endpoint in T. 
+- Repeat until V - 1 edges.
+
+**Indexed PQ:**
+
+- Start with same code as MinPQ.
+- Maintain parallel arrays keys[], pq[], and qp[] so that:
+  - keys[i] is the priority of i
+  - pq[i] is the index of the key in heap position i
+  - qp[i] is the heap position of the key with index i 
+- Use swim(qp[i]) implement decreaseKey(i, key).
+
+# 12. Shortest Paths
+
+Shortest-paths optimality conditions: Let G be an edge-weighted digraph.Then distTo[] are the shortest path distances from s iff:
+
+- distTo[s] = 0.
+- For each vertex v, distTo[v] is the length of some path from s to v.
+- For each edge e = v→w, distTo[w] ≤ distTo[v] + e.weight().
+
+**Dijkstra’s Algorithm:** Doesn’t work with negative edge weights.
+
+- Consider vertices in increasing order of distance from s (non-tree vertex with the lowest distTo[] value).
+- Add vertex to tree and relax all edges pointing from that vertex.
+
+
+
+
+
+
+
 
 
 

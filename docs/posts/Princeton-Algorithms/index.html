@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="Princeton Algorithms" />
 <meta name="google-site-verification" content="google_meta_tag_verification" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2024-01-17T13:22:03+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Terry"},"dateModified":"2024-01-25T14:36:24+00:00","datePublished":"2023-11-01T08:00:00+00:00","description":"1. Introduction","headline":"Princeton Algorithms","mainEntityOfPage":{"@type":"WebPage","@id":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"},"url":"https://tasogarenaki.github.io/posts/Princeton-Algorithms/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1674,13 +1674,13 @@
 
 
 <em class="timeago"
-    date="2024-01-17 14:22:03 +0100
+    date="2024-01-25 15:36:24 +0100
 "
     
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Wed, Jan 17, 2024,  2:22 PM +0100"
-    >Jan 17</em>
+      title="Thu, Jan 25, 2024,  3:36 PM +0100"
+    >Jan 25</em>
 
       </span>
       
@@ -1705,8 +1705,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1782 words">
-  <em>9 min</em> read</span>
+  title="2034 words">
+  <em>11 min</em> read</span>
 
 
       <!-- page views -->
@@ -2274,6 +2274,61 @@
 <ul>
   <li>Run depth-first search.</li>
   <li>Return vertices in reverse postorder.</li>
+</ul>
+
+<h1 id="11-minimum-spanning-trees">11. Minimum Spanning Trees</h1>
+
+<p>A spanning tree of G is a subgraph T that is both a tree (connected and acyclic) and spanning (includes all of the vertices). Goa: Find a min weight spanning tree.</p>
+
+<p><strong>Greedy Algorithm:</strong></p>
+
+<ul>
+  <li>Start with all edges coloured grey.</li>
+  <li>Find cut with no black crossing edges; color its min-weight edge black.</li>
+  <li>Repeat until V - 1 edges are coloured black.</li>
+</ul>
+
+<p><strong>Kruskal’s Algorithm:</strong></p>
+
+<p>Consider edges in ascending order of weight. Add next edge to tree T unless doing so would create a cycle.</p>
+
+<p><strong>Prim’s Algorithm:</strong></p>
+
+<ul>
+  <li>Start with vertex 0 and greedily grow tree T.</li>
+  <li>Add to T the min weight edge with exactly one endpoint in T.</li>
+  <li>Repeat until V - 1 edges.</li>
+</ul>
+
+<p><strong>Indexed PQ:</strong></p>
+
+<ul>
+  <li>Start with same code as MinPQ.</li>
+  <li>Maintain parallel arrays keys[], pq[], and qp[] so that:
+    <ul>
+      <li>keys[i] is the priority of i</li>
+      <li>pq[i] is the index of the key in heap position i</li>
+      <li>qp[i] is the heap position of the key with index i</li>
+    </ul>
+  </li>
+  <li>Use swim(qp[i]) implement decreaseKey(i, key).</li>
+</ul>
+
+<h1 id="12-shortest-paths">12. Shortest Paths</h1>
+
+<p>Shortest-paths optimality conditions: Let G be an edge-weighted digraph.Then distTo[] are the shortest path distances from s iff:</p>
+
+<ul>
+  <li>distTo[s] = 0.</li>
+  <li>For each vertex v, distTo[v] is the length of some path from s to v.</li>
+  <li>For each edge e = v→w, distTo[w] ≤ distTo[v] + e.weight().</li>
+</ul>
+
+<p><strong>Dijkstra’s Algorithm:</strong> Doesn’t work with negative edge weights.</p>
+
+<ul>
+  <li>Consider vertices in increasing order of distance from s (non-tree vertex with the lowest distTo[] value).</li>
+  <li>Add vertex to tree and relax all edges pointing from that vertex.</li>
 </ul>
 
 
